@@ -260,7 +260,7 @@ void func_6()
 	{
 		case 1:
 			func_25(&uLocal_123);
-			PED::_0xED9582B3DA8F02B4(5);
+			PED::_RESERVE_AMBIENT_PEDS(5);
 			iLocal_126 = ITEMSET::CREATE_ITEMSET(true);
 			if (func_7() == 5)
 			{
@@ -413,7 +413,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_38(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -441,7 +441,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_38(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -455,7 +455,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_38(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}
@@ -469,7 +469,7 @@ void func_10(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}
@@ -789,7 +789,7 @@ void func_28(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 {
 	if (!func_37(iParam0))
 	{
-		*iParam0 = GRAPHICS::_0xFA50F79257745E74(vParam1, fParam4, iParam5, iParam6, iParam7);
+		*iParam0 = GRAPHICS::ADD_VEG_MODIFIER_SPHERE(vParam1, fParam4, iParam5, iParam6, iParam7);
 		if (func_37(iParam0))
 		{
 		}

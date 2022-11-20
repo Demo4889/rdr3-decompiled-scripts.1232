@@ -27,7 +27,7 @@ void __EntryFunction__()
 	{
 		func_1(&Local_13);
 	}
-	if (TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		Local_13.f_2 = ScriptParam_0.f_1;
 		Local_13.f_1 = TASK::_0x7467165EE97D3C68(Local_13.f_2);
@@ -56,7 +56,7 @@ void __EntryFunction__()
 		{
 			func_3(&Local_13, 5);
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
 			func_1(&Local_13);
 		}
@@ -68,7 +68,7 @@ void __EntryFunction__()
 					func_7(&Local_13);
 					func_8(&Local_13);
 				}
-				if (TASK::_0x841475AC96E794D1(Local_13.f_2))
+				if (TASK::DOES_SCENARIO_POINT_EXIST(Local_13.f_2))
 				{
 					if (func_9(Global_36) && func_10(&Local_13))
 					{
@@ -143,7 +143,7 @@ void func_1(var uParam0)
 		}
 		iVar0++;
 	}
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(uParam0->f_11);
 	}
@@ -180,7 +180,7 @@ void func_7(var uParam0)
 {
 	uParam0->f_3[0] = 1477581656;
 	uParam0->f_3[1] = 1477581656;
-	if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+	if (!ANIMSCENE::DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 	{
 		uParam0->f_11 = ANIMSCENE::_CREATE_ANIM_SCENE("script@proc@shoprobberies@GLOBAL@EVENT_OPEN_REGISTER@BASE", 2, 0, false, true);
 	}
@@ -221,7 +221,7 @@ int func_10(var uParam0)
 		}
 		iVar0++;
 	}
-	if ((ANIMSCENE::_0x25557E324489393C(uParam0->f_11) && !ANIMSCENE::_0x477122B8D05E7968(uParam0->f_11, 1, 0)) && !ANIMSCENE::_0x59606519FF9D3EC2(uParam0->f_11, 1))
+	if ((ANIMSCENE::DOES_ANIM_SCENE_EXIST(uParam0->f_11) && !ANIMSCENE::IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_LOADING(uParam0->f_11, 1))
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_11);
 	}
@@ -254,7 +254,7 @@ int func_11(var uParam0)
 		}
 		iVar0++;
 	}
-	if (!ANIMSCENE::_0x477122B8D05E7968(uParam0->f_11, 1, 0))
+	if (!ANIMSCENE::IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0))
 	{
 		return 0;
 	}

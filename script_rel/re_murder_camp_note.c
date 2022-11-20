@@ -39,7 +39,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -141,7 +141,7 @@ void func_6()
 				StringCopy(&(Local_5.f_25), "doc_treasure_map", 32);
 				StringCopy(&(Local_5.f_1), "MAP", 32);
 				Local_5.f_6 = TASK::_0xDF7993356F52359A(Local_5, 0);
-				Local_5.f_5 = TASK::_0x295514F198EFD0CA(Local_5.f_6, &(Local_5.f_1));
+				Local_5.f_5 = TASK::GET_PROP_FOR_SCENARIO_POINT(Local_5.f_6, &(Local_5.f_1));
 				if (ENTITY::DOES_ENTITY_EXIST(Local_5.f_5))
 				{
 				}
@@ -193,8 +193,8 @@ void func_6()
 				{
 					fVar1 = ENTITY::_0x627520389E288A73(Local_5, "script_re@murder_campfire@knife_note", "enter");
 				}
-				iLocal_64 = TASK::_0x295514F198EFD0CA(Local_5.f_6, "Knife");
-				iLocal_65 = TASK::_0x295514F198EFD0CA(Local_5.f_6, "Head");
+				iLocal_64 = TASK::GET_PROP_FOR_SCENARIO_POINT(Local_5.f_6, "Knife");
+				iLocal_65 = TASK::GET_PROP_FOR_SCENARIO_POINT(Local_5.f_6, "Head");
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_64))
 				{
 					if (TASK::_0x6EF4E31B4D5D2DA0(Local_5.f_6, "Knife"))

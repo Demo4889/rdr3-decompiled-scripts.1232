@@ -48,7 +48,7 @@ void __EntryFunction__()
 		func_1(1);
 		func_5();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		if (!ScriptParam_0.f_3)
 		{
@@ -206,7 +206,7 @@ void func_1(int iParam0)
 
 void func_2()
 {
-	if (!SCRIPTS::_0x9E4EF615E307FBBE())
+	if (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
@@ -861,7 +861,7 @@ void func_27(float fParam0, int iParam1)
 	iVar1 = BUILTIN::ROUND((fVar0 + IntToFloat(ENTITY::GET_ENTITY_HEALTH(Global_35))));
 	if (iParam1 && fVar0 < 0f)
 	{
-		ENTITY::_0x835F131E7DC8F97A(Global_35, fVar0, 0, 0);
+		ENTITY::_CHANGE_ENTITY_HEALTH(Global_35, fVar0, 0, 0);
 	}
 	else if (fParam0 <= 0f || iVar1 > ENTITY::GET_ENTITY_MAX_HEALTH(Global_35, 0))
 	{
@@ -2034,7 +2034,7 @@ struct<2> func_80(int iParam0)
 
 void func_81(var uParam0, var uParam1, int iParam2)
 {
-	STATS::_0x6A0184E904CDF25E(&uParam0, iParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, iParam2);
 }
 
 int func_82(int iParam0)
@@ -2128,7 +2128,7 @@ void func_83(int iParam0, int iParam1)
 	struct<2> Var0;
 
 	Var0 = { func_84(-372368982, func_152(iParam0)) };
-	STATS::_0x6A0184E904CDF25E(&Var0, iParam1);
+	STATS::STAT_ID_INCREMENT_INT(&Var0, iParam1);
 	func_81(func_153(106002964), iParam1);
 }
 
@@ -2639,13 +2639,13 @@ int func_110(bool bParam0)
 {
 	if (func_18() == -1)
 	{
-		if (!bParam0 && INVENTORY::_0x7C7E4AB748EA3B07())
+		if (!bParam0 && INVENTORY::_INVENTORY_USE_SP_BACKUP())
 		{
 			return 5;
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_INVENTORY_ID_FROM_PED(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -3225,7 +3225,7 @@ void func_147(float fParam0, int iParam1)
 	{
 		return;
 	}
-	ENTITY::_0x835F131E7DC8F97A(iParam1, fParam0, 0, 0);
+	ENTITY::_CHANGE_ENTITY_HEALTH(iParam1, fParam0, 0, 0);
 }
 
 int func_148(int iParam0)
@@ -4052,7 +4052,7 @@ struct<4> func_175(bool bParam0)
 	iVar0 = func_110(bParam0);
 	if (iVar0 == 2)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224214))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224214))
 		{
 			*Global_1224214 = { func_218(923904168, func_217(bParam0), -740156546, bParam0) };
 		}
@@ -4060,7 +4060,7 @@ struct<4> func_175(bool bParam0)
 	}
 	else if (iVar0 == 3)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224222))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224222))
 		{
 			*Global_1224222 = { func_218(923904168, func_217(bParam0), -740156546, 0) };
 		}
@@ -4071,7 +4071,7 @@ struct<4> func_175(bool bParam0)
 
 void func_176(var uParam0, struct<4> Param1)
 {
-	if (INVENTORY::_0xB881CA836CC4B6D4(&Param1))
+	if (INVENTORY::_INVENTORY_IS_GUID_VALID(&Param1))
 	{
 		uParam0->f_9 = { Param1 };
 	}
@@ -4402,7 +4402,7 @@ struct<4> func_197(int iParam0, int iParam1)
 
 char* func_198(var uParam0, var uParam1, var uParam2, var uParam3)
 {
-	return HUD::_0xD8402B858F4DDD88(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
+	return HUD::GET_TEXT_SUBSTRING_2(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
 }
 
 char* func_199(int iParam0)
@@ -4677,7 +4677,7 @@ struct<4> func_218(int iParam0, var uParam1, var uParam2, var uParam3, var uPara
 	{
 		return Var0;
 	}
-	INVENTORY::_0x886DFD3E185C8A89(func_110(bParam6), &uParam1, iParam0, iParam5, &Var0);
+	INVENTORY::INVENTORY_GET_GUID_FROM_ITEMID(func_110(bParam6), &uParam1, iParam0, iParam5, &Var0);
 	return Var0;
 }
 

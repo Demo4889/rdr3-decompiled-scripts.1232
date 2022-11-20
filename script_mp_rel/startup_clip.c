@@ -51,7 +51,7 @@ void __EntryFunction__()
 		if (!bVar0)
 		{
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
 			bVar0 = false;
 		}

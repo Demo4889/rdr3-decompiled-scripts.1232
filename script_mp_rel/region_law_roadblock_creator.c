@@ -253,7 +253,7 @@ void func_6()
 	{
 		case 1:
 			func_22(&uLocal_127);
-			PED::_0xED9582B3DA8F02B4(5);
+			PED::_RESERVE_AMBIENT_PEDS(5);
 			iLocal_130 = ITEMSET::CREATE_ITEMSET(true);
 			if (func_7() == 5)
 			{
@@ -406,7 +406,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_35(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -434,7 +434,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_35(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -448,7 +448,7 @@ int func_9(int iParam0, int iParam1)
 	}
 	if (func_35(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}
@@ -462,7 +462,7 @@ void func_10(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}
@@ -763,7 +763,7 @@ void func_25(var uParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 {
 	if (!func_34(uParam0))
 	{
-		*uParam0 = GRAPHICS::_0xFA50F79257745E74(vParam1, fParam4, iParam5, iParam6, iParam7);
+		*uParam0 = GRAPHICS::ADD_VEG_MODIFIER_SPHERE(vParam1, fParam4, iParam5, iParam6, iParam7);
 		if (func_34(uParam0))
 		{
 		}
@@ -1993,7 +1993,7 @@ int func_61(int iParam0)
 	}
 	iVar0 = 0;
 	Var1 = { func_72(PLAYER::PLAYER_ID()) };
-	BOUNTY::_0x4EF23E04A0C8FF51(&Var1, &uVar8);
+	BOUNTY::BOUNTY_GET_BOUNTY_ON_PLAYER(&Var1, &uVar8);
 	iVar0 = 0;
 	while (iVar0 < 6)
 	{
@@ -2061,7 +2061,7 @@ int func_68(vector3 vParam0, int iParam3)
 	iVar0 = func_17();
 	if (func_42(iVar0))
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
 		{
 			return iVar0;
 		}
@@ -2154,9 +2154,9 @@ int func_73(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
-				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
+				if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{
 					switch (((*Global_1887327)[iVar4 /*36*/])->f_21)
 					{

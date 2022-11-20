@@ -246,7 +246,7 @@ void func_16()
 int func_17()
 {
 	STREAMING::REQUEST_MODEL(func_32(), false);
-	PED::_0xED9582B3DA8F02B4(1);
+	PED::_RESERVE_AMBIENT_PEDS(1);
 	if (PED::_0x5C16855277819BBF() == 1 && STREAMING::HAS_MODEL_LOADED(func_32()))
 	{
 		return 1;
@@ -263,7 +263,7 @@ int func_18()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (!VOLUME::_0x92A78D0BEDB332A3(&(Local_0.f_2[iVar0])))
+		if (!VOLUME::DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
 		{
 			iVar1 = iVar0;
 			Var2 = { func_33(iVar1) };
@@ -354,13 +354,13 @@ int func_25()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(&(Local_0.f_2[iVar0])))
+		if (VOLUME::DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
 		{
-			VOLUME::_0x43F867EF5C463A53(&(Local_0.f_2[iVar0]));
+			VOLUME::DELETE_VOLUME(&(Local_0.f_2[iVar0]));
 		}
 		iVar0++;
 	}
-	PED::_0x7D4E70A67A651C71(1);
+	PED::_UNRESERVE_AMBIENT_PEDS(1);
 	return 1;
 }
 

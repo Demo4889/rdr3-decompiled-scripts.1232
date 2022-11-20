@@ -326,7 +326,7 @@ int func_7()
 		if (&Local_13.f_8.f_93[iVar0 /*19*/] == 3)
 		{
 			iVar2 = NETWORK::_0xD7F6781A0ABAF6FB((Local_13.f_8.f_93[iVar0 /*19*/])->f_4);
-			if (ANIMSCENE::_0x25557E324489393C(iVar2) && ANIMSCENE::_0x477122B8D05E7968(iVar2, 1, 0))
+			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar2) && ANIMSCENE::IS_ANIM_SCENE_LOADED(iVar2, 1, 0))
 			{
 				if (func_41(&Local_13, iVar0, iVar0, "SEAT_01"))
 				{
@@ -475,7 +475,7 @@ int func_17()
 		if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID((Local_13.f_8.f_93[iVar0 /*19*/])->f_4))
 		{
 			iVar1 = NETWORK::_0xD7F6781A0ABAF6FB((Local_13.f_8.f_93[iVar0 /*19*/])->f_4);
-			if (ANIMSCENE::_0x25557E324489393C(iVar1) && ANIMSCENE::_0xCBFC7725DE6CE2E0(iVar1, 0))
+			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar1) && ANIMSCENE::IS_ANIM_SCENE_RUNNING(iVar1, 0))
 			{
 				bLocal_463[iVar0] = ANIMSCENE::_0x8D81E7824B7753F7(iVar1, "HoldCardsLoopA", 1);
 				bVar2 = ANIMSCENE::GET_ANIM_SCENE_BOOL(iVar1, "BREAKLOOP");
@@ -2765,7 +2765,7 @@ int func_41(var uParam0, int iParam1, int iParam2, char* sParam3)
 	}
 	NETWORK::_0x7182EDDA1EE7DB5A(iVar1);
 	iVar2 = NETWORK::_0xD7F6781A0ABAF6FB(iVar1);
-	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && ANIMSCENE::_0x25557E324489393C(iVar2))
+	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar2))
 	{
 		ANIMSCENE::SET_ANIM_SCENE_ENTITY(iVar2, sParam3, iVar0, 0);
 		(uParam0->f_8.f_4[iParam1 /*5*/])->f_3 = iVar1;
@@ -2794,7 +2794,7 @@ void func_42(var uParam0, var uParam1, int iParam2, char* sParam3)
 	}
 	iVar1 = NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_8.f_93[iParam2 /*19*/])->f_4);
 	uVar2 = (uParam0->f_8.f_93[iParam2 /*19*/])->f_4;
-	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && ANIMSCENE::_0x25557E324489393C(iVar1))
+	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar1))
 	{
 		ANIMSCENE::SET_ANIM_SCENE_ENTITY(iVar1, sParam3, iVar0, 0);
 		uParam1->f_4 = uVar2;
@@ -3076,9 +3076,9 @@ int func_58()
 		{
 			func_23();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -3153,9 +3153,9 @@ void func_61(bool bParam0)
 		{
 			NETWORK::_0x236905C700FDB54D();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -3774,7 +3774,7 @@ int func_79(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -3792,9 +3792,9 @@ int func_79(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -3928,7 +3928,7 @@ void func_88(var uParam0)
 	switch (*uParam0)
 	{
 		case 1:
-			if (iVar0 == -1 || !ANIMSCENE::_0x25557E324489393C(iVar0))
+			if (iVar0 == -1 || !ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 			{
 				if (MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_9)))
 				{
@@ -3947,7 +3947,7 @@ void func_88(var uParam0)
 		case 2:
 			iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
 			NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
-			if (ANIMSCENE::_0x477122B8D05E7968(iVar0, 1, 0))
+			if (ANIMSCENE::IS_ANIM_SCENE_LOADED(iVar0, 1, 0))
 			{
 				func_73(uParam0, 3);
 			}
@@ -4062,7 +4062,7 @@ int func_94(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 
 	iVar4 = 0;
 	func_114(&iVar0, vParam1, 0f, 0f, 0f, fParam4, fParam4, fParam4);
-	if (!VOLUME::_0x92A78D0BEDB332A3(iVar0))
+	if (!VOLUME::DOES_VOLUME_EXIST(iVar0))
 	{
 		return 0;
 	}
@@ -4152,11 +4152,11 @@ void func_95(var uParam0, var uParam1)
 			{
 				iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam1->f_3);
 				iVar1 = NETWORK::NET_TO_PED(uParam1->f_2);
-				if (ANIMSCENE::_0x25557E324489393C(iVar0) && ANIMSCENE::_0xCBFC7725DE6CE2E0(iVar0, 0))
+				if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0) && ANIMSCENE::IS_ANIM_SCENE_RUNNING(iVar0, 0))
 				{
 					if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(iVar1, iVar0))
 					{
-						ANIMSCENE::_0xBC781D24AA11F179(iVar1);
+						ANIMSCENE::_CLEAR_BREAKOUT_ARCHETYPE(iVar1);
 						if (ENTITY::_0x083D497D57B7400F(iVar1))
 						{
 							ENTITY::FREEZE_ENTITY_POSITION(iVar1, false);
@@ -4298,7 +4298,7 @@ void func_100(var uParam0)
 	{
 		return;
 	}
-	ANIMSCENE::_0xBC781D24AA11F179(iVar0);
+	ANIMSCENE::_CLEAR_BREAKOUT_ARCHETYPE(iVar0);
 }
 
 void func_101(var uParam0)
@@ -4321,7 +4321,7 @@ void func_102(var uParam0)
 	int iVar0;
 
 	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
-	if (ANIMSCENE::_0x25557E324489393C(iVar0))
+	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(iVar0);
 	}
@@ -4398,7 +4398,7 @@ void func_109(var uParam0, int iParam1)
 		return;
 	}
 	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
-	if (ANIMSCENE::_0x25557E324489393C(iVar0))
+	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
 		NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
 		ANIMSCENE::_0xDF7B5144E25CD3FE(iVar0, func_134(iParam1));
@@ -4424,7 +4424,7 @@ int func_110(var uParam0)
 		return 0;
 	}
 	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
-	if (ANIMSCENE::_0x25557E324489393C(iVar0))
+	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
 		NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
 		return ANIMSCENE::_0x23E33CB9F4A3F547(iVar0, func_134(uParam0->f_3));
@@ -4518,7 +4518,7 @@ int func_112(var uParam0, var uParam1)
 		}
 		MISC::SET_BIT(&(uParam1->f_4), 1);
 	}
-	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && !PED::_0xA0BC8FAED8CFEB3C(iVar0))
+	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && !PED::IS_PED_READY_TO_RENDER(iVar0))
 	{
 		return 0;
 	}
@@ -4551,7 +4551,7 @@ int func_113(var uParam0, int iParam1)
 
 void func_114(int iParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*iParam0))
+	if (!VOLUME::DOES_VOLUME_EXIST(*iParam0))
 	{
 		*iParam0 = VOLUME::_0x10157BC3247FF3BA(vParam1, vParam4, vParam7, func_140());
 	}
@@ -4670,9 +4670,9 @@ int func_115(int iParam0, int iParam1)
 
 void func_116(int iParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (VOLUME::DOES_VOLUME_EXIST(iParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam0);
+		VOLUME::DELETE_VOLUME(iParam0);
 	}
 }
 

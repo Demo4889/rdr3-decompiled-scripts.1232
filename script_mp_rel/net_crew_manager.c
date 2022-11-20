@@ -53,7 +53,7 @@ int func_2(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -71,9 +71,9 @@ int func_2(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -165,9 +165,9 @@ int func_7()
 		{
 			func_5();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -260,9 +260,9 @@ void func_10(bool bParam0)
 		{
 			NETWORK::_0x236905C700FDB54D();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -649,6 +649,6 @@ int func_35(int iParam0)
 
 char* func_36(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7)
 {
-	return HUD::_0xD8402B858F4DDD88(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
+	return HUD::GET_TEXT_SUBSTRING_2(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
 }
 

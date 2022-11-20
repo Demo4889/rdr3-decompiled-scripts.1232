@@ -41,7 +41,7 @@ void __EntryFunction__()
 	{
 		func_2(0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(0, 0);
 	}
@@ -267,7 +267,7 @@ void func_7()
 				iVar1 = func_26((Global_1393237->f_11[iVar0 /*30*/])->f_3, 0);
 				if (iVar1 >= 0)
 				{
-					if (VOLUME::_0xF6A8A652A6B186CD(Global_1911670[iVar1]))
+					if (VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2(Global_1911670[iVar1]))
 					{
 						if (VOLUME::_0xF6CE6F9C3897804E(Global_1911670[iVar1]) > 45f)
 						{
@@ -519,7 +519,7 @@ void func_15(int iParam0)
 		}
 		MISC::SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT(false);
 	}
-	if (VOLUME::_0xF6A8A652A6B186CD((Global_1393237->f_11[iParam0 /*30*/])->f_21))
+	if (VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2((Global_1393237->f_11[iParam0 /*30*/])->f_21))
 	{
 		func_24((Global_1393237->f_11[iParam0 /*30*/])->f_3, 1);
 	}
@@ -659,14 +659,14 @@ void func_24(vector3 vParam0, int iParam3)
 	while (iVar0 < &Global_1911670)
 	{
 		iVar1 = Global_1911670[iVar0];
-		if (VOLUME::_0xF6A8A652A6B186CD(iVar1))
+		if (VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2(iVar1))
 		{
 			vVar2 = { VOLUME::_0xC4019CF9AE8E931A(iVar1) };
 			if (func_51(vVar2, vParam0, 2f, 1))
 			{
 				if (iParam3 == 0 || VOLUME::_0x769BB7626B8CDB06(vVar2, 2f, 0, iParam3, 16384))
 				{
-					VOLUME::_0xFDFECC6EE4491E11(iVar1);
+					VOLUME::RELEASE_LOCK_VOLUME(iVar1);
 					(*Global_1911670)[iVar0] = 0;
 				}
 			}
@@ -706,7 +706,7 @@ int func_26(vector3 vParam0, int iParam3)
 	while (iVar0 < &Global_1911670)
 	{
 		iVar1 = Global_1911670[iVar0];
-		if (VOLUME::_0xF6A8A652A6B186CD(iVar1))
+		if (VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2(iVar1))
 		{
 			vVar2 = { VOLUME::_0xC4019CF9AE8E931A(iVar1) };
 			if (func_51(vVar2, vParam0, 2f, 1))
@@ -1228,14 +1228,14 @@ int func_53(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (!VOLUME::_0xF6A8A652A6B186CD(iParam0))
+	if (!VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2(iParam0))
 	{
 	}
 	iVar1 = 0;
 	while (iVar1 < &Global_1911670)
 	{
 		iVar0 = Global_1911670[iVar1];
-		if (!VOLUME::_0xF6A8A652A6B186CD(iVar0) || iVar0 == iParam0)
+		if (!VOLUME::IS_VOLUME_LOCK_REQUEST_VALID_2(iVar0) || iVar0 == iParam0)
 		{
 			(*Global_1911670)[iVar1] = iParam0;
 			return 1;

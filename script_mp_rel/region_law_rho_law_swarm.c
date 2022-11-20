@@ -84,7 +84,7 @@ void func_1()
 void func_2()
 {
 	iLocal_48 = 1;
-	PED::_0xED9582B3DA8F02B4(5);
+	PED::_RESERVE_AMBIENT_PEDS(5);
 }
 
 int func_3(var uParam0)
@@ -215,7 +215,7 @@ void func_9(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}
@@ -1131,7 +1131,7 @@ int func_22(vector3 vParam0, int iParam3)
 	iVar0 = func_24();
 	if (func_25(iVar0))
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
 		{
 			return iVar0;
 		}
@@ -1171,9 +1171,9 @@ int func_26(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
-				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
+				if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{
 					switch (((*Global_1887327)[iVar4 /*36*/])->f_21)
 					{

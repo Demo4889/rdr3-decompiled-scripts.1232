@@ -753,7 +753,7 @@ void func_1()
 	func_8();
 	func_9(&(Local_14.f_32));
 	func_10();
-	if (ANIMSCENE::_0x25557E324489393C(Local_14.f_1))
+	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(Local_14.f_1))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Local_14.f_1);
 	}
@@ -851,7 +851,7 @@ int func_7(var uParam0)
 	var uVar7;
 	int iVar8;
 
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		return 0;
 	}
@@ -1529,13 +1529,13 @@ int func_25(var uParam0)
 	{
 		iVar0 = 0;
 	}
-	if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_1))
+	if (!ANIMSCENE::DOES_ANIM_SCENE_EXIST(uParam0->f_1))
 	{
 		uParam0->f_1 = ANIMSCENE::_CREATE_ANIM_SCENE("lightrig@player_journal", 0, "plMain", false, true);
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_1);
 		iVar0 = 0;
 	}
-	else if (!ANIMSCENE::_0x477122B8D05E7968(uParam0->f_1, 1, 0))
+	else if (!ANIMSCENE::IS_ANIM_SCENE_LOADED(uParam0->f_1, 1, 0))
 	{
 		iVar0 = 0;
 	}
@@ -1919,7 +1919,7 @@ void func_40(int iParam0, var uParam1)
 
 void func_41(var uParam0)
 {
-	if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_1, 0))
+	if (!ANIMSCENE::IS_ANIM_SCENE_RUNNING(uParam0->f_1, 0))
 	{
 		ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_1, Global_36, ENTITY::GET_ENTITY_ROTATION(Global_35, 2), 2);
 		ANIMSCENE::ATTACH_ANIM_SCENE_TO_ENTITY_PRESERVING_LOCATION(uParam0->f_1, Global_35, -1);

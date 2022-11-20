@@ -39,7 +39,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();

@@ -29,7 +29,7 @@ void func_1()
 
 int func_2()
 {
-	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::_0x841475AC96E794D1(iLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), iLocal_46))
+	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), iLocal_46))
 	{
 		func_3();
 		return 0;
@@ -63,7 +63,7 @@ int func_4()
 	{
 		case 0:
 			Local_0.f_32 = TASK::_0xDF7993356F52359A(Global_35, 0);
-			if (!TASK::_0x841475AC96E794D1(Local_0.f_32))
+			if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_0.f_32))
 			{
 				return 0;
 			}

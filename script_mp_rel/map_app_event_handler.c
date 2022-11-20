@@ -140,7 +140,7 @@ void func_3(var uParam0)
 	uParam0->f_10 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "Region", "");
 	uParam0->f_11 = DATABINDING::_DATABINDING_ADD_DATA_BOOL(uParam0->f_8, "ItemHovered", false);
 	uParam0->f_12 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "HoveredName", "");
-	HUD::_0xF66090013DE648D5("FMMC");
+	HUD::TEXT_BLOCK_REQUEST("FMMC");
 	if (TXD::_0xBA0163B277C2D2D0(-1859668514))
 	{
 		TXD::_0xDB1BD07FB464584D(-1859668514, 0);
@@ -366,7 +366,7 @@ int func_13(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -384,9 +384,9 @@ int func_13(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -3028,7 +3028,7 @@ int func_86(vector3 vParam0, int iParam3)
 	iVar0 = func_131();
 	if (func_57(iVar0))
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
 		{
 			return iVar0;
 		}
@@ -3723,7 +3723,7 @@ int func_119(int iParam0)
 	}
 	iVar0 = 0;
 	Var1 = { func_94(PLAYER::PLAYER_ID()) };
-	BOUNTY::_0x4EF23E04A0C8FF51(&Var1, &uVar8);
+	BOUNTY::BOUNTY_GET_BOUNTY_ON_PLAYER(&Var1, &uVar8);
 	iVar0 = 0;
 	while (iVar0 < 6)
 	{
@@ -4294,7 +4294,7 @@ int func_127(int iParam0)
 
 char* func_128(var uParam0)
 {
-	return HUD::_0xD8402B858F4DDD88(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
+	return HUD::GET_TEXT_SUBSTRING_2(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
 }
 
 char* func_129(int iParam0)
@@ -4372,9 +4372,9 @@ int func_132(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
-				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
+				if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{
 					switch (((*Global_1887327)[iVar4 /*36*/])->f_21)
 					{
@@ -6437,7 +6437,7 @@ int func_237(bool bParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 	iVar0 = &Global_1273882->f_154[&Global_1273882];
 	iVar1 = Global_1273882->f_8;
 	bVar2 = ENTITY::IS_ENTITY_DEAD(iVar1);
-	bVar3 = PED::_0xB655DB7582AEC805(iVar1);
+	bVar3 = PED::IS_PED_INCAPACITATED(iVar1);
 	if (bVar2 || bVar3)
 	{
 		if (!bParam5)
@@ -6967,7 +6967,7 @@ int func_251(int iParam0)
 
 bool func_252()
 {
-	return (ANIMSCENE::_0x25557E324489393C(Global_26286) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Global_26286, 0));
+	return (ANIMSCENE::DOES_ANIM_SCENE_EXIST(Global_26286) && ANIMSCENE::IS_ANIM_SCENE_RUNNING(Global_26286, 0));
 }
 
 var func_253(var uParam0, int iParam1, int iParam2)

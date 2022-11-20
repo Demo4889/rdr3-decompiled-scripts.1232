@@ -34,7 +34,7 @@ void __EntryFunction__()
 	{
 		func_2(&uLocal_14);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&uLocal_14);
 	}
@@ -107,7 +107,7 @@ int func_3()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(iLocal_20))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(iLocal_20))
 	{
 		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_20));
 	}
@@ -202,7 +202,7 @@ int func_9()
 
 int func_10()
 {
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		func_2(&uLocal_14);
 		return 0;
@@ -272,7 +272,7 @@ int func_13(var uParam0)
 			{
 				if (!func_30(func_29(iLocal_21)))
 				{
-					MAP::_0xD8C7162AB2E2AF45(func_31(iLocal_21));
+					MAP::MAP_DISCOVER_REGION(func_31(iLocal_21));
 				}
 				return 1;
 			}

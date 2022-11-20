@@ -101,9 +101,9 @@ int func_7()
 		{
 			func_5();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -199,9 +199,9 @@ void func_10(bool bParam0)
 		{
 			NETWORK::_0x236905C700FDB54D();
 		}
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
-			switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+			switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 			{
 				case 0:
 					break;
@@ -256,7 +256,7 @@ int func_11(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -274,9 +274,9 @@ int func_11(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -361,9 +361,9 @@ void func_15()
 	iVar0 = 0;
 	while (iVar0 <= 21)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(&(Global_1247291->f_51[iVar0])))
+		if (VOLUME::DOES_VOLUME_EXIST(&(Global_1247291->f_51[iVar0])))
 		{
-			VOLUME::_0x43F867EF5C463A53(&(Global_1247291->f_51[iVar0]));
+			VOLUME::DELETE_VOLUME(&(Global_1247291->f_51[iVar0]));
 		}
 		iVar0++;
 	}
@@ -753,7 +753,7 @@ int func_34(vector3 vParam0, var uParam3)
 	*uParam3 = 0;
 	while (*uParam3 <= 7)
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(&(Global_1247291->f_51[*uParam3]), vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(&(Global_1247291->f_51[*uParam3]), vParam0))
 		{
 			return 1;
 		}
@@ -1125,7 +1125,7 @@ int func_56(vector3 vParam0)
 	iVar0 = 16;
 	while (iVar0 <= 16)
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(&(Global_1247291->f_51[iVar0]), vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(&(Global_1247291->f_51[iVar0]), vParam0))
 		{
 			return 1;
 		}
@@ -1972,7 +1972,7 @@ int func_75(vector3 vParam0, int iParam3)
 	iVar0 = func_85();
 	if (func_86(iVar0))
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar0 /*36*/])->f_4, vParam0))
 		{
 			return iVar0;
 		}
@@ -1995,7 +1995,7 @@ int func_78(vector3 vParam0, var uParam3)
 	*uParam3 = 8;
 	while (*uParam3 <= 15)
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(&(Global_1247291->f_51[*uParam3]), vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(&(Global_1247291->f_51[*uParam3]), vParam0))
 		{
 			return 1;
 		}
@@ -2045,7 +2045,7 @@ int func_80(vector3 vParam0, int iParam3)
 	*iParam3 = 17;
 	while (*iParam3 <= 21)
 	{
-		if (VOLUME::_0xF256A75210C5C0EB(&(Global_1247291->f_51[*iParam3]), vParam0))
+		if (VOLUME::IS_POINT_IN_VOLUME(&(Global_1247291->f_51[*iParam3]), vParam0))
 		{
 			return 1;
 		}
@@ -2217,9 +2217,9 @@ int func_87(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
-				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
+				if (VOLUME::IS_POINT_IN_VOLUME(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{
 					switch (((*Global_1887327)[iVar4 /*36*/])->f_21)
 					{

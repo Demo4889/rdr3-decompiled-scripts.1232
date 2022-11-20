@@ -210,7 +210,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -347,7 +347,7 @@ void func_6()
 			}
 			else
 			{
-				if (!TASK::_0x841475AC96E794D1(Local_23.f_6))
+				if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_23.f_6))
 				{
 					iLocal_13 = 0;
 					return;
@@ -378,7 +378,7 @@ void func_6()
 			}
 			break;
 		case 1:
-			if (!TASK::_0x841475AC96E794D1(Local_23.f_6))
+			if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_23.f_6))
 			{
 				iLocal_13 = 0;
 				return;
@@ -425,7 +425,7 @@ void func_6()
 						iLocal_217 = 2;
 					}
 					Jump @859; //curOff = 672
-					if (!TASK::_0x841475AC96E794D1(Local_23.f_6))
+					if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_23.f_6))
 					{
 						iLocal_13 = 0;
 						return;
@@ -458,7 +458,7 @@ void func_6()
 								iLocal_217 = 3;
 							}
 							Jump @859; //curOff = 817
-							if (!TASK::_0x841475AC96E794D1(Local_23.f_6) || !PED::_0x9C54041BB66BCF9E(Global_35, Local_23.f_6))
+							if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_23.f_6) || !PED::_0x9C54041BB66BCF9E(Global_35, Local_23.f_6))
 							{
 								iLocal_13 = 0;
 								return;
@@ -821,7 +821,7 @@ void func_26(var uParam0, int iParam1, int iParam2, var uParam3, char* sParam4, 
 						vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(iParam1->f_5, *(iParam1->f_37[iParam2 /*3*/])) };
 					}
 				}
-				else if (TASK::_0x841475AC96E794D1(iParam1->f_6))
+				else if (TASK::DOES_SCENARIO_POINT_EXIST(iParam1->f_6))
 				{
 					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iParam1->f_6, 1), TASK::_0xB93EA7184BAA85C3(iParam1->f_6, 1), *(iParam1->f_37[iParam2 /*3*/])) };
 				}
@@ -868,7 +868,7 @@ void func_26(var uParam0, int iParam1, int iParam2, var uParam3, char* sParam4, 
 						{
 							*uParam0 = iVar7;
 						}
-						else if (!TASK::_0x841475AC96E794D1(iParam1->f_6))
+						else if (!TASK::DOES_SCENARIO_POINT_EXIST(iParam1->f_6))
 						{
 							*uParam0 = iVar7;
 						}
@@ -1411,7 +1411,7 @@ int func_38(int iParam0)
 	while (iVar4 < iVar3)
 	{
 		iVar5 = ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar4, iVar2);
-		if (iParam0->f_5 == MISC::_0xEE04C0AFD4EFAF0E(iVar5))
+		if (iParam0->f_5 == MISC::_GET_ENTITY_FROM_ITEM(iVar5))
 		{
 			ITEMSET::DESTROY_ITEMSET(iVar2);
 			return 1;
@@ -1447,15 +1447,15 @@ int func_40(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
 		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{
-			iVar1 = TASK::_0x295514F198EFD0CA(iParam4, "CONTAINER");
+			iVar1 = TASK::GET_PROP_FOR_SCENARIO_POINT(iParam4, "CONTAINER");
 			if (ENTITY::IS_ENTITY_AN_OBJECT(iVar1))
 			{
 				iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar1);
@@ -1640,7 +1640,7 @@ void func_56(var uParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	STATS::_0x6A0184E904CDF25E(&uParam0, bParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, bParam2);
 }
 
 int func_57(int iParam0)

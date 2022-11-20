@@ -33,7 +33,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2();
 	}

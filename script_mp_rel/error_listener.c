@@ -26,7 +26,7 @@ void __EntryFunction__()
 	{
 		if (func_2() == -1)
 		{
-			bVar0 = SCRIPTS::_0x9E4EF615E307FBBE();
+			bVar0 = SCRIPTS::IS_THREAD_EXIT_REQUESTED();
 		}
 		else
 		{
@@ -102,7 +102,7 @@ int func_3(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -120,9 +120,9 @@ int func_3(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;

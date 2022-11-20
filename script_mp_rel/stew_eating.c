@@ -62,7 +62,7 @@ void __EntryFunction__()
 		Var0.f_182 = iVar184;
 	}
 	Var0.f_1.f_2 = 5f;
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && !ENTITY::IS_ENTITY_DEAD(Global_35))
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && !ENTITY::IS_ENTITY_DEAD(Global_35))
 	{
 		if (!ScriptParam_0.f_3)
 		{
@@ -906,7 +906,7 @@ var func_33(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			}
 			if (!bVar3)
 			{
-				if (iVar9 & 16384 != 0 && PED::_0xB655DB7582AEC805(iVar11))
+				if (iVar9 & 16384 != 0 && PED::IS_PED_INCAPACITATED(iVar11))
 				{
 					bVar3 = true;
 				}
@@ -1007,7 +1007,7 @@ var func_33(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			}
 			if (!bVar3 && bVar7)
 			{
-				if (!VOLUME::_0xF256A75210C5C0EB(iVar8, ENTITY::GET_ENTITY_COORDS(iVar11, false, false)))
+				if (!VOLUME::IS_POINT_IN_VOLUME(iVar8, ENTITY::GET_ENTITY_COORDS(iVar11, false, false)))
 				{
 					bVar3 = true;
 				}
@@ -1021,7 +1021,7 @@ var func_33(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -1041,7 +1041,7 @@ int func_35(bool bParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (ITEMDATABASE::_0x99C6EA66DFE73757(bParam0, iParam1, 1120943070))
+	if (ITEMDATABASE::_ITEMDATABASE_DOES_BUNDLE_HAVE_TAG(bParam0, iParam1, 1120943070))
 	{
 		return 1;
 	}
@@ -1084,7 +1084,7 @@ void func_37(float fParam0, int iParam1)
 	{
 		return;
 	}
-	ENTITY::_0x835F131E7DC8F97A(iParam1, fParam0, 0, 0);
+	ENTITY::_CHANGE_ENTITY_HEALTH(iParam1, fParam0, 0, 0);
 }
 
 int func_38(int iParam0)
@@ -1570,7 +1570,7 @@ void func_56(var uParam0, bool bParam1, bool bParam2)
 	{
 		return;
 	}
-	STATS::_0x6A0184E904CDF25E(&uParam0, bParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, bParam2);
 }
 
 int func_57(bool bParam0)
@@ -1656,7 +1656,7 @@ void func_58(int iParam0, bool bParam1)
 	struct<2> Var0;
 
 	Var0 = { func_59(-372368982, func_113(iParam0)) };
-	STATS::_0x6A0184E904CDF25E(&Var0, bParam1);
+	STATS::STAT_ID_INCREMENT_INT(&Var0, bParam1);
 	func_56(func_114(106002964), bParam1);
 }
 
@@ -1834,7 +1834,7 @@ int func_71(bool bParam0, int iParam1)
 	{
 		return 0;
 	}
-	return ITEMDATABASE::_0x4308812A6E9CA62E(bParam0, iParam1);
+	return ITEMDATABASE::_ITEMDATABASE_IS_BUNDLE_VALID(bParam0, iParam1);
 }
 
 int func_72(int iParam0)
@@ -4515,7 +4515,7 @@ int func_164(int iParam0)
 
 int func_165()
 {
-	if (NETWORK::_0xDD73C9838CE7181D())
+	if (NETWORK::_NETWORK_HAS_COMPLETED_MP_INTRO_FLOW_ON_CURRENT_SLOT())
 	{
 		return 1;
 	}

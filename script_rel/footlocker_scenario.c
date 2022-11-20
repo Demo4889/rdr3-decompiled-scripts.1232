@@ -58,7 +58,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -207,7 +207,7 @@ void func_6()
 		case 3:
 			break;
 	}
-	if (!iLocal_182 && ANIMSCENE::_0x25557E324489393C(vLocal_176.x))
+	if (!iLocal_182 && ANIMSCENE::DOES_ANIM_SCENE_EXIST(vLocal_176.x))
 	{
 		func_20(&vLocal_176, &iLocal_183, &iLocal_182);
 	}
@@ -346,7 +346,7 @@ int func_12()
 	if (!PED::IS_PED_INJURED(Global_35))
 	{
 		iVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		if (TASK::DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
@@ -354,7 +354,7 @@ int func_12()
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				iVar0 = TASK::_0x295514F198EFD0CA(iVar1, "PROP");
+				iVar0 = TASK::GET_PROP_FOR_SCENARIO_POINT(iVar1, "PROP");
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
@@ -546,7 +546,7 @@ void func_19(int iParam0, int iParam1, var uParam2, int iParam3, char* sParam4, 
 						vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam2->f_5, vParam5) };
 					}
 				}
-				else if (TASK::_0x841475AC96E794D1(uParam2->f_6))
+				else if (TASK::DOES_SCENARIO_POINT_EXIST(uParam2->f_6))
 				{
 					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(uParam2->f_6, 1), TASK::_0xB93EA7184BAA85C3(uParam2->f_6, 1), vParam5) };
 				}
@@ -592,7 +592,7 @@ void func_19(int iParam0, int iParam1, var uParam2, int iParam3, char* sParam4, 
 						{
 							*iParam0 = iVar7;
 						}
-						else if (!TASK::_0x841475AC96E794D1(uParam2->f_6))
+						else if (!TASK::DOES_SCENARIO_POINT_EXIST(uParam2->f_6))
 						{
 							*iParam0 = iVar7;
 						}
@@ -620,7 +620,7 @@ void func_20(int iParam0, var uParam1, bool bParam2)
 	float fVar0;
 	float fVar1;
 
-	if (!ANIMSCENE::_0x25557E324489393C(*iParam0))
+	if (!ANIMSCENE::DOES_ANIM_SCENE_EXIST(*iParam0))
 	{
 		return;
 	}
@@ -1593,7 +1593,7 @@ int func_40(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4, 
 	Var35 = { func_133(iParam0) };
 	if (STATS::_STAT_ID_IS_VALID(&Var35))
 	{
-		STATS::_0x6A0184E904CDF25E(&Var35, iVar0);
+		STATS::STAT_ID_INCREMENT_INT(&Var35, iVar0);
 	}
 	func_134(iParam0);
 	if (sParam6 > 0f)
@@ -1621,7 +1621,7 @@ struct<2> func_41(int iParam0)
 
 void func_42(var uParam0, var uParam1, int iParam2)
 {
-	STATS::_0x6A0184E904CDF25E(&uParam0, iParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, iParam2);
 }
 
 int func_43(int iParam0, vector3 vParam1, int iParam4, float fParam5, int iParam6, int iParam7)
@@ -4674,15 +4674,15 @@ int func_137(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
 		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{
-			iVar1 = TASK::_0x295514F198EFD0CA(iParam4, "CONTAINER");
+			iVar1 = TASK::GET_PROP_FOR_SCENARIO_POINT(iParam4, "CONTAINER");
 			if (ENTITY::IS_ENTITY_AN_OBJECT(iVar1))
 			{
 				iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar1);
@@ -5311,13 +5311,13 @@ int func_158(bool bParam0)
 {
 	if (func_81() == -1)
 	{
-		if (!bParam0 && INVENTORY::_0x7C7E4AB748EA3B07())
+		if (!bParam0 && INVENTORY::_INVENTORY_USE_SP_BACKUP())
 		{
 			return 5;
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_INVENTORY_ID_FROM_PED(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -7555,7 +7555,7 @@ struct<4> func_190(int iParam0, var uParam1, var uParam2, var uParam3, var uPara
 	{
 		return Var0;
 	}
-	INVENTORY::_0x886DFD3E185C8A89(func_158(bParam6), &uParam1, iParam0, iParam5, &Var0);
+	INVENTORY::INVENTORY_GET_GUID_FROM_ITEMID(func_158(bParam6), &uParam1, iParam0, iParam5, &Var0);
 	return Var0;
 }
 
@@ -7564,7 +7564,7 @@ int func_191(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4, in
 	struct<12> Var0;
 	int iVar14;
 
-	if (!INVENTORY::_0xB881CA836CC4B6D4(uParam1))
+	if (!INVENTORY::_INVENTORY_IS_GUID_VALID(uParam1))
 	{
 		return 0;
 	}
@@ -9813,7 +9813,7 @@ int func_255(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4, bo
 	if (!func_39(iParam0, 0))
 	{
 	}
-	if (!INVENTORY::_0xB881CA836CC4B6D4(uParam2))
+	if (!INVENTORY::_INVENTORY_IS_GUID_VALID(uParam2))
 	{
 		return 0;
 	}
@@ -10455,7 +10455,7 @@ struct<4> func_281(bool bParam0)
 	iVar0 = func_158(bParam0);
 	if (iVar0 == 2)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224214))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224214))
 		{
 			*Global_1224214 = { func_190(923904168, func_280(bParam0), -740156546, bParam0) };
 		}
@@ -10463,7 +10463,7 @@ struct<4> func_281(bool bParam0)
 	}
 	else if (iVar0 == 3)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224222))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224222))
 		{
 			*Global_1224222 = { func_190(923904168, func_280(bParam0), -740156546, 0) };
 		}
@@ -10499,7 +10499,7 @@ struct<4> func_283(bool bParam0)
 	iVar0 = func_158(bParam0);
 	if (iVar0 == 2 || iVar0 == 3)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224218))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224218))
 		{
 			*Global_1224218 = { func_190(271701509, func_280(bParam0), 12999093, 0) };
 		}
@@ -10538,11 +10538,11 @@ int func_284(int iParam0, int iParam1)
 
 int func_285(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, bool bParam5, bool bParam6)
 {
-	if (!INVENTORY::_0xB881CA836CC4B6D4(&uParam0))
+	if (!INVENTORY::_INVENTORY_IS_GUID_VALID(&uParam0))
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x9700E8EFC4AB9089(func_158(bParam5), &uParam0, uParam4, !bParam6))
+	if (!INVENTORY::INVENTORY_GET_INVENTORY_ITEM(func_158(bParam5), &uParam0, uParam4, !bParam6))
 	{
 		return 0;
 	}
@@ -10622,11 +10622,11 @@ int func_288(int iParam0, struct<4> Param1, int iParam5, bool bParam6)
 		return 0;
 	}
 	Var0 = { func_190(iParam0, Param1, iParam5, bParam6) };
-	if (!INVENTORY::_0xB881CA836CC4B6D4(&Var0))
+	if (!INVENTORY::_INVENTORY_IS_GUID_VALID(&Var0))
 	{
 		return 0;
 	}
-	uVar4 = INVENTORY::_0xC97E0D2302382211(func_158(bParam6), &Var0, 0);
+	uVar4 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_GUID(func_158(bParam6), &Var0, 0);
 	return uVar4;
 }
 
@@ -10673,7 +10673,7 @@ struct<14> func_289(int iParam0, int iParam1, int iParam2, int iParam3, int iPar
 
 void func_290(var uParam0, struct<4> Param1)
 {
-	if (INVENTORY::_0xB881CA836CC4B6D4(&Param1))
+	if (INVENTORY::_INVENTORY_IS_GUID_VALID(&Param1))
 	{
 		uParam0->f_9 = { Param1 };
 	}
@@ -11506,7 +11506,7 @@ int func_336(int iParam0, var uParam1, var uParam2, int iParam3)
 
 	iVar0 = func_158(0);
 	*uParam1 = { func_190(iParam0, func_281(0), iParam3, 0) };
-	if (!INVENTORY::_0xB881CA836CC4B6D4(uParam1))
+	if (!INVENTORY::_INVENTORY_IS_GUID_VALID(uParam1))
 	{
 		return 0;
 	}
@@ -13023,7 +13023,7 @@ bool func_398()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+	iVar0 = _NAMESPACE71::UI_FEED_GET_CURRENT_MESSAGE(1);
 	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) == 4);
 }
 
@@ -13835,7 +13835,7 @@ void func_425()
 	int iVar0;
 	struct<4> Var30;
 
-	if (!INVENTORY::_0x7C7E4AB748EA3B07())
+	if (!INVENTORY::_INVENTORY_USE_SP_BACKUP())
 	{
 		return;
 	}
@@ -15378,7 +15378,7 @@ struct<4> func_476(int iParam0, int iParam1)
 
 char* func_477(var uParam0, var uParam1, var uParam2, var uParam3)
 {
-	return HUD::_0xD8402B858F4DDD88(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
+	return HUD::GET_TEXT_SUBSTRING_2(&uParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&uParam0));
 }
 
 char* func_478(int iParam0)
@@ -15486,7 +15486,7 @@ int func_483(var uParam0, int iParam1, int iParam2, var uParam3)
 	{
 		return 0;
 	}
-	if (ENTITY::IS_ENTITY_A_MISSION_ENTITY(*uParam0) && !ENTITY::_0x88AD6CC10D8D35B2(*uParam0))
+	if (ENTITY::IS_ENTITY_A_MISSION_ENTITY(*uParam0) && !ENTITY::DOES_THREAD_OWN_THIS_ENTITY(*uParam0))
 	{
 		return 0;
 	}

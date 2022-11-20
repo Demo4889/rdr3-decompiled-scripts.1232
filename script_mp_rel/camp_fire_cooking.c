@@ -33,7 +33,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -106,7 +106,7 @@ void func_5()
 
 void func_6()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_16))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(uLocal_16))
 	{
 		bLocal_13 = false;
 	}

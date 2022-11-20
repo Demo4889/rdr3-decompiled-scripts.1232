@@ -179,7 +179,7 @@ int func_6(bool bParam0, bool bParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (bParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (bParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -197,9 +197,9 @@ int func_6(bool bParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -310,7 +310,7 @@ int func_10(var uParam0)
 	{
 		return 1;
 	}
-	if (!PED::_0xA0BC8FAED8CFEB3C(&(uParam0->f_3[iVar0 /*11*/])))
+	if (!PED::IS_PED_READY_TO_RENDER(&(uParam0->f_3[iVar0 /*11*/])))
 	{
 		return 0;
 	}

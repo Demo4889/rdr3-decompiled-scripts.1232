@@ -207,7 +207,7 @@ void func_7(int iParam0, int iParam1)
 	struct<2> Var0;
 
 	Var0 = { func_18(-372368982, func_11(iParam0)) };
-	STATS::_0x6A0184E904CDF25E(&Var0, iParam1);
+	STATS::STAT_ID_INCREMENT_INT(&Var0, iParam1);
 	func_20(func_19(106002964), iParam1);
 }
 
@@ -551,7 +551,7 @@ struct<2> func_19(int iParam0)
 
 void func_20(var uParam0, var uParam1, int iParam2)
 {
-	STATS::_0x6A0184E904CDF25E(&uParam0, iParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, iParam2);
 }
 
 int func_21(int iParam0)

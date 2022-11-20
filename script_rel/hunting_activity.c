@@ -68,15 +68,15 @@ void func_2(var uParam0)
 	{
 		MAP::REMOVE_BLIP(&(Local_3.f_46));
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(iLocal_85))
+	if (VOLUME::DOES_VOLUME_EXIST(iLocal_85))
 	{
-		VOLUME::_0x43F867EF5C463A53(iLocal_85);
+		VOLUME::DELETE_VOLUME(iLocal_85);
 	}
 	ITEMSET::DESTROY_ITEMSET(iLocal_70);
 	ITEMSET::DESTROY_ITEMSET(iLocal_69);
 	ITEMSET::DESTROY_ITEMSET(iLocal_71);
 	ITEMSET::DESTROY_ITEMSET(iLocal_72);
-	PED::_0x7D4E70A67A651C71(uParam0->f_49);
+	PED::_UNRESERVE_AMBIENT_PEDS(uParam0->f_49);
 }
 
 int func_3(var uParam0)
@@ -125,7 +125,7 @@ int func_3(var uParam0)
 			{
 				uParam0->f_56 = 9;
 			}
-			if (VOLUME::_0xF256A75210C5C0EB(uParam0->f_51, Global_36))
+			if (VOLUME::IS_POINT_IN_VOLUME(uParam0->f_51, Global_36))
 			{
 				uParam0->f_46 = MAP::_0xA6EF0C54A3443E70(1247852480, uParam0->f_51);
 				func_11(uParam0->f_45, Global_35, "ACT_HUNTING_ARRIVAL", func_14(Global_1391438->f_414.f_2, 0), -1082130432, 0, 0, 0, 1, 1, 1, 291934926, 1, 0, 0);
@@ -198,7 +198,7 @@ int func_4(int iParam0, int iParam1)
 	}
 	if (func_19(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -226,7 +226,7 @@ int func_4(int iParam0, int iParam1)
 	}
 	if (func_19(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -240,7 +240,7 @@ int func_4(int iParam0, int iParam1)
 	}
 	if (func_19(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}
@@ -265,7 +265,7 @@ int func_5(var uParam0)
 			uParam0->f_53 = { Global_1391438->f_414.f_37 };
 			fVar0 = 50f;
 			uParam0->f_51 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(uParam0->f_53, 0f, 0f, 0f, fVar0, fVar0, 20f, "Hunting Grounds");
-			if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_51))
+			if (VOLUME::DOES_VOLUME_EXIST(uParam0->f_51))
 			{
 				uParam0->f_57 = 2;
 			}

@@ -52,7 +52,7 @@ void __EntryFunction__()
 	{
 		func_1();
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1();
 	}
@@ -84,7 +84,7 @@ void func_1()
 
 int func_2()
 {
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		return 0;
 	}
@@ -258,7 +258,7 @@ bool func_8(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -438,11 +438,11 @@ struct<11> func_12(int iParam0, int iParam1)
 
 int func_13(var uParam0, struct<10> Param1, var uParam11)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::DOES_VOLUME_EXIST(*uParam0))
 	{
 		*uParam0 = VOLUME::_CREATE_VOLUME_BY_HASH_WITH_CUSTOM_NAME(Param1.f_10, Param1, Param1.f_3, Param1.f_6, Param1.f_9);
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::DOES_VOLUME_EXIST(*uParam0))
 	{
 		return 0;
 	}
@@ -561,7 +561,7 @@ void func_17(int iParam0)
 	{
 		return;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(&((Local_13[iParam0 /*10*/])->f_1[0])))
+	if (!VOLUME::DOES_VOLUME_EXIST(&((Local_13[iParam0 /*10*/])->f_1[0])))
 	{
 		return;
 	}
@@ -581,9 +581,9 @@ void func_17(int iParam0)
 
 void func_18(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (VOLUME::DOES_VOLUME_EXIST(*uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(*uParam0);
+		VOLUME::DELETE_VOLUME(*uParam0);
 	}
 }
 

@@ -19,7 +19,7 @@ void __EntryFunction__()
 		switch (iLocal_0)
 		{
 			case 0:
-				HUD::_0xF66090013DE648D5(sLocal_4);
+				HUD::TEXT_BLOCK_REQUEST(sLocal_4);
 				iLocal_0 = 1;
 				break;
 			case 1:
@@ -49,7 +49,7 @@ void __EntryFunction__()
 void func_1()
 {
 	func_5(1);
-	HUD::_0xAA03F130A637D923(sLocal_4);
+	HUD::_TEXT_BLOCK_DELETE(sLocal_4);
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 

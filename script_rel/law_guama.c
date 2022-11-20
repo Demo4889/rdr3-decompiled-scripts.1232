@@ -850,7 +850,7 @@ void func_38(int* iParam0, bool bParam1)
 {
 	if (ENTITY::DOES_ENTITY_EXIST(*iParam0))
 	{
-		if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+		if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 		{
 			return;
 		}
@@ -1543,7 +1543,7 @@ void func_66(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}
@@ -1770,7 +1770,7 @@ int func_79()
 	iVar6 = 0;
 	while (iVar6 < 61)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iVar6 /*35*/])->f_3))
+		if (VOLUME::DOES_VOLUME_EXIST(((*Global_1888801)[iVar6 /*35*/])->f_3))
 		{
 			vVar7 = { 0f, 0f, 0f };
 			vVar7 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iVar6 /*35*/])->f_3) };

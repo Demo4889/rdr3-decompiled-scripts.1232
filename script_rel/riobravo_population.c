@@ -104,7 +104,7 @@ void func_4(var uParam0)
 		case 1:
 			TASK::SET_SCENARIO_GROUP_ENABLED("Special_Ambient_Horse", true);
 			STREAMING::REQUEST_MODEL(func_12(uParam0->f_1), false);
-			PED::_0xED9582B3DA8F02B4(1);
+			PED::_RESERVE_AMBIENT_PEDS(1);
 			uParam0->f_9 = 1;
 			func_11(uParam0, 2);
 			break;
@@ -171,12 +171,12 @@ void func_5()
 
 void func_6(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
-	POPULATION::_0xB56D41A694E42E86(iParam0, 2228479, 16384, 0, -1, -1, 2);
-	POPULATION::_0x18262CAFEBB5FBE1(iParam0, 2228479, 16384, 0, -1, -1, 0);
+	POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION(iParam0, 2228479, 16384, 0, -1, -1, 2);
+	POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION(iParam0, 2228479, 16384, 0, -1, -1, 0);
 	if (bParam1)
 	{
 		POPULATION::_0x2161278C6322F740(2228479, 16384, 0, -1, -1, iParam0);
@@ -322,14 +322,14 @@ void func_13(var uParam0)
 		}
 		uParam0->f_3 = 0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4))
+	if (VOLUME::DOES_VOLUME_EXIST(uParam0->f_4))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_4);
+		VOLUME::DELETE_VOLUME(uParam0->f_4);
 	}
 	if (uParam0->f_9)
 	{
 		TASK::SET_SCENARIO_GROUP_ENABLED("Special_Ambient_Horse", false);
-		PED::_0x7D4E70A67A651C71(1);
+		PED::_UNRESERVE_AMBIENT_PEDS(1);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(func_12(uParam0->f_1));
 		uParam0->f_9 = 0;
 	}

@@ -27,7 +27,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -103,7 +103,7 @@ void func_6()
 	switch (iLocal_5)
 	{
 		case 0:
-			if (!TASK::_0x841475AC96E794D1(iLocal_3))
+			if (!TASK::DOES_SCENARIO_POINT_EXIST(iLocal_3))
 			{
 				iLocal_5 = 6;
 				return;
@@ -111,7 +111,7 @@ void func_6()
 			bLocal_11 = func_12() == func_13();
 			iLocal_8 = TASK::_0x5BA659955369B0E2(iLocal_3);
 			iLocal_9 = TASK::_0xA92450B5AE687AAF(iLocal_3);
-			if (func_14(iLocal_8, 0) && !_NAMESPACE48::_0x800DF3FC913355F3(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_8)))
+			if (func_14(iLocal_8, 0) && !_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_8)))
 			{
 				iLocal_5 = 6;
 				return;
@@ -288,7 +288,7 @@ int func_14(int iParam0, int iParam1)
 	}
 	if (func_28(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -316,7 +316,7 @@ int func_14(int iParam0, int iParam1)
 	}
 	if (func_28(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -330,7 +330,7 @@ int func_14(int iParam0, int iParam1)
 	}
 	if (func_28(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}

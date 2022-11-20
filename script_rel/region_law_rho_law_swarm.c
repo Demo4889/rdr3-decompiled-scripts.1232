@@ -80,7 +80,7 @@ void func_1()
 void func_2()
 {
 	iLocal_44 = 1;
-	PED::_0xED9582B3DA8F02B4(5);
+	PED::_RESERVE_AMBIENT_PEDS(5);
 }
 
 int func_3(int iParam0)
@@ -187,7 +187,7 @@ bool func_9(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -363,7 +363,7 @@ void func_16(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}

@@ -21,14 +21,14 @@ void __EntryFunction__()
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	if (!TASK::_0x841475AC96E794D1(vScriptParam_0.y))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(vScriptParam_0.y))
 	{
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
 	while (!func_1(vScriptParam_0))
 	{
-		if (SCRIPTS::_0x9E4EF615E307FBBE())
+		if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 		{
 			SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 			SCRIPTS::TERMINATE_THIS_THREAD();

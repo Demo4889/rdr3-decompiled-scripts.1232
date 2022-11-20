@@ -203,7 +203,7 @@ int func_13(int iParam0, bool bParam1, bool bParam2, float fParam3, bool bParam4
 	{
 		return 1;
 	}
-	if (VOLUME::_0xF256A75210C5C0EB(func_16(iParam0), vVar1))
+	if (VOLUME::IS_POINT_IN_VOLUME(func_16(iParam0), vVar1))
 	{
 		return 1;
 	}
@@ -236,9 +236,9 @@ int func_13(int iParam0, bool bParam1, bool bParam2, float fParam3, bool bParam4
 
 void func_14(int iParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (VOLUME::DOES_VOLUME_EXIST(iParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam0);
+		VOLUME::DELETE_VOLUME(iParam0);
 	}
 }
 

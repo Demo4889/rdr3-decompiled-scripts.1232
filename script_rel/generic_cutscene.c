@@ -73,7 +73,7 @@ int func_2(bool bParam0, int iParam1)
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		if (iParam1 && NETWORK::_0xF2CBC969C4F090C7())
+		if (iParam1 && NETWORK::NETWORK_SESSION_IS_TRANSITIONING())
 		{
 		}
 		else if (iParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
@@ -91,9 +91,9 @@ int func_2(bool bParam0, int iParam1)
 	{
 		return 1;
 	}
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
-		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
+		switch (SCRIPTS::GET_THREAD_EXIT_REASON())
 		{
 			case 0:
 				return 1;
@@ -619,7 +619,7 @@ void func_31(var uParam0)
 	}
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_626)))
 	{
-		HUD::_0xAA03F130A637D923(&(uParam0->f_626));
+		HUD::_TEXT_BLOCK_DELETE(&(uParam0->f_626));
 	}
 	func_9(uParam0, 0);
 }
@@ -844,7 +844,7 @@ int func_44(var uParam0)
 			else if (!PROPSET::_DOES_PROPSET_EXIST((uParam0->f_532[iVar0 /*12*/])->f_8))
 			{
 			}
-			else if (PED::_0x91A5F9CBEBB9D936((uParam0->f_532[iVar0 /*12*/])->f_10))
+			else if (PED::IS_SCENARIO_BLOCKING_AREA_VALID((uParam0->f_532[iVar0 /*12*/])->f_10))
 			{
 			}
 			else
@@ -853,7 +853,7 @@ int func_44(var uParam0)
 				vVar6 = { 0f, 0f, 0f };
 				iVar9 = VOLUME::_0x10157BC3247FF3BA((uParam0->f_532[iVar0 /*12*/])->f_1, vVar6, vVar3, &(uParam0->f_618));
 				(uParam0->f_532[iVar0 /*12*/])->f_10 = PED::_0x4C39C95AE5DB1329(iVar9, 0, 7);
-				if (PED::_0x91A5F9CBEBB9D936((uParam0->f_532[iVar0 /*12*/])->f_10))
+				if (PED::IS_SCENARIO_BLOCKING_AREA_VALID((uParam0->f_532[iVar0 /*12*/])->f_10))
 				{
 				}
 				else
@@ -1246,7 +1246,7 @@ void func_57(var uParam0)
 			{
 				PROPSET::_DELETE_PROPSET((uParam0->f_532[iVar0 /*12*/])->f_8, true, true);
 			}
-			if (PED::_0x91A5F9CBEBB9D936((uParam0->f_532[iVar0 /*12*/])->f_10))
+			if (PED::IS_SCENARIO_BLOCKING_AREA_VALID((uParam0->f_532[iVar0 /*12*/])->f_10))
 			{
 				PED::REMOVE_SCENARIO_BLOCKING_AREA((uParam0->f_532[iVar0 /*12*/])->f_10, false);
 			}
@@ -1687,7 +1687,7 @@ void func_73(int* iParam0)
 	{
 		return;
 	}
-	if (ENTITY::_0xA7E51B53309EAC97(*iParam0))
+	if (ENTITY::_IS_ENTITY_OWNED_BY_PERSISTENCE_SYSTEM(*iParam0))
 	{
 		return;
 	}

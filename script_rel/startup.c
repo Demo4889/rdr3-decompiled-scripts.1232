@@ -11419,7 +11419,7 @@ int func_212()
 			{
 				return 1;
 			}
-			if (!NETWORK::_0xDD73C9838CE7181D())
+			if (!NETWORK::_NETWORK_HAS_COMPLETED_MP_INTRO_FLOW_ON_CURRENT_SLOT())
 			{
 				return 1;
 			}
@@ -15606,7 +15606,7 @@ void func_359(vector3 vParam0)
 	if (iVar0 != -1)
 	{
 		iVar1 = ((*Global_1888801)[iVar0 /*35*/])->f_4;
-		if (VOLUME::_0x92A78D0BEDB332A3(iVar1))
+		if (VOLUME::DOES_VOLUME_EXIST(iVar1))
 		{
 			vVar2 = { VOLUME::_0xF70F00013A62F866(iVar1) };
 		}
@@ -17446,7 +17446,7 @@ void func_453(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -18420,7 +18420,7 @@ void func_506(int iParam0)
 	iVar0 = DATABINDING::_DATABINDING_READ_DATA_INT_FROM_PARENT(iParam0, func_475(83));
 	if (func_509(iVar0))
 	{
-		_NAMESPACE71::_0x2F901291EF177B02(iVar0, 1);
+		_NAMESPACE71::UI_FEED_CLEAR_HELP_TEXT_FEED(iVar0, 1);
 	}
 }
 

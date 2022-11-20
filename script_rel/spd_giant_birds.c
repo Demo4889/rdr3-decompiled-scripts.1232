@@ -34,7 +34,7 @@ void __EntryFunction__()
 		{
 			case 0:
 				iLocal_14 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(613.343f, 2192.701f, 223.576f, 0f, 0f, 11f, 29f, 46f, 9f, "BirdsTrigger");
-				PED::_0xED9582B3DA8F02B4(12);
+				PED::_RESERVE_AMBIENT_PEDS(12);
 				STREAMING::REQUEST_MODEL(func_2(), false);
 				iLocal_13 = 1;
 				break;

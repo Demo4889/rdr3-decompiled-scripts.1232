@@ -20,7 +20,7 @@ void __EntryFunction__()
 {
 	struct<44> Var0;
 
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1) || func_1() != -1)
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1) || func_1() != -1)
 	{
 		SCRIPTS::_0xE7282390542F570D(ScriptParam_0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
@@ -60,9 +60,9 @@ int func_1()
 
 void func_2(var uParam0, bool bParam1)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_49))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_49))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_49);
+		TASK::DELETE_SCENARIO_POINT(uParam0->f_49);
 	}
 	if (bParam1)
 	{
@@ -102,7 +102,7 @@ void func_2(var uParam0, bool bParam1)
 		{
 			PED::DELETE_PED(&(uParam0->f_42));
 		}
-		PED::_0x7D4E70A67A651C71(1);
+		PED::_UNRESERVE_AMBIENT_PEDS(1);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_43))
 	{
@@ -139,7 +139,7 @@ int func_4(var uParam0)
 
 int func_5(var uParam0)
 {
-	if ((SCRIPTS::_0x9E4EF615E307FBBE() || !TASK::_0x841475AC96E794D1(*uParam0)) || func_9())
+	if ((SCRIPTS::IS_THREAD_EXIT_REQUESTED() || !TASK::DOES_SCENARIO_POINT_EXIST(*uParam0)) || func_9())
 	{
 		return 1;
 	}
@@ -552,7 +552,7 @@ bool func_19(var uParam0)
 	{
 		bVar0 = true;
 	}
-	else if (!TASK::_0x841475AC96E794D1(uParam0->f_49))
+	else if (!TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_49))
 	{
 		if ((ENTITY::IS_ENTITY_ATTACHED(uParam0->f_42) || PED::_0x7020839C7302D8AC(uParam0->f_42)) || (PHYSICS::DOES_ROPE_EXIST(uParam0->f_46) && !PHYSICS::_0x79C2BEC82CFD7F7F(uParam0->f_46)))
 		{
@@ -586,7 +586,7 @@ int func_20(var uParam0)
 			}
 		}
 	}
-	if (TASK::_0x841475AC96E794D1(uParam0->f_49) && PED::_0x9C54041BB66BCF9E(Global_35, uParam0->f_49))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_49) && PED::_0x9C54041BB66BCF9E(Global_35, uParam0->f_49))
 	{
 		if (!func_7(uParam0, 8))
 		{

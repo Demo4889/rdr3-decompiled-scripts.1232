@@ -17,7 +17,7 @@ void __EntryFunction__()
 	{
 		func_2(&uLocal_3);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&uLocal_3);
 	}
@@ -57,7 +57,7 @@ void func_2(var uParam0)
 
 int func_3()
 {
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		func_2(&uLocal_3);
 		return 0;

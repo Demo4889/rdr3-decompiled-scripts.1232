@@ -688,7 +688,7 @@ void func_1(var uParam0, int iParam1)
 	func_29(uParam0);
 	func_31(1);
 	MAP::DISPLAY_RADAR(true);
-	HUD::_0xAA03F130A637D923("CAMERA");
+	HUD::_TEXT_BLOCK_DELETE("CAMERA");
 }
 
 void func_2()
@@ -1284,11 +1284,11 @@ void func_22()
 {
 	if (func_58())
 	{
-		HUD::_0xF66090013DE648D5("CAMERA");
+		HUD::TEXT_BLOCK_REQUEST("CAMERA");
 	}
 	else
 	{
-		HUD::_0xF66090013DE648D5("CAMERA");
+		HUD::TEXT_BLOCK_REQUEST("CAMERA");
 		STREAMING::REQUEST_ANIM_DICT(func_61());
 		STREAMING::REQUEST_CLIP_SET(func_60());
 		GRAPHICS::_0x5199405EABFBD7F0("CameraViewfinder");
@@ -2442,7 +2442,7 @@ int func_72(int iParam0, int iParam1)
 	}
 	if (func_118(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -2470,7 +2470,7 @@ int func_72(int iParam0, int iParam1)
 	}
 	if (func_118(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -2484,7 +2484,7 @@ int func_72(int iParam0, int iParam1)
 	}
 	if (func_118(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}
@@ -4157,13 +4157,13 @@ int func_146(bool bParam0)
 {
 	if (func_164() == -1)
 	{
-		if (!bParam0 && INVENTORY::_0x7C7E4AB748EA3B07())
+		if (!bParam0 && INVENTORY::_INVENTORY_USE_SP_BACKUP())
 		{
 			return 5;
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_INVENTORY_ID_FROM_PED(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -4441,7 +4441,7 @@ struct<4> func_161(bool bParam0)
 	iVar0 = func_146(bParam0);
 	if (iVar0 == 2)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224214))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224214))
 		{
 			*Global_1224214 = { func_167(923904168, func_166(bParam0), -740156546, bParam0) };
 		}
@@ -4449,7 +4449,7 @@ struct<4> func_161(bool bParam0)
 	}
 	else if (iVar0 == 3)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224222))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224222))
 		{
 			*Global_1224222 = { func_167(923904168, func_166(bParam0), -740156546, 0) };
 		}
@@ -4460,7 +4460,7 @@ struct<4> func_161(bool bParam0)
 
 void func_162(var uParam0, struct<4> Param1)
 {
-	if (INVENTORY::_0xB881CA836CC4B6D4(&Param1))
+	if (INVENTORY::_INVENTORY_IS_GUID_VALID(&Param1))
 	{
 		uParam0->f_9 = { Param1 };
 	}
@@ -4525,7 +4525,7 @@ struct<4> func_167(int iParam0, var uParam1, var uParam2, var uParam3, var uPara
 	{
 		return Var0;
 	}
-	INVENTORY::_0x886DFD3E185C8A89(func_146(bParam6), &uParam1, iParam0, iParam5, &Var0);
+	INVENTORY::INVENTORY_GET_GUID_FROM_ITEMID(func_146(bParam6), &uParam1, iParam0, iParam5, &Var0);
 	return Var0;
 }
 

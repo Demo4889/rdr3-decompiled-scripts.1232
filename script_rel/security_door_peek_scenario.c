@@ -64,7 +64,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -169,7 +169,7 @@ void func_6()
 		case 1:
 			if (!func_21(&uLocal_7))
 			{
-				OBJECT::_0x276AAF0F1C7F2494(iLocal_59, 1);
+				OBJECT::DOOR_SYSTEM_FORCE_SHUT(iLocal_59, 1);
 				func_22(&uLocal_7, 0);
 			}
 			else if (func_23(&uLocal_7, 3f))
@@ -200,7 +200,7 @@ void func_6()
 	{
 		MAP::UNLOCK_MINIMAP_ANGLE();
 		TASK::CLEAR_PED_TASKS(Global_35, 1, 0);
-		OBJECT::_0x276AAF0F1C7F2494(iLocal_59, 0);
+		OBJECT::DOOR_SYSTEM_FORCE_SHUT(iLocal_59, 0);
 		iLocal_0 = 0;
 	}
 }
@@ -269,7 +269,7 @@ void func_14()
 	func_31(&uLocal_10);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f, 1065353216);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1f);
-	OBJECT::_0x276AAF0F1C7F2494(iLocal_59, 0);
+	OBJECT::DOOR_SYSTEM_FORCE_SHUT(iLocal_59, 0);
 	func_25(3);
 }
 
@@ -752,23 +752,23 @@ int func_50(int iParam0, int iParam1, bool bParam2)
 	{
 		if ((NETWORK::NETWORK_IS_IN_SESSION() && SCRIPTS::_DOES_THREAD_EXIST(&(Global_1051081->f_15[0]))) && iParam1)
 		{
-			OBJECT::_0xD99229FE93B46286(iParam0, 1, 1, 0, &(Global_1051081->f_15[0]), 0, 0);
+			OBJECT::ADD_DOOR_TO_SYSTEM_NEW(iParam0, 1, 1, 0, &(Global_1051081->f_15[0]), 0, 0);
 		}
 		else
 		{
-			OBJECT::_0xD99229FE93B46286(iParam0, 1, 0, 0, 0, 0, 0);
+			OBJECT::ADD_DOOR_TO_SYSTEM_NEW(iParam0, 1, 0, 0, 0, 0, 0);
 		}
 	}
 	else if ((NETWORK::NETWORK_IS_IN_SESSION() && SCRIPTS::_DOES_THREAD_EXIST(&(Global_1051081->f_15[0]))) && iParam1)
 	{
-		if (!OBJECT::_0xB5DED7B65C604FDF(iParam0))
+		if (!OBJECT::IS_DOOR_REGISTERED_WITH_NETWORK(iParam0))
 		{
-			OBJECT::_0xD99229FE93B46286(iParam0, 1, 1, 0, &(Global_1051081->f_15[0]), 0, 0);
+			OBJECT::ADD_DOOR_TO_SYSTEM_NEW(iParam0, 1, 1, 0, &(Global_1051081->f_15[0]), 0, 0);
 		}
 	}
 	if (bParam2)
 	{
-		OBJECT::_0x1F1FABFE9B2A1254(iParam0, 1);
+		OBJECT::DOOR_SYSTEM_SET_ABLE_TO_CHANGE_OPEN_RATIO_WHILE_LOCKED(iParam0, 1);
 	}
 	return iParam0;
 }

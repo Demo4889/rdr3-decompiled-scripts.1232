@@ -81,7 +81,7 @@ void __EntryFunction__()
 	Var0.f_179 = func_6();
 	func_7(&Var0);
 	func_8(&Var0);
-	while (!SCRIPTS::_0x9E4EF615E307FBBE())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		fVar209 = func_9(&Var0, ScriptParam_0.f_1);
 		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_ALCOHOL_BLOCK_CHUG_DISCARD", 1, 1);
@@ -319,7 +319,7 @@ int func_1()
 void func_2(var uParam0)
 {
 	func_25(uParam0);
-	if (!SCRIPTS::_0x9E4EF615E307FBBE())
+	if (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
@@ -1958,7 +1958,7 @@ void func_69(var uParam0, int iParam1, int iParam2)
 	{
 		return;
 	}
-	STATS::_0x6A0184E904CDF25E(&uParam0, iParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, iParam2);
 }
 
 void func_70(int iParam0)
@@ -2048,7 +2048,7 @@ char* func_74(int iParam0)
 
 char* func_75(char[4] cParam0, char[4] cParam1, char[4] cParam2, char[4] cParam3)
 {
-	return HUD::_0xD8402B858F4DDD88(&cParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&cParam0));
+	return HUD::GET_TEXT_SUBSTRING_2(&cParam0, HUD::GET_LENGTH_OF_LITERAL_STRING(&cParam0));
 }
 
 bool func_76(int iParam0, int iParam1)
@@ -2300,7 +2300,7 @@ int func_85(int iParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (ITEMDATABASE::_0x99C6EA66DFE73757(iParam0, iParam1, 1120943070))
+	if (ITEMDATABASE::_ITEMDATABASE_DOES_BUNDLE_HAVE_TAG(iParam0, iParam1, 1120943070))
 	{
 		return 1;
 	}
@@ -2343,7 +2343,7 @@ void func_87(float fParam0, int iParam1)
 	{
 		return;
 	}
-	ENTITY::_0x835F131E7DC8F97A(iParam1, fParam0, 0, 0);
+	ENTITY::_CHANGE_ENTITY_HEALTH(iParam1, fParam0, 0, 0);
 }
 
 int func_88(int iParam0)
@@ -2906,7 +2906,7 @@ void func_107(int iParam0, int iParam1)
 	struct<2> Var0;
 
 	Var0 = { func_68(-372368982, func_166(iParam0)) };
-	STATS::_0x6A0184E904CDF25E(&Var0, iParam1);
+	STATS::STAT_ID_INCREMENT_INT(&Var0, iParam1);
 	func_69(func_167(106002964), iParam1);
 }
 
@@ -3531,7 +3531,7 @@ int func_126(int iParam0, int iParam1)
 	{
 		return 0;
 	}
-	return ITEMDATABASE::_0x4308812A6E9CA62E(iParam0, iParam1);
+	return ITEMDATABASE::_ITEMDATABASE_IS_BUNDLE_VALID(iParam0, iParam1);
 }
 
 int func_127(int iParam0)
@@ -5941,7 +5941,7 @@ int func_224(int iParam0)
 
 int func_225()
 {
-	if (NETWORK::_0xDD73C9838CE7181D())
+	if (NETWORK::_NETWORK_HAS_COMPLETED_MP_INTRO_FLOW_ON_CURRENT_SLOT())
 	{
 		return 1;
 	}

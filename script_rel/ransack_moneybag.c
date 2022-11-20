@@ -19,7 +19,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -105,11 +105,11 @@ void func_6()
 		return;
 	}
 	iVar0 = TASK::_0xDF7993356F52359A(Local_5, 0);
-	if (!TASK::_0x841475AC96E794D1(iVar0))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return;
 	}
-	iVar1 = TASK::_0x295514F198EFD0CA(iVar0, "");
+	iVar1 = TASK::GET_PROP_FOR_SCENARIO_POINT(iVar0, "");
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar1))
 	{
 		return;

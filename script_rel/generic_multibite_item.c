@@ -27,7 +27,7 @@ void __EntryFunction__()
 	Var0.f_1.f_33 = 20;
 	func_1(&ScriptParam_0, &(Var0.f_1));
 	Var0.f_1.f_2 = 3f;
-	while (!SCRIPTS::_0x9E4EF615E307FBBE())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		if (!ScriptParam_0.f_3)
 		{
@@ -347,7 +347,7 @@ void func_10(float fParam0, int iParam1)
 	iVar1 = BUILTIN::ROUND((fVar0 + IntToFloat(ENTITY::GET_ENTITY_HEALTH(Global_35))));
 	if (iParam1 && fVar0 < 0f)
 	{
-		ENTITY::_0x835F131E7DC8F97A(Global_35, fVar0, 0, 0);
+		ENTITY::_CHANGE_ENTITY_HEALTH(Global_35, fVar0, 0, 0);
 	}
 	else if (fParam0 <= 0f || iVar1 > ENTITY::GET_ENTITY_MAX_HEALTH(Global_35, 0))
 	{
@@ -1174,7 +1174,7 @@ struct<2> func_49(int iParam0)
 
 void func_50(var uParam0, var uParam1, int iParam2)
 {
-	STATS::_0x6A0184E904CDF25E(&uParam0, iParam2);
+	STATS::STAT_ID_INCREMENT_INT(&uParam0, iParam2);
 }
 
 int func_51(int iParam0)
@@ -1268,7 +1268,7 @@ void func_52(int iParam0, int iParam1)
 	struct<2> Var0;
 
 	Var0 = { func_53(-372368982, func_98(iParam0)) };
-	STATS::_0x6A0184E904CDF25E(&Var0, iParam1);
+	STATS::STAT_ID_INCREMENT_INT(&Var0, iParam1);
 	func_50(func_99(106002964), iParam1);
 }
 
@@ -1895,7 +1895,7 @@ void func_92(float fParam0, int iParam1)
 	{
 		return;
 	}
-	ENTITY::_0x835F131E7DC8F97A(iParam1, fParam0, 0, 0);
+	ENTITY::_CHANGE_ENTITY_HEALTH(iParam1, fParam0, 0, 0);
 }
 
 void func_93(int iParam0, bool bParam1, int iParam2)

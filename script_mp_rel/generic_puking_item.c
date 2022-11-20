@@ -24,7 +24,7 @@ void __EntryFunction__()
 	{
 	}
 	iVar3 = 0;
-	while (!SCRIPTS::_0x9E4EF615E307FBBE())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		if (func_1(&iVar3, &uVar4, 1, &uVar0))
 		{
@@ -58,14 +58,14 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			func_5(iParam0, 2);
 			break;
 		case 2:
-			if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(*uParam1))
 			{
 				ANIMSCENE::LOAD_ANIM_SCENE(*uParam1);
 				func_5(iParam0, 3);
 			}
 			break;
 		case 3:
-			if (ANIMSCENE::_0x477122B8D05E7968(*uParam1, 1, 0) && ANIMSCENE::_0x95531A4A20CCE7BC(*uParam1, 0))
+			if (ANIMSCENE::IS_ANIM_SCENE_LOADED(*uParam1, 1, 0) && ANIMSCENE::_0x95531A4A20CCE7BC(*uParam1, 0))
 			{
 				if (PED::IS_PED_MALE(Global_35))
 				{
@@ -80,7 +80,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if ((!ANIMSCENE::_0xCBFC7725DE6CE2E0(*uParam1, 0) || PED::IS_PED_FALLING(Global_35)) || ENTITY::IS_ENTITY_IN_WATER(Global_35))
+			if ((!ANIMSCENE::IS_ANIM_SCENE_RUNNING(*uParam1, 0) || PED::IS_PED_FALLING(Global_35)) || ENTITY::IS_ENTITY_IN_WATER(Global_35))
 			{
 				if (PED::IS_PED_MALE(Global_35))
 				{

@@ -29,7 +29,7 @@ void __EntryFunction__()
 	}
 	func_2();
 	bVar0 = false;
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && !bVar0)
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && !bVar0)
 	{
 		func_3(&bVar0);
 		BUILTIN::WAIT(0);
@@ -2516,7 +2516,7 @@ void func_95(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+	iVar0 = _NAMESPACE71::UI_FEED_GET_CURRENT_MESSAGE(1);
 	if (iVar0 != 0)
 	{
 		_NAMESPACE71::_0xDD1232B332CBB9E7(1, 1, 0);
@@ -3124,13 +3124,13 @@ int func_123(bool bParam0)
 {
 	if (func_137() == -1)
 	{
-		if (!bParam0 && INVENTORY::_0x7C7E4AB748EA3B07())
+		if (!bParam0 && INVENTORY::_INVENTORY_USE_SP_BACKUP())
 		{
 			return 5;
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_INVENTORY_ID_FROM_PED(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -3363,7 +3363,7 @@ struct<4> func_134(bool bParam0)
 	iVar0 = func_123(bParam0);
 	if (iVar0 == 2)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224214))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224214))
 		{
 			*Global_1224214 = { func_142(923904168, func_141(bParam0), -740156546, bParam0) };
 		}
@@ -3371,7 +3371,7 @@ struct<4> func_134(bool bParam0)
 	}
 	else if (iVar0 == 3)
 	{
-		if (!INVENTORY::_0xB881CA836CC4B6D4(Global_1224222))
+		if (!INVENTORY::_INVENTORY_IS_GUID_VALID(Global_1224222))
 		{
 			*Global_1224222 = { func_142(923904168, func_141(bParam0), -740156546, 0) };
 		}
@@ -3382,7 +3382,7 @@ struct<4> func_134(bool bParam0)
 
 void func_135(var uParam0, struct<4> Param1)
 {
-	if (INVENTORY::_0xB881CA836CC4B6D4(&Param1))
+	if (INVENTORY::_INVENTORY_IS_GUID_VALID(&Param1))
 	{
 		uParam0->f_9 = { Param1 };
 	}
@@ -3450,7 +3450,7 @@ struct<4> func_142(int iParam0, var uParam1, var uParam2, var uParam3, var uPara
 	{
 		return Var0;
 	}
-	INVENTORY::_0x886DFD3E185C8A89(func_123(bParam6), &uParam1, iParam0, iParam5, &Var0);
+	INVENTORY::INVENTORY_GET_GUID_FROM_ITEMID(func_123(bParam6), &uParam1, iParam0, iParam5, &Var0);
 	return Var0;
 }
 

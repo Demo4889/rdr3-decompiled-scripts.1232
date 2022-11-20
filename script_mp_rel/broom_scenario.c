@@ -43,7 +43,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (!SCRIPTS::_0x9E4EF615E307FBBE() && func_3())
+	while (!SCRIPTS::IS_THREAD_EXIT_REQUESTED() && func_3())
 	{
 		func_4();
 		func_5();
@@ -122,7 +122,7 @@ void func_6()
 	switch (iLocal_18)
 	{
 		case 0:
-			if (!TASK::_0x841475AC96E794D1(uLocal_16))
+			if (!TASK::DOES_SCENARIO_POINT_EXIST(uLocal_16))
 			{
 				iLocal_18 = 7;
 				return;
@@ -133,11 +133,11 @@ void func_6()
 				iLocal_18 = 7;
 				return;
 			}
-			bLocal_92 = _NAMESPACE48::_0x800DF3FC913355F3(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_85));
+			bLocal_92 = _NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_85));
 			if (!bLocal_92)
 			{
 				TASK::_0xE7BBC4E56B989449(uLocal_16, &uLocal_93, 1);
-				if (!TASK::_0x841475AC96E794D1(&(uLocal_93[0])))
+				if (!TASK::DOES_SCENARIO_POINT_EXIST(&(uLocal_93[0])))
 				{
 					iLocal_18 = 7;
 					return;
@@ -192,7 +192,7 @@ void func_6()
 				}
 				else
 				{
-					if (!TASK::_0x841475AC96E794D1(&(Local_19[iVar1 /*13*/])))
+					if (!TASK::DOES_SCENARIO_POINT_EXIST(&(Local_19[iVar1 /*13*/])))
 					{
 						if (iVar1 > 0)
 						{
@@ -368,7 +368,7 @@ int func_12(int iParam0, int iParam1)
 	}
 	if (func_24(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -396,7 +396,7 @@ int func_12(int iParam0, int iParam1)
 	}
 	if (func_24(iVar0, 64))
 	{
-		if (PED::_0xB655DB7582AEC805(iParam0))
+		if (PED::IS_PED_INCAPACITATED(iParam0))
 		{
 			return 0;
 		}
@@ -410,7 +410,7 @@ int func_12(int iParam0, int iParam1)
 	}
 	if (func_24(iVar0, 256))
 	{
-		if (!PED::_0xA0BC8FAED8CFEB3C(iParam0))
+		if (!PED::IS_PED_READY_TO_RENDER(iParam0))
 		{
 			return 0;
 		}

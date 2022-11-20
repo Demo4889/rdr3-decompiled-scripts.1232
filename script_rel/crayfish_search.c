@@ -14,7 +14,7 @@ void __EntryFunction__()
 	{
 		func_1(&ScriptParam_0, &Local_0);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&ScriptParam_0, &Local_0);
 	}
@@ -85,11 +85,11 @@ void func_1(var uParam0, int iParam1)
 
 int func_2(var uParam0, var uParam1)
 {
-	if (SCRIPTS::_0x9E4EF615E307FBBE())
+	if (SCRIPTS::IS_THREAD_EXIT_REQUESTED())
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam0->f_1))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
 		return 0;
 	}
@@ -105,7 +105,7 @@ int func_3(var uParam0, int iParam1)
 	vector3 vVar0;
 
 	vVar0 = { func_10(uParam0) };
-	if (!TASK::_0x841475AC96E794D1(&(iParam1->f_9[0])))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(&(iParam1->f_9[0])))
 	{
 		iParam1->f_9[0] = TASK::CREATE_SCENARIO_POINT(-1843735114, vVar0 - Vector(0f, 0.3f, 0f), 0f, 0f, 0f, 0);
 	}
@@ -175,7 +175,7 @@ int func_7(var uParam0, int iParam1)
 		iParam1->f_5 = 0;
 		func_19(1798104140, joaat("a_c_crawfish_01"), func_18(PLAYER::PLAYER_ID()), 1, 1);
 		Var0 = { func_20(-717883113, 1798104140) };
-		STATS::_0x6A0184E904CDF25E(&Var0, 1);
+		STATS::STAT_ID_INCREMENT_INT(&Var0, 1);
 		return 1;
 	}
 	return 0;
@@ -191,9 +191,9 @@ void func_8(var uParam0)
 	while (iVar0 <= (1 - 1))
 	{
 		iVar1 = iVar0;
-		if (TASK::_0x841475AC96E794D1(&(uParam0->f_9[iVar1])))
+		if (TASK::DOES_SCENARIO_POINT_EXIST(&(uParam0->f_9[iVar1])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uParam0->f_9[iVar1]));
+			TASK::DELETE_SCENARIO_POINT(&(uParam0->f_9[iVar1]));
 		}
 		iVar0++;
 	}
@@ -291,7 +291,7 @@ int func_9(int iParam0, bool bParam1, int iParam2)
 
 Vector3 func_10(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_1))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
 		return TASK::_0xA8452DD321607029(uParam0->f_1, 1);
 	}
@@ -312,7 +312,7 @@ int func_12(int iParam0)
 	float fVar6;
 	int iVar7;
 
-	if (!TASK::_0x841475AC96E794D1(iParam0))
+	if (!TASK::DOES_SCENARIO_POINT_EXIST(iParam0))
 	{
 		return -1;
 	}
@@ -426,7 +426,7 @@ void func_19(int iParam0, int iParam1, vector3 vParam2, int iParam5, int iParam6
 	iVar1 = uVar0;
 	if (iVar1 != 0 && !MAP::_0x3F81EA4275D39D6F(iVar1))
 	{
-		MAP::_0xD8C7162AB2E2AF45(iVar1);
+		MAP::MAP_DISCOVER_REGION(iVar1);
 	}
 	if (iParam5 && -153407852 != iParam0)
 	{
