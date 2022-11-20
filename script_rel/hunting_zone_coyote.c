@@ -5753,7 +5753,7 @@ int func_136(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_133(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_133(bParam1), iParam0, 0);
 }
 
 int func_137(int iParam0)
@@ -6934,7 +6934,7 @@ int func_196(int iParam0, var uParam1, int iParam2, bool bParam3, bool bParam4)
 	}
 	else
 	{
-		iVar28 = INVENTORY::_0xE787F05DFC977BDE(func_133(bParam4), iParam0, 0);
+		iVar28 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_133(bParam4), iParam0, 0);
 	}
 	if ((iVar28 + iParam2) > iVar27)
 	{

@@ -17592,6 +17592,6 @@ int func_499(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_494(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_494(bParam1), iParam0, 0);
 }
 

@@ -5287,7 +5287,7 @@ int func_75(int iParam0, struct<4> Param1, int iParam5, bool bParam6, bool bPara
 	}
 	else
 	{
-		iVar0 = INVENTORY::_0xE787F05DFC977BDE(func_72(bParam6), iParam0, iParam8);
+		iVar0 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_72(bParam6), iParam0, iParam8);
 	}
 	return iVar0;
 }
@@ -5513,7 +5513,7 @@ int func_85(var uParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	{
 		iParam4 = func_72(bParam3);
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(iParam4, uParam0, iParam1, &uVar0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(iParam4, uParam0, iParam1, &uVar0))
 	{
 		return 0;
 	}
@@ -5738,7 +5738,7 @@ int func_80(int iParam0, bool bParam1, bool bParam2, int iParam3)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_72(bParam1), iParam0, iParam3);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_72(bParam1), iParam0, iParam3);
 }
 
 // 1c030dac30f61667f04c860c95e54fbd611252a3f76dbb17487ec5a2e2e22e2b

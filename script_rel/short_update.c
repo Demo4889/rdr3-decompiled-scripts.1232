@@ -1081,10 +1081,10 @@ void func_30()
 	}
 	if ((MISC::GET_FRAME_COUNT() % 30) == 0)
 	{
-		Global_1935496->f_123 = INVENTORY::_0xE787F05DFC977BDE(func_221(0), -569063887, 0) >= 1;
-		Global_1935496->f_124 = INVENTORY::_0xE787F05DFC977BDE(func_221(0), 1259508039, 0) >= 1;
-		Global_1935496->f_125 = INVENTORY::_0xE787F05DFC977BDE(func_221(0), -1838434463, 0) >= 1;
-		Global_1935496->f_126 = INVENTORY::_0xE787F05DFC977BDE(func_221(0), 2019377485, 0) >= 1;
+		Global_1935496->f_123 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), -569063887, 0) >= 1;
+		Global_1935496->f_124 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), 1259508039, 0) >= 1;
+		Global_1935496->f_125 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), -1838434463, 0) >= 1;
+		Global_1935496->f_126 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), 2019377485, 0) >= 1;
 	}
 	if (UIEVENTS::_EVENT_MANAGER_IS_EVENT_PENDING(746131100) && UIEVENTS::_EVENT_MANAGER_PEEK_EVENT(746131100, &vVar0))
 	{
@@ -7200,7 +7200,7 @@ int func_210(int iParam0, int iParam1, bool bParam2)
 	{
 		return func_843(iParam0, 0);
 	}
-	iVar2 = INVENTORY::_0xE787F05DFC977BDE(func_221(bParam2), iParam0, 0);
+	iVar2 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(bParam2), iParam0, 0);
 	return iVar2;
 }
 
@@ -10880,7 +10880,7 @@ void func_302()
 							else
 							{
 								iVar64 = INVENTORY::_INVENTORY_GET_INVENTORY_ID_FROM_PED(iVar63);
-								if (iVar64 == 0 || INVENTORY::_0xE787F05DFC977BDE(iVar64, iVar61, 0) == 0)
+								if (iVar64 == 0 || INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(iVar64, iVar61, 0) == 0)
 								{
 									bVar62 = false;
 								}
@@ -94632,7 +94632,7 @@ int func_3124(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(func_221(bParam6), &uParam0, iParam4, &Var0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(func_221(bParam6), &uParam0, iParam4, &Var0))
 	{
 		return 0;
 	}
@@ -96543,7 +96543,7 @@ int func_3193(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_221(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(bParam1), iParam0, 0);
 }
 
 int func_3194(int iParam0, var uParam1, int iParam2, bool bParam3, bool bParam4)
@@ -96610,7 +96610,7 @@ int func_3194(int iParam0, var uParam1, int iParam2, bool bParam3, bool bParam4)
 	}
 	else
 	{
-		iVar28 = INVENTORY::_0xE787F05DFC977BDE(func_221(bParam4), iParam0, 0);
+		iVar28 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(bParam4), iParam0, 0);
 	}
 	if ((iVar28 + iParam2) > iVar27)
 	{
@@ -112155,11 +112155,11 @@ int func_3668(int iParam0)
 	switch (iParam0)
 	{
 		case 0:
-			return INVENTORY::_0xE787F05DFC977BDE(func_221(0), -1845241476, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), -1845241476, 0);
 		case 1:
-			return INVENTORY::_0xE787F05DFC977BDE(func_221(0), 1654063339, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), 1654063339, 0);
 		case 2:
-			return INVENTORY::_0xE787F05DFC977BDE(func_221(0), 1623931083, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_221(0), 1623931083, 0);
 	}
 	return 0;
 }

@@ -5456,7 +5456,7 @@ int func_248(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(func_231(bParam6), &uParam0, uParam4, &Var0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(func_231(bParam6), &uParam0, uParam4, &Var0))
 	{
 		return 0;
 	}

@@ -16465,7 +16465,7 @@ int func_642(var uParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	{
 		iParam4 = func_344(bParam3);
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(iParam4, uParam0, iParam1, &uVar0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(iParam4, uParam0, iParam1, &uVar0))
 	{
 		return 0;
 	}

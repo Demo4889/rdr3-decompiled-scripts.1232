@@ -7837,7 +7837,7 @@ int func_162(int iParam0, int iParam1, bool bParam2)
 	{
 		return func_189(iParam0, 0);
 	}
-	iVar2 = INVENTORY::_0xE787F05DFC977BDE(func_127(bParam2), iParam0, 0);
+	iVar2 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_127(bParam2), iParam0, 0);
 	return iVar2;
 }
 

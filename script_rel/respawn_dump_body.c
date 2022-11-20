@@ -10525,7 +10525,7 @@ int func_408(int iParam0, int iParam1, bool bParam2)
 	{
 		return func_533(iParam0, 0);
 	}
-	iVar2 = INVENTORY::_0xE787F05DFC977BDE(func_534(bParam2), iParam0, 0);
+	iVar2 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_534(bParam2), iParam0, 0);
 	return iVar2;
 }
 
@@ -16336,7 +16336,7 @@ int func_633(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, va
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(func_534(bParam6), &uParam0, iParam4, &Var0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(func_534(bParam6), &uParam0, iParam4, &Var0))
 	{
 		return 0;
 	}

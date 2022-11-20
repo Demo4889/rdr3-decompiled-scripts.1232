@@ -6633,7 +6633,7 @@ int func_262(int iParam0, bool bParam1, int iParam2, bool bParam3, int iParam4)
 	{
 		iParam4 = func_194(bParam3);
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(iParam4, iParam0, bParam1, &uVar0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(iParam4, iParam0, bParam1, &uVar0))
 	{
 		return 0;
 	}

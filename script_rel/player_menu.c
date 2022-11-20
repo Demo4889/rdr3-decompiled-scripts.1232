@@ -1472,7 +1472,7 @@ int func_69(int iParam0, var uParam1, bool bParam2, bool bParam3)
 	}
 	else
 	{
-		iVar1 = INVENTORY::_0xE787F05DFC977BDE(func_104(bParam3), iParam0, 0);
+		iVar1 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(bParam3), iParam0, 0);
 	}
 	if (iVar0 > iVar1)
 	{
@@ -3138,7 +3138,7 @@ int func_123(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_104(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(bParam1), iParam0, 0);
 }
 
 int func_124(int iParam0, var uParam1, var uParam2, int iParam3)
@@ -3270,7 +3270,7 @@ int func_128(int iParam0, int iParam1, bool bParam2)
 	{
 		return func_223(iParam0, 0);
 	}
-	iVar2 = INVENTORY::_0xE787F05DFC977BDE(func_104(bParam2), iParam0, 0);
+	iVar2 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(bParam2), iParam0, 0);
 	return iVar2;
 }
 
@@ -6094,7 +6094,7 @@ int func_220(int iParam0, var uParam1, int iParam2, bool bParam3, bool bParam4)
 	}
 	else
 	{
-		iVar28 = INVENTORY::_0xE787F05DFC977BDE(func_104(bParam4), iParam0, 0);
+		iVar28 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(bParam4), iParam0, 0);
 	}
 	if ((iVar28 + iParam2) > iVar27)
 	{
@@ -16010,11 +16010,11 @@ int func_520(int iParam0)
 	switch (iParam0)
 	{
 		case 0:
-			return INVENTORY::_0xE787F05DFC977BDE(func_104(0), -1845241476, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(0), -1845241476, 0);
 		case 1:
-			return INVENTORY::_0xE787F05DFC977BDE(func_104(0), 1654063339, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(0), 1654063339, 0);
 		case 2:
-			return INVENTORY::_0xE787F05DFC977BDE(func_104(0), 1623931083, 0);
+			return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_104(0), 1623931083, 0);
 	}
 	return 0;
 }

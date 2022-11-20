@@ -11271,7 +11271,7 @@ int func_430(int iParam0, var uParam1, int iParam2, bool bParam3, bool bParam4)
 	}
 	else
 	{
-		iVar28 = INVENTORY::_0xE787F05DFC977BDE(func_424(bParam4), iParam0, 0);
+		iVar28 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_424(bParam4), iParam0, 0);
 	}
 	if ((iVar28 + iParam2) > iVar27)
 	{
@@ -11960,7 +11960,7 @@ int func_469(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_424(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_424(bParam1), iParam0, 0);
 }
 
 struct<5> func_470(int iParam0, bool bParam1, int iParam2)

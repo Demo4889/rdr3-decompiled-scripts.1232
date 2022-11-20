@@ -7788,7 +7788,7 @@ int func_191(int iParam0, int iParam1, bool bParam2)
 	{
 		return func_263(iParam0, 0);
 	}
-	iVar2 = INVENTORY::_0xE787F05DFC977BDE(func_255(bParam2), iParam0, 0);
+	iVar2 = INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_255(bParam2), iParam0, 0);
 	return iVar2;
 }
 
@@ -9529,7 +9529,7 @@ int func_278(int iParam0, bool bParam1)
 	{
 		return WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, iParam0);
 	}
-	return INVENTORY::_0xE787F05DFC977BDE(func_255(bParam1), iParam0, 0);
+	return INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_COUNT_WITH_ITEMID(func_255(bParam1), iParam0, 0);
 }
 
 void func_279(int iParam0, var uParam1, var uParam2)

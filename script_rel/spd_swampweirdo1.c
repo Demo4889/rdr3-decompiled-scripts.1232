@@ -19410,7 +19410,7 @@ int func_702(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, va
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x22E590F108289A9D(func_553(bParam6), &uParam0, iParam4, &Var0))
+	if (!INVENTORY::_INVENTORY_GET_INVENTORY_ITEM_EQUIPPED_IN_SLOT_BY_REF(func_553(bParam6), &uParam0, iParam4, &Var0))
 	{
 		return 0;
 	}
