@@ -17437,7 +17437,7 @@ void func_490(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_62(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_62(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_62(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_62(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

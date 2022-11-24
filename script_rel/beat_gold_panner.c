@@ -2795,7 +2795,7 @@ void func_84()
 	ENTITY::SET_ENTITY_COORDS(&(uLocal_213[0]), vVar0, true, false, true, true);
 	func_236(&(iLocal_211[0]), *(Local_479[0 /*32*/]));
 	func_86(&(iLocal_211[0]), Local_15.f_51 + vLocal_217 * Vector(100f, 100f, 100f));
-	PED::_0x931B241409216C1F(&(iLocal_211[0]), &(uLocal_213[0]), 0);
+	PED::SET_PED_OWNS_ANIMAL(&(iLocal_211[0]), &(uLocal_213[0]), 0);
 	func_237(&(iLocal_211[0]), &((Local_479[0 /*32*/])->f_23), 0);
 }
 
@@ -16455,7 +16455,7 @@ void func_570(int iParam0, var uParam1, int iParam2)
 					{
 						TASK::CLEAR_PED_TASKS(iParam2, 1, 0);
 					}
-					PED::_0x931B241409216C1F(iParam0, iParam2, 0);
+					PED::SET_PED_OWNS_ANIMAL(iParam0, iParam2, 0);
 					PED::SET_PED_CONFIG_FLAG(iParam0, 167, true);
 					PED::SET_PED_CONFIG_FLAG(iParam0, 321, true);
 					PED::SET_PED_CONFIG_FLAG(iParam2, 178, true);
@@ -18809,7 +18809,7 @@ int func_660(var uParam0, int iParam1)
 			uParam0->f_9 = func_395();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

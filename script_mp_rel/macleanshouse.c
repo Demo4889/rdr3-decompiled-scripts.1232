@@ -698,7 +698,7 @@ void func_30(int iParam0)
 	VOLUME::_0x4A8FEFC43FD8AC9B(iLocal_15, 3, 1);
 	VOLUME::_0x53D05D60E5F5B40C(iLocal_15, 3, 1, func_59(900));
 	VOLUME::_0x53D05D60E5F5B40C(iLocal_15, 3, 1, func_59(766));
-	PED::_0x931B241409216C1F(func_60(899), func_60(766), 0);
+	PED::SET_PED_OWNS_ANIMAL(func_60(899), func_60(766), 0);
 }
 
 void func_31()

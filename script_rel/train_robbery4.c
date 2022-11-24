@@ -62861,7 +62861,7 @@ int func_1345(var uParam0)
 				Local_6957[7 /*14*/] = func_1765((Local_6957[7 /*14*/])->f_2, (Local_6957[7 /*14*/])->f_3, (Local_6957[7 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 				func_1520(Local_6957[7 /*14*/]);
 				func_1862(&(Local_6957[7 /*14*/]), 0);
-				AITRANSPORT::_0xBA8818212633500A(&(Local_6957[7 /*14*/]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[7 /*14*/]), 0, 1);
 				iLocal_9151++;
 			}
 			break;
@@ -62896,7 +62896,7 @@ int func_1345(var uParam0)
 				Local_6957[9 /*14*/] = func_1765((Local_6957[9 /*14*/])->f_2, (Local_6957[9 /*14*/])->f_3, (Local_6957[9 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 				func_1520(Local_6957[9 /*14*/]);
 				func_1862(&(Local_6957[9 /*14*/]), 0);
-				AITRANSPORT::_0xBA8818212633500A(&(Local_6957[9 /*14*/]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[9 /*14*/]), 0, 1);
 				iLocal_9151++;
 			}
 			break;
@@ -81898,7 +81898,7 @@ int func_1869()
 			Local_7266[0 /*14*/] = func_1765((Local_7266[0 /*14*/])->f_2, (Local_7266[0 /*14*/])->f_3, (Local_7266[0 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[0 /*14*/]);
 			func_1862(&(Local_7266[0 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[0 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[0 /*14*/]), 0, 1);
 			iLocal_9219++;
 			break;
 		case 1:
@@ -81911,7 +81911,7 @@ int func_1869()
 			Local_7266[1 /*14*/] = func_1765((Local_7266[1 /*14*/])->f_2, (Local_7266[1 /*14*/])->f_3, (Local_7266[1 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[1 /*14*/]);
 			func_1862(&(Local_7266[1 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[1 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[1 /*14*/]), 0, 1);
 			iLocal_9219++;
 			break;
 		case 3:
@@ -81934,7 +81934,7 @@ int func_1870()
 			Local_6957[5 /*14*/] = func_1765((Local_6957[5 /*14*/])->f_2, (Local_6957[5 /*14*/])->f_3, (Local_6957[5 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[5 /*14*/]);
 			func_1862(&(Local_6957[5 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[5 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[5 /*14*/]), 0, 1);
 			iLocal_9220++;
 			break;
 		case 1:
@@ -81947,7 +81947,7 @@ int func_1870()
 			Local_6957[6 /*14*/] = func_1765((Local_6957[6 /*14*/])->f_2, (Local_6957[6 /*14*/])->f_3, (Local_6957[6 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[6 /*14*/]);
 			func_1862(&(Local_6957[6 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[6 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[6 /*14*/]), 0, 1);
 			iLocal_9220++;
 			break;
 		case 3:
@@ -81970,7 +81970,7 @@ int func_1871()
 			Local_7266[2 /*14*/] = func_1765((Local_7266[2 /*14*/])->f_2, (Local_7266[2 /*14*/])->f_3, (Local_7266[2 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[2 /*14*/]);
 			func_1862(&(Local_7266[2 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[2 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[2 /*14*/]), 0, 1);
 			iLocal_9221++;
 			break;
 		case 1:
@@ -81983,7 +81983,7 @@ int func_1871()
 			Local_7266[3 /*14*/] = func_1765((Local_7266[3 /*14*/])->f_2, (Local_7266[3 /*14*/])->f_3, (Local_7266[3 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[3 /*14*/]);
 			func_1862(&(Local_7266[3 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[3 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[3 /*14*/]), 0, 1);
 			iLocal_9221++;
 			break;
 		case 3:
@@ -82030,7 +82030,7 @@ int func_1873()
 			Local_7266[4 /*14*/] = func_1765((Local_7266[4 /*14*/])->f_2, (Local_7266[4 /*14*/])->f_3, (Local_7266[4 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[4 /*14*/]);
 			func_1862(&(Local_7266[4 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[4 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[4 /*14*/]), 0, 1);
 			iLocal_9222++;
 			break;
 		case 1:
@@ -82043,7 +82043,7 @@ int func_1873()
 			Local_7266[5 /*14*/] = func_1765((Local_7266[5 /*14*/])->f_2, (Local_7266[5 /*14*/])->f_3, (Local_7266[5 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_7266[5 /*14*/]);
 			func_1862(&(Local_7266[5 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_7266[5 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_7266[5 /*14*/]), 0, 1);
 			iLocal_9222++;
 			break;
 		case 3:
@@ -82066,7 +82066,7 @@ int func_1874()
 			Local_6957[13 /*14*/] = func_1765((Local_6957[13 /*14*/])->f_2, (Local_6957[13 /*14*/])->f_3, (Local_6957[13 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[13 /*14*/]);
 			func_1862(&(Local_6957[13 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[13 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[13 /*14*/]), 0, 1);
 			iLocal_9223++;
 			break;
 		case 1:
@@ -82079,7 +82079,7 @@ int func_1874()
 			Local_6957[14 /*14*/] = func_1765((Local_6957[14 /*14*/])->f_2, (Local_6957[14 /*14*/])->f_3, (Local_6957[14 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[14 /*14*/]);
 			func_1862(&(Local_6957[14 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[14 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[14 /*14*/]), 0, 1);
 			iLocal_9223++;
 			break;
 		case 3:
@@ -82102,7 +82102,7 @@ int func_1875()
 			Local_6957[10 /*14*/] = func_1765((Local_6957[10 /*14*/])->f_2, (Local_6957[10 /*14*/])->f_3, (Local_6957[10 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[10 /*14*/]);
 			func_1862(&(Local_6957[10 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[10 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[10 /*14*/]), 0, 1);
 			iLocal_9224++;
 			break;
 		case 1:
@@ -82115,7 +82115,7 @@ int func_1875()
 			Local_6957[11 /*14*/] = func_1765((Local_6957[11 /*14*/])->f_2, (Local_6957[11 /*14*/])->f_3, (Local_6957[11 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[11 /*14*/]);
 			func_1862(&(Local_6957[11 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[11 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[11 /*14*/]), 0, 1);
 			iLocal_9224++;
 			break;
 		case 3:
@@ -82128,7 +82128,7 @@ int func_1875()
 			Local_6957[12 /*14*/] = func_1765((Local_6957[12 /*14*/])->f_2, (Local_6957[12 /*14*/])->f_3, (Local_6957[12 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0);
 			func_1520(Local_6957[12 /*14*/]);
 			func_1862(&(Local_6957[12 /*14*/]), 0);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_6957[12 /*14*/]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[12 /*14*/]), 0, 1);
 			iLocal_9224++;
 			break;
 		case 5:
@@ -84157,7 +84157,7 @@ void func_1950(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -91249,7 +91249,7 @@ int func_2274()
 				Local_6957[iVar0 /*14*/] = func_2261(&((Local_6957[iVar0 /*14*/])->f_1), (Local_6957[iVar0 /*14*/])->f_2, (Local_6957[iVar0 /*14*/])->f_3, (Local_6957[iVar0 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0);
 				func_1520(Local_6957[iVar0 /*14*/]);
 				func_1862(&(Local_6957[iVar0 /*14*/]), 0);
-				AITRANSPORT::_0xBA8818212633500A(&(Local_6957[iVar0 /*14*/]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[iVar0 /*14*/]), 0, 1);
 				iLocal_9217++;
 				if (iLocal_9217 == 5)
 				{
@@ -91260,7 +91260,7 @@ int func_2274()
 				Local_6957[iVar0 /*14*/] = func_2261(&((Local_6957[iVar0 /*14*/])->f_1), (Local_6957[iVar0 /*14*/])->f_2, (Local_6957[iVar0 /*14*/])->f_3, (Local_6957[iVar0 /*14*/])->f_6, 1, 1, 0, 1, 1, 1, 0, 0);
 				func_1520(Local_6957[iVar0 /*14*/]);
 				func_1862(&(Local_6957[iVar0 /*14*/]), 0);
-				AITRANSPORT::_0xBA8818212633500A(&(Local_6957[iVar0 /*14*/]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_6957[iVar0 /*14*/]), 0, 1);
 				iLocal_9217++;
 				break;
 		}
@@ -104487,7 +104487,7 @@ void func_2743(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_529(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_529(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_529(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_529(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

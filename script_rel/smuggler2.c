@@ -17465,7 +17465,7 @@ void func_170(var uParam0, bool bParam1)
 		{
 			if (PED::IS_PED_IN_VEHICLE(Global_35, vLocal_2104.x, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 		}
 		VEHICLE::DELETE_VEHICLE(&vLocal_2104);
@@ -54668,7 +54668,7 @@ void func_1258(var uParam0)
 										{
 											ENTITY::SET_ENTITY_INVINCIBLE(&(Local_424[iVar0 /*8*/]), false);
 											vVar1 = { ENTITY::GET_ENTITY_COORDS(&(Local_424[iVar0 /*8*/]), true, true) };
-											PED::_0xE0B61ED8BB37712F(&(Local_424[iVar0 /*8*/]));
+											PED::_WARP_PED_OUT_OF_VEHICLE(&(Local_424[iVar0 /*8*/]));
 											ENTITY::SET_ENTITY_COORDS(&(Local_424[iVar0 /*8*/]), vVar1, true, false, true, true);
 											FIRE::START_ENTITY_FIRE(&(Local_424[iVar0 /*8*/]), 100f, 0, 4);
 											ENTITY::SET_ENTITY_DYNAMIC(&(Local_424[iVar0 /*8*/]), true);
@@ -61982,7 +61982,7 @@ void func_1430(var uParam0)
 			func_849(12);
 			if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_unarmed"), true, 0, false, false);
 			WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_unarmed"), true, 1, false, false);
@@ -75307,7 +75307,7 @@ void func_1830(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -77803,7 +77803,7 @@ void func_1932()
 	{
 		if (PED::IS_PED_IN_ANY_VEHICLE(&(Local_424[iVar1 /*8*/]), false))
 		{
-			PED::_0xE0B61ED8BB37712F(&(Local_424[iVar1 /*8*/]));
+			PED::_WARP_PED_OUT_OF_VEHICLE(&(Local_424[iVar1 /*8*/]));
 		}
 		ENTITY::_0x203BEFFDBE12E96A(&(Local_424[iVar1 /*8*/]), func_2274(iVar1, 1), -45f, 1, 0, 1);
 		ENTITY::_0x9587913B9E772D29(&(Local_424[iVar1 /*8*/]), 0);

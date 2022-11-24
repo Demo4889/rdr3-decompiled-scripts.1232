@@ -7399,7 +7399,7 @@ int func_14(var uParam0, var uParam1, var uParam2)
 	switch (uParam1[uParam2->f_1 /*10*/])
 	{
 		case 0:
-			if (NETWORK::_0x255A5EF65EDA9167(uParam2->f_2) && !PLAYER::IS_PLAYER_DEAD(uParam2->f_2))
+			if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(uParam2->f_2) && !PLAYER::IS_PLAYER_DEAD(uParam2->f_2))
 			{
 				PLAYER::SET_EVERYONE_IGNORE_PLAYER(uParam2->f_2, false);
 				PLAYER::SET_PLAYER_FORCED_AIM(uParam2->f_2, 0, 0, -1, 0);
@@ -7941,7 +7941,7 @@ void func_16(var uParam0, var uParam1, var uParam2)
 	{
 		func_170(uParam2);
 	}
-	if (NETWORK::_0x255A5EF65EDA9167(uParam2->f_2))
+	if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(uParam2->f_2))
 	{
 		PLAYER::SET_ALL_RANDOM_PEDS_FLEE_THIS_FRAME(uParam2->f_2);
 	}
@@ -10865,7 +10865,7 @@ void func_46(var uParam0, var uParam1, var uParam2, var uParam3)
 	uParam0->f_3 = *uParam3;
 	if (func_451(uParam2, 4))
 	{
-		SCRIPTS::_0x31010318BA9897AC(&uVar4, uParam2->f_152.f_3);
+		SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar4, uParam2->f_152.f_3);
 		if (func_452() == 109)
 		{
 			func_53(uParam0, 3);

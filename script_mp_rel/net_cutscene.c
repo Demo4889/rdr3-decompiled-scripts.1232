@@ -1525,7 +1525,7 @@ int func_62(var uParam0)
 										else if ((uParam0->f_89[iVar2 /*15*/])->f_11 != iVar0)
 										{
 										}
-										else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_89[iVar2 /*15*/])->f_11.f_1)))
+										else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_89[iVar2 /*15*/])->f_11.f_1)))
 										{
 										}
 										else
@@ -1691,7 +1691,7 @@ int func_62(var uParam0)
 																												else
 																												{
 																													iVar8 = PLAYER::INT_TO_PLAYERINDEX(iVar1);
-																													if (!NETWORK::_0x255A5EF65EDA9167(iVar8))
+																													if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar8))
 																													{
 																													}
 																													else if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar8))
@@ -1775,7 +1775,7 @@ int func_62(var uParam0)
 																																							else if (((uParam0->f_229[iVar0 /*27*/])->f_1[iVar1 /*6*/])->f_2 != &uParam0->f_8[iVar0 /*40*/])
 																																							{
 																																							}
-																																							else if (MISC::_0x375F5870A7B8BEC1(&(((uParam0->f_229[iVar0 /*27*/])->f_1[iVar1 /*6*/])->f_2.f_1)))
+																																							else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&(((uParam0->f_229[iVar0 /*27*/])->f_1[iVar1 /*6*/])->f_2.f_1)))
 																																							{
 																																							}
 																																							else
@@ -2091,7 +2091,7 @@ void func_73(bool bParam0, bool bParam1, bool bParam2)
 	while (iVar2 < 32)
 	{
 		iVar0 = PLAYER::INT_TO_PLAYERINDEX(iVar2);
-		if (!NETWORK::_0x255A5EF65EDA9167(iVar0))
+		if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar0))
 		{
 		}
 		else if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar0))
@@ -3324,7 +3324,7 @@ int func_118(var uParam0)
 							{
 								iVar1 = 0;
 							}
-							if (!MISC::_0x375F5870A7B8BEC1((uParam0->f_8[iVar0 /*40*/])->f_11[1 /*3*/]))
+							if (!MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES((uParam0->f_8[iVar0 /*40*/])->f_11[1 /*3*/]))
 							{
 								iVar2 = func_224();
 							}
@@ -3333,7 +3333,7 @@ int func_118(var uParam0)
 								if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(&(uParam0->f_8[iVar0 /*40*/])))
 								{
 								}
-								else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_8[iVar0 /*40*/])->f_3)))
+								else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_8[iVar0 /*40*/])->f_3)))
 								{
 									MISC::SET_BIT(&((uParam0->f_8[iVar0 /*40*/])->f_1), 1);
 								}
@@ -3829,7 +3829,7 @@ void func_143(var uParam0)
 
 	if (!func_129(*uParam0))
 	{
-		SCRIPTS::_0x31010318BA9897AC(&uVar0, &Global_1273882);
+		SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, &Global_1273882);
 		iVar1 = 0;
 		while (iVar1 < 2)
 		{
@@ -3904,7 +3904,7 @@ void func_143(var uParam0)
 												else
 												{
 													iVar2++;
-													SCRIPTS::_0x31010318BA9897AC(&uVar0, &(Global_1273882->f_154[iVar3]));
+													SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, &(Global_1273882->f_154[iVar3]));
 													(((*Global_1055965)[Global_1273882->f_10 /*436*/])->f_39.f_1[*uParam0 /*16*/])->f_3[iVar4] = &Global_1273882->f_154[iVar3];
 													iVar4++;
 												}
@@ -3935,7 +3935,7 @@ bool func_145(var uParam0, int iParam1)
 	{
 		return false;
 	}
-	return !MISC::_0x375F5870A7B8BEC1(&((uParam0->f_8[iParam1 /*40*/])->f_3));
+	return !MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_8[iParam1 /*40*/])->f_3));
 }
 
 var func_146(int iParam0, int iParam1)
@@ -5837,7 +5837,7 @@ int func_203(int iParam0, bool bParam1)
 {
 	if (bParam1)
 	{
-		if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+		if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 		{
 			return -1;
 		}
@@ -6772,7 +6772,7 @@ void func_223(var uParam0, int iParam1)
 
 int func_224()
 {
-	if ((Global_1273882->f_16 < 0 || Global_1273882->f_16 >= 32) || !NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[Global_1273882->f_16])))
+	if ((Global_1273882->f_16 < 0 || Global_1273882->f_16 >= 32) || !NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[Global_1273882->f_16])))
 	{
 		return 0;
 	}
@@ -7059,7 +7059,7 @@ void func_236(int iParam0)
 	vVar0.x = 191;
 	vVar0.f_1 = PLAYER::PLAYER_ID();
 	vVar0.f_2 = NETWORK::GET_NETWORK_TIME_ACCURATE();
-	SCRIPTS::_0x31010318BA9897AC(&uVar4, iParam0);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar4, iParam0);
 	SCRIPTS::TRIGGER_SCRIPT_EVENT(1, &vVar0, 4, 16, &uVar4);
 }
 
@@ -17936,7 +17936,7 @@ int func_575(int iParam0, int iParam1)
 			return 1;
 		case 190804938:
 			iVar1 = func_442(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}
@@ -17955,7 +17955,7 @@ int func_575(int iParam0, int iParam1)
 				return 0;
 			}
 			iVar1 = func_442(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

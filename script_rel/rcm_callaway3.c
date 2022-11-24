@@ -16094,7 +16094,7 @@ int func_522(var uParam0, int iParam1)
 			uParam0->f_9 = func_279();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -33153,7 +33153,7 @@ int func_1091(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -35670,7 +35670,7 @@ void func_1203()
 		PED::SET_PED_CONFIG_FLAG(&(Local_666[0 /*5*/]), 253, true);
 		PED::SET_PED_CONFIG_FLAG(&(Local_666[0 /*5*/]), 26, true);
 		ENTITY::_0x9587913B9E772D29(&(Local_666[0 /*5*/]), 0);
-		AITRANSPORT::_0xBA8818212633500A(&(Local_666[0 /*5*/]), 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_666[0 /*5*/]), 0, 1);
 		PED::_0xB8DE69D9473B7593(&(Local_666[0 /*5*/]), 0);
 		PED::SET_PED_LASSO_HOGTIE_FLAG(&(Local_666[0 /*5*/]), 0, 0);
 	}
@@ -69878,7 +69878,7 @@ void func_2278(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

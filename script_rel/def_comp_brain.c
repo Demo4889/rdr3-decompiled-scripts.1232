@@ -1514,7 +1514,7 @@ void func_46(var uParam0, bool bParam1)
 	{
 		if (func_4(*uParam0, 38, 1))
 		{
-			PED::_0x931B241409216C1F(func_112(*uParam0), iVar0, 0);
+			PED::SET_PED_OWNS_ANIMAL(func_112(*uParam0), iVar0, 0);
 			PED::_0xED1C764997A86D5A(func_112(*uParam0), iVar0);
 			PED::SET_PED_CONFIG_FLAG(iVar0, 367, true);
 			func_12(*uParam0, 38, 1);
@@ -1525,7 +1525,7 @@ void func_46(var uParam0, bool bParam1)
 		{
 			if (!func_144(*uParam0, 32))
 			{
-				AITRANSPORT::_0xBA8818212633500A(iVar0, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iVar0, 0, 1);
 				func_30(*uParam0, 32, 1);
 			}
 		}
@@ -1535,7 +1535,7 @@ void func_46(var uParam0, bool bParam1)
 			POPULATION::_0xF74E134F40192884(iVar0, 1);
 			if (func_144(*uParam0, 32))
 			{
-				AITRANSPORT::_0xBA8818212633500A(iVar0, 0, 0);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iVar0, 0, 0);
 				func_30(*uParam0, 32, 0);
 			}
 			TASK::CLEAR_PED_TASKS(iVar0, 1, 0);
@@ -9491,7 +9491,7 @@ int func_320(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		if (bVar4)
 		{
-			PED::_0x931B241409216C1F(func_112(iParam0), iParam1, 0);
+			PED::SET_PED_OWNS_ANIMAL(func_112(iParam0), iParam1, 0);
 			PED::_0xED1C764997A86D5A(func_112(iParam0), iParam1);
 		}
 	}
@@ -9885,7 +9885,7 @@ void func_332(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_112(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_112(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_112(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_112(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

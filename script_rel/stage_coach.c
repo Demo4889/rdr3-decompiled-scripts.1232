@@ -295,7 +295,7 @@ int func_2(int iParam0)
 					}
 					if (ENTITY::DOES_ENTITY_EXIST(Local_14.f_16))
 					{
-						VEHICLE::_0x838C216C2B05A009(Local_14.f_16, Local_14.f_15);
+						VEHICLE::SET_PED_OWNS_VEHICLE(Local_14.f_16, Local_14.f_15);
 						PED::SET_PED_CONFIG_FLAG(Local_14.f_16, 146, false);
 						PED::SET_PED_CONFIG_FLAG(Local_14.f_16, 168, true);
 						PED::SET_PED_CONFIG_FLAG(Local_14.f_16, 216, true);

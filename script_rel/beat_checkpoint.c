@@ -1798,7 +1798,7 @@ int func_42()
 				PED::SET_PED_HEARING_RANGE(&(uLocal_810[1]), 10f);
 				if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_810[4])))
 				{
-					PED::_0x931B241409216C1F(&(uLocal_810[1]), &(uLocal_810[4]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uLocal_810[1]), &(uLocal_810[4]), 0);
 					func_117(&(Local_351.f_5), &(uLocal_810[1]), &(uLocal_810[4]), 0);
 				}
 				PED::SET_PED_CONFIG_FLAG(&(uLocal_810[1]), 6, true);
@@ -1819,7 +1819,7 @@ int func_42()
 				PED::SET_PED_HEARING_RANGE(&(uLocal_810[2]), 10f);
 				if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_810[5])))
 				{
-					PED::_0x931B241409216C1F(&(uLocal_810[2]), &(uLocal_810[5]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uLocal_810[2]), &(uLocal_810[5]), 0);
 					func_117(&(Local_351.f_5), &(uLocal_810[2]), &(uLocal_810[5]), 0);
 				}
 				PED::SET_PED_CONFIG_FLAG(&(uLocal_810[2]), 6, true);
@@ -1838,7 +1838,7 @@ int func_42()
 				PED::SET_PED_HEARING_RANGE(&(uLocal_810[3]), 10f);
 				if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_810[6])))
 				{
-					PED::_0x931B241409216C1F(&(uLocal_810[3]), &(uLocal_810[6]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uLocal_810[3]), &(uLocal_810[6]), 0);
 					func_117(&(Local_351.f_5), &(uLocal_810[3]), &(uLocal_810[6]), 0);
 				}
 				PED::SET_PED_CONFIG_FLAG(&(uLocal_810[3]), 6, true);
@@ -6451,7 +6451,7 @@ int func_165(var uParam0, int iParam1)
 			uParam0->f_9 = func_166();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

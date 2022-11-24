@@ -6615,7 +6615,7 @@ void func_200(int iParam0)
 
 	Var0.f_3 = 1;
 	Var0.f_4 = iParam0;
-	SCRIPTS::_0x31010318BA9897AC(&uVar5, PLAYER::PLAYER_ID());
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar5, PLAYER::PLAYER_ID());
 	func_357(&Var0, uVar5);
 }
 

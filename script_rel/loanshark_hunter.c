@@ -15828,7 +15828,7 @@ int func_483(var uParam0, int iParam1)
 			uParam0->f_9 = func_194();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -16728,7 +16728,7 @@ int func_533()
 			TASK::TASK_STAND_STILL(&(uLocal_144[0]), -1);
 			FLOCK::SET_ANIMAL_TUNING_BOOL_PARAM(&(uLocal_144[0]), 48, true);
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(&(uLocal_144[0]), -1538724068);
-			AITRANSPORT::_0xBA8818212633500A(&(uLocal_144[0]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_144[0]), 0, 1);
 			PED::SET_PED_CONFIG_FLAG(&(uLocal_144[0]), 324, true);
 			func_1093(&(uLocal_144[0]), 2, 0);
 			func_1093(&(uLocal_144[0]), 0, 80);
@@ -28086,7 +28086,7 @@ void func_906(var uParam0)
 			{
 				if (func_383(&(uParam0->f_2106), "PLY_SCAREWINHOR", 0))
 				{
-					AITRANSPORT::_0xBA8818212633500A(&(uLocal_144[0]), 0, 0);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_144[0]), 0, 0);
 					PED::SET_PED_CONFIG_FLAG(&(uLocal_144[0]), 324, false);
 					func_495(&(uLocal_144[0]), 0);
 					func_141(uLocal_144[0], 0, 1, 1);
@@ -38641,7 +38641,7 @@ void func_1283(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

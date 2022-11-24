@@ -5854,7 +5854,7 @@ void func_187()
 			iVar6 = PED::GET_VEHICLE_PED_IS_IN(Global_35, false);
 			if (((VEHICLE::IS_VEHICLE_DRIVEABLE(iVar6, 0, 0) && VEHICLE::_0xB9D5BDDA88E1BB66(ENTITY::GET_ENTITY_MODEL(iVar6))) && !DECORATOR::DECOR_EXIST_ON(iVar6, "wagon_block_honor")) && (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(iVar6) || func_711(iVar6)))
 			{
-				VEHICLE::_0xA19447D83294E29F(iVar6, &iVar7, &iVar8);
+				VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar6, &iVar7, &iVar8);
 				if (iVar7 == 0 || iVar8 > 0)
 				{
 					func_677(0, -856432278, 0, 0, 0, 0, 1065353216, 0);
@@ -6789,7 +6789,7 @@ int func_209(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -89276,7 +89276,7 @@ int func_2740(var uParam0, int iParam1)
 			uParam0->f_9 = func_2351();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

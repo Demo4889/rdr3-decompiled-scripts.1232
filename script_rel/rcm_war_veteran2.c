@@ -3796,7 +3796,7 @@ int func_107(var uParam0)
 																			vLocal_180 = { vVar0 };
 																			ANIMSCENE::START_ANIM_SCENE(&(Local_29[2 /*16*/]));
 																			PED::_0x2208438012482A1A(iLocal_15, false, false);
-																			PED::_0xE0B61ED8BB37712F(iLocal_15);
+																			PED::_WARP_PED_OUT_OF_VEHICLE(iLocal_15);
 																			iLocal_14 = 3;
 																		}
 																	}
@@ -18529,7 +18529,7 @@ int func_611(var uParam0, bool bParam1)
 		PED::_0x1902C4CFCC5BE57C(iLocal_16, 1268180497);
 		PED::_0xCC8CA3E88256E58F(iLocal_16, 0, 1, 1, 1, 0);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_16, iLocal_234);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_16, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_16, 0, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_16, 419, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_16, 367, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_16, 324, true);
@@ -19412,13 +19412,13 @@ void func_653(var uParam0)
 	func_302(18, 0, 0);
 	if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, true))
 	{
-		PED::_0xE0B61ED8BB37712F(Global_35);
+		PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_15))
 	{
 		if (PED::IS_PED_IN_ANY_VEHICLE(iLocal_15, true))
 		{
-			PED::_0xE0B61ED8BB37712F(iLocal_15);
+			PED::_WARP_PED_OUT_OF_VEHICLE(iLocal_15);
 		}
 	}
 	if (func_1142(uParam0, Global_35, 0, 0, 1, 1))
@@ -32606,7 +32606,7 @@ int func_1049(var uParam0, int iParam1)
 			uParam0->f_9 = func_273();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -33615,7 +33615,7 @@ int func_1095(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

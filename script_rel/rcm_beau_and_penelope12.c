@@ -9735,7 +9735,7 @@ void func_324(var uParam0)
 	}
 	if (PED::IS_PED_IN_VEHICLE(Global_35, iLocal_170, false))
 	{
-		PED::_0xE0B61ED8BB37712F(Global_35);
+		PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	}
 	if (iLocal_2245 == 0)
 	{
@@ -9869,7 +9869,7 @@ void func_326(var uParam0)
 			{
 				TASK::TASK_MOUNT_ANIMAL(iLocal_159, iLocal_163, 60000, -1, fVar0, 1, 0, 0);
 				PED::SET_PED_CONFIG_FLAG(iLocal_159, 167, true);
-				AITRANSPORT::_0xBA8818212633500A(iLocal_163, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_163, 0, 1);
 			}
 			break;
 		case 4:
@@ -10402,15 +10402,15 @@ int func_336(var uParam0, int iParam1)
 	{
 		func_695(iLocal_163, 1);
 		PED::SET_PED_LASSO_HOGTIE_FLAG(iLocal_163, 0, 0);
-		PED::_0x931B241409216C1F(iLocal_159, iLocal_163, 0);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_163, 0, 1);
+		PED::SET_PED_OWNS_ANIMAL(iLocal_159, iLocal_163, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_163, 0, 1);
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_164))
 	{
 		func_695(iLocal_164, 1);
 		PED::SET_PED_LASSO_HOGTIE_FLAG(iLocal_164, 0, 0);
 		func_696(iLocal_164, 1);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_164, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_164, 0, 1);
 	}
 	iVar1 = _NAMESPACE48::_0x112DDF56300BC6E5(2140917767);
 	_NAMESPACE48::FORCE_DESPAWN_PERSCHAR(iVar1);

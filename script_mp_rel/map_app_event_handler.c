@@ -4851,7 +4851,7 @@ int func_145(char* sParam0, int iParam1, int iParam2)
 						return 1;
 					}
 					sVar12 = NETWORK::TEXTURE_DOWNLOAD_GET_NAME(iVar1);
-					if (MISC::_0x375F5870A7B8BEC1(sVar12))
+					if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(sVar12))
 					{
 						return 3;
 					}
@@ -5374,7 +5374,7 @@ int func_171(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE26::_0x901E0DC25080C8B9(iParam0);
+	iVar0 = _NAMESPACE26::NETWORK_GET_GANG_ID(iParam0);
 	if (_NAMESPACE26::_0x0F99F6436528A089(iVar0) && !_NAMESPACE26::_0x424B17A7DC5C90BC(iParam0))
 	{
 		return 0;
@@ -5738,12 +5738,12 @@ int func_189(int iParam0, bool bParam1)
 		{
 			return 0;
 		}
-		if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iParam0])))
+		if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iParam0])))
 		{
 			return 0;
 		}
 	}
-	if (_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::_0x901E0DC25080C8B9(&(Global_1273882->f_154[iParam0]))) <= 1)
+	if (_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::NETWORK_GET_GANG_ID(&(Global_1273882->f_154[iParam0]))) <= 1)
 	{
 		return 0;
 	}

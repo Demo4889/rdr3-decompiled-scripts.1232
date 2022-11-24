@@ -778,19 +778,19 @@ void func_14()
 	func_60();
 	if (func_61(&(uLocal_746[0]), &(uLocal_746[4]), 1, 1) <= 1f && !PED::IS_PED_ON_MOUNT(&(uLocal_746[0])))
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[4]), 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[4]), 0, 1);
 	}
 	else
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[4]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[4]), 0, 0);
 	}
 	if (func_61(&(uLocal_746[1]), &(uLocal_746[5]), 1, 1) <= 1f && !PED::IS_PED_ON_MOUNT(&(uLocal_746[1])))
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[5]), 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[5]), 0, 1);
 	}
 	else
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[5]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[5]), 0, 0);
 	}
 	if (!PED::IS_PED_DEAD_OR_DYING(&(uLocal_746[0]), true) || !PED::IS_PED_DEAD_OR_DYING(&(uLocal_746[1]), true))
 	{
@@ -2773,7 +2773,7 @@ int func_60()
 			}
 			break;
 		case 1:
-			VEHICLE::_0xA19447D83294E29F(iLocal_76, &iVar0, &iVar1);
+			VEHICLE::GET_DRAFT_ANIMAL_COUNT(iLocal_76, &iVar0, &iVar1);
 			if (iVar1 < 2)
 			{
 				iLocal_797 = 2;
@@ -3207,8 +3207,8 @@ void func_71()
 	}
 	if (func_233())
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[4]), 0, 0);
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_746[5]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[4]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_746[5]), 0, 0);
 		if (ENTITY::IS_ENTITY_DEAD(VEHICLE::_0xA8BA0BAE0173457B(iLocal_76, 0)) && ENTITY::IS_ENTITY_DEAD(VEHICLE::_0xA8BA0BAE0173457B(iLocal_76, 1)))
 		{
 			func_65(9);
@@ -8657,7 +8657,7 @@ int func_201(int iParam0)
 	{
 		if (VEHICLE::_0xEA44E97849E9F3DD(*iParam0))
 		{
-			if (VEHICLE::_0xA19447D83294E29F(*iParam0, &iVar0, &iVar1))
+			if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(*iParam0, &iVar0, &iVar1))
 			{
 				if (iVar0 == iVar1)
 				{
@@ -14560,7 +14560,7 @@ int func_397(var uParam0, int iParam1)
 			uParam0->f_9 = func_398();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

@@ -3836,7 +3836,7 @@ void func_60(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -8511,7 +8511,7 @@ void func_215(var uParam0, bool bParam1)
 	func_597(Global_35, 1, 1);
 	Var0.f_1 = 1;
 	Var0 = 2;
-	SCRIPTS::_0x31010318BA9897AC(&(Var0.f_2), &Global_1273882);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Var0.f_2), &Global_1273882);
 	Var0.f_3 = 1;
 	func_598(&Var0);
 	func_452(34, 0, 0, 0, 0);
@@ -12071,7 +12071,7 @@ void func_369(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -12097,7 +12097,7 @@ void func_371(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}

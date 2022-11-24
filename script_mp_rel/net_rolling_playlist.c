@@ -1415,7 +1415,7 @@ void func_46(var uParam0)
 		}
 		else
 		{
-			SCRIPTS::_0x31010318BA9897AC(&(uParam0->f_250), iVar0);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(uParam0->f_250), iVar0);
 			(uParam0->f_23[uParam0->f_18 /*7*/])->f_1 = &((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar2 /*6*/];
 			(uParam0->f_23[uParam0->f_18 /*7*/])->f_2 = (((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar2 /*6*/])->f_1;
 			(uParam0->f_23[uParam0->f_18 /*7*/])->f_3 = (((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar2 /*6*/])->f_2;
@@ -1456,7 +1456,7 @@ int func_47(var uParam0, var uParam1)
 	{
 		func_48(uParam0, 4);
 	}
-	if (NETWORK::_0x255A5EF65EDA9167(&(uParam0->f_23[uParam0->f_16 /*7*/])) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(&(uParam0->f_23[uParam0->f_16 /*7*/])))
+	if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(uParam0->f_23[uParam0->f_16 /*7*/])) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(&(uParam0->f_23[uParam0->f_16 /*7*/])))
 	{
 		NETWORK::NETWORK_HANDLE_FROM_PLAYER(&(uParam0->f_23[uParam0->f_16 /*7*/]), &uVar0);
 	}
@@ -1555,7 +1555,7 @@ void func_49(int iParam0)
 	}
 	Global_1180694->f_5[3] = 0;
 	func_41(Global_1180694->f_5[3], 1);
-	iVar1 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar1 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	if (!_NAMESPACE26::_0xD6F6ACF4392187FB(iVar1))
 	{
 		func_41(Global_1180694->f_5[3], 6);
@@ -1577,7 +1577,7 @@ void func_50(var uParam0, var uParam1)
 	var uVar3;
 
 	iVar0 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&(uParam0->f_2));
-	if (NETWORK::_0x255A5EF65EDA9167(iVar0) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar0))
+	if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar0) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar0))
 	{
 		return;
 	}
@@ -2124,7 +2124,7 @@ int func_77(int iParam0)
 	int iVar0;
 	int iVar1;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		return 0;
 	}
@@ -2331,7 +2331,7 @@ int func_83(int iParam0)
 {
 	int iVar0;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		iParam0 = PLAYER::PLAYER_ID();
 	}
@@ -2432,7 +2432,7 @@ var func_89(int iParam0, int iParam1)
 			}
 			else
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 			iVar2++;
 			return uVar0;
@@ -3307,7 +3307,7 @@ void func_125(var uParam0)
 		}
 		else
 		{
-			SCRIPTS::_0x31010318BA9897AC(&(uParam0->f_250), iVar0);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(uParam0->f_250), iVar0);
 			(uParam0->f_23[iVar1 /*7*/])->f_1 = &((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar3 /*6*/];
 			(uParam0->f_23[iVar1 /*7*/])->f_2 = (((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar3 /*6*/])->f_1;
 			(uParam0->f_23[iVar1 /*7*/])->f_3 = (((*Global_1055965)[iVar0 /*436*/])->f_153.f_11[iVar3 /*6*/])->f_2;
@@ -3953,7 +3953,7 @@ int func_157(struct<2> Param0, bool bParam2, bool bParam3)
 		}
 		return 0;
 	}
-	if (NETWORK::_0x255A5EF65EDA9167(((*Global_262996)[iVar0 /*70*/])->f_1) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(((*Global_262996)[iVar0 /*70*/])->f_1))
+	if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(((*Global_262996)[iVar0 /*70*/])->f_1) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(((*Global_262996)[iVar0 /*70*/])->f_1))
 	{
 		if (bParam3)
 		{
@@ -4061,7 +4061,7 @@ void func_161(int iParam0)
 
 int func_162(var uParam0, bool bParam1)
 {
-	if (((bParam1 && NETWORK::_0x255A5EF65EDA9167(*uParam0)) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(*uParam0)) && ((*Global_262996)[&Global_1273882 /*70*/])->f_1 == *uParam0)
+	if (((bParam1 && NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(*uParam0)) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(*uParam0)) && ((*Global_262996)[&Global_1273882 /*70*/])->f_1 == *uParam0)
 	{
 		return 1;
 	}
@@ -4107,7 +4107,7 @@ int func_166(int iParam0)
 	int iVar0;
 	int iVar1;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		return -1;
 	}
@@ -6571,7 +6571,7 @@ void func_289(struct<2> Param0, var uParam2)
 		return;
 	}
 	iVar2 = -1;
-	iVar3 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar3 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	if (iVar3 == 0)
 	{
 		return;

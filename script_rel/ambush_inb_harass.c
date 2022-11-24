@@ -1203,7 +1203,7 @@ void func_26()
 			iVar0 = PED::_0xB676EFDA03DADA52(&(Local_15.f_40[iVar1]), 0);
 			if (func_61(iVar0, 0, 0))
 			{
-				PED::_0x931B241409216C1F(iVar0, &(Local_15.f_40[iVar1]), 0);
+				PED::SET_PED_OWNS_ANIMAL(iVar0, &(Local_15.f_40[iVar1]), 0);
 				func_167(&Local_15, iVar1, 32);
 			}
 		}
@@ -1477,7 +1477,7 @@ void func_36(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(&(uParam0->f_49[iVar0])))
 		{
-			if (VEHICLE::_0xA19447D83294E29F(&(uParam0->f_49[iVar0]), &iVar1, &iVar2))
+			if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(&(uParam0->f_49[iVar0]), &iVar1, &iVar2))
 			{
 				if (iVar1 <= 0)
 				{
@@ -1761,7 +1761,7 @@ void func_51()
 					else if ((Local_15.f_215 == Local_15.f_216 && func_61(&(Local_15.f_40[iVar0]), 0, 1)) && !PED::IS_PED_IN_ANY_VEHICLE(&(Local_15[iVar0]), true))
 					{
 						iVar11 = &Local_15.f_40[iVar0];
-						PED::_0x931B241409216C1F(&(Local_15.f_40[iVar0]), iVar11, 0);
+						PED::SET_PED_OWNS_ANIMAL(&(Local_15.f_40[iVar0]), iVar11, 0);
 						TASK::OPEN_SEQUENCE_TASK(&iVar12);
 						TASK::TASK_MOUNT_ANIMAL(0, &(Local_15.f_40[iVar0]), 20000, -1, 2f, 1, 0, 0);
 						if (!func_69((Local_15.f_118[iVar0 /*4*/])->f_1))
@@ -3654,7 +3654,7 @@ void func_137()
 	{
 		return;
 	}
-	if (!VEHICLE::_0xA19447D83294E29F(&(Local_15.f_49[0]), &iVar0, &iVar1))
+	if (!VEHICLE::GET_DRAFT_ANIMAL_COUNT(&(Local_15.f_49[0]), &iVar0, &iVar1))
 	{
 		return;
 	}
@@ -12908,7 +12908,7 @@ int func_457(var uParam0, int iParam1)
 			uParam0->f_9 = func_190();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

@@ -957,7 +957,7 @@ int func_26()
 		uLocal_220[0] = func_86((Local_416[0 /*32*/])->f_1, Local_416[0 /*32*/], Local_14.f_51 + (Local_416[0 /*32*/])->f_6, func_88((Local_14.f_51.f_3 + (Local_416[0 /*32*/])->f_9)), 1, 0, 1, 0, 1);
 		if (!ENTITY::IS_ENTITY_DEAD(&(uLocal_220[0])) && !ENTITY::IS_ENTITY_DEAD(&(uLocal_218[0])))
 		{
-			PED::_0x931B241409216C1F(&(uLocal_218[0]), &(uLocal_220[0]), 0);
+			PED::SET_PED_OWNS_ANIMAL(&(uLocal_218[0]), &(uLocal_220[0]), 0);
 			ENTITY::_0x18FF3110CF47115D(&(uLocal_220[0]), 9, 0);
 		}
 	}
@@ -4728,7 +4728,7 @@ int func_125(var uParam0, int iParam1)
 			uParam0->f_9 = func_126();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

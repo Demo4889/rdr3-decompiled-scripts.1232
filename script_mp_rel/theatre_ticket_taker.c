@@ -10702,7 +10702,7 @@ int func_353(var uParam0, int iParam1)
 			uParam0->f_9 = func_354();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -15555,7 +15555,7 @@ int func_551(bool bParam0, var uParam1, int iParam2, var uParam3, int iParam4, i
 	}
 	if (bParam7)
 	{
-		bVar0 = (_NAMESPACE26::_0xD6F6ACF4392187FB(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())) && _NAMESPACE26::_0x0F99F6436528A089(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())));
+		bVar0 = (_NAMESPACE26::_0xD6F6ACF4392187FB(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID())) && _NAMESPACE26::_0x0F99F6436528A089(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID())));
 		bParam7 = bVar0;
 	}
 	POSSE::_0xC08AFF658B2E51DA(&iVar1);
@@ -17280,7 +17280,7 @@ int func_639()
 {
 	int iVar0;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(PLAYER::PLAYER_ID()))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(PLAYER::PLAYER_ID()))
 	{
 		return 0;
 	}
@@ -17288,7 +17288,7 @@ int func_639()
 	{
 		return 0;
 	}
-	iVar0 = PLAYER::_0xB9050A97594C8832(PLAYER::PLAYER_ID());
+	iVar0 = PLAYER::_GET_VEHICLE_OWNED_BY_PLAYER(PLAYER::PLAYER_ID());
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
 		return 0;

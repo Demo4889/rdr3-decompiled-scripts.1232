@@ -10483,13 +10483,13 @@ int func_315(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, bo
 									{
 										func_76("GC_SELECT_HELP_NOT_LEADER", 10000, 0, 0, 0, 1);
 									}
-									func_562(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+									func_562(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 								}
 							}
 							else if (!_NAMESPACE26::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID()))
 							{
 								func_76("GC_SELECT_HELP_NOT_LEADER", 10000, 0, 0, 0, 1);
-								func_562(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+								func_562(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 							}
 							else
 							{
@@ -13891,7 +13891,7 @@ void func_476(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -35915,7 +35915,7 @@ var func_1182(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -36085,7 +36085,7 @@ var func_1182(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -36110,7 +36110,7 @@ var func_1182(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;

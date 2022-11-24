@@ -3780,7 +3780,7 @@ void func_144(var uParam0)
 	}
 	if (func_374(&(Local_15.f_604[0]), 0, 1))
 	{
-		PED::_0x931B241409216C1F(&(Local_15.f_604[0]), &(Local_15.f_604[1]), 0);
+		PED::SET_PED_OWNS_ANIMAL(&(Local_15.f_604[0]), &(Local_15.f_604[1]), 0);
 		PED::SET_PED_CONFIG_FLAG(&(Local_15.f_604[0]), 315, false);
 		PED::SET_PED_CONFIG_FLAG(&(Local_15.f_604[0]), 130, false);
 		PED::SET_PED_CONFIG_FLAG(&(Local_15.f_604[0]), 178, true);
@@ -22651,7 +22651,7 @@ int func_744(var uParam0)
 					uParam0->f_919 = 0;
 					uParam0->f_616 = VOLUME::_CREATE_ANTI_GRIEF_VOLUME(665633627, -588.817f, -339.592f, 83.215f, 0f, 0f, 22.349f, 2f, 6.852f, 5f);
 					uParam0->f_617 = VOLUME::_CREATE_ANTI_GRIEF_VOLUME(665633627, -590.199f, -340.998f, 83.215f, 0f, 0f, 45.493f, 2f, 6.852f, 5f);
-					PED::_0x931B241409216C1F(&(uParam0->f_604[0]), &(uParam0->f_604[1]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_604[0]), &(uParam0->f_604[1]), 0);
 					if (uParam0->f_595 == 0)
 					{
 						uParam0->f_984 = 1;
@@ -24379,7 +24379,7 @@ int func_764(var uParam0, int iParam1)
 			uParam0->f_9 = func_242();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -27160,7 +27160,7 @@ int func_874(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

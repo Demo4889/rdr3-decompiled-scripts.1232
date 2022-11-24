@@ -93,7 +93,7 @@ void __EntryFunction__()
 		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_ALCOHOL_BLOCK_PUTAWAY_PROMPT", 1, 1);
 		if ((NETWORK::GET_NUM_RESERVED_MISSION_OBJECTS(0) >= 1 && NETWORK::_0xB07D3185E11657A5(ScriptParam_0.f_1)) && NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(NETWORK::OBJ_TO_NET(ScriptParam_0.f_1)))
 		{
-			NETWORK::_0x7182EDDA1EE7DB5A(NETWORK::OBJ_TO_NET(ScriptParam_0.f_1));
+			NETWORK::PREVENT_NETWORK_ID_MIGRATION(NETWORK::OBJ_TO_NET(ScriptParam_0.f_1));
 		}
 		if (!ScriptParam_0.f_3)
 		{
@@ -329,7 +329,7 @@ bool func_3(int iParam0, bool bParam1)
 {
 	if (bParam1)
 	{
-		if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+		if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 		{
 			return false;
 		}
@@ -7094,7 +7094,7 @@ int func_257(int iParam0, int iParam1)
 			return 1;
 		case 190804938:
 			iVar1 = func_211(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}
@@ -7113,7 +7113,7 @@ int func_257(int iParam0, int iParam1)
 				return 0;
 			}
 			iVar1 = func_211(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

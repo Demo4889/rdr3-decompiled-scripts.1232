@@ -9477,7 +9477,7 @@ void func_310(var uParam0)
 			}
 			if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			if (!iLocal_54)
 			{
@@ -9667,7 +9667,7 @@ int func_312(var uParam0)
 				func_372(&iLocal_288);
 				if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 				{
-					PED::_0xE0B61ED8BB37712F(Global_35);
+					PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 				}
 				else if (!iLocal_1140)
 				{

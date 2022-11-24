@@ -6158,7 +6158,7 @@ void func_235(int iParam0)
 		ENTITY::SET_CAN_AUTO_VAULT_ON_ENTITY(iParam0, true);
 		ENTITY::SET_CAN_CLIMB_ON_ENTITY(iParam0, true);
 		VEHICLE::SET_VEHICLE_IS_CONSIDERED_BY_PLAYER(iParam0, true);
-		AITRANSPORT::_0xBA8818212633500A(iParam0, 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iParam0, 0, 0);
 	}
 }
 
@@ -13246,7 +13246,7 @@ int func_474(var uParam0, int iParam1)
 			uParam0->f_9 = func_326();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

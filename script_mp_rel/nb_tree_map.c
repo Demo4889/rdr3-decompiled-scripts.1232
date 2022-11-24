@@ -2115,7 +2115,7 @@ void func_41()
 		func_88(1);
 		return;
 	}
-	Local_0.f_6 = func_73(_NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::_0x901E0DC25080C8B9(iVar0)));
+	Local_0.f_6 = func_73(_NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::NETWORK_GET_GANG_ID(iVar0)));
 	func_89(256);
 	if (func_90(Local_0.f_6))
 	{
@@ -3428,7 +3428,7 @@ void func_133()
 
 bool func_134(int iParam0, int iParam1, int iParam2)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return false;
 	}
@@ -4094,7 +4094,7 @@ void func_193(struct<2> Param0, var uParam2)
 		return;
 	}
 	iVar2 = -1;
-	iVar3 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar3 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	if (iVar3 == 0)
 	{
 		return;
@@ -4354,8 +4354,8 @@ void func_208(int iParam0)
 	{
 		case -773758976:
 			func_230();
-			iVar1 = _NAMESPACE26::_0x901E0DC25080C8B9(iParam0->f_10);
-			iVar2 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+			iVar1 = _NAMESPACE26::NETWORK_GET_GANG_ID(iParam0->f_10);
+			iVar2 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 			if (((_NAMESPACE26::_0xD6F6ACF4392187FB(iVar1) && _NAMESPACE26::_0x93A91A351A07360E(iVar1)) && _NAMESPACE26::_0xD6F6ACF4392187FB(iVar2)) && _NAMESPACE26::_0x93A91A351A07360E(iVar2))
 			{
 				if (iVar1 == iVar2)
@@ -5064,7 +5064,7 @@ var func_254(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -5234,7 +5234,7 @@ var func_254(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -5259,7 +5259,7 @@ var func_254(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;

@@ -528,7 +528,7 @@ int func_21(var uParam0)
 	{
 		iLocal_24 = ANIMSCENE::_GET_ANIM_SCENE_VEHICLE(uParam0->f_2, "SKIFF", false);
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_24, true, true);
-		VEHICLE::_0x838C216C2B05A009(iLocal_22, iLocal_24);
+		VEHICLE::SET_PED_OWNS_VEHICLE(iLocal_22, iLocal_24);
 		ENTITY::FREEZE_ENTITY_POSITION(iLocal_24, false);
 		return 0;
 	}

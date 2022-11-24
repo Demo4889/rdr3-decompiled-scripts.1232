@@ -8533,7 +8533,7 @@ int func_300(var uParam0, bool bParam1, bool bParam2)
 		PED::SET_PED_NAME_DEBUG(iLocal_379, "EDW21_HORSE");
 		TASK::TASK_STAND_STILL(iLocal_379, -1);
 		PHYSICS::_0x06AADE17334F7A40(iLocal_379, vLocal_385);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_379, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_379, 0, 1);
 	}
 	if ((!iLocal_289 && !ENTITY::IS_ENTITY_DEAD(iLocal_283)) && !ENTITY::IS_ENTITY_DEAD(iLocal_310))
 	{
@@ -14239,7 +14239,7 @@ int func_482(var uParam0, int iParam1)
 			uParam0->f_9 = func_268();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -28597,7 +28597,7 @@ int func_969(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

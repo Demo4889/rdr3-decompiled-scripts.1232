@@ -471,7 +471,7 @@ int func_12()
 				ENTITY::SET_ENTITY_INVINCIBLE(Local_9.f_131, false);
 				ENTITY::_0xC64E597783BE9A1D(Local_9.f_131, false);
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(Local_9.f_131, 0, 1);
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 				if (ENTITY::DOES_ENTITY_EXIST(Local_9.f_117))
 				{
 					func_74(&(Local_9.f_117));
@@ -6775,7 +6775,7 @@ int func_288(var uParam0, int iParam1)
 			uParam0->f_9 = func_289();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

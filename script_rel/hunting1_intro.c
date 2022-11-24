@@ -3328,7 +3328,7 @@ void func_140(int iParam0, vector3 vParam1, float fParam4)
 	if (!ENTITY::DOES_ENTITY_EXIST(iLocal_19))
 	{
 		iLocal_19 = func_292(iLocal_29, vParam1, fParam4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_19, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_19, 0, 1);
 		func_293(iLocal_19, 1);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_19, true);
 		TASK::TASK_STAND_STILL(iLocal_19, -1);
@@ -14580,7 +14580,7 @@ void func_626(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -17683,7 +17683,7 @@ void func_751(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_263(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_263(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_263(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_263(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

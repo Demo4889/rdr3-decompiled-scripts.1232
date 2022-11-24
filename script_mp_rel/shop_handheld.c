@@ -717,7 +717,7 @@ void func_10(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -5889,7 +5889,7 @@ int func_165(var uParam0, bool bParam1, bool bParam2)
 	func_399(uParam0, 6, 0);
 	func_399(uParam0, 1, 0);
 	func_400(uParam0, 1, 267171385 /* GXTEntry: "Processing" */);
-	if ((func_401(&Var1, cVar9, Var17) && !MISC::_0x375F5870A7B8BEC1(func_402(Var1))) && !MISC::ARE_STRINGS_EQUAL(func_402(Var1), "DUMMY_TEXT"))
+	if ((func_401(&Var1, cVar9, Var17) && !MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(func_402(Var1))) && !MISC::ARE_STRINGS_EQUAL(func_402(Var1), "DUMMY_TEXT"))
 	{
 		func_403(&uVar25, 1);
 		if (func_167(bParam1, 1))

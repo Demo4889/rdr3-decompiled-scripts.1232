@@ -1405,12 +1405,12 @@ void func_61()
 				if (func_91(0) || func_92(0, "A_M_M_ValTownfolk_02", 1))
 				{
 					TASK::TASK_SMART_FLEE_PED(iLocal_16, Global_35, 10000f, -1, 0, 3f, iLocal_17);
-					AITRANSPORT::_0xBA8818212633500A(iLocal_17, 0, 0);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_17, 0, 0);
 					iLocal_31 = 1;
 				}
 				else
 				{
-					AITRANSPORT::_0xBA8818212633500A(iLocal_17, 0, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_17, 0, 1);
 				}
 			}
 		}
@@ -1455,7 +1455,7 @@ void func_62()
 			}
 			if (func_39(iLocal_17, 73))
 			{
-				AITRANSPORT::_0xBA8818212633500A(iLocal_17, 0, 0);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_17, 0, 0);
 				TASK::TASK_SMART_FLEE_PED(iLocal_17, Global_35, 1000f, -1, 0, 2f, 0);
 			}
 			func_101(1034793488, -2147483648);
@@ -2398,7 +2398,7 @@ void func_97()
 			{
 				func_30(0);
 				TASK::TASK_SMART_FLEE_PED(iLocal_16, Global_35, 10000f, -1, 0, 3f, iLocal_17);
-				AITRANSPORT::_0xBA8818212633500A(iLocal_17, 0, 0);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_17, 0, 0);
 				PED::_0x2208438012482A1A(iLocal_16, false, false);
 				iLocal_31 = 1;
 			}
@@ -2779,7 +2779,7 @@ void func_115(int iParam0)
 			TASK::CLEAR_PED_TASKS(iLocal_14, 1, 0);
 			if (func_39(iLocal_15, 0))
 			{
-				AITRANSPORT::_0xBA8818212633500A(iLocal_15, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_15, 0, 1);
 				FLOCK::SET_ANIMAL_TUNING_BOOL_PARAM(iLocal_15, 48, true);
 			}
 			TASK::OPEN_SEQUENCE_TASK(&iVar0);
@@ -3329,7 +3329,7 @@ int func_122()
 		{
 			PED::SET_PED_CONFIG_FLAG(iLocal_15, 300, true);
 			PED::SET_PED_CONFIG_FLAG(iLocal_15, 297, false);
-			AITRANSPORT::_0xBA8818212633500A(iLocal_15, 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_15, 0, 1);
 			iLocal_38 = 1;
 			func_219(1, 1);
 		}
@@ -5940,7 +5940,7 @@ int func_199(var uParam0, int iParam1)
 			uParam0->f_9 = func_200();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -7068,7 +7068,7 @@ void func_251(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

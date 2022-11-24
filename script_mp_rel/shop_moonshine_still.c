@@ -3844,7 +3844,7 @@ void func_60(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -8553,7 +8553,7 @@ void func_215(var uParam0, bool bParam1)
 	func_624(Global_35, 1, 1);
 	Var0.f_1 = 1;
 	Var0 = 2;
-	SCRIPTS::_0x31010318BA9897AC(&(Var0.f_2), &Global_1273882);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Var0.f_2), &Global_1273882);
 	Var0.f_3 = 1;
 	func_625(&Var0);
 	func_479(34, 0, 0, 0, 0);
@@ -11689,7 +11689,7 @@ void func_350(var uParam0, var uParam1, int iParam2, var uParam3)
 	}
 	else if (iParam2 == 603940701)
 	{
-		iVar4 = _NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+		iVar4 = _NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 		if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar4))
 		{
 			iVar4 = PLAYER::PLAYER_ID();

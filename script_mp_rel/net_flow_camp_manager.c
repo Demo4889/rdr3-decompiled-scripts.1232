@@ -501,7 +501,7 @@ int func_16(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
 	int iVar0;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return -1;
 	}
@@ -1048,7 +1048,7 @@ bool func_45(int iParam0, int iParam1)
 	{
 		return false;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam1))
 	{
 		return false;
 	}
@@ -1057,7 +1057,7 @@ bool func_45(int iParam0, int iParam1)
 
 bool func_46(int iParam0, int iParam1)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam1))
 	{
 		return false;
 	}
@@ -3675,7 +3675,7 @@ int func_108(var uParam0)
 						{
 							iVar38 = 0;
 							iVar39 = 0;
-							if (!VEHICLE::_0xA19447D83294E29F(&(uParam0->f_326[iVar0 /*8*/]), &iVar38, &iVar39))
+							if (!VEHICLE::GET_DRAFT_ANIMAL_COUNT(&(uParam0->f_326[iVar0 /*8*/]), &iVar38, &iVar39))
 							{
 								bVar1 = false;
 							}
@@ -3898,13 +3898,13 @@ int func_114(var uParam0)
 			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST((uParam0->f_388[iVar0 /*20*/])->f_1))
 			{
 			}
-			else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_388[iVar0 /*20*/])->f_3)))
+			else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_388[iVar0 /*20*/])->f_3)))
 			{
 				MISC::SET_BIT(uParam0->f_388[iVar0 /*20*/], 3);
 			}
 			else
 			{
-				if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_388[iVar0 /*20*/])->f_11)))
+				if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_388[iVar0 /*20*/])->f_11)))
 				{
 				}
 				(uParam0->f_388[iVar0 /*20*/])->f_1 = ANIMSCENE::_CREATE_ANIM_SCENE(&((uParam0->f_388[iVar0 /*20*/])->f_3), (uParam0->f_388[iVar0 /*20*/])->f_2, &((uParam0->f_388[iVar0 /*20*/])->f_11), false, false);
@@ -3942,7 +3942,7 @@ int func_114(var uParam0)
 								else if ((uParam0->f_127[iVar2 /*33*/])->f_19 != iVar0)
 								{
 								}
-								else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_127[iVar2 /*33*/])->f_19.f_1)))
+								else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_127[iVar2 /*33*/])->f_19.f_1)))
 								{
 								}
 								else
@@ -3964,7 +3964,7 @@ int func_114(var uParam0)
 								else if ((uParam0->f_6[iVar2 /*12*/])->f_8 != iVar0)
 								{
 								}
-								else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_6[iVar2 /*12*/])->f_8.f_1)))
+								else if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&((uParam0->f_6[iVar2 /*12*/])->f_8.f_1)))
 								{
 								}
 								else

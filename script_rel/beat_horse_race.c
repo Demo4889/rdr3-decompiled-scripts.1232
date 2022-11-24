@@ -687,7 +687,7 @@ void func_3()
 	if (!ENTITY::IS_ENTITY_DEAD(&(uLocal_412[0])))
 	{
 		func_22(&(uLocal_412[0]), 1);
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_412[1]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_412[1]), 0, 0);
 	}
 	func_23(Global_1935630, 4);
 	func_24(27);
@@ -3589,7 +3589,7 @@ void func_78()
 				TASK::TASK_STAND_STILL(&(uLocal_412[1]), -1);
 				TASK::TASK_STAND_STILL(&(uLocal_412[0]), -1);
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(Local_403, &(sLocal_525[2]), true);
-				AITRANSPORT::_0xBA8818212633500A(&(uLocal_412[1]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_412[1]), 0, 1);
 				PHYSICS::_0xBDDA142759307528(&(uLocal_412[1]));
 				PHYSICS::_0xBDDA142759307528(&(uLocal_412[0]));
 				func_216(&iLocal_523, 8);
@@ -3683,7 +3683,7 @@ void func_79()
 				TASK::TASK_STAND_STILL(&(uLocal_412[1]), -1);
 				TASK::TASK_STAND_STILL(&(uLocal_412[0]), -1);
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(Local_403, &(sLocal_525[1]), true);
-				AITRANSPORT::_0xBA8818212633500A(&(uLocal_412[1]), 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_412[1]), 0, 1);
 				PHYSICS::_0xBDDA142759307528(&(uLocal_412[0]));
 				PHYSICS::_0xBDDA142759307528(&(uLocal_412[1]));
 				func_216(&iLocal_523, 16);
@@ -3745,7 +3745,7 @@ void func_80()
 			}
 			if (fLocal_1003 >= 0.99f)
 			{
-				AITRANSPORT::_0xBA8818212633500A(&(uLocal_412[1]), 0, 0);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_412[1]), 0, 0);
 			}
 			if (ANIMSCENE::_0xD8254CB2C586412B(Local_403, 0))
 			{
@@ -3832,7 +3832,7 @@ void func_81()
 	iLocal_889 = 0;
 	if (func_99(&(uLocal_412[1]), 0, 1))
 	{
-		AITRANSPORT::_0xBA8818212633500A(&(uLocal_412[1]), 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(uLocal_412[1]), 0, 0);
 	}
 	if (!func_264())
 	{
@@ -17156,7 +17156,7 @@ int func_458(var uParam0, int iParam1)
 			uParam0->f_9 = func_459();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

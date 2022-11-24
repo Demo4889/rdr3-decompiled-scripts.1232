@@ -2855,17 +2855,17 @@ void func_69(var uParam0, bool bParam1, int iParam2)
 				func_105(&((uParam0->f_20[iParam2 /*14*/])->f_5), 50, 10, 0);
 				if (iParam2 == 1)
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[4 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[4 /*14*/]), 0);
 					iLocal_11 = 871322766;
 				}
 				else if (iParam2 == 2)
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[5 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[5 /*14*/]), 0);
 					iLocal_11 = 1546182539;
 				}
 				else
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
 				}
 				func_106(&(uParam0->f_20[iParam2 /*14*/]), iLocal_11, 0, 0, 0, -1082130432);
 				if (!PED::_0x5102307CE88798EB(&(uParam0->f_20[iParam2 /*14*/])))
@@ -2889,17 +2889,17 @@ void func_69(var uParam0, bool bParam1, int iParam2)
 			if (iParam2 == 0)
 			{
 				func_108(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[3 /*14*/]), 1, -1, 1);
-				PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
 			}
 			else if (iParam2 == 1)
 			{
 				func_108(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[4 /*14*/]), 1, -1, 1);
-				PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[4 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[4 /*14*/]), 0);
 			}
 			else
 			{
 				func_108(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[5 /*14*/]), 1, -1, 1);
-				PED::_0x931B241409216C1F(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[5 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[iParam2 /*14*/]), &(uParam0->f_20[5 /*14*/]), 0);
 			}
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(&(uParam0->f_20[iParam2 /*14*/]), -401180987);
 			PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[iParam2 /*14*/]), 146, true);
@@ -5251,7 +5251,7 @@ int func_152(var uParam0, int iParam1)
 			uParam0->f_9 = func_153();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

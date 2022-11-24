@@ -1859,7 +1859,7 @@ int func_31(var uParam0)
 						{
 							PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[0 /*14*/]), 297, true);
 							PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[0 /*14*/]), 130, false);
-							PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
+							PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
 							PED::_0xED1C764997A86D5A(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]));
 							WEAPON::REMOVE_ALL_PED_WEAPONS(&(uParam0->f_20[0 /*14*/]), true, true);
 							WEAPON::_GIVE_WEAPON_TO_PED_2(&(uParam0->f_20[0 /*14*/]), joaat("weapon_revolver_cattleman"), 999, false, true, 0, false, 0.5f, 1f, 752097756, false, 0f, false);
@@ -4921,7 +4921,7 @@ int func_127(var uParam0, int iParam1)
 			uParam0->f_9 = func_128();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

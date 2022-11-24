@@ -1926,7 +1926,7 @@ int func_31(var uParam0)
 				MISC::_0x870708A6E147A9AD(&(uParam0->f_20[0 /*14*/]), "", 35f, 35f, 8, 0, 0, 0, 0, -1);
 				if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[1 /*14*/])))
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
 					if (*uParam0 != 44)
 					{
 						PED::_0xED1C764997A86D5A(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]));
@@ -1952,7 +1952,7 @@ int func_31(var uParam0)
 					VOLUME::_0x4A8FEFC43FD8AC9B(iLocal_13, 0, 1);
 					PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[1 /*14*/]), 297, true);
 					PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[1 /*14*/]), 130, false);
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
 					MISC::_0x870708A6E147A9AD(&(uParam0->f_20[1 /*14*/]), "", 2f, 2f, 8, 0, 0, 0, 0, -1);
 					TASK::TASK_ANIMAL_UNALERTED(&(uParam0->f_20[1 /*14*/]), -1, iLocal_12, 0, 0);
 					PED::SET_PED_KEEP_TASK(&(uParam0->f_20[1 /*14*/]), true);
@@ -6018,7 +6018,7 @@ int func_171(var uParam0, int iParam1)
 			uParam0->f_9 = func_172();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

@@ -1092,7 +1092,7 @@ int func_29(int iParam0)
 	}
 	if (!func_139(&(Local_14.f_3[0])))
 	{
-		VEHICLE::_0xA19447D83294E29F(&(Local_14.f_3[0]), &uVar5, &iVar6);
+		VEHICLE::GET_DRAFT_ANIMAL_COUNT(&(Local_14.f_3[0]), &uVar5, &iVar6);
 		VEHICLE::_0x8C6D9A399126C194(&(Local_14.f_3[0]), 7);
 		if (iVar6 > 1)
 		{

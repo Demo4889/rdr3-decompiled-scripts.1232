@@ -1780,7 +1780,7 @@ int func_35()
 			ENTITY::PLAY_ENTITY_ANIM((Local_79[1 /*12*/])->f_8, (Local_128[11 /*2*/])->f_1, &(Local_128[11 /*2*/]), 8f, true, true, false, 0f, 0);
 			func_146(&(uLocal_496[1]), 197929875, -1, 0, 0, -1082130432);
 			func_147();
-			PED::_0x931B241409216C1F(&(uLocal_496[0]), &(uLocal_496[1]), 0);
+			PED::SET_PED_OWNS_ANIMAL(&(uLocal_496[0]), &(uLocal_496[1]), 0);
 			if (iLocal_289 == 0)
 			{
 				iLocal_695 = 1;
@@ -4576,7 +4576,7 @@ int func_114(var uParam0, int iParam1)
 			uParam0->f_9 = func_115();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

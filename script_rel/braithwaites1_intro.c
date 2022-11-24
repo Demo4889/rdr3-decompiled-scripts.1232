@@ -2946,7 +2946,7 @@ int func_128(var uParam0)
 					}
 					if (PED::IS_PED_IN_ANY_VEHICLE(&(iLocal_31[iVar4]), true))
 					{
-						PED::_0xE0B61ED8BB37712F(&(iLocal_31[iVar4]));
+						PED::_WARP_PED_OUT_OF_VEHICLE(&(iLocal_31[iVar4]));
 					}
 					if (PED::IS_PED_ON_MOUNT(&(iLocal_31[iVar4])))
 					{

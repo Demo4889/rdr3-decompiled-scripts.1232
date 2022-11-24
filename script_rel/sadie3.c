@@ -74866,7 +74866,7 @@ int func_1863(int iParam0)
 	{
 		if (VEHICLE::_0xEA44E97849E9F3DD(*iParam0))
 		{
-			if (VEHICLE::_0xA19447D83294E29F(*iParam0, &iVar0, &iVar1))
+			if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(*iParam0, &iVar0, &iVar1))
 			{
 				if (iVar0 == iVar1)
 				{
@@ -76119,7 +76119,7 @@ void func_1918(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -84934,7 +84934,7 @@ int func_2276(var uParam0, int iParam1)
 			uParam0->f_9 = func_510();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -91842,7 +91842,7 @@ void func_2513(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_192(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_192(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_192(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_192(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

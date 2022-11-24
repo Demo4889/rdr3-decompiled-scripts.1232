@@ -1087,7 +1087,7 @@ void func_53(int iParam0, bool bParam1, bool bParam2, bool bParam3, float fParam
 	{
 		if (PED::IS_PED_IN_ANY_VEHICLE(&(uLocal_6[iParam0]), true))
 		{
-			PED::_0xE0B61ED8BB37712F(&(uLocal_6[iParam0]));
+			PED::_WARP_PED_OUT_OF_VEHICLE(&(uLocal_6[iParam0]));
 		}
 	}
 	func_13(&(iLocal_3[iParam0]), bParam1, bParam2, bParam3, fParam4, 1, 1, 0, 0, 0, 0);

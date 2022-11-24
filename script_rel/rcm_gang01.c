@@ -14595,7 +14595,7 @@ void func_525(var uParam0)
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(Local_17.f_11))
 		{
-			PED::_0xE0B61ED8BB37712F(Local_17.f_11);
+			PED::_WARP_PED_OUT_OF_VEHICLE(Local_17.f_11);
 			PED::CLEAR_PED_WETNESS(Local_17.f_11);
 		}
 		PED::CLEAR_PED_WETNESS(Global_35);
@@ -23711,7 +23711,7 @@ int func_803(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -36148,7 +36148,7 @@ int func_1219(var uParam0, int iParam1)
 			uParam0->f_9 = func_249();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -37383,7 +37383,7 @@ var func_1257(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -37553,7 +37553,7 @@ var func_1257(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -37578,7 +37578,7 @@ var func_1257(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, va
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;

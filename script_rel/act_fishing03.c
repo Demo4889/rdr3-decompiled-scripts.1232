@@ -885,7 +885,7 @@ void func_7(var uParam0)
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_27))
 	{
 		PED::SET_PED_MAX_MOVE_BLEND_RATIO(iLocal_27, 3f);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_27, 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_27, 0, 0);
 	}
 	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(&(Local_186.f_32[1 /*3*/])))
 	{
@@ -10835,13 +10835,13 @@ int func_239(var uParam0)
 			if ((PED::IS_PED_ON_MOUNT(Global_35) && TASK::GET_SCRIPT_TASK_STATUS(Global_35, 501393341, 1) != 1) && func_519(iLocal_28, iVar0, 1, 1) > 2f)
 			{
 				func_523(&iLocal_33, 12);
-				AITRANSPORT::_0xBA8818212633500A(iLocal_27, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_27, 0, 1);
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 1, 256, 0);
 				TASK::TASK_DISMOUNT_ANIMAL(Global_35, 0, 0, 0, 0, 0);
 			}
 			if (!PED::IS_PED_ON_MOUNT(Global_35) && func_62(iLocal_146, 256))
 			{
-				AITRANSPORT::_0xBA8818212633500A(iLocal_27, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_27, 0, 1);
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 1, 256, 0);
 				func_523(&iLocal_33, 12);
 				func_63(&iLocal_146, 256);
@@ -11404,7 +11404,7 @@ int func_247(var uParam0)
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION(&(Local_186.f_25[0]), 256, 8192, 0, -1, -1, 0);
 		PED::_0x4C39C95AE5DB1329(&(Local_186.f_25[0]), 0, 6);
 	}
-	AITRANSPORT::_0xBA8818212633500A(iLocal_28, 0, 1);
+	AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_28, 0, 1);
 	func_508(&uLocal_36, Global_35, "ARTHUR", 0);
 	func_508(&uLocal_36, func_61(uParam0->f_2), "KIERAN", 0);
 	func_600(&(uParam0->f_9), 16, 0);

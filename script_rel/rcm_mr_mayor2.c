@@ -13053,7 +13053,7 @@ void func_430(var uParam0)
 	if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, true))
 	{
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_35, 0, 1);
-		PED::_0xE0B61ED8BB37712F(Global_35);
+		PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	}
 	func_863(1);
 	func_429(0);
@@ -25623,7 +25623,7 @@ int func_850(var uParam0, int iParam1)
 			uParam0->f_9 = func_265();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -28099,7 +28099,7 @@ int func_949(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -65273,7 +65273,7 @@ void func_2223(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

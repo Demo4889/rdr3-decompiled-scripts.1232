@@ -271,7 +271,7 @@ void func_6()
 			}
 			break;
 		case 2:
-			VEHICLE::_0xA19447D83294E29F(iLocal_45, &uVar0, &iVar1);
+			VEHICLE::GET_DRAFT_ANIMAL_COUNT(iLocal_45, &uVar0, &iVar1);
 			if (iVar1 >= VEHICLE::_0x5B1A26BB18E7D451(joaat("wagon02x")))
 			{
 				MISC::GET_MODEL_DIMENSIONS(joaat("wagon02x"), &vVar2, &vVar5);

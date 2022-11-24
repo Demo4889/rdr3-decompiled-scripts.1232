@@ -2840,8 +2840,8 @@ void func_62()
 	PED::SET_PED_COMBAT_ATTRIBUTES(&(uLocal_873[1]), 98, false);
 	PED::SET_PED_COMBAT_ATTRIBUTES(&(uLocal_873[0]), 1, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(&(uLocal_873[1]), 1, true);
-	PED::_0x931B241409216C1F(&(uLocal_873[0]), &(uLocal_873[3]), 0);
-	PED::_0x931B241409216C1F(&(uLocal_873[1]), &(uLocal_873[2]), 0);
+	PED::SET_PED_OWNS_ANIMAL(&(uLocal_873[0]), &(uLocal_873[3]), 0);
+	PED::SET_PED_OWNS_ANIMAL(&(uLocal_873[1]), &(uLocal_873[2]), 0);
 	PED::SET_PED_CONFIG_FLAG(&(uLocal_873[0]), 6, true);
 	PED::SET_PED_CONFIG_FLAG(&(uLocal_873[1]), 6, true);
 	PED::SET_PED_CONFIG_FLAG(&(uLocal_873[4]), 6, true);
@@ -2888,7 +2888,7 @@ void func_62()
 	func_175(0);
 	func_176(&(uLocal_873[4]), 1142025875);
 	func_176(&(uLocal_873[5]), 1142025875);
-	AITRANSPORT::_0xBA8818212633500A(iLocal_142, 0, 1);
+	AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_142, 0, 1);
 	func_177(&(uLocal_873[0]), &Local_314, 0);
 	func_177(&(uLocal_873[1]), &Local_314, 0);
 	func_177(&(uLocal_873[4]), &Local_314, 0);
@@ -20367,7 +20367,7 @@ int func_515(var uParam0, int iParam1)
 			uParam0->f_9 = func_447();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

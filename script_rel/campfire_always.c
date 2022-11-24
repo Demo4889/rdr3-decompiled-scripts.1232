@@ -3121,7 +3121,7 @@ void func_64(var uParam0)
 					{
 						if (PED::IS_PED_HUMAN(&(uParam0->f_16[0])))
 						{
-							PED::_0x931B241409216C1F(&(uParam0->f_16[0]), &(uParam0->f_16[iVar1]), 0);
+							PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_16[0]), &(uParam0->f_16[iVar1]), 0);
 							FLOCK::SET_ANIMAL_TUNING_BOOL_PARAM(&(uParam0->f_16[iVar1]), 67, true);
 							ENTITY::SET_ENTITY_PROOFS(&(uParam0->f_16[iVar1]), 2, false);
 						}
@@ -3534,7 +3534,7 @@ int func_66(int iParam0)
 			{
 				if (func_201(&(iParam0->f_16[iVar0]), 0))
 				{
-					PED::_0x931B241409216C1F(&(iParam0->f_16[iVar0]), &(iParam0->f_19[iVar0]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(iParam0->f_16[iVar0]), &(iParam0->f_19[iVar0]), 0);
 				}
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(iParam0->f_19[iVar0]), false);
 				POPULATION::_0xF74E134F40192884(&(iParam0->f_19[iVar0]), 1);
@@ -23261,7 +23261,7 @@ int func_504(var uParam0, int iParam1)
 			uParam0->f_9 = func_505();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

@@ -16539,7 +16539,7 @@ int func_568(var uParam0, bool bParam1)
 	fVar3 = 134.8983f;
 	if (func_1003(uParam0, &iLocal_16, iLocal_187, vVar0, fVar3, 1))
 	{
-		AITRANSPORT::_0xBA8818212633500A(iLocal_16, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_16, 0, 1);
 		if (func_1004(&iLocal_16, vVar0, fVar3, bParam1))
 		{
 			return 1;
@@ -29380,7 +29380,7 @@ int func_958(var uParam0, int iParam1)
 			uParam0->f_9 = func_272();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -30047,7 +30047,7 @@ int func_985(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -30374,7 +30374,7 @@ int func_1004(int* iParam0, vector3 vParam1, float fParam4, bool bParam5)
 	ENTITY::_0x18FF3110CF47115D(*iParam0, 15, 1);
 	PED::SET_PED_CONFIG_FLAG(*iParam0, 172, true);
 	PED::SET_PED_CONFIG_FLAG(*iParam0, 324, true);
-	AITRANSPORT::_0xBA8818212633500A(*iParam0, 0, 1);
+	AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(*iParam0, 0, 1);
 	TASK::SET_PED_PATH_MAY_ENTER_WATER(*iParam0, true);
 	if (!bParam5)
 	{

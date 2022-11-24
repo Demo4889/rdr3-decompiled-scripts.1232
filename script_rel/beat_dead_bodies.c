@@ -421,7 +421,7 @@ void func_3()
 				if (func_41(&(iLocal_263[0]), iLocal_262, 20f, 1))
 				{
 					VEHICLE::SET_VEHICLE_CAN_BE_USED_BY_FLEEING_PEDS(iLocal_262, true);
-					VEHICLE::_0x838C216C2B05A009(&(iLocal_263[0]), iLocal_262);
+					VEHICLE::SET_PED_OWNS_VEHICLE(&(iLocal_263[0]), iLocal_262);
 					PED::SET_PED_COMBAT_ATTRIBUTES(&(iLocal_263[0]), 6, true);
 					TASK::OPEN_SEQUENCE_TASK(&iVar0);
 					if (!func_42(&(iLocal_263[0]), iLocal_262, 0))
@@ -883,7 +883,7 @@ int func_20(var uParam0, int iParam1, int iParam2)
 
 	iVar0 = -1;
 	iVar1 = -1;
-	if (VEHICLE::_0xA19447D83294E29F(iParam1, &iVar0, &iVar1))
+	if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iParam1, &iVar0, &iVar1))
 	{
 		if (iVar0 <= 0)
 		{
@@ -7261,7 +7261,7 @@ int func_232()
 			}
 			if (func_453(&(iLocal_263[0]), iLocal_262, 0))
 			{
-				VEHICLE::_0x838C216C2B05A009(&(iLocal_263[0]), iLocal_262);
+				VEHICLE::SET_PED_OWNS_VEHICLE(&(iLocal_263[0]), iLocal_262);
 				TASK::TASK_VEHICLE_DRIVE_WANDER(&(iLocal_263[0]), iLocal_262, 5f, 524419);
 				iLocal_211 = 10;
 			}
@@ -12587,7 +12587,7 @@ int func_391(var uParam0, int iParam1)
 			uParam0->f_9 = func_392();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

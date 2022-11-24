@@ -2757,13 +2757,13 @@ int func_41(var uParam0, int iParam1, int iParam2, char* sParam3)
 		NETWORK::NETWORK_REQUEST_CONTROL_OF_NETWORK_ID((uParam0->f_8.f_4[iParam1 /*5*/])->f_2);
 		return 0;
 	}
-	NETWORK::_0x7182EDDA1EE7DB5A((uParam0->f_8.f_4[iParam1 /*5*/])->f_2);
+	NETWORK::PREVENT_NETWORK_ID_MIGRATION((uParam0->f_8.f_4[iParam1 /*5*/])->f_2);
 	if (!NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iVar1))
 	{
 		NETWORK::NETWORK_REQUEST_CONTROL_OF_NETWORK_ID(iVar1);
 		return 0;
 	}
-	NETWORK::_0x7182EDDA1EE7DB5A(iVar1);
+	NETWORK::PREVENT_NETWORK_ID_MIGRATION(iVar1);
 	iVar2 = NETWORK::_0xD7F6781A0ABAF6FB(iVar1);
 	if (ENTITY::DOES_ENTITY_EXIST(iVar0) && ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar2))
 	{
@@ -3940,13 +3940,13 @@ void func_88(var uParam0)
 				}
 				ANIMSCENE::LOAD_ANIM_SCENE(iVar0);
 				uParam0->f_4 = NETWORK::_0xE0D73CDDEA79DDCD(iVar0);
-				NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
+				NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
 				func_73(uParam0, 2);
 			}
 			break;
 		case 2:
 			iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
-			NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
+			NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
 			if (ANIMSCENE::IS_ANIM_SCENE_LOADED(iVar0, 1, 0))
 			{
 				func_73(uParam0, 3);
@@ -4400,7 +4400,7 @@ void func_109(var uParam0, int iParam1)
 	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
 	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
-		NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
+		NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
 		ANIMSCENE::_0xDF7B5144E25CD3FE(iVar0, func_134(iParam1));
 		uParam0->f_3 = iParam1;
 		uParam0->f_18 = 1;
@@ -4426,7 +4426,7 @@ int func_110(var uParam0)
 	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
 	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
-		NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
+		NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
 		return ANIMSCENE::_0x23E33CB9F4A3F547(iVar0, func_134(uParam0->f_3));
 	}
 	return 0;
@@ -4442,7 +4442,7 @@ void func_111(var uParam0)
 		return;
 	}
 	iVar1 = NETWORK::_0xD7F6781A0ABAF6FB(uParam0->f_4);
-	NETWORK::_0x7182EDDA1EE7DB5A(uParam0->f_4);
+	NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
 	ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(iVar1, func_134(uParam0->f_3), true);
 	sVar0 = func_134(uParam0->f_2);
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(sVar0))
@@ -4500,10 +4500,10 @@ int func_112(var uParam0, var uParam1)
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar1);
 	}
 	iVar0 = NETWORK::NET_TO_PED(uParam1->f_2);
-	NETWORK::_0x7182EDDA1EE7DB5A(uParam1->f_2);
+	NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam1->f_2);
 	if (!MISC::IS_BIT_SET(uParam1->f_4, 0))
 	{
-		NETWORK::_0x7182EDDA1EE7DB5A(uParam1->f_2);
+		NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam1->f_2);
 		func_139(uParam1);
 		DECORATOR::DECOR_SET_INT(iVar0, "MiniScenePedData", 0);
 		MISC::SET_BIT(&(uParam1->f_4), 0);

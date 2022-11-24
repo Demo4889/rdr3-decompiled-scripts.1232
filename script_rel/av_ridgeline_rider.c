@@ -1828,7 +1828,7 @@ int func_32(var uParam0)
 			{
 				func_68(&(uParam0->f_20[0 /*14*/]), (uParam0->f_20[1 /*14*/])->f_5, (uParam0->f_20[1 /*14*/])->f_8, 2, 1073741824);
 				func_69(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), 1, -1, 1);
-				PED::_0x931B241409216C1F(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), 0);
 				func_70(uParam0->f_20[1 /*14*/], 0, 1);
 			}
 			func_71(&uLocal_10);
@@ -5246,7 +5246,7 @@ int func_151(var uParam0, int iParam1)
 			uParam0->f_9 = func_152();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

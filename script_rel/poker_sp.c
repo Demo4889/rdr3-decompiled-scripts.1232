@@ -33986,7 +33986,7 @@ void func_1078(int iParam0)
 {
 	if (!func_1537(iParam0))
 	{
-		SCRIPTS::_0x31010318BA9897AC(&(Global_1058888->f_42357.f_164), iParam0);
+		SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Global_1058888->f_42357.f_164), iParam0);
 	}
 }
 

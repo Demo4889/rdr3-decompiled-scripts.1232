@@ -987,7 +987,7 @@ void func_32()
 						iVar30 = NETWORK::_0xB4A25351D79B444C(&Global_1196787);
 						if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar30))
 						{
-							SCRIPTS::_0x31010318BA9897AC(&uVar29, iVar30);
+							SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar29, iVar30);
 						}
 					}
 					if (!SCRIPTS::_0x179A6F0EE2E79026(&uVar29))
@@ -1268,10 +1268,10 @@ void func_39(struct<2> Param0, var uParam2, var uParam3, var uParam4, var uParam
 	(Global_1197721->f_5[iVar12 /*5*/])->f_1 = 2;
 	(Global_1197721->f_5[iVar12 /*5*/])->f_4 = NETWORK::GET_CLOUD_TIME_AS_INT();
 	Var0.f_4 = 1;
-	SCRIPTS::_0x31010318BA9897AC(&uVar14, Param0.f_1);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar14, Param0.f_1);
 	func_38(&Var0, uVar14);
 	SCRIPTS::_0xDE544B7EC0C187CC(&uVar14);
-	iVar15 = _NAMESPACE26::_0x901E0DC25080C8B9(Param0.f_1);
+	iVar15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Param0.f_1);
 	if (_NAMESPACE26::_0xD6F6ACF4392187FB(iVar15) && _NAMESPACE26::_0x0F99F6436528A089(iVar15))
 	{
 		Var0.f_10 = iVar15;
@@ -1281,7 +1281,7 @@ void func_39(struct<2> Param0, var uParam2, var uParam3, var uParam4, var uParam
 		iVar16 = NETWORK::_0xB4A25351D79B444C(&Global_1196787);
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar16))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar14, iVar16);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar14, iVar16);
 		}
 	}
 	Var0.f_4 = 5;
@@ -1646,7 +1646,7 @@ var func_54(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -1816,7 +1816,7 @@ var func_54(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -1841,7 +1841,7 @@ var func_54(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;
@@ -1857,7 +1857,7 @@ var func_55(int iParam0)
 {
 	var uVar0;
 
-	SCRIPTS::_0x31010318BA9897AC(&uVar0, iParam0);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iParam0);
 	return uVar0;
 }
 

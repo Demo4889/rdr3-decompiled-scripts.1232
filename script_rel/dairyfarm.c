@@ -2657,7 +2657,7 @@ void func_94(int iParam0)
 	iVar1 = func_93(iVar0);
 	if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 	{
-		PED::_0x931B241409216C1F(iVar1, iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(iVar1, iParam0, 0);
 	}
 }
 

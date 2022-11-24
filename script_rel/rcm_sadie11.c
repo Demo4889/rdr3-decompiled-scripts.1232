@@ -4140,12 +4140,12 @@ int func_98(var uParam0, int iParam1)
 						}
 						if (!AITRANSPORT::_0xF382C92CCC1CCDBC(iLocal_760, 7, 1))
 						{
-							AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 1);
+							AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 1);
 						}
 						PED::SET_PED_CONFIG_FLAG(iLocal_430, 65, true);
 						func_315(2);
 						func_325(uParam0, (Local_1347[10 /*9*/])->f_2, 1, -1082130432, 0, 0, -1, -1, 0);
-						AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 1);
+						AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 1);
 						return 7;
 					}
 					break;
@@ -4977,7 +4977,7 @@ int func_109(var uParam0)
 						func_385(1);
 						func_329(10);
 						func_82(&uLocal_705, 0);
-						AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 1);
+						AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 1);
 					}
 				}
 				else
@@ -4992,10 +4992,10 @@ int func_109(var uParam0)
 				func_329(26);
 				if (TASK::_0xE62754D09354F6CF(iLocal_760) != 0)
 				{
-					AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 0);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 0);
 					TASK::_0xE01F55B2896F6B37(iLocal_760, 0);
 					func_329(10);
-					AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 1);
 				}
 				PED::SET_PED_CONFIG_FLAG(iLocal_430, 65, true);
 				func_351();
@@ -5008,7 +5008,7 @@ int func_109(var uParam0)
 				func_315(2);
 				if (VEHICLE::_0x2963B5C1637E8A27(iLocal_760) == Global_35)
 				{
-					AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 1);
 					func_385(10);
 					func_324(uParam0, iLocal_1284, 14);
 				}
@@ -10371,11 +10371,11 @@ void func_309()
 {
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_430) && PED::IS_PED_IN_ANY_VEHICLE(iLocal_430, false))
 	{
-		PED::_0xE0B61ED8BB37712F(iLocal_430);
+		PED::_WARP_PED_OUT_OF_VEHICLE(iLocal_430);
 	}
 	if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 	{
-		PED::_0xE0B61ED8BB37712F(Global_35);
+		PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	}
 }
 
@@ -23966,7 +23966,7 @@ int func_722(var uParam0, vector3 vParam1, float fParam4, int iParam5)
 	{
 		TASK::_0x4BA972D0E5AD8122(iLocal_760, -1);
 	}
-	AITRANSPORT::_0xBA8818212633500A(iLocal_760, 7, 0);
+	AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_760, 7, 0);
 	if (!bVar2)
 	{
 		VEHICLE::SET_VEHICLE_IS_CONSIDERED_BY_PLAYER(iLocal_760, false);
@@ -24673,7 +24673,7 @@ void func_754(var uParam0)
 		func_1303();
 		if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 		{
-			PED::_0xE0B61ED8BB37712F(Global_35);
+			PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 		}
 		if (iLocal_625 != 0)
 		{
@@ -39159,7 +39159,7 @@ int func_1238(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -54791,7 +54791,7 @@ int func_1752(var uParam0, int iParam1)
 			uParam0->f_9 = func_280();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

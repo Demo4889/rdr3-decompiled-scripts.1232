@@ -3342,7 +3342,7 @@ int func_103(var uParam0)
 			func_331(9);
 			func_291(uParam0, func_61(2), func_61(3), 2, 3, 0);
 			func_332();
-			PED::_0xE0B61ED8BB37712F(iLocal_206);
+			PED::_WARP_PED_OUT_OF_VEHICLE(iLocal_206);
 			ENTITY::_0x203BEFFDBE12E96A(iLocal_206, vLocal_343, fLocal_346, 1, 0, 1);
 			func_203(1);
 			if (!ENTITY::IS_ENTITY_DEAD(iLocal_315))
@@ -15679,7 +15679,7 @@ int func_518(var uParam0, int iParam1)
 			uParam0->f_9 = func_271();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -30153,7 +30153,7 @@ int func_1033(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

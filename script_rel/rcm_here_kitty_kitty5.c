@@ -14431,7 +14431,7 @@ int func_522(var uParam0)
 	PED::SET_PED_CONFIG_FLAG(iLocal_109, 419, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_109, 367, true);
 	ENTITY::_0x18FF3110CF47115D(iLocal_109, 9, 0);
-	AITRANSPORT::_0xBA8818212633500A(iLocal_109, 0, 1);
+	AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_109, 0, 1);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_109, true);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_105, true);
 	PED::SET_PED_CAN_BE_TARGETTED(iLocal_109, false);
@@ -26809,7 +26809,7 @@ int func_899(var uParam0, int iParam1)
 			uParam0->f_9 = func_256();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -27476,7 +27476,7 @@ int func_926(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

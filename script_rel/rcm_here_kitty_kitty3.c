@@ -11060,7 +11060,7 @@ void func_352(var uParam0, bool bParam1)
 							PED::SET_PED_CONFIG_FLAG(iLocal_435, 419, true);
 							PED::SET_PED_CONFIG_FLAG(iLocal_435, 367, true);
 							ENTITY::_0x18FF3110CF47115D(iLocal_435, 9, 0);
-							AITRANSPORT::_0xBA8818212633500A(iLocal_435, 0, 1);
+							AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_435, 0, 1);
 							if (!ENTITY::IS_ENTITY_DEAD(iLocal_433))
 							{
 								ENTITY::ATTACH_ENTITY_TO_ENTITY(iLocal_435, iLocal_433, 0, vLocal_16.f_16, vLocal_16.f_19, 0, 0, 1, 0, 2, 1, 0, 0);
@@ -19935,7 +19935,7 @@ void func_642(var uParam0)
 			{
 				if (PED::IS_PED_IN_VEHICLE(iLocal_55, iLocal_326, false))
 				{
-					PED::_0xE0B61ED8BB37712F(iLocal_55);
+					PED::_WARP_PED_OUT_OF_VEHICLE(iLocal_55);
 				}
 				else
 				{
@@ -29794,7 +29794,7 @@ int func_903(var uParam0, int iParam1)
 			uParam0->f_9 = func_270();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -32286,7 +32286,7 @@ int func_1000(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -32570,7 +32570,7 @@ bool func_1017(int iParam0, int iParam1)
 	int iVar2;
 
 	iVar2 = VEHICLE::_0x5B1A26BB18E7D451(iParam1);
-	VEHICLE::_0xA19447D83294E29F(iParam0, &uVar0, &iVar1);
+	VEHICLE::GET_DRAFT_ANIMAL_COUNT(iParam0, &uVar0, &iVar1);
 	return iVar1 >= iVar2;
 }
 
@@ -34759,7 +34759,7 @@ void func_1110(var uParam0)
 
 void func_1111(var uParam0)
 {
-	PED::_0xE0B61ED8BB37712F(Global_35);
+	PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	func_617(0);
 	func_617(1);
 	func_533();

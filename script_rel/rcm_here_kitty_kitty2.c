@@ -3313,7 +3313,7 @@ void func_122(var uParam0)
 		ENTITY::SET_ENTITY_PROOFS(iLocal_105, 119, true);
 		ENTITY::SET_ENTITY_INVINCIBLE(iLocal_105, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_105, 419, true);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_105, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_105, 0, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_105, 297, false);
 		if (PLAYER::_0x0E6846476906C9DD(PLAYER::GET_PLAYER_INDEX(), iLocal_105))
 		{
@@ -19199,7 +19199,7 @@ void func_695(var uParam0)
 {
 	if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 	{
-		PED::_0xE0B61ED8BB37712F(Global_35);
+		PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 	}
 	if (func_956(Global_35))
 	{
@@ -25063,7 +25063,7 @@ int func_827(var uParam0, int iParam1)
 			uParam0->f_9 = func_265();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -27447,7 +27447,7 @@ int func_914(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -54029,7 +54029,7 @@ void func_1789(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

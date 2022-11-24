@@ -2280,7 +2280,7 @@ void func_43()
 		func_110(1);
 		return;
 	}
-	Local_16.f_6 = func_77(_NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::_0x901E0DC25080C8B9(iVar0)));
+	Local_16.f_6 = func_77(_NAMESPACE26::_0x4BE6C13A45CCA8EC(_NAMESPACE26::NETWORK_GET_GANG_ID(iVar0)));
 	func_111(256);
 	if (func_112(Local_16.f_6))
 	{
@@ -4223,7 +4223,7 @@ void func_156(int iParam0)
 
 bool func_157(int iParam0, int iParam1, int iParam2)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return false;
 	}
@@ -5315,7 +5315,7 @@ void func_242()
 	bool bVar6;
 	int iVar7;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(PLAYER::PLAYER_ID()))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(PLAYER::PLAYER_ID()))
 	{
 		return;
 	}
@@ -5740,7 +5740,7 @@ int func_246(vector3 vParam0, bool bParam3)
 		}
 		iVar4++;
 	}
-	if (NETWORK::_0x255A5EF65EDA9167(iVar3))
+	if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar3))
 	{
 		return PLAYER::GET_PLAYER_PED(iVar3);
 	}
@@ -6263,7 +6263,7 @@ void func_276(struct<2> Param0, var uParam2)
 		return;
 	}
 	iVar2 = -1;
-	iVar3 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar3 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	if (iVar3 == 0)
 	{
 		return;
@@ -6850,7 +6850,7 @@ bool func_308(int iParam0, float fParam1, int iParam2, bool bParam3)
 			if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 			{
 				iVar2 = NETWORK::NETWORK_GET_PLAYER_INDEX(PLAYER::INT_TO_PARTICIPANTINDEX(iParam2));
-				if (NETWORK::_0x255A5EF65EDA9167(iVar2))
+				if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar2))
 				{
 					fVar0 = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(iVar1, true, false), func_449(iVar2));
 					if (fVar0 < 0f)
@@ -7035,7 +7035,7 @@ void func_320(int iParam0, int iParam1, bool bParam2)
 					func_459(iVar1, 1f, 0);
 				}
 				sVar0 = func_460(iParam0);
-				if (!MISC::_0x375F5870A7B8BEC1(sVar0))
+				if (!MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(sVar0))
 				{
 					func_461(iVar1, sVar0, 1);
 				}
@@ -7972,7 +7972,7 @@ int func_371(int iParam0, var uParam1, int iParam2, var uParam3)
 		return 0;
 	}
 	*iParam2 = NETWORK::NETWORK_GET_PLAYER_INDEX(*uParam1);
-	if (!NETWORK::_0x255A5EF65EDA9167(*iParam2))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(*iParam2))
 	{
 		return 0;
 	}
@@ -8012,7 +8012,7 @@ int func_373(int iParam0, var uParam1, int iParam2, int iParam3)
 
 void func_374(int iParam0, int iParam1)
 {
-	SCRIPTS::_0x31010318BA9897AC((Local_60[NETWORK::PARTICIPANT_ID_TO_INT() /*23*/])->f_8.f_9[iParam0], iParam1);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX((Local_60[NETWORK::PARTICIPANT_ID_TO_INT() /*23*/])->f_8.f_9[iParam0], iParam1);
 }
 
 int func_375(int iParam0, bool bParam1, bool bParam2)
@@ -9726,11 +9726,11 @@ void func_470(int iParam0, int iParam1)
 			return;
 		}
 		iVar0 = NETWORK::NETWORK_GET_PLAYER_INDEX(PLAYER::INT_TO_PARTICIPANTINDEX(iParam1));
-		if (!NETWORK::_0x255A5EF65EDA9167(iVar0))
+		if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar0))
 		{
 			return;
 		}
-		if (NETWORK::_0x255A5EF65EDA9167(&(Local_16.f_37.f_1[iParam0])))
+		if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Local_16.f_37.f_1[iParam0])))
 		{
 			if (&Local_16.f_37.f_1[iParam0] == iVar0)
 			{
@@ -10627,7 +10627,7 @@ int func_495(var uParam0, int iParam1)
 			uParam0->f_9 = func_496();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -14253,7 +14253,7 @@ var func_656(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -14423,7 +14423,7 @@ var func_656(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -14448,7 +14448,7 @@ var func_656(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;

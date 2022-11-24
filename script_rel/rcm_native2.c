@@ -9069,7 +9069,7 @@ int func_334(var uParam0)
 	}
 	if (((((func_372(uParam0) && func_390(uParam0)) && func_391(uParam0)) && func_392(uParam0)) && func_604(uParam0)) && ANIMSCENE::IS_ANIM_SCENE_LOADED(iLocal_95, 1, 0))
 	{
-		AITRANSPORT::_0xBA8818212633500A(iLocal_115, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_115, 0, 1);
 		ENTITY::_0x203BEFFDBE12E96A(iLocal_115, vLocal_786, fLocal_789, 1, 0, 1);
 		PED::_SET_PED_ON_MOUNT(iLocal_114, iLocal_115, -1, true);
 		CAM::DO_SCREEN_FADE_IN(500);
@@ -17384,7 +17384,7 @@ int func_604(var uParam0)
 		{
 			ENTITY::_0x203BEFFDBE12E96A(iLocal_115, 219.89f, 513.86f, 126.02f, -41.27f, 1, 0, 1);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_115, true);
-			AITRANSPORT::_0xBA8818212633500A(iLocal_115, 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_115, 0, 1);
 			PED::_0x2EB75FB86C41F026(iLocal_115, 3, 0);
 			PED::SET_PED_CONFIG_FLAG(iLocal_115, 324, true);
 		}
@@ -31849,7 +31849,7 @@ int func_1064(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -37391,7 +37391,7 @@ int func_1263(var uParam0, int iParam1)
 			uParam0->f_9 = func_279();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -65368,7 +65368,7 @@ void func_2096(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -70017,7 +70017,7 @@ void func_2261(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_1230(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_1230(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_1230(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_1230(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}

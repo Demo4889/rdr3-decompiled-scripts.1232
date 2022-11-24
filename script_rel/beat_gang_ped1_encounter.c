@@ -353,7 +353,7 @@ void func_10()
 			func_55(&(Local_14.f_230[iVar0]), &Local_14, 0);
 			iVar1 = func_56(&Local_14, iVar0);
 			iVar2 = func_57(&Local_14, iVar0);
-			if (MISC::_0x375F5870A7B8BEC1(iVar2))
+			if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(iVar2))
 			{
 				func_58(&(Local_14.f_230[iVar0]), iVar1, (Local_14.f_194[iVar0 /*32*/])->f_6, (Local_14.f_194[iVar0 /*32*/])->f_9, 0, 1, 1, 0, -1082130432);
 			}
@@ -974,7 +974,7 @@ void func_25()
 		{
 			iVar1 = func_56(&Local_14, iVar0);
 			iVar2 = func_57(&Local_14, iVar0);
-			if (MISC::_0x375F5870A7B8BEC1(iVar2))
+			if (MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(iVar2))
 			{
 				func_58(&(Local_14.f_230[iVar0]), iVar1, (Local_14.f_194[iVar0 /*32*/])->f_6, (Local_14.f_194[iVar0 /*32*/])->f_9, 0, 1, 0, 0, -1082130432);
 			}
@@ -14712,7 +14712,7 @@ int func_467(var uParam0, int iParam1)
 			uParam0->f_9 = func_286();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

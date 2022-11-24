@@ -6521,7 +6521,7 @@ void func_142(int iParam0, bool bParam1)
 	{
 		if (!SCRIPTS::_0x72B2E00C9BAC6789(&(Global_1070355->f_19946.f_260), iParam0))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&(Global_1070355->f_19946.f_260), iParam0);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Global_1070355->f_19946.f_260), iParam0);
 		}
 	}
 	else if (SCRIPTS::_0x72B2E00C9BAC6789(&(Global_1070355->f_19946.f_260), iParam0))

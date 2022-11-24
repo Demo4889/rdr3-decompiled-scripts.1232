@@ -81,7 +81,7 @@ void __EntryFunction__()
 					else if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 					{
 						iVar3 = PED::GET_VEHICLE_PED_IS_USING(Global_35);
-						PED::_0xE0B61ED8BB37712F(Global_35);
+						PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 						ENTITY::_0x203BEFFDBE12E96A(iVar3, -2618.071f, 460.2562f, 144.8576f, 7.2663f, 1, 0, 1);
 					}
 					func_4(1);

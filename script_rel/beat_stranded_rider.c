@@ -5405,7 +5405,7 @@ int func_132(var uParam0, int iParam1)
 			uParam0->f_9 = func_133();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -12935,7 +12935,7 @@ void func_350()
 	{
 		return;
 	}
-	PED::_0x931B241409216C1F(&(uLocal_597[0]), &(uLocal_597[1]), 0);
+	PED::SET_PED_OWNS_ANIMAL(&(uLocal_597[0]), &(uLocal_597[1]), 0);
 	if (!func_217(vLocal_527))
 	{
 		if (!TASK::GET_IS_TASK_ACTIVE(&(uLocal_597[1]), 3) || ENTITY::HAS_ANIM_EVENT_FIRED(&(uLocal_597[1]), 330934146))

@@ -8503,7 +8503,7 @@ void func_269(int iParam0, int iParam1, int iParam2, bool bParam3)
 	}
 	else
 	{
-		SCRIPTS::_0x31010318BA9897AC(&uVar6, PLAYER::PLAYER_ID());
+		SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar6, PLAYER::PLAYER_ID());
 	}
 	if (SCRIPTS::_0x179A6F0EE2E79026(&uVar6))
 	{

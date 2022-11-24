@@ -210,7 +210,7 @@ void func_6()
 
 bool func_7(int iParam0, int iParam1, int iParam2)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return false;
 	}
@@ -1518,7 +1518,7 @@ struct<40> func_56(var uParam0)
 		case 2:
 			return func_120(uParam0, &(Global_1212887->f_367));
 		case 5:
-			if (!NETWORK::_0x255A5EF65EDA9167(uParam0->f_3))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(uParam0->f_3))
 			{
 				return Var0;
 			}
@@ -2598,7 +2598,7 @@ void func_96(int iParam0, int iParam1)
 	{
 		return;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return;
 	}
@@ -2606,7 +2606,7 @@ void func_96(int iParam0, int iParam1)
 	{
 		return;
 	}
-	(Global_1184672->f_2505[iParam0 /*6*/])->f_4 = _NAMESPACE26::_0x901E0DC25080C8B9(iParam1);
+	(Global_1184672->f_2505[iParam0 /*6*/])->f_4 = _NAMESPACE26::NETWORK_GET_GANG_ID(iParam1);
 	(Global_1184672->f_2505[iParam0 /*6*/])->f_5 = iParam1;
 }
 
@@ -2682,13 +2682,13 @@ void func_101(int iParam0)
 	int iVar2;
 
 	iVar0 = (Global_1184672->f_2505[iParam0 /*6*/])->f_5;
-	if (!NETWORK::_0x255A5EF65EDA9167(iVar0))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar0))
 	{
 		return;
 	}
 	if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar0))
 	{
-		iVar2 = _NAMESPACE26::_0x901E0DC25080C8B9(iVar0);
+		iVar2 = _NAMESPACE26::NETWORK_GET_GANG_ID(iVar0);
 		if ((Global_1184672->f_2505[iParam0 /*6*/])->f_4 != iVar2)
 		{
 			if ((_NAMESPACE26::_0xD6F6ACF4392187FB((Global_1184672->f_2505[iParam0 /*6*/])->f_4) && _NAMESPACE26::_0x93A91A351A07360E((Global_1184672->f_2505[iParam0 /*6*/])->f_4)) && _NAMESPACE26::_0x149A2751AB66AC02((Global_1184672->f_2505[iParam0 /*6*/])->f_4) > 0)
@@ -2718,7 +2718,7 @@ void func_101(int iParam0)
 		return;
 	}
 	iVar1 = _NAMESPACE26::_0x4BE6C13A45CCA8EC((Global_1184672->f_2505[iParam0 /*6*/])->f_4);
-	if (!NETWORK::_0x255A5EF65EDA9167(iVar1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar1))
 	{
 		func_174(iParam0);
 		return;
@@ -3994,7 +3994,7 @@ var func_172(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -4164,7 +4164,7 @@ var func_172(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -4189,7 +4189,7 @@ var func_172(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;
@@ -4778,7 +4778,7 @@ void func_200(struct<2> Param0, var uParam2)
 		return;
 	}
 	iVar2 = -1;
-	iVar3 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar3 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	if (iVar3 == 0)
 	{
 		return;

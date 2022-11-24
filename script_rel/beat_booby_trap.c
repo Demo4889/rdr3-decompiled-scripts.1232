@@ -9925,7 +9925,7 @@ bool func_272(int iParam0)
 	int iVar2;
 	int iVar3;
 
-	if (VEHICLE::_0xEA44E97849E9F3DD(iParam0) && VEHICLE::_0xA19447D83294E29F(iParam0, &iVar0, &uVar1))
+	if (VEHICLE::_0xEA44E97849E9F3DD(iParam0) && VEHICLE::GET_DRAFT_ANIMAL_COUNT(iParam0, &iVar0, &uVar1))
 	{
 		iVar2 = 0;
 		while (iVar2 < iVar0)
@@ -21793,7 +21793,7 @@ int func_696(var uParam0, int iParam1)
 			uParam0->f_9 = func_553();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

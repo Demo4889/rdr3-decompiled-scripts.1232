@@ -488,11 +488,11 @@ void func_17(var uParam0)
 		case 11:
 			if (!DECORATOR::DECOR_GET_BOOL(iLocal_40, "EggBroken"))
 			{
-				func_43(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+				func_43(*uParam0, uParam0->f_13, _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 			}
 			else
 			{
-				func_44(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+				func_44(*uParam0, uParam0->f_13, _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 			}
 			break;
 		case 9:
@@ -1270,7 +1270,7 @@ int func_52(var uParam0)
 		{
 			_NAMESPACE49::_0x8245C1F3262F4AC2(iLocal_24);
 		}
-		func_81(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+		func_81(*uParam0, uParam0->f_13, _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 		return 1;
 	}
 	return 0;
@@ -1814,7 +1814,7 @@ var func_75(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 		iVar1 = PLAYER::PLAYER_ID();
 		if (iVar1 >= 0 && iVar1 < 32)
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar1);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar1);
 		}
 		return uVar0;
 	}
@@ -1984,7 +1984,7 @@ var func_75(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (_NAMESPACE26::NETWORK_GET_GANG_ID(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -2009,7 +2009,7 @@ var func_75(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			}
 			if (!bVar3)
 			{
-				SCRIPTS::_0x31010318BA9897AC(&uVar0, iVar2);
+				SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar0, iVar2);
 			}
 		}
 		iVar2++;
@@ -2196,7 +2196,7 @@ void func_81(var uParam0, var uParam1, int iParam2)
 
 	if (iParam2 == 0)
 	{
-		iParam2 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+		iParam2 = _NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID());
 	}
 	if (!_NAMESPACE26::_0xD6F6ACF4392187FB(iParam2))
 	{
@@ -2920,7 +2920,7 @@ var func_125(int iParam0)
 		iVar53 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(Var0[iVar52 /*7*/]);
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar53))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar50, iVar53);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar50, iVar53);
 		}
 		iVar52++;
 	}

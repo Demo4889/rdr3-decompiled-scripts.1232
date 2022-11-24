@@ -3693,7 +3693,7 @@ void func_62(var uParam0, var uParam1, int iParam2)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar9)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar8, iVar9);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar8, iVar9);
 		}
 		iVar9++;
 	}
@@ -5231,7 +5231,7 @@ void func_104(var uParam0, var uParam1, int iParam2)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar9)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar8, iVar9);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar8, iVar9);
 		}
 		iVar9++;
 	}
@@ -5328,7 +5328,7 @@ void func_108(var uParam0, var uParam1, int iParam2)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar9)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar8, iVar9);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar8, iVar9);
 		}
 		iVar9++;
 	}
@@ -10635,7 +10635,7 @@ void func_308(var uParam0, var uParam1, int iParam2)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar9)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar8, iVar9);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar8, iVar9);
 		}
 		iVar9++;
 	}
@@ -57592,7 +57592,7 @@ int func_1708(var uParam0, bool bParam1, int iParam2, int iParam3)
 	iVar11 = MISC::GET_HASH_KEY(func_2318(iVar9));
 	StringCopy(&cVar12, HUD::_GET_LABEL_TEXT_BY_HASH(iVar11), 64);
 	Var20 = { func_2309(iVar10) };
-	if (iVar10 != -1 && !MISC::_0x375F5870A7B8BEC1(&Var20))
+	if (iVar10 != -1 && !MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&Var20))
 	{
 		Var1 = { Var20 };
 	}
@@ -67206,7 +67206,7 @@ int func_2015(var uParam0, int iParam1)
 			uParam0->f_9 = func_1894();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -91841,7 +91841,7 @@ void func_2879(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -97216,7 +97216,7 @@ int func_3073(char* sParam0, char* sParam1, char* sParam2, int iParam3, char* sP
 						Var5.f_2 = 0;
 						Var5.f_3 = MISC::GET_HASH_KEY("IB_ACCEPT");
 						Var5.f_3.f_3 = 0;
-						if (MISC::IS_STRING_NULL_OR_EMPTY(sParam4) || MISC::_0x375F5870A7B8BEC1(sParam4))
+						if (MISC::IS_STRING_NULL_OR_EMPTY(sParam4) || MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(sParam4))
 						{
 							iVar24 = func_3209(&Var5, "ERROR_PROFANITY_HEADER", "ERROR_WHITESPACE_ONLY", 0, 0, 1);
 						}

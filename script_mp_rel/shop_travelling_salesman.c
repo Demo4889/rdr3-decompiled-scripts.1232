@@ -3877,7 +3877,7 @@ void func_60(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -8567,7 +8567,7 @@ void func_215(var uParam0, bool bParam1)
 	func_626(Global_35, 1, 1);
 	Var0.f_1 = 1;
 	Var0 = 2;
-	SCRIPTS::_0x31010318BA9897AC(&(Var0.f_2), &Global_1273882);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Var0.f_2), &Global_1273882);
 	Var0.f_3 = 1;
 	func_627(&Var0);
 	func_478(34, 0, 0, 0, 0);

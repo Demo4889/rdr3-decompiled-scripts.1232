@@ -3378,7 +3378,7 @@ int func_96(var uParam0, int iParam1)
 			ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_26, vVar2, false, true, true);
 			if (func_312(Global_35, iLocal_26, 0))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			ENTITY::_0x203BEFFDBE12E96A(Global_35, vLocal_309, 34.4847f, 1, 0, 1);
 			func_306(uParam0, 12);
@@ -30755,7 +30755,7 @@ int func_976(var uParam0, int iParam1)
 			uParam0->f_9 = func_269();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -31422,7 +31422,7 @@ int func_1003(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}

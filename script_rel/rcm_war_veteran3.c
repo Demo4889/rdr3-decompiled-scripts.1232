@@ -3189,7 +3189,7 @@ int func_96(var uParam0, int iParam1)
 				TASK::CLEAR_PED_TASKS(iLocal_16, 1, 0);
 				ENTITY::_0x203BEFFDBE12E96A(iLocal_16, 1300.393f, 1708.799f, 234.3693f, 184.1953f, 1, 0, 1);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_16, func_218(10), 1.75f, -1, 10f, false, 40000f);
-				AITRANSPORT::_0xBA8818212633500A(iLocal_16, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_16, 0, 1);
 				func_324(7);
 			}
 			if (!ENTITY::IS_ENTITY_DEAD(iLocal_14))
@@ -9581,7 +9581,7 @@ int func_315(var uParam0, bool bParam1)
 	{
 		func_654(iLocal_15, 1268180497);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_15, iLocal_315);
-		AITRANSPORT::_0xBA8818212633500A(iLocal_15, 0, 1);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_15, 0, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_15, 324, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_15, 419, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_15, 367, true);
@@ -10115,7 +10115,7 @@ void func_320(var uParam0, int iParam1, bool bParam2)
 				TASK::TASK_STAND_STILL(0, -1);
 				TASK::CLOSE_SEQUENCE_TASK(iVar0);
 				TASK::CLEAR_PED_TASKS(iLocal_16, 1, 0);
-				AITRANSPORT::_0xBA8818212633500A(iLocal_16, 0, 1);
+				AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_16, 0, 1);
 				TASK::TASK_PERFORM_SEQUENCE(iLocal_16, iVar0);
 				TASK::CLEAR_SEQUENCE_TASK(&iVar0);
 				func_324(7);
@@ -15593,7 +15593,7 @@ void func_439(var uParam0)
 	func_169(uLocal_17[1], 1, 0, 1);
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_16))
 	{
-		AITRANSPORT::_0xBA8818212633500A(iLocal_16, 0, 0);
+		AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(iLocal_16, 0, 0);
 	}
 	HUD::_0x8BC7C1F929D07BF3(724769646);
 	OBJECT::_0x0C0A373D181BF900(868379185);
@@ -31894,7 +31894,7 @@ int func_973(var uParam0, int iParam1)
 			uParam0->f_9 = func_280();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -33081,7 +33081,7 @@ int func_1024(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -65564,7 +65564,7 @@ void func_2102(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

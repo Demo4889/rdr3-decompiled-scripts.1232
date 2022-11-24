@@ -3860,7 +3860,7 @@ void func_60(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -8535,7 +8535,7 @@ void func_215(var uParam0, bool bParam1)
 	func_607(Global_35, 1, 1);
 	Var0.f_1 = 1;
 	Var0 = 2;
-	SCRIPTS::_0x31010318BA9897AC(&(Var0.f_2), &Global_1273882);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Var0.f_2), &Global_1273882);
 	Var0.f_3 = 1;
 	func_608(&Var0);
 	func_462(34, 0, 0, 0, 0);
@@ -11121,7 +11121,7 @@ void func_331(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 
 int func_332(var uParam0)
 {
-	func_752(func_751(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())), 2);
+	func_752(func_751(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID())), 2);
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), false, 0, 0);
 	if (!NETWORK::NETWORK_IS_IN_MP_CUTSCENE())
 	{
@@ -12458,7 +12458,7 @@ void func_379(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -12484,7 +12484,7 @@ void func_381(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}

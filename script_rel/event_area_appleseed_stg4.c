@@ -5486,7 +5486,7 @@ int func_135()
 		{
 			ENTITY::SET_ENTITY_COORDS(&(iLocal_1869[0]), (Local_526.f_304[0 /*32*/])->f_6, true, false, true, true);
 			ENTITY::FREEZE_ENTITY_POSITION(&(iLocal_1869[0]), true);
-			AITRANSPORT::_0xBA8818212633500A(&(iLocal_1869[0]), 0, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(iLocal_1869[0]), 0, 1);
 		}
 	}
 	if (!func_19(32))
@@ -18338,7 +18338,7 @@ int func_571(var uParam0, int iParam1)
 			uParam0->f_9 = func_572();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

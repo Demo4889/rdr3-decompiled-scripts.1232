@@ -1923,7 +1923,7 @@ int func_32(var uParam0)
 				}
 				if (*uParam0 == 62 || *uParam0 == 56)
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
 					func_74(&(uParam0->f_20[0 /*14*/]), (uParam0->f_20[3 /*14*/])->f_5, (uParam0->f_20[3 /*14*/])->f_8, 2, 1073741824);
 					func_75(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[3 /*14*/]), 1, -1, 1);
 				}
@@ -1962,13 +1962,13 @@ int func_32(var uParam0)
 				}
 				if (*uParam0 != 63 && *uParam0 != 56)
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[2 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[2 /*14*/]), 0);
 					func_74(&(uParam0->f_20[2 /*14*/]), (uParam0->f_20[1 /*14*/])->f_5, (uParam0->f_20[1 /*14*/])->f_8, 2, 1073741824);
 					func_75(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[2 /*14*/]), 1, -1, 1);
 				}
 				if (*uParam0 == 56)
 				{
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
 					PED::_0x45FEA6D5539BD474(&(uParam0->f_20[1 /*14*/]), "DogVerbalReactionResponse");
 					PED::_0xE37ACEE15AC50C7E(&(uParam0->f_20[1 /*14*/]), "DogVerbalReactionResponse");
 				}
@@ -5924,7 +5924,7 @@ int func_175(var uParam0, int iParam1)
 			uParam0->f_9 = func_176();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

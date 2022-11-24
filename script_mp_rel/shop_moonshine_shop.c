@@ -3828,7 +3828,7 @@ void func_60(var uParam0, var uParam1)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(PLAYER::INT_TO_PLAYERINDEX(iVar8)))
 		{
-			SCRIPTS::_0x31010318BA9897AC(&uVar7, iVar8);
+			SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar7, iVar8);
 		}
 		iVar8++;
 	}
@@ -6222,7 +6222,7 @@ void func_122(var uParam0)
 		func_466(Local_23.f_397);
 		Local_23.f_19 = 0;
 	}
-	func_468(func_467(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())), 2);
+	func_468(func_467(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID())), 2);
 	func_469(Local_23.f_33, 0);
 	if (!Local_23.f_21 && ENTITY::DOES_ENTITY_EXIST(Global_35))
 	{
@@ -8579,7 +8579,7 @@ void func_215(var uParam0, bool bParam1)
 	func_624(Global_35, 1, 1);
 	Var0.f_1 = 1;
 	Var0 = 2;
-	SCRIPTS::_0x31010318BA9897AC(&(Var0.f_2), &Global_1273882);
+	SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&(Var0.f_2), &Global_1273882);
 	Var0.f_3 = 1;
 	func_625(&Var0);
 	func_480(34, 0, 0, 0, 0);

@@ -4648,7 +4648,7 @@ int func_166(int iParam0, int iParam1)
 			return 1;
 		case 190804938:
 			iVar1 = func_123(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}
@@ -4667,7 +4667,7 @@ int func_166(int iParam0, int iParam1)
 				return 0;
 			}
 			iVar1 = func_123(iParam1);
-			if (!NETWORK::_0x255A5EF65EDA9167(&(Global_1273882->f_154[iVar1])))
+			if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

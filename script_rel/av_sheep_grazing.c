@@ -1978,7 +1978,7 @@ int func_31(var uParam0)
 					TASK::_TASK_START_SCENARIO_IN_PLACE(&(uParam0->f_20[0 /*14*/]), 1546182539, 0, 0, 0, -1082130432, 0);
 					TASK::TASK_START_SCENARIO_AT_POSITION(&(uParam0->f_20[0 /*14*/]), 1546182539, (uParam0->f_20[0 /*14*/])->f_5, (uParam0->f_20[0 /*14*/])->f_8, 0, 0, 1, 0, -1082130432, 0);
 				}
-				PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[1 /*14*/]), 0);
 				func_73(uParam0->f_20[0 /*14*/], 0, 1);
 			}
 			if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[1 /*14*/])))
@@ -1998,7 +1998,7 @@ int func_31(var uParam0)
 					func_72(&((uParam0->f_20[2 /*14*/])->f_5), 50, 10, 0);
 					FLOCK::SET_ANIMAL_TUNING_FLOAT_PARAM(&(uParam0->f_20[2 /*14*/]), 73, 0f);
 					PED::SET_PED_RELATIONSHIP_GROUP_HASH(&(uParam0->f_20[2 /*14*/]), 543319108);
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[2 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[2 /*14*/]), 0);
 					TASK::TASK_START_SCENARIO_AT_POSITION(&(uParam0->f_20[2 /*14*/]), iLocal_10, (uParam0->f_20[2 /*14*/])->f_5, (uParam0->f_20[2 /*14*/])->f_8, 0, 0, 1, 0, -1082130432, 0);
 					func_73(uParam0->f_20[2 /*14*/], 0, 1);
 				}
@@ -2010,7 +2010,7 @@ int func_31(var uParam0)
 					func_72(&((uParam0->f_20[3 /*14*/])->f_5), 50, 10, 0);
 					FLOCK::SET_ANIMAL_TUNING_FLOAT_PARAM(&(uParam0->f_20[3 /*14*/]), 73, 0f);
 					PED::SET_PED_RELATIONSHIP_GROUP_HASH(&(uParam0->f_20[3 /*14*/]), 543319108);
-					PED::_0x931B241409216C1F(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
+					PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_20[3 /*14*/]), 0);
 					TASK::TASK_START_SCENARIO_AT_POSITION(&(uParam0->f_20[3 /*14*/]), iLocal_10, (uParam0->f_20[3 /*14*/])->f_5, (uParam0->f_20[3 /*14*/])->f_8, 0, 0, 1, 0, -1082130432, 0);
 					func_73(uParam0->f_20[3 /*14*/], 0, 1);
 				}
@@ -5330,7 +5330,7 @@ int func_130(var uParam0, int iParam1)
 			uParam0->f_9 = func_131();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

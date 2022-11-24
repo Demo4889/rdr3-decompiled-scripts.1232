@@ -11017,7 +11017,7 @@ bool func_469(int iParam0, int iParam1)
 	int iVar2;
 
 	iVar2 = VEHICLE::_0x5B1A26BB18E7D451(iParam1);
-	VEHICLE::_0xA19447D83294E29F(iParam0, &uVar0, &iVar1);
+	VEHICLE::GET_DRAFT_ANIMAL_COUNT(iParam0, &uVar0, &iVar1);
 	return iVar1 >= iVar2;
 }
 

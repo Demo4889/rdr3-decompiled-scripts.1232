@@ -19247,7 +19247,7 @@ int func_692(var uParam0, int iParam1, int iParam2, int iParam3)
 	iVar11 = MISC::GET_HASH_KEY(func_1255(iVar9));
 	StringCopy(&cVar12, HUD::_GET_LABEL_TEXT_BY_HASH(iVar11), 64);
 	Var20 = { func_1248(iVar10) };
-	if (iVar10 != -1 && !MISC::_0x375F5870A7B8BEC1(&Var20))
+	if (iVar10 != -1 && !MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(&Var20))
 	{
 		Var1 = { Var20 };
 	}
@@ -44588,7 +44588,7 @@ void func_1558(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);
@@ -55935,7 +55935,7 @@ int func_1918(char* sParam0, char* sParam1, char* sParam2, int iParam3, char* sP
 						Var5.f_2 = 0;
 						Var5.f_3 = MISC::GET_HASH_KEY("IB_ACCEPT");
 						Var5.f_3.f_3 = 0;
-						if (MISC::IS_STRING_NULL_OR_EMPTY(sParam4) || MISC::_0x375F5870A7B8BEC1(sParam4))
+						if (MISC::IS_STRING_NULL_OR_EMPTY(sParam4) || MISC::IS_STRING_NULL_OR_EMPTY_OR_SPACES(sParam4))
 						{
 							iVar24 = func_2193(&Var5, "ERROR_PROFANITY_HEADER", "ERROR_WHITESPACE_ONLY", 0, 0, 1);
 						}

@@ -656,9 +656,9 @@ void func_8(var uParam0)
 				{
 					ENTITY::SET_ENTITY_COLLISION(&(Local_14.f_2[iVar0]), false, false);
 					ENTITY::SET_ENTITY_ALPHA(&(Local_14.f_2[iVar0]), 0, true);
-					AITRANSPORT::_0xBA8818212633500A(&(Local_14.f_2[iVar0]), 4, 1);
-					AITRANSPORT::_0xBA8818212633500A(&(Local_14.f_2[iVar0]), 5, 1);
-					AITRANSPORT::_0xBA8818212633500A(&(Local_14.f_2[iVar0]), 6, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_14.f_2[iVar0]), 4, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_14.f_2[iVar0]), 5, 1);
+					AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_14.f_2[iVar0]), 6, 1);
 				}
 				iVar0++;
 			}
@@ -675,9 +675,9 @@ void func_8(var uParam0)
 			}
 			VEHICLE::SET_TRAIN_SPEED(Local_14.f_1, 12f);
 			VEHICLE::SET_TRAIN_CRUISE_SPEED(Local_14.f_1, 12f);
-			AITRANSPORT::_0xBA8818212633500A(Local_14.f_1, 4, 1);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_14.f_2[iVar0]), 5, 1);
-			AITRANSPORT::_0xBA8818212633500A(&(Local_14.f_2[iVar0]), 6, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(Local_14.f_1, 4, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_14.f_2[iVar0]), 5, 1);
+			AITRANSPORT::SET_TRANSPORT_CONFIG_FLAG(&(Local_14.f_2[iVar0]), 6, 1);
 			func_49(&Local_14, 6);
 			break;
 		case 6:

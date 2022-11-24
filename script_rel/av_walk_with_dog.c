@@ -1898,7 +1898,7 @@ int func_31(var uParam0)
 				func_70(&((uParam0->f_20[1 /*14*/])->f_5), 50, 10, 0);
 				PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[1 /*14*/]), 297, true);
 				PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[1 /*14*/]), 130, false);
-				PED::_0x931B241409216C1F(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), 0);
+				PED::SET_PED_OWNS_ANIMAL(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), 0);
 				PED::SET_PED_COMBAT_ATTRIBUTES(&(uParam0->f_20[1 /*14*/]), 93, true);
 				WEAPON::_GIVE_WEAPON_TO_PED_2(&(uParam0->f_20[1 /*14*/]), joaat("weapon_revolver_cattleman"), 5000, false, true, 0, false, 0.5f, 1f, 752097756, true, 0f, false);
 				func_71(&(uParam0->f_20[1 /*14*/]), &(uParam0->f_20[0 /*14*/]), &uLocal_12, 0f, 0f, 0f, 0, 0, 1, 1069547520, -1082130432, 1073069561, 1f, 1092616192, -1, 1, 0, 0, 0, 1);
@@ -5487,7 +5487,7 @@ int func_154(var uParam0, int iParam1)
 			uParam0->f_9 = func_155();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{

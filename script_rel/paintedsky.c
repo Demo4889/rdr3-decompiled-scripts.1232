@@ -815,11 +815,11 @@ void func_28(int iParam0)
 		VOLUME::_0x53D05D60E5F5B40C(iLocal_165, 3, 1, func_52(780));
 		if (func_53(8))
 		{
-			PED::_0x931B241409216C1F(func_54(885), func_54(781), 0);
+			PED::SET_PED_OWNS_ANIMAL(func_54(885), func_54(781), 0);
 		}
 		else
 		{
-			PED::_0x931B241409216C1F(func_54(780), func_54(781), 0);
+			PED::SET_PED_OWNS_ANIMAL(func_54(780), func_54(781), 0);
 		}
 	}
 }

@@ -3632,7 +3632,7 @@ int func_96(var uParam0, int iParam1)
 		case 3:
 			if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			if (!func_302(uParam0, 1373.127f, -806.4133f, 65.7558f, 268.127f) && iLocal_227 < 200)
 			{
@@ -3685,7 +3685,7 @@ int func_96(var uParam0, int iParam1)
 			}
 			if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			if (!func_302(uParam0, 1494.05f, -1037.22f, 52.03f, -172.24f) && iLocal_227 < 200)
 			{
@@ -3800,7 +3800,7 @@ int func_96(var uParam0, int iParam1)
 		case 5:
 			if (PED::IS_PED_IN_ANY_VEHICLE(Global_35, false))
 			{
-				PED::_0xE0B61ED8BB37712F(Global_35);
+				PED::_WARP_PED_OUT_OF_VEHICLE(Global_35);
 			}
 			if (!func_302(uParam0, 1491.582f, -1062.437f, 51.198f, 247.6698f) && iLocal_227 < 200)
 			{
@@ -36848,7 +36848,7 @@ int func_1151(bool bParam0)
 	{
 		return 0;
 	}
-	if (MISC::_0xF236C84C6ADFCB2F())
+	if (MISC::_IS_MISSION_CREATOR_ACTIVE())
 	{
 		return 0;
 	}
@@ -55881,7 +55881,7 @@ void func_1744(int iParam0, int iParam1)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_1431(iParam1)))
 	{
-		PED::_0x931B241409216C1F(func_1431(iParam1), iParam0, 0);
+		PED::SET_PED_OWNS_ANIMAL(func_1431(iParam1), iParam0, 0);
 		PED::_0xED1C764997A86D5A(func_1431(iParam1), iParam0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 367, true);
 	}
@@ -63149,7 +63149,7 @@ int func_2041(var uParam0, int iParam1)
 			uParam0->f_9 = func_275();
 			return 1;
 		}
-		else if (VEHICLE::_0xA19447D83294E29F(iVar0, &iVar5, &iVar4))
+		else if (VEHICLE::GET_DRAFT_ANIMAL_COUNT(iVar0, &iVar5, &iVar4))
 		{
 			if (iVar5 <= 0)
 			{
@@ -74541,7 +74541,7 @@ void func_2371(int iParam0)
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, true);
 	}
 	PED::_0xBCC76708E5677E1D(iParam0, 0);
-	PED::_0x931B241409216C1F(Global_35, iParam0, 0);
+	PED::SET_PED_OWNS_ANIMAL(Global_35, iParam0, 0);
 	PED::_0xB8B6430EAD2D2437(iParam0, 130495496);
 	iVar1 = ENTITY::GET_ENTITY_MODEL(iParam0);
 	iVar2 = PED::_GET_DEFAULT_RELATIONSHIP_GROUP_HASH(iVar1);

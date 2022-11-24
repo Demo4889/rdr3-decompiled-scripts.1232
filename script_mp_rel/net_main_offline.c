@@ -5804,14 +5804,14 @@ void func_124(int iParam0)
 				if (ENTITY::DOES_ENTITY_EXIST(iVar4))
 				{
 					iVar5 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(iVar4);
-					if (NETWORK::_0x255A5EF65EDA9167(iVar5))
+					if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar5))
 					{
 						if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar5))
 						{
 							if (ENTITY::DOES_ENTITY_EXIST(Var0.f_1) && ENTITY::IS_ENTITY_A_PED(Var0.f_1))
 							{
 								iVar6 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(Var0.f_1));
-								if (NETWORK::_0x255A5EF65EDA9167(iVar6) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar6))
+								if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar6) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar6))
 								{
 									if (iVar5 == PLAYER::PLAYER_ID())
 									{
@@ -5929,7 +5929,7 @@ void func_128(int iParam0)
 			func_688(&Var3, 32, 6);
 			if (func_716(&Var3, &(Global_1273882->f_154[&Global_1273882])))
 			{
-				if (NETWORK::_0x255A5EF65EDA9167(Var3.f_18.f_3))
+				if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(Var3.f_18.f_3))
 				{
 					func_717(4, Var3.f_18.f_3, &(Global_1273882->f_154[&Global_1273882]));
 				}
@@ -6006,7 +6006,7 @@ void func_132(int iParam0)
 		switch (Var0.f_1)
 		{
 			case 3:
-				Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+				Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 				if (_NAMESPACE26::_0xD6F6ACF4392187FB(Var0) && _NAMESPACE26::_0x149A2751AB66AC02(Var0) == _NAMESPACE26::_0x853B0FA4D8732C57(Var0))
 				{
 					if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(_NAMESPACE26::_0x4BE6C13A45CCA8EC(Var0)))
@@ -6049,7 +6049,7 @@ void func_132(int iParam0)
 				func_726(4, 0);
 				break;
 			case 4:
-				Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+				Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 				if (NETWORK::NETWORK_ARE_HANDLES_THE_SAME(&(Var0.f_3), &(Global_1273882->f_1)))
 				{
 					func_729();
@@ -6105,7 +6105,7 @@ void func_132(int iParam0)
 					_NAMESPACE26::_0xAD22AB64FA428DF3(_NAMESPACE26::_0x0E5C9FB9ED5DFF1C(Var0));
 					return;
 				}
-				Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+				Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 				iVar25 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&(Var0.f_3));
 				func_742(Var0, iVar25);
 				break;
@@ -6137,7 +6137,7 @@ void func_132(int iParam0)
 				}
 				break;
 			case 8:
-				Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+				Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 				func_748();
 				func_749();
 				if (_NAMESPACE26::_0xCE88A261DCBBA0D9(Var0, &iVar18))
@@ -6148,7 +6148,7 @@ void func_132(int iParam0)
 			case 9:
 				func_731();
 				func_729();
-				Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+				Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 				func_745(32);
 				func_751();
 				func_749();
@@ -7052,7 +7052,7 @@ void func_155()
 	vVar0 = { Global_1572887->f_342 };
 	if (!NETWORK::_0x2F54B146D3EDCE4D(&vVar0) && Global_1572887->f_342.f_26 == 2)
 	{
-		uVar3 = func_822(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+		uVar3 = func_822(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 		SCRIPTS::_0xD426E2E3288469D6(&uVar3, &Global_1273882);
 		func_823(uVar3);
 		func_335("Match Error", 0, 1, 0);
@@ -7078,7 +7078,7 @@ void func_155()
 		else
 		{
 			func_828(iVar4);
-			uVar5 = func_822(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+			uVar5 = func_822(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 			SCRIPTS::_0xD426E2E3288469D6(&uVar5, &Global_1273882);
 			func_823(uVar5);
 			func_335("Match Failed", 0, 0, 0);
@@ -7090,7 +7090,7 @@ void func_155()
 		NETWORK::_0xC505036A35AFD01B(false);
 		if (func_335("Timeout", 0, 0, 0))
 		{
-			uVar6 = func_822(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+			uVar6 = func_822(_NAMESPACE26::NETWORK_GET_GANG_ID(PLAYER::PLAYER_ID()));
 			SCRIPTS::_0xD426E2E3288469D6(&uVar6, &Global_1273882);
 			func_823(uVar6);
 			func_312("NM_MATCHMAKING_TIMED_OUT", 10000, 0, 0, 0, 1);
@@ -7820,7 +7820,7 @@ void func_176()
 	NETWORK::NETWORK_HANDLE_FROM_PLAYER(Global_1273882->f_10, &(Global_1273882->f_1));
 	if (Global_1273882->f_22[&Global_1273882] && NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		Global_1273882->f_15 = _NAMESPACE26::_0x901E0DC25080C8B9(Global_1273882->f_10);
+		Global_1273882->f_15 = _NAMESPACE26::NETWORK_GET_GANG_ID(Global_1273882->f_10);
 		Global_1273882->f_16 = _NAMESPACE26::_0x4BE6C13A45CCA8EC(Global_1273882->f_15);
 	}
 	else

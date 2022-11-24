@@ -709,7 +709,7 @@ void func_28(int iParam0)
 	VOLUME::_0x4A8FEFC43FD8AC9B(iLocal_17, 3, 1);
 	VOLUME::_0x53D05D60E5F5B40C(iLocal_17, 3, 1, func_51(746));
 	VOLUME::_0x53D05D60E5F5B40C(iLocal_17, 3, 1, func_51(748));
-	PED::_0x931B241409216C1F(func_52(745), func_52(748), 0);
+	PED::SET_PED_OWNS_ANIMAL(func_52(745), func_52(748), 0);
 }
 
 void func_29()

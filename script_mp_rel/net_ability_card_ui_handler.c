@@ -293,7 +293,7 @@ int func_7()
 	{
 		return PLAYER::PLAYER_ID();
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iVar0))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar0))
 	{
 		return PLAYER::PLAYER_ID();
 	}
@@ -1609,7 +1609,7 @@ int func_87(int iParam0, var uParam1, int iParam2, int iParam3)
 		iVar51 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&(Global_1939221->f_1433.f_8));
 		uParam1->f_9 = Var2.f_3;
 		uParam1->f_10 = Var2.f_6;
-		if (NETWORK::_0x255A5EF65EDA9167(iVar51))
+		if (NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iVar51))
 		{
 			uParam1->f_19 = func_139(*uParam1, iVar51);
 			if (func_89(uParam1->f_19))
@@ -2395,7 +2395,7 @@ int func_139(int iParam0, int iParam1)
 	int iVar0;
 	int iVar1;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return -1;
 	}
