@@ -50,8 +50,8 @@ void __EntryFunction__()
 		func_2(0, 0);
 	}
 	Var8 = -1;
-	Var8.f_1 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	Var8.f_4 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
+	Var8.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var8.f_4 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
 	while (func_3(&Var8))
 	{
 		BUILTIN::WAIT(0);
@@ -1596,7 +1596,7 @@ int func_72(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)

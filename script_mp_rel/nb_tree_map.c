@@ -3233,13 +3233,13 @@ int func_114()
 	if (HUD::_DOES_TEXT_BLOCK_EXIST(sVar0))
 	{
 		HUD::TEXT_BLOCK_REQUEST(sVar0);
-		if (!HUD::_0xD0976CC34002DB57(sVar0))
+		if (!HUD::TEXT_BLOCK_IS_LOADED(sVar0))
 		{
 			iVar1 = 0;
 		}
 	}
-	STREAMING::_0x19A6BE7D9C6884D3(1545192181, 15, 0, 0);
-	if (!STREAMING::_0x9427C94D2E4094A4(1545192181, 0))
+	STREAMING::_REQUEST_SCENARIO_TYPE(1545192181, 15, 0, 0);
+	if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(1545192181, 0))
 	{
 		iVar1 = 0;
 	}
@@ -3628,7 +3628,7 @@ bool func_151(var uParam0, var uParam1)
 	*uParam0 = Global_1232796->f_8113;
 	uParam0->f_2 = 423895568;
 	uParam0->f_3 = uParam1;
-	return (DATAFILE::_0x603AC35FD4602C76(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
+	return (DATAFILE::PARSEDDATA_IS_FILE_LOADED(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
 }
 
 bool func_152(var uParam0, int iParam1)
@@ -4800,7 +4800,7 @@ var func_241(int iParam0, int iParam1)
 
 void func_242(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return;
 	}

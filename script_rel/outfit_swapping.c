@@ -705,7 +705,7 @@ var func_17(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -747,7 +747,7 @@ void func_20(int iParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 
 bool func_21(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::IS_WEAPON_BOW(iParam0);
 }
 
 int func_22(int iParam0)
@@ -850,7 +850,7 @@ void func_30()
 	{
 		return;
 	}
-	if (CAM::_0xA24C1D341C6E0D53(1, 1, 1))
+	if (CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(1, 1, 1))
 	{
 		return;
 	}

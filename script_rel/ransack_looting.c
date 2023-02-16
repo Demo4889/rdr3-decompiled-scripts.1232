@@ -226,13 +226,13 @@ void func_6()
 		if (ENTITY::DOES_ENTITY_EXIST(Local_19.f_5))
 		{
 			iLocal_197 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_5);
-			OBJECT::_0xB6CBD40F8EA69E8A(ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_5));
+			OBJECT::CREATE_OBJECT_SKELETON(ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_5));
 		}
 	}
 	switch (iLocal_202)
 	{
 		case 0:
-			if (ENTITY::DOES_ENTITY_EXIST(Local_19.f_5) && OBJECT::_0xB6CBD40F8EA69E8A(ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_5)))
+			if (ENTITY::DOES_ENTITY_EXIST(Local_19.f_5) && OBJECT::CREATE_OBJECT_SKELETON(ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_5)))
 			{
 				if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_19.f_6))
 				{
@@ -286,8 +286,8 @@ void func_6()
 				}
 				else
 				{
-					vVar4 = { TASK::_0xA8452DD321607029(iLocal_3, 1) };
-					vVar7 = { 0f, 0f, TASK::_0xB93EA7184BAA85C3(iLocal_3, 1) };
+					vVar4 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_3, 1) };
+					vVar7 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1) };
 				}
 				func_24(&iLocal_185, &uLocal_198, &Local_19, vVar4, vVar7);
 			}
@@ -344,7 +344,7 @@ void func_6()
 								iLocal_202 = 3;
 							}
 							Jump @776; //curOff = 734
-							if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_19.f_6) || !PED::_0x9C54041BB66BCF9E(Global_35, Local_19.f_6))
+							if (!TASK::DOES_SCENARIO_POINT_EXIST(Local_19.f_6) || !PED::IS_PED_USING_THIS_SCENARIO(Global_35, Local_19.f_6))
 							{
 								iLocal_0 = 0;
 								return;
@@ -460,7 +460,7 @@ int func_15(var uParam0)
 	{
 		return 0;
 	}
-	if (func_34(TASK::_0xA8452DD321607029(uParam0->f_6, 1)))
+	if (func_34(TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_6, 1)))
 	{
 		return 0;
 	}
@@ -680,7 +680,7 @@ void func_23(var uParam0, var uParam1, var uParam2, var uParam3, char* sParam4, 
 				}
 				else if (TASK::DOES_SCENARIO_POINT_EXIST(uParam2->f_6))
 				{
-					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(uParam2->f_6, 1), TASK::_0xB93EA7184BAA85C3(uParam2->f_6, 1), vParam5) };
+					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(uParam2->f_6, 1), TASK::_GET_SCENARIO_POINT_HEADING(uParam2->f_6, 1), vParam5) };
 				}
 			else
 			{
@@ -1265,7 +1265,7 @@ int func_36(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	}
 	if (TASK::DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
-		if (TASK::_0xEA31F199A73801D3(iParam4))
+		if (TASK::_DOES_SCENARIO_POINT_HAVE_PROPS(iParam4))
 		{
 			iVar1 = TASK::GET_PROP_FOR_SCENARIO_POINT(iParam4, "CONTAINER");
 			if (ENTITY::IS_ENTITY_AN_OBJECT(iVar1))
@@ -1794,7 +1794,7 @@ int func_66(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 			iVar1 = DECORATOR::DECOR_GET_INT(iParam0, &Var8);
 			if (iVar1 != 0)
 			{
-				iVar0 = WEAPON::_0x5C2EA6C44F515F34(iVar1);
+				iVar0 = WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iVar1);
 				DECORATOR::DECOR_REMOVE(iParam0, &Var8);
 				if (DECORATOR::DECOR_EXIST_ON(iParam0, &Var10))
 				{

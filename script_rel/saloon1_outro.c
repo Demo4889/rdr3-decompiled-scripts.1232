@@ -222,7 +222,7 @@ int func_11(var uParam0)
 	if (!bLocal_14)
 	{
 		AUDIO::SET_PED_IS_DRUNK(Global_35, false);
-		PED::_0x406CCF555B04FAD3(Global_35, 0, 0f);
+		PED::_SET_PED_DRUNKNESS(Global_35, 0, 0f);
 		PED::_0x437C08DB4FEBE2BD(Global_35, "Drunkness", 0f, -1);
 		PED::_0xCB9401F918CB0F75(Global_35, "IsDrunk", 0, -1);
 	}
@@ -326,7 +326,7 @@ void func_15(int iParam0, int iParam1, bool bParam2, bool bParam3, float fParam4
 			{
 				PED::SET_PED_KEEP_TASK(Global_1360165[iParam0 /*1157*/], true);
 			}
-			POPULATION::_0xF74E134F40192884(Global_1360165[iParam0 /*1157*/], 1);
+			POPULATION::_SET_PED_SHOULD_IGNORE_AVOIDANCE_VOLUMES(Global_1360165[iParam0 /*1157*/], 1);
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(Global_1360165[iParam0 /*1157*/], 1030835986);
 		}
 		if (bVar2)
@@ -430,7 +430,7 @@ int func_21(var uParam0)
 	if (!bLocal_14)
 	{
 		AUDIO::SET_PED_IS_DRUNK(Global_35, true);
-		PED::_0x406CCF555B04FAD3(Global_35, 1, 0.75f);
+		PED::_SET_PED_DRUNKNESS(Global_35, 1, 0.75f);
 		PED::_0xCB9401F918CB0F75(Global_35, "IsDrunk", 1, -1);
 		PED::_0x437C08DB4FEBE2BD(Global_35, "Drunkness", 0.75f, -1);
 		fLocal_13 = 0.75f;
@@ -462,7 +462,7 @@ int func_23(var uParam0)
 		if ((!PED::_0x50F124E6EF188B22(Global_35) || PED::_0x6FB76442469ABD68(Global_35) != fLocal_13) || PED::_0xA29FD00D45311EB7(Global_35, "Drunkness") != fLocal_13)
 		{
 			AUDIO::SET_PED_IS_DRUNK(Global_35, true);
-			PED::_0x406CCF555B04FAD3(Global_35, 1, fLocal_13);
+			PED::_SET_PED_DRUNKNESS(Global_35, 1, fLocal_13);
 			PED::_0x437C08DB4FEBE2BD(Global_35, "Drunkness", fLocal_13, -1);
 		}
 		switch (iLocal_9)
@@ -479,7 +479,7 @@ int func_23(var uParam0)
 				fVar1 = (1f - ((4f - fVar0) / 4f));
 				fLocal_13 = (0.75f - (0.75f * fVar1));
 				fLocal_13 = func_51(fLocal_13, 0f, 0.75f);
-				PED::_0x406CCF555B04FAD3(Global_35, 1, fLocal_13);
+				PED::_SET_PED_DRUNKNESS(Global_35, 1, fLocal_13);
 				PED::_0x437C08DB4FEBE2BD(Global_35, "Drunkness", fLocal_13, -1);
 				if (fLocal_13 <= 0f)
 				{
@@ -910,7 +910,7 @@ void func_43(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iVar1) && ENTITY::IS_ENTITY_ATTACHED(iVar1))
 	{
-		if (((TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) || TASK::_0x0C3CB2E600C8977D(iVar1, 1)) || PED::IS_PED_ON_MOUNT(iVar1)) || PED::IS_PED_IN_ANY_VEHICLE(iVar1, false))
+		if (((TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) || TASK::IS_PED_EXITING_SCENARIO(iVar1, 1)) || PED::IS_PED_ON_MOUNT(iVar1)) || PED::IS_PED_IN_ANY_VEHICLE(iVar1, false))
 		{
 			PED::_0xF1C03A5352243A30(iVar1);
 			TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar1, 1, 1);
@@ -1049,11 +1049,11 @@ float func_51(float fParam0, float fParam1, float fParam2)
 
 int func_52(int iParam0, char* sParam1)
 {
-	if (!ANIMSCENE::_0x0DF57F86FE71DBE5(iParam0, sParam1))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(iParam0, sParam1))
 	{
-		ANIMSCENE::_0xDF7B5144E25CD3FE(iParam0, sParam1);
+		ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iParam0, sParam1);
 	}
-	if (ANIMSCENE::_0x23E33CB9F4A3F547(iParam0, sParam1))
+	if (ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iParam0, sParam1))
 	{
 		return 1;
 	}
@@ -1536,7 +1536,7 @@ void func_81(int iParam0)
 	int iVar3;
 
 	iVar0 = func_45(iParam0);
-	if (!PED::_0xA911EE21EDF69DAF(iVar0))
+	if (!PED::IS_PED_CARRYING_SOMETHING(iVar0))
 	{
 		return;
 	}
@@ -1693,7 +1693,7 @@ int func_90(int iParam0)
 	if (!_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(((*Global_1360165)[iParam0 /*1157*/])->f_126))
 	{
 		iVar0 = func_80(iParam0, 1);
-		iVar1 = _NAMESPACE48::_0xA00DF706C60173D1(iVar0);
+		iVar1 = _NAMESPACE48::_GET_PERSCHAR_MODEL_NAME(iVar0);
 		if ((Global_40.f_4942[iParam0 /*60*/])->f_7 != 0 && iVar1 != (Global_40.f_4942[iParam0 /*60*/])->f_7)
 		{
 			_NAMESPACE48::_0x8BC555034A5A5E8C(iVar0, (Global_40.f_4942[iParam0 /*60*/])->f_7);

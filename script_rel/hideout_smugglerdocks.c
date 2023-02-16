@@ -131,7 +131,7 @@ void __EntryFunction__()
 					}
 					break;
 				case 3:
-					if (!STREAMING::_0xCF45DF50C7775F2A())
+					if (!STREAMING::IS_LOAD_SCENE_ACTIVE())
 					{
 						if (func_15(bLocal_40))
 						{
@@ -4848,7 +4848,7 @@ void func_178(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iVar1) && ENTITY::IS_ENTITY_ATTACHED(iVar1))
 	{
-		if (((TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) || TASK::_0x0C3CB2E600C8977D(iVar1, 1)) || PED::IS_PED_ON_MOUNT(iVar1)) || PED::IS_PED_IN_ANY_VEHICLE(iVar1, false))
+		if (((TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) || TASK::IS_PED_EXITING_SCENARIO(iVar1, 1)) || PED::IS_PED_ON_MOUNT(iVar1)) || PED::IS_PED_IN_ANY_VEHICLE(iVar1, false))
 		{
 			PED::_0xF1C03A5352243A30(iVar1);
 			TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar1, 1, 1);

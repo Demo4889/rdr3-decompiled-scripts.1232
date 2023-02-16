@@ -135,7 +135,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_19, 8);
 							if (func_36(32))
@@ -496,8 +496,8 @@ int func_11()
 {
 	iLocal_14 = ((*Global_1888801)[124 /*35*/])->f_4;
 	iLocal_15 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Ridgewood - m_volHorsePens");
-	VOLUME::_0xBCE668AAF83608BE(iLocal_15, -4793.275f, -2684.797f, -12.52667f, 0f, 0f, 2.828959f, 21.53875f, 14.61882f, 2.730403f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_15, -4827.138f, -2733.15f, -13.91682f, 0f, 0f, 53.75946f, 20.16043f, 53.09112f, 4.69964f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_15, -4793.275f, -2684.797f, -12.52667f, 0f, 0f, 2.828959f, 21.53875f, 14.61882f, 2.730403f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_15, -4827.138f, -2733.15f, -13.91682f, 0f, 0f, 53.75946f, 20.16043f, 53.09112f, 4.69964f);
 	return 1;
 }
 
@@ -999,7 +999,7 @@ int func_50(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 

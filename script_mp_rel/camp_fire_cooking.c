@@ -120,7 +120,7 @@ void func_6()
 		{
 			bLocal_13 = false;
 		}
-		else if (!PED::_0x9C54041BB66BCF9E(Local_19.f_3, uLocal_16))
+		else if (!PED::IS_PED_USING_THIS_SCENARIO(Local_19.f_3, uLocal_16))
 		{
 			bLocal_13 = false;
 		}
@@ -134,7 +134,7 @@ void func_6()
 		case 0:
 			if (!ENTITY::DOES_ENTITY_EXIST(Local_19.f_3))
 			{
-				Local_19.f_3 = TASK::_0x5BA659955369B0E2(uLocal_16);
+				Local_19.f_3 = TASK::_GET_PED_USING_SCENARIO_POINT(uLocal_16);
 				bLocal_18 = true;
 			}
 			else
@@ -147,7 +147,7 @@ void func_6()
 			{
 				if (!ENTITY::DOES_ENTITY_EXIST(Local_19.f_2))
 				{
-					Local_19.f_2 = PED::_0x4D0D2E3D8BC000EB(Local_19.f_3, "s_meatbit_Chunck_small01x_PH_L_HAND", 0);
+					Local_19.f_2 = PED::_GET_PED_REGISTER_PROP(Local_19.f_3, "s_meatbit_Chunck_small01x_PH_L_HAND", 0);
 				}
 				Local_19.f_7 = 2;
 			}

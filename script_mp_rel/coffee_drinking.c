@@ -63,7 +63,7 @@ void __EntryFunction__()
 				func_5(&Var0, 1);
 				break;
 			case 1:
-				if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_0x569F1E1237508DEB(Global_35) == 254049387 || PED::_0x569F1E1237508DEB(Global_35) == -1451987280) || PED::_0x569F1E1237508DEB(Global_35) == 1135271674))
+				if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 254049387 || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == -1451987280) || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 1135271674))
 				{
 					PED::_0xCB9401F918CB0F75(Global_35, "BLOCK_COFFEE_DISCARD_PROMPT", 1, 1);
 					PED::_0xCB9401F918CB0F75(Global_35, "SHOW_COFFEE_KNEEL_DISCARD_PROMPT", 1, 1);
@@ -98,7 +98,7 @@ void __EntryFunction__()
 				}
 				else
 				{
-					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_0x569F1E1237508DEB(Global_35) == 254049387 || PED::_0x569F1E1237508DEB(Global_35) == -1451987280) || PED::_0x569F1E1237508DEB(Global_35) == 1135271674))
+					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 254049387 || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == -1451987280) || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 1135271674))
 					{
 						TASK::_0xB35370D5353995CB(Global_35, 2140481581, 1048576000);
 					}
@@ -336,7 +336,7 @@ void func_13(float fParam0, bool bParam1)
 	if (fParam0 < 0f)
 	{
 		Global_1938998->f_9 = 0f;
-		PED::_0x06D26A96CA1BCA75(Global_35, 10, Global_1938998->f_9, 0);
+		PED::_SET_PED_MOTIVATION(Global_35, 10, Global_1938998->f_9, 0);
 	}
 	else if (fParam0 >= 1f && Global_1938998->f_14)
 	{
@@ -681,7 +681,7 @@ void func_27(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, 0);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, 0);
 			uParam0->f_176 = 1;
 		}
 	}
@@ -5302,7 +5302,7 @@ int func_182(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (!_NAMESPACE26::_0x81FB74C83C2ED69F(&(Global_1273882->f_154[iVar1])))
+			if (!_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

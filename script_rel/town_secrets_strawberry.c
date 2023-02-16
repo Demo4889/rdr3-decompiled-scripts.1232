@@ -1131,7 +1131,7 @@ int func_47(vector3 vParam0, int iParam3, var uParam4, var uParam5, var uParam6,
 		if (ENTITY::IS_ENTITY_A_PED(iParam3))
 		{
 			iVar1 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam3);
-			if (!PED::_0x5102307CE88798EB(iVar1))
+			if (!PED::_IS_PED_VISIBILITY_TRACKED(iVar1))
 			{
 				PED::REQUEST_PED_VISIBILITY_TRACKING(iVar1);
 			}
@@ -1145,7 +1145,7 @@ int func_47(vector3 vParam0, int iParam3, var uParam4, var uParam5, var uParam6,
 						bVar0 = true;
 					}
 				}
-				else if (PED::_0x164CECC59E70DF86(iVar1, fVar2))
+				else if (PED::_IS_TRACKED_PED_VISIBILITY_PERCENTAGE_NOT_LESS_THAN(iVar1, fVar2))
 				{
 					bVar0 = true;
 				}

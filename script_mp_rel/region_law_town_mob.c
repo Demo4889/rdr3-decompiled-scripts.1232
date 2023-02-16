@@ -119,8 +119,8 @@ void func_2()
 			iVar0 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-266.4598f, 686.257f, 121.6327f, 0f, 0f, 29.92756f, 64.32985f, 90.86015f, 10f, "Main Town");
 			iVar1 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-301.8687f, 775.7222f, 117.88f, 0f, 0f, 111.0193f, 113.049f, 150.2262f, 41.61763f, "Stockyard");
 			iLocal_60 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volTownMob Valentine Agg");
-			VOLUME::_0x6E0D3C3F828DA773(iLocal_60, iVar0);
-			VOLUME::_0x6E0D3C3F828DA773(iLocal_60, iVar1);
+			VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_60, iVar0);
+			VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_60, iVar1);
 			break;
 		case 26:
 			vLocal_64 = { -1791.522f, -395.2781f, 159.2376f };
@@ -385,7 +385,7 @@ Vector3 func_8(int iParam0, bool bParam1)
 	}
 	if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_4))
 	{
-		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1887327)[iParam0 /*36*/])->f_4) };
+		vVar0 = { VOLUME::GET_VOLUME_COORDS(((*Global_1887327)[iParam0 /*36*/])->f_4) };
 		if (bParam1)
 		{
 			if (MISC::GET_GROUND_Z_FOR_3D_COORD(vVar0, &uVar3, 0))
@@ -525,9 +525,9 @@ void func_13()
 				PED::SET_PED_CONFIG_FLAG(&(iLocal_50[iVar0]), 156, true);
 				PED::SET_PED_CONFIG_FLAG(&(iLocal_50[iVar0]), 152, true);
 			}
-			iVar4 = MAP::_0x23F74C2FDA6E7C61(joaat("BLIP_STYLE_ENEMY"), &(iLocal_50[iVar0]));
-			MAP::_0x662D364ABF16DE2F(iVar4, 2096805056);
-			MAP::_0x662D364ABF16DE2F(iVar4, 1086257954);
+			iVar4 = MAP::BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_ENEMY"), &(iLocal_50[iVar0]));
+			MAP::BLIP_ADD_MODIFIER(iVar4, 2096805056);
+			MAP::BLIP_ADD_MODIFIER(iVar4, 1086257954);
 			PED::_0x1E017404784AA6A3(&(iLocal_50[iVar0]), 1005019729);
 			PED::SET_PED_COMBAT_MOVEMENT(&(iLocal_50[iVar0]), 2);
 			PED::SET_PED_COMBAT_RANGE(&(iLocal_50[iVar0]), 1);
@@ -842,7 +842,7 @@ void func_34(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

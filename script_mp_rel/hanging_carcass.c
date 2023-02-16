@@ -28,8 +28,8 @@ void __EntryFunction__()
 	Var0.f_40 = -950200242;
 	Var0.f_41 = -227367034;
 	Var0 = SCRIPTS::GET_ID_OF_THIS_THREAD();
-	Var0.f_1 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	Var0.f_4 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
+	Var0.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var0.f_4 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
 	Var0.f_43 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(TASK::_0x7467165EE97D3C68(ScriptParam_0.f_1));
 	Var0.f_39 = ENTITY::GET_ENTITY_MODEL(Var0.f_43);
 	StringCopy(&(Var0.f_22), "Dead_Hanging", 64);
@@ -425,7 +425,7 @@ int func_14(var uParam0)
 
 	fVar0 = -90f;
 	vVar1 = { uParam0->f_1 };
-	OBJECT::_0xB6CBD40F8EA69E8A(uParam0->f_43);
+	OBJECT::CREATE_OBJECT_SKELETON(uParam0->f_43);
 	if (func_15(3, uParam0))
 	{
 		vVar1 = { func_24(uParam0) };
@@ -433,7 +433,7 @@ int func_14(var uParam0)
 	if (func_15(1, uParam0))
 	{
 		uParam0->f_45 = OBJECT::CREATE_OBJECT(uParam0->f_41, vVar1, false, true, false, false, false);
-		OBJECT::_0xB6CBD40F8EA69E8A(uParam0->f_45);
+		OBJECT::CREATE_OBJECT_SKELETON(uParam0->f_45);
 		ENTITY::SET_ENTITY_COLLISION(uParam0->f_45, false, false);
 	}
 	uParam0->f_42 = func_25(uParam0->f_38, vVar1, (uParam0->f_4 + fVar0), 0, 1, 0, 1, 1, 1, 0, 0);
@@ -443,7 +443,7 @@ int func_14(var uParam0)
 	PED::SET_PED_CONFIG_FLAG(uParam0->f_42, 243, true);
 	ENTITY::SET_ENTITY_NO_COLLISION_ENTITY(uParam0->f_42, uParam0->f_42, false);
 	ENTITY::SET_ENTITY_COLLISION(uParam0->f_42, false, false);
-	OBJECT::_0xB6CBD40F8EA69E8A(uParam0->f_43);
+	OBJECT::CREATE_OBJECT_SKELETON(uParam0->f_43);
 	ENTITY::FREEZE_ENTITY_POSITION(uParam0->f_43, true);
 	ENTITY::SET_ENTITY_COLLISION(uParam0->f_43, false, false);
 	if (func_15(3, uParam0))
@@ -586,7 +586,7 @@ int func_20(var uParam0)
 			}
 		}
 	}
-	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_49) && PED::_0x9C54041BB66BCF9E(Global_35, uParam0->f_49))
+	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_49) && PED::IS_PED_USING_THIS_SCENARIO(Global_35, uParam0->f_49))
 	{
 		if (!func_7(uParam0, 8))
 		{
@@ -650,7 +650,7 @@ int func_20(var uParam0)
 	{
 		if (func_7(uParam0, 128))
 		{
-			MISC::_0x674B90BE1115846D(uParam0->f_42, 1);
+			MISC::SET_PED_DECOMPOSED(uParam0->f_42, 1);
 			func_27(uParam0, 1);
 		}
 		if (!func_7(uParam0, 64))
@@ -784,7 +784,7 @@ void func_27(var uParam0, bool bParam1)
 	{
 	}
 	PED::_0x6569F31A01B4C097(uParam0->f_42, 0, bParam1);
-	ENTITY::_0x18FF3110CF47115D(uParam0->f_42, 7, bParam1);
+	ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_42, 7, bParam1);
 }
 
 bool func_28(var uParam0)
@@ -871,7 +871,7 @@ void func_33(var uParam0)
 		iVar0 = 1;
 		fVar1 = 0.3f;
 	}
-	uParam0->f_46 = PHYSICS::_0xE9C59F6809373A99(uParam0->f_1, 0f, 0f, 0f, fVar1, iVar0, 0, 1, -1082130432);
+	uParam0->f_46 = PHYSICS::_ADD_ROPE_2(uParam0->f_1, 0f, 0f, 0f, fVar1, iVar0, 0, 1, -1082130432);
 	if (func_15(3, uParam0))
 	{
 		PHYSICS::_0xE9CD9A67834985A7(uParam0->f_46, uParam0->f_43, uParam0->f_42, 0f, 0f, 0f, 0f, 0f, 0f, 33567, 32157);
@@ -993,7 +993,7 @@ void func_37(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

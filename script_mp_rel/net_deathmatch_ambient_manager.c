@@ -990,7 +990,7 @@ void func_32()
 							SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar29, iVar30);
 						}
 					}
-					if (!SCRIPTS::_0x179A6F0EE2E79026(&uVar29))
+					if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uVar29))
 					{
 					}
 					else if (MISC::ABSI((&Global_1197807->f_8[iVar0] - NETWORK::GET_CLOUD_TIME_AS_INT())) < 2)
@@ -1211,7 +1211,7 @@ var func_37(int iParam0, int iParam1)
 
 void func_38(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return;
 	}
@@ -1863,7 +1863,7 @@ var func_55(int iParam0)
 
 void func_56(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return;
 	}

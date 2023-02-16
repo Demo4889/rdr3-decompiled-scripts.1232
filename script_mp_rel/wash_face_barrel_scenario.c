@@ -220,7 +220,7 @@ void func_18(float fParam0, bool bParam1)
 	if (fParam0 < 0f)
 	{
 		Global_1938998->f_9 = 0f;
-		PED::_0x06D26A96CA1BCA75(Global_35, 10, Global_1938998->f_9, 0);
+		PED::_SET_PED_MOTIVATION(Global_35, 10, Global_1938998->f_9, 0);
 	}
 	else if (fParam0 >= 1f && Global_1938998->f_14)
 	{

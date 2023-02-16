@@ -1107,7 +1107,7 @@ void func_60()
 			if (STREAMING::HAS_MODEL_LOADED(iLocal_19) && STREAMING::HAS_ANIM_DICT_LOADED("MECH_RANSACK@LOCKBOX@MED@0CM@OPENUNLOCKED@A"))
 			{
 				func_91();
-				if (NETWORK::_0xFBE782B3165AC8EC(-448258490))
+				if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(-448258490))
 				{
 					iLocal_20 = OBJECT::CREATE_OBJECT(joaat("p_strongbox01x"), vLocal_21, false, false, false, true, true);
 				}
@@ -1122,7 +1122,7 @@ void func_60()
 				DECORATOR::DECOR_SET_BOOL(iLocal_20, "chest_local_only", true);
 				ENTITY::SET_ENTITY_ROTATION(iLocal_20, vLocal_24, 2, true);
 				ENTITY::FREEZE_ENTITY_POSITION(iLocal_20, true);
-				if (NETWORK::_0xFBE782B3165AC8EC(-448258490))
+				if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(-448258490))
 				{
 					TASK::_0x188F8071F244B9B8(iLocal_20, 1);
 					ENTITY::PLAY_ENTITY_ANIM(iLocal_20, "base_lockbox", "MECH_RANSACK@LOCKBOX@MED@0CM@OPENUNLOCKED@A", 1f, false, true, false, 0f, 0);
@@ -2704,7 +2704,7 @@ void func_91()
 		vVar3 = { 0f, 0f, -140.167f };
 		vVar6 = { 7f, 8f, 5f };
 		iLocal_18 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vVar0, vVar3, vVar6, "LuckysCabin");
-		NETWORK::_0xEEB7818B1D307212(iLocal_18);
+		NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME(iLocal_18);
 	}
 }
 
@@ -4008,7 +4008,7 @@ int func_128(int iParam0, var uParam1, int iParam2, var uParam3, int iParam4, in
 	{
 		return 0;
 	}
-	if (NETWORK::_0xFBE782B3165AC8EC(iParam0))
+	if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(iParam0))
 	{
 		return 1;
 	}

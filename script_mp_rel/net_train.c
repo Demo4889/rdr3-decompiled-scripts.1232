@@ -645,7 +645,7 @@ void func_28(var uParam0, var uParam1)
 			func_49(*uParam1, iVar0);
 			if (func_50(uParam1->f_1))
 			{
-				uParam1->f_3 = MAP::_0x23F74C2FDA6E7C61(-399496385, iVar0);
+				uParam1->f_3 = MAP::BLIP_ADD_FOR_ENTITY(-399496385, iVar0);
 				MAP::SET_BLIP_SPRITE(uParam1->f_3, -250506368, true);
 				func_51(*uParam1, uParam1->f_3);
 			}
@@ -1259,7 +1259,7 @@ var func_64(int iParam0, int iParam1)
 
 int func_65(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return 0;
 	}
@@ -1430,10 +1430,10 @@ void func_75(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6
 			PED::_0xF1C03A5352243A30(iParam0);
 			break;
 		case 7:
-			PED::_0xA3A9299C4F2ADB98(iParam0);
+			PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(iParam0);
 			break;
 		default:
-			PED::_0xA3A9299C4F2ADB98(iParam0);
+			PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(iParam0);
 			break;
 	}
 }
@@ -2625,7 +2625,7 @@ int func_104(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		return -1;
 	}
-	iVar0 = _NAMESPACE48::_0x32A1E3B83D501096(iParam0);
+	iVar0 = _NAMESPACE48::_GET_PERSCHAR_INDEX_FROM_PED_INDEX(iParam0);
 	if (!_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(iVar0))
 	{
 		return -1;

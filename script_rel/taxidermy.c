@@ -21,7 +21,7 @@ void __EntryFunction__()
 	{
 		func_2(&uLocal_3);
 	}
-	vLocal_5 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	vLocal_5 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	while (func_3())
 	{
 		if (func_4())
@@ -175,7 +175,7 @@ int func_6(var uParam0)
 			}
 			else
 			{
-				uParam0->f_1 = MAP::_0x554D9D53F696D002(2098831270, vLocal_5);
+				uParam0->f_1 = MAP::BLIP_ADD_FOR_COORDS(2098831270, vLocal_5);
 				func_13(uParam0);
 			}
 			func_14(uParam0, 1);

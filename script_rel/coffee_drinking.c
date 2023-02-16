@@ -52,7 +52,7 @@ void __EntryFunction__()
 				func_4(&Var0, 1);
 				break;
 			case 1:
-				if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && (PED::_0x569F1E1237508DEB(Global_35) == 254049387 || PED::_0x569F1E1237508DEB(Global_35) == 1135271674))
+				if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && (PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 254049387 || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 1135271674))
 				{
 					PED::_0xCB9401F918CB0F75(Global_35, "BLOCK_COFFEE_DISCARD_PROMPT", 1, 1);
 					PED::_0xCB9401F918CB0F75(Global_35, "SHOW_COFFEE_KNEEL_DISCARD_PROMPT", 1, 1);
@@ -83,7 +83,7 @@ void __EntryFunction__()
 				}
 				else
 				{
-					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && (PED::_0x569F1E1237508DEB(Global_35) == 254049387 || PED::_0x569F1E1237508DEB(Global_35) == 1135271674))
+					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && (PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 254049387 || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 1135271674))
 					{
 						TASK::_0xB35370D5353995CB(Global_35, 2140481581, 1048576000);
 					}
@@ -738,7 +738,7 @@ void func_24(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, 0);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, 0);
 			uParam0->f_176 = 1;
 		}
 	}

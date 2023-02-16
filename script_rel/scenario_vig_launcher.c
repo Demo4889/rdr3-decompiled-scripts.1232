@@ -109,9 +109,9 @@ void func_6()
 				return;
 			}
 			bLocal_11 = func_12() == func_13();
-			iLocal_8 = TASK::_0x5BA659955369B0E2(iLocal_3);
+			iLocal_8 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_3);
 			iLocal_9 = TASK::_0xA92450B5AE687AAF(iLocal_3);
-			if (func_14(iLocal_8, 0) && !_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_8)))
+			if (func_14(iLocal_8, 0) && !_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_GET_PERSCHAR_INDEX_FROM_PED_INDEX(iLocal_8)))
 			{
 				iLocal_5 = 6;
 				return;
@@ -352,7 +352,7 @@ int func_15()
 	{
 		return 1;
 	}
-	if (!PED::_0x9C54041BB66BCF9E(iLocal_8, iLocal_3))
+	if (!PED::IS_PED_USING_THIS_SCENARIO(iLocal_8, iLocal_3))
 	{
 		return 1;
 	}
@@ -472,8 +472,8 @@ int func_22()
 		Var0 = -1;
 		Var0.f_11 = -1;
 		Var0 = iLocal_6;
-		Var0.f_1 = { TASK::_0xA8452DD321607029(iLocal_3, 1) };
-		Var0.f_4 = { 0f, 0f, TASK::_0xB93EA7184BAA85C3(iLocal_3, 1) };
+		Var0.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_3, 1) };
+		Var0.f_4 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1) };
 		Var0.f_10 = 1;
 		Var0.f_8 = iLocal_8;
 		(*Global_1425179)[iLocal_10 /*8*/] = iLocal_6;

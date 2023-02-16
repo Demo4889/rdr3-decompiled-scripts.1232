@@ -2632,7 +2632,7 @@ void func_68(var uParam0)
 	if (iLocal_1398)
 	{
 		HUD::_ENABLE_HUD_CONTEXT_THIS_FRAME(-1679307491);
-		CAM::_0xE296208C273BD7F0(-1, -1, 0, 17, 1, 0);
+		CAM::_REQUEST_LETTER_BOX_OVERTIME(-1, -1, 0, 17, 1, 0);
 	}
 	if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 	{
@@ -3543,7 +3543,7 @@ int func_96(var uParam0, int iParam1)
 			{
 				ENTITY::_0x203BEFFDBE12E96A(Global_35, Var1, Var1.f_3, 0, 0, 1);
 				func_312();
-				STREAMING::_0x19A6BE7D9C6884D3(1904532698, 15, 0, 0);
+				STREAMING::_REQUEST_SCENARIO_TYPE(1904532698, 15, 0, 0);
 				MISC::_0x59174F1AFE095B5A(1500834021, true, true, false, 0f, false);
 				if (func_313(&Local_122, 0, vLocal_64.x, vLocal_64.y, vLocal_64.z, fLocal_67, 1, 0, 0, 0) && func_313(&Local_142, 7, vLocal_68.x, vLocal_68.y, vLocal_68.z, fLocal_71, 1, 0, 1, 0))
 				{
@@ -3639,10 +3639,10 @@ int func_96(var uParam0, int iParam1)
 										func_320(&Local_142, 6, 0, 0);
 										break;
 									case 1:
-										CAM::_0xE296208C273BD7F0(0, -1, 0, 17, 1, 0);
+										CAM::_REQUEST_LETTER_BOX_OVERTIME(0, -1, 0, 17, 1, 0);
 										if (CAM::_0xDD0B7C5AE58F721D(&Local_1518))
 										{
-											if (!CAM::_0x927B810E43E99932(&Local_1518))
+											if (!CAM::_IS_CAMERA_AVAILABLE(&Local_1518))
 											{
 												CAM::_0xB8B207C34285E978(&Local_1518);
 											}
@@ -4634,7 +4634,7 @@ int func_103(var uParam0)
 			HUD::_0x4CC5F2FC1332577F(-1679307491);
 			return 7;
 		case 7:
-			HUD::_0x8BC7C1F929D07BF3(-1679307491);
+			HUD::_DISABLE_HUD_CONTEXT(-1679307491);
 			return 8;
 	}
 	return 7;

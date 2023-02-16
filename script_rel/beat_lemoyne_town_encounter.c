@@ -185,7 +185,7 @@ int func_3(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, i
 			{
 				func_37(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			_NAMESPACE49::PERSISTENCE_REMOVE_ALL_ENTITIES_IN_AREA(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_38(uParam0->f_51);
@@ -794,10 +794,10 @@ void func_25(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6
 			PED::_0xF1C03A5352243A30(iParam0);
 			break;
 		case 7:
-			PED::_0xA3A9299C4F2ADB98(iParam0);
+			PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(iParam0);
 			break;
 		default:
-			PED::_0xA3A9299C4F2ADB98(iParam0);
+			PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(iParam0);
 			break;
 	}
 }
@@ -991,7 +991,7 @@ int func_34(int iParam0, var uParam1, bool bParam2, var uParam3, struct<7> Param
 	{
 		if (bParam2)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 0);
 			func_116("BEAT_FAIL", 4000, 0, 1, 0, 0, -1, -1, 0);
 		}
 		*uParam11 = 1;
@@ -1143,7 +1143,7 @@ void func_44(int iParam0)
 	PED::_0x9851DE7AEC10B4E1(Local_14.f_51, 8f, 1, 0);
 	func_150(iParam0, 1, 0, 0, 0);
 	vVar0 = { VOLUME::_0x3E2A25B2416DD67E(iParam0) };
-	vVar3 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar3 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	if (vVar0.x > vVar0.y)
 	{
 		fVar6 = vVar0.x;
@@ -1246,7 +1246,7 @@ int func_49(var uParam0)
 		iVar0 = (iVar0 + iVar1);
 	}
 	PED::_RESERVE_AMBIENT_PEDS(iVar0);
-	if (PED::_0x5C16855277819BBF() >= iVar0)
+	if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() >= iVar0)
 	{
 		return 1;
 	}
@@ -1979,9 +1979,9 @@ int func_71(var uParam0, var uParam1, int iParam2, bool bParam3, bool bParam4, i
 		}
 		if (bParam6)
 		{
-			if (PED::_0xA911EE21EDF69DAF(Global_35))
+			if (PED::IS_PED_CARRYING_SOMETHING(Global_35))
 			{
-				iVar1 = PED::_0xD806CD2A4F2C2996(Global_35);
+				iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_35);
 				if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 				{
 					if (ENTITY::IS_ENTITY_A_PED(iVar1))
@@ -3142,11 +3142,11 @@ int func_97(int iParam0, float fParam1, float fParam2, float fParam3, float fPar
 	}
 	if (fVar0 < fParam1)
 	{
-		if (PED::_0x5102307CE88798EB(iParam0))
+		if (PED::_IS_PED_VISIBILITY_TRACKED(iParam0))
 		{
 			if (fParam4 > 0f)
 			{
-				if (PED::_0x164CECC59E70DF86(iParam0, fParam4))
+				if (PED::_IS_TRACKED_PED_VISIBILITY_PERCENTAGE_NOT_LESS_THAN(iParam0, fParam4))
 				{
 					return 1;
 				}
@@ -3496,7 +3496,7 @@ var func_116(char* sParam0, int iParam1, bool bParam2, bool bParam3, char* sPara
 
 	if (bParam2)
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 1);
+		_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 1);
 	}
 	if (Global_1572887->f_12 != -1)
 	{
@@ -3678,7 +3678,7 @@ int func_122(var uParam0, var uParam1, var uParam2, bool bParam3, int iParam4, i
 	{
 		if (bParam3)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 0);
 			func_116("BEAT_FAIL", 5000, 0, 1, 0, 0, -1, -1, 0);
 		}
 		*uParam2 = 1;
@@ -3848,16 +3848,16 @@ int func_130(int iParam0, int iParam1, var uParam2)
 			{
 				case 1:
 					*uParam2 = VOLUME::_CREATE_VOLUME_AGGREGATE();
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -771.7f, -1343.6f, 43.9f, 0f, 0f, 0f, 95f, 140f, 50f);
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -852.4f, -1349.5f, 45f, 5f, 0f, 0f, 70f, 130f, 50f);
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -907.6f, -1362.1f, 49f, 0f, 0f, 0f, 50f, 100f, 50f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -771.7f, -1343.6f, 43.9f, 0f, 0f, 0f, 95f, 140f, 50f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -852.4f, -1349.5f, 45f, 5f, 0f, 0f, 70f, 130f, 50f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -907.6f, -1362.1f, 49f, 0f, 0f, 0f, 50f, 100f, 50f);
 					return 1;
 				case 2:
 					*uParam2 = VOLUME::_CREATE_VOLUME_AGGREGATE();
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -270.606f, 827.282f, 118.4249f, 0f, 0f, 11.275f, 80f, 100.4f, 86.6f);
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -235.442f, 653.1498f, 112.3099f, 0f, 0f, 49.575f, 44.4f, 76.775f, 50f);
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -236.9004f, 797.5648f, 121.6383f, 0f, 0f, 17.55f, 53.975f, 105.5f, 20f);
-					VOLUME::_0x39816F6F94F385AD(*uParam2, -339.8f, 829.675f, 100f, 0f, 0f, 14.975f, 25f, 75f, 50f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -270.606f, 827.282f, 118.4249f, 0f, 0f, 11.275f, 80f, 100.4f, 86.6f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -235.442f, 653.1498f, 112.3099f, 0f, 0f, 49.575f, 44.4f, 76.775f, 50f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -236.9004f, 797.5648f, 121.6383f, 0f, 0f, 17.55f, 53.975f, 105.5f, 20f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(*uParam2, -339.8f, 829.675f, 100f, 0f, 0f, 14.975f, 25f, 75f, 50f);
 					return 1;
 			}
 			break;
@@ -3991,28 +3991,28 @@ void func_142(int iParam0, int iParam1)
 void func_143(var uParam0)
 {
 	uParam0->f_356[4] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volAvoidance");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[4]), 2359.092f, -1421.56f, 45.33163f, 0f, 0f, -1.99997f, 6.585349f, 12.54345f, 3.426f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[4]), 2350.49f, -1408.312f, 45.33163f, 0f, 0f, 71.00001f, 3.489247f, 7.811243f, 3.425777f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[4]), 2355.655f, -1412.669f, 45.33163f, 0f, 0f, 30.00001f, 3.489247f, 7.811243f, 3.425777f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[4]), 2359.092f, -1421.56f, 45.33163f, 0f, 0f, -1.99997f, 6.585349f, 12.54345f, 3.426f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[4]), 2350.49f, -1408.312f, 45.33163f, 0f, 0f, 71.00001f, 3.489247f, 7.811243f, 3.425777f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[4]), 2355.655f, -1412.669f, 45.33163f, 0f, 0f, 30.00001f, 3.489247f, 7.811243f, 3.425777f);
 	uParam0->f_356[5] = VOLUME::_0x10157BC3247FF3BA(2355.992f, -1421.836f, 41.3914f, 0f, 0f, 19.99999f, 55f, 55f, 55f, "volRestriction");
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2355.992f, -1421.836f, 41.3914f, 0f, 0f, 70.00002f, 8f, 8f, 6f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2355.885f, -1421.8f, 41.34521f, 0f, 0f, 70f, 11f, 11f, 6f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0xBCE668AAF83608BE(&(uParam0->f_356[6]), 2366.74f, -1422.255f, 44.43055f, 0f, 0f, -91.5616f, 20.04471f, 11.15886f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2361.172f, -1422.089f, 46.04272f, 0f, 0f, -91.5616f, 40.08969f, 10.93277f, 3f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2366.74f, -1422.255f, 44.43055f, 0f, 0f, -91.5616f, 20.04471f, 11.15886f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2361.172f, -1422.089f, 46.04272f, 0f, 0f, -91.5616f, 40.08969f, 10.93277f, 3f);
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volDontApproach");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volLeaveSpecial");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2348.596f, -1410.837f, 48.04359f, 0f, 0f, 87.00005f, 11.45307f, 14.97555f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2348.596f, -1410.837f, 48.04359f, 0f, 0f, 87.00005f, 11.45307f, 14.97555f, 8.5f);
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volGunfire");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2346.184f, -1412.446f, 48.04359f, 0f, 0f, -18.75681f, 11.45307f, 5.932232f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2349.426f, -1426.544f, 48.04359f, 0f, 0f, 177.8593f, 11.45307f, 20.56424f, 8.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2349.077f, -1416.859f, 48.04359f, 0f, 0f, -149.5772f, 11.45307f, 5.932232f, 8.5f);
 }
 
 void func_144(var uParam0)
@@ -4022,23 +4022,23 @@ void func_144(var uParam0)
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2481.61f, -1489.811f, 46.47475f, 0f, 0f, 70.00002f, 8f, 8f, 1.872454f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2481.61f, -1489.811f, 46.47475f, 0f, 0f, 70.00002f, 11f, 11f, 1.872454f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0xBCE668AAF83608BE(&(uParam0->f_356[6]), 2480.174f, -1481.284f, 44.43055f, 0f, 0f, 9.70794f, 19.37479f, 11.04326f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2480.816f, -1486.419f, 46.04272f, 0f, 0f, 17.70794f, 43.03735f, 6.898358f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2481.224f, -1486.839f, 46.04272f, 0f, 0f, 3.707942f, 43.03735f, 6.898358f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2481.311f, -1487.413f, 46.04272f, 0f, 0f, 8.707941f, 43.03735f, 6.898358f, 3f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2480.174f, -1481.284f, 44.43055f, 0f, 0f, 9.70794f, 19.37479f, 11.04326f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2480.816f, -1486.419f, 46.04272f, 0f, 0f, 17.70794f, 43.03735f, 6.898358f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2481.224f, -1486.839f, 46.04272f, 0f, 0f, 3.707942f, 43.03735f, 6.898358f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2481.311f, -1487.413f, 46.04272f, 0f, 0f, 8.707941f, 43.03735f, 6.898358f, 3f);
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volDontApproach");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2490.426f, -1495.638f, 41.33596f, 0f, 0f, 97.43935f, 11.45307f, 22.11825f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2469.827f, -1499.94f, 41.33596f, 0f, 0f, 106.4393f, 11.45307f, 22.11825f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2490.426f, -1495.638f, 41.33596f, 0f, 0f, 97.43935f, 11.45307f, 22.11825f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2469.827f, -1499.94f, 41.33596f, 0f, 0f, 106.4393f, 11.45307f, 22.11825f, 18.28401f);
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volLeaveSpecial");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2490.426f, -1495.638f, 41.33596f, 0f, 0f, 97.43935f, 11.45307f, 22.11825f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2469.827f, -1499.94f, 41.33596f, 0f, 0f, 106.4393f, 11.45307f, 22.11825f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2490.426f, -1495.638f, 41.33596f, 0f, 0f, 97.43935f, 11.45307f, 22.11825f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2469.827f, -1499.94f, 41.33596f, 0f, 0f, 106.4393f, 11.45307f, 22.11825f, 18.28401f);
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volGunfire");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2481.456f, -1496.809f, 34.73368f, 0f, 0f, 97.43935f, 43.96677f, 61.59657f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2460.604f, -1492.015f, 47.15677f, 0f, 0f, 106.4393f, 1.472394f, 2.960552f, 3.341793f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2461.642f, -1456.285f, 47.15677f, 0f, 0f, 154.926f, 9.894988f, 4.656751f, 8.947354f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2470.778f, -1459.601f, 47.15677f, 0f, 0f, 163.926f, 9.894988f, 4.656751f, 8.947354f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2480.23f, -1461.705f, 47.15677f, 0f, 0f, 169.926f, 9.894988f, 4.656751f, 8.947354f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2480.802f, -1449.137f, 47.15677f, 0f, 0f, 89.43931f, 28.63529f, 9.029835f, 8.947354f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2481.456f, -1496.809f, 34.73368f, 0f, 0f, 97.43935f, 43.96677f, 61.59657f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2460.604f, -1492.015f, 47.15677f, 0f, 0f, 106.4393f, 1.472394f, 2.960552f, 3.341793f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2461.642f, -1456.285f, 47.15677f, 0f, 0f, 154.926f, 9.894988f, 4.656751f, 8.947354f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2470.778f, -1459.601f, 47.15677f, 0f, 0f, 163.926f, 9.894988f, 4.656751f, 8.947354f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2480.23f, -1461.705f, 47.15677f, 0f, 0f, 169.926f, 9.894988f, 4.656751f, 8.947354f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2480.802f, -1449.137f, 47.15677f, 0f, 0f, 89.43931f, 28.63529f, 9.029835f, 8.947354f);
 }
 
 void func_145(var uParam0)
@@ -4048,15 +4048,15 @@ void func_145(var uParam0)
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2439f, -1477.2f, 45.4f, 0f, 0f, 70.00002f, 9f, 9f, 1.872454f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2439f, -1477.2f, 45.4f, 0f, 0f, 70.00002f, 13f, 13f, 1.872454f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0xBCE668AAF83608BE(&(uParam0->f_356[6]), 2439.329f, -1468.278f, 44.43055f, 0f, 0f, -2f, 20.57613f, 10.42412f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2439.075f, -1475.143f, 46.04272f, 0f, 0f, -1.999999f, 41.91213f, 6.898358f, 3f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2439.193f, -1471.767f, 46.04272f, 0f, 0f, -1.999999f, 41.10165f, 6.898358f, 3f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2439.329f, -1468.278f, 44.43055f, 0f, 0f, -2f, 20.57613f, 10.42412f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2439.075f, -1475.143f, 46.04272f, 0f, 0f, -1.999999f, 41.91213f, 6.898358f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2439.193f, -1471.767f, 46.04272f, 0f, 0f, -1.999999f, 41.10165f, 6.898358f, 3f);
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volDontApproach");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2435.491f, -1484.325f, 41.33596f, 0f, 0f, 88f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2450.682f, -1486.405f, 41.33596f, 0f, 0f, 74.89835f, 11.45307f, 15.18096f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2435.491f, -1484.325f, 41.33596f, 0f, 0f, 88f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2450.682f, -1486.405f, 41.33596f, 0f, 0f, 74.89835f, 11.45307f, 15.18096f, 18.28401f);
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volLeaveSpecial");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2435.491f, -1485.995f, 41.33596f, 0f, 0f, 88f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 2450.682f, -1488.076f, 41.33596f, 0f, 0f, 74.89835f, 11.45307f, 15.18096f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2435.491f, -1485.995f, 41.33596f, 0f, 0f, 88f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 2450.682f, -1488.076f, 41.33596f, 0f, 0f, 74.89835f, 11.45307f, 15.18096f, 18.28401f);
 }
 
 void func_146(var uParam0)
@@ -4066,17 +4066,17 @@ void func_146(var uParam0)
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2802.931f, -1227.268f, 48.132f, 0f, 0f, 70.00002f, 8f, 8f, 1.872454f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2802.931f, -1227.268f, 48.132f, 0f, 0f, 70.00002f, 13f, 13f, 1.872454f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2809.939f, -1227.461f, 47.80409f, 0f, 0f, 4f, 15.74124f, 26.98112f, 5.627087f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 2806.535f, -1240.933f, 47.80409f, 0f, 0f, -16f, 15.74124f, 26.98112f, 5.627087f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2809.939f, -1227.461f, 47.80409f, 0f, 0f, 4f, 15.74124f, 26.98112f, 5.627087f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 2806.535f, -1240.933f, 47.80409f, 0f, 0f, -16f, 15.74124f, 26.98112f, 5.627087f);
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volDontApproach");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2792.503f, -1223.224f, 48.132f, 0f, 0f, 93f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 2796.437f, -1227.087f, 48.132f, 0f, 0f, 157.2016f, 11.45307f, 1.967644f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2792.503f, -1223.224f, 48.132f, 0f, 0f, 93f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 2796.437f, -1227.087f, 48.132f, 0f, 0f, 157.2016f, 11.45307f, 1.967644f, 18.28401f);
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2792.322f, -1226.895f, 48.132f, 0f, 0f, 87.99999f, 16.17267f, 18.38813f, 18.28401f, "volLeaveSpecial");
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volGunfire");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2796.437f, -1227.087f, 48.132f, 0f, 0f, 157.2016f, 11.45307f, 1.967644f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2792.503f, -1223.224f, 48.132f, 0f, 0f, 93f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2821.741f, -1234.392f, 48.132f, 0f, 0f, 145f, 9.506063f, 4.220686f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 2817.688f, -1231.57f, 48.132f, 0f, 0f, 175f, 1.49644f, 4.220686f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2796.437f, -1227.087f, 48.132f, 0f, 0f, 157.2016f, 11.45307f, 1.967644f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2792.503f, -1223.224f, 48.132f, 0f, 0f, 93f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2821.741f, -1234.392f, 48.132f, 0f, 0f, 145f, 9.506063f, 4.220686f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 2817.688f, -1231.57f, 48.132f, 0f, 0f, 175f, 1.49644f, 4.220686f, 18.28401f);
 }
 
 void func_147(var uParam0)
@@ -4086,16 +4086,16 @@ void func_147(var uParam0)
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(1351.49f, -1259.158f, 78.13533f, 0f, 0f, 70.00003f, 10f, 10f, 2.5f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(1351.49f, -1259.158f, 78.13533f, 0f, 0f, 70.00003f, 13f, 13f, 2.5f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0xBCE668AAF83608BE(&(uParam0->f_356[6]), 1352.894f, -1254.122f, 78.49686f, 0f, 0f, -21.38857f, 18.16649f, 9.36652f, 3.187529f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 1351.046f, -1258.798f, 79.04047f, 0f, 0f, -21.38857f, 36.50782f, 6.898358f, 5.363967f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 1345.281f, -1262.595f, 77.55599f, 0f, 0f, -20f, 8.649118f, 6.691235f, 5f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[6]), 1359.496f, -1267.865f, 77.55599f, 0f, 0f, -23f, 10.62437f, 7.700585f, 5f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 1352.894f, -1254.122f, 78.49686f, 0f, 0f, -21.38857f, 18.16649f, 9.36652f, 3.187529f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 1351.046f, -1258.798f, 79.04047f, 0f, 0f, -21.38857f, 36.50782f, 6.898358f, 5.363967f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 1345.281f, -1262.595f, 77.55599f, 0f, 0f, -20f, 8.649118f, 6.691235f, 5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 1359.496f, -1267.865f, 77.55599f, 0f, 0f, -23f, 10.62437f, 7.700585f, 5f);
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volDontApproach");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 1355.305f, -1269.654f, 74.33895f, 0f, 0f, 68.00002f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[2]), 1345.839f, -1275.037f, 74.33895f, 0f, 0f, 137.8984f, 11.45307f, 15.18096f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 1355.305f, -1269.654f, 74.33895f, 0f, 0f, 68.00002f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[2]), 1345.839f, -1275.037f, 74.33895f, 0f, 0f, 137.8984f, 11.45307f, 15.18096f, 18.28401f);
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volLeaveSpecial");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 1353.735f, -1273.54f, 74.37292f, 0f, 0f, 68.00002f, 11.45307f, 18.38813f, 18.28401f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[3]), 1345.123f, -1277.858f, 74.37292f, 0f, 0f, 137.8984f, 11.45307f, 15.18096f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 1353.735f, -1273.54f, 74.37292f, 0f, 0f, 68.00002f, 11.45307f, 18.38813f, 18.28401f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[3]), 1345.123f, -1277.858f, 74.37292f, 0f, 0f, 137.8984f, 11.45307f, 15.18096f, 18.28401f);
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1347.519f, -1268.598f, 79.04047f, 0f, 0f, -21.38857f, 38.28065f, 13.52188f, 11.8531f, "volGunfire");
 }
 
@@ -4109,8 +4109,8 @@ void func_148(var uParam0)
 	uParam0->f_356[2] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1308.615f, -1352.026f, 74.33895f, 0f, 0f, 162f, 11.45307f, 20.38813f, 18.28401f, "volDontApproach");
 	uParam0->f_356[3] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1308.615f, -1352.026f, 74.33895f, 0f, 0f, 162f, 11.45307f, 20.38813f, 18.28401f, "volLeaveSpecial");
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volGunfire");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1312.336f, -1353.235f, 74.33895f, 0f, 0f, 162f, 18.46553f, 19.81668f, 25.11803f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1313.737f, -1357.91f, 74.33895f, 0f, 0f, 142f, 18.46553f, 19.81668f, 25.11803f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1312.336f, -1353.235f, 74.33895f, 0f, 0f, 162f, 18.46553f, 19.81668f, 25.11803f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1313.737f, -1357.91f, 74.33895f, 0f, 0f, 142f, 18.46553f, 19.81668f, 25.11803f);
 }
 
 void func_149(var uParam0)
@@ -4120,17 +4120,17 @@ void func_149(var uParam0)
 	uParam0->f_356[0] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(1392.874f, -1310.944f, 78.13533f, 0f, 0f, 70.00003f, 10.5f, 10.5f, 2.5f, "volTrigger");
 	uParam0->f_356[1] = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(1392.874f, -1310.944f, 78.13533f, 0f, 0f, 70.00003f, 14.5f, 14.5f, 2.5f, "volTriggerHeadLook");
 	uParam0->f_356[6] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volILO");
-	VOLUME::_0xBCE668AAF83608BE(&(uParam0->f_356[6]), 1392.874f, -1310.944f, 78.13533f, 0f, 0f, 70.00003f, 20f, 20f, 2.5f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[6]), 1392.874f, -1310.944f, 78.13533f, 0f, 0f, 70.00003f, 20f, 20f, 2.5f);
 	uParam0->f_356[7] = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("volGunfire");
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1391.794f, -1329.702f, 79.33273f, 0f, 0f, 17.03527f, 2.0198f, 3.554839f, 3.033877f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1390.177f, -1303.995f, 79.33273f, 0f, 0f, -26.96474f, 1.628754f, 4.196584f, 1.933624f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1380.052f, -1313.042f, 79.33273f, 0f, 0f, 49.03527f, 2.696761f, 4.196584f, 1.933624f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1382.822f, -1304.423f, 78.6823f, 0f, 0f, 40.03526f, 1.274845f, 3.864339f, 3.111284f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1405.018f, -1302.858f, 79.2057f, 0f, 0f, 12.03527f, 0.595659f, 3.952965f, 4.058104f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1399.541f, -1304.149f, 79.2057f, 0f, 0f, 12.03527f, 1.131549f, 3.204172f, 4.058104f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1387.898f, -1324.363f, 79.33273f, 0f, 0f, 65.03527f, 1.505351f, 4.265281f, 3.033877f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1391.817f, -1310.087f, 78.26695f, 0f, 0f, -0.96473f, 1.567469f, 2.648976f, 4.058104f);
-	VOLUME::_0x39816F6F94F385AD(&(uParam0->f_356[7]), 1379.425f, -1290.664f, 78.6823f, 0f, 0f, -21.96474f, 13.81176f, 17.83206f, 10.94466f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1391.794f, -1329.702f, 79.33273f, 0f, 0f, 17.03527f, 2.0198f, 3.554839f, 3.033877f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1390.177f, -1303.995f, 79.33273f, 0f, 0f, -26.96474f, 1.628754f, 4.196584f, 1.933624f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1380.052f, -1313.042f, 79.33273f, 0f, 0f, 49.03527f, 2.696761f, 4.196584f, 1.933624f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1382.822f, -1304.423f, 78.6823f, 0f, 0f, 40.03526f, 1.274845f, 3.864339f, 3.111284f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1405.018f, -1302.858f, 79.2057f, 0f, 0f, 12.03527f, 0.595659f, 3.952965f, 4.058104f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1399.541f, -1304.149f, 79.2057f, 0f, 0f, 12.03527f, 1.131549f, 3.204172f, 4.058104f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1387.898f, -1324.363f, 79.33273f, 0f, 0f, 65.03527f, 1.505351f, 4.265281f, 3.033877f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1391.817f, -1310.087f, 78.26695f, 0f, 0f, -0.96473f, 1.567469f, 2.648976f, 4.058104f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(&(uParam0->f_356[7]), 1379.425f, -1290.664f, 78.6823f, 0f, 0f, -21.96474f, 13.81176f, 17.83206f, 10.94466f);
 }
 
 void func_150(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4)
@@ -4913,12 +4913,12 @@ int func_162(var uParam0, int iParam1)
 
 bool func_163(int iParam0, int iParam1, int iParam2, int iParam3)
 {
-	return STREAMING::_0x19A6BE7D9C6884D3(iParam0, iParam1, iParam2, iParam3);
+	return STREAMING::_REQUEST_SCENARIO_TYPE(iParam0, iParam1, iParam2, iParam3);
 }
 
 bool func_164(int iParam0)
 {
-	return STREAMING::_0x9427C94D2E4094A4(iParam0, 0);
+	return STREAMING::_HAS_SCENARIO_TYPE_LOADED(iParam0, 0);
 }
 
 int func_165(var uParam0)
@@ -5954,10 +5954,10 @@ void func_196(int iParam0, int* iParam1, int iParam2, int iParam3, int iParam4, 
 		{
 			MAP::REMOVE_BLIP(&iVar0);
 		}
-		*iParam1 = MAP::_0x23F74C2FDA6E7C61(iParam2, iParam0);
+		*iParam1 = MAP::BLIP_ADD_FOR_ENTITY(iParam2, iParam0);
 		if (iParam3 != 0)
 		{
-			MAP::_0x662D364ABF16DE2F(*iParam1, iParam3);
+			MAP::BLIP_ADD_MODIFIER(*iParam1, iParam3);
 		}
 		if (iParam4 != 0)
 		{
@@ -10216,12 +10216,12 @@ void func_292(var uParam0, bool bParam1)
 {
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
-		uParam0->f_6 = MAP::_0x554D9D53F696D002(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		uParam0->f_6 = MAP::BLIP_ADD_FOR_COORDS(-1702907713, *uParam0);
+		MAP::BLIP_ADD_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 0);
 			func_116("BEAT_GLB", 5500, 0, 1, 0, 0, -1, -1, 0);
 		}
 		PED::_0x9851DE7AEC10B4E1(*uParam0, 100f, 1, 0);
@@ -10505,7 +10505,7 @@ int func_297(int iParam0, var uParam1, bool bParam2, int iParam3, int iParam4, b
 	{
 		return 0;
 	}
-	vVar0 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar0 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	vVar3 = { VOLUME::_0x3E2A25B2416DD67E(iParam0) };
 	uVar6 = func_298(vVar0, vVar3.x, uParam1, bParam2, iParam3, iParam4, bParam5, fParam6);
 	return uVar6;
@@ -11390,7 +11390,7 @@ int func_353(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4, 
 					{
 						return 0;
 					}
-					func_473(WEAPON::_0x5C2EA6C44F515F34(iParam0), iParam1, iParam6);
+					func_473(WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0), iParam1, iParam6);
 					func_474(iParam0, iParam1);
 					return 1;
 				}
@@ -11483,7 +11483,7 @@ void func_354(int iParam0, int iParam1, float fParam2)
 
 bool func_355(bool bParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(WEAPON::_0x5C2EA6C44F515F34(bParam0));
+	return WEAPON::_IS_AMMO_VALID(WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0));
 }
 
 void func_356(int* iParam0, int iParam1)
@@ -11609,7 +11609,7 @@ int func_367()
 	{
 		if (WEAPON::_0x6AD66548840472E5(Global_1935630->f_44))
 		{
-			if (CAM::_0xA24C1D341C6E0D53(1, 1, 1))
+			if (CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(1, 1, 1))
 			{
 				if (PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()))
 				{
@@ -11699,7 +11699,7 @@ int func_370(var uParam0, float fParam1, int iParam2, int iParam3, float fParam4
 	switch (*uParam0)
 	{
 		case 0:
-			if (ENTITY::IS_ENTITY_A_PED(uParam0->f_6) && !PED::_0x5102307CE88798EB(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6)))
+			if (ENTITY::IS_ENTITY_A_PED(uParam0->f_6) && !PED::_IS_PED_VISIBILITY_TRACKED(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6)))
 			{
 				PED::REQUEST_PED_VISIBILITY_TRACKING(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6));
 			}
@@ -11721,7 +11721,7 @@ int func_370(var uParam0, float fParam1, int iParam2, int iParam3, float fParam4
 			{
 				if (fParam4 > 0f)
 				{
-					bVar1 = PED::_0x164CECC59E70DF86(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6), fParam4);
+					bVar1 = PED::_IS_TRACKED_PED_VISIBILITY_PERCENTAGE_NOT_LESS_THAN(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6), fParam4);
 				}
 				else
 				{
@@ -12006,7 +12006,7 @@ int func_381(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -13298,7 +13298,7 @@ int func_428(int iParam0, int iParam1, int iParam2)
 void func_429(var uParam0, var uParam1, int iParam2, vector3 vParam3, float fParam6, int iParam7, int iParam8, int iParam9, bool bParam10, bool bParam11, bool bParam12, float fParam13)
 {
 	return;
-	if (CAM::_0xA24C1D341C6E0D53(1, 0, 0))
+	if (CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(1, 0, 0))
 	{
 		if (func_546(uParam0, 64))
 		{
@@ -13392,7 +13392,7 @@ void func_433(int iParam0, float fParam1)
 	PED::_0x58F7DB5BD8FA2288(&(Local_14.f_307[iParam0]));
 	PED::_0x935CF6E42BAF7F4D(&(Local_14.f_307[iParam0]));
 	func_200(Local_14.f_311[iParam0]);
-	if (!PED::_0x9C54041BB66BCF9E(&(Local_14.f_307[iParam0]), &(Local_14.f_502[iParam0])))
+	if (!PED::IS_PED_USING_THIS_SCENARIO(&(Local_14.f_307[iParam0]), &(Local_14.f_502[iParam0])))
 	{
 		TASK::OPEN_SEQUENCE_TASK(&iVar0);
 		TASK::_TASK_USE_SCENARIO_POINT(0, &(Local_14.f_502[iParam0]), 0, -1, 1, 0, 0, 0, -1082130432, 0);
@@ -13866,7 +13866,7 @@ void func_465(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -13913,10 +13913,10 @@ struct<5> func_466(int iParam0, bool bParam1, int iParam2)
 	switch (func_568(iParam0))
 	{
 		case -1037537535:
-			if (!INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			if (!INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0 = { func_470(889965687, Var0, 1034665895, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 889965687);
 			}
 			else
 			{
@@ -13976,27 +13976,27 @@ struct<5> func_466(int iParam0, bool bParam1, int iParam2)
 			if (func_573(iParam0, -1823706425))
 			{
 				Var0 = { func_470(-1838434463, Var0, 1084182731, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, -1838434463);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, -1838434463);
 			}
 			else if (func_573(iParam0, -1483207246))
 			{
 				Var0 = { func_470(889965687, Var0, 1034665895, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var27.f_9 = -1591664384;
 				if (!func_574(Var0, &Var27, bParam1, 0))
@@ -14011,7 +14011,7 @@ struct<5> func_466(int iParam0, bool bParam1, int iParam2)
 			}
 			else
 			{
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 1328661203);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 1328661203);
 				if (Var0.f_4 == 0)
 				{
 				}
@@ -15245,7 +15245,7 @@ int func_471(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4, in
 		iVar14 = -1;
 		return iVar14 != -1;
 	}
-	if (!INVENTORY::_0x3E4E811480B3AE79(func_578(bParam6), uParam1, iParam3, iParam4))
+	if (!INVENTORY::_INVENTORY_REMOVE_INVENTORY_ITEM_WITH_GUID(func_578(bParam6), uParam1, iParam3, iParam4))
 	{
 		return 0;
 	}
@@ -15258,7 +15258,7 @@ int func_472(bool bParam0)
 	{
 		return 1;
 	}
-	return INVENTORY::_0x0FBBFFC891A97C81(func_578(bParam0));
+	return INVENTORY::_INVENTORY_ARE_LOCAL_CHANGES_ALLOWED(func_578(bParam0));
 }
 
 int func_473(int iParam0, int iParam1, int iParam2)
@@ -15558,7 +15558,7 @@ int func_488(bool bParam0)
 	{
 		return 0;
 	}
-	LAW::_0xC61EDEBF16CD9668(752193127, bParam0, 0);
+	LAW::_PAUSE_BOUNTY_HUNTER_COOLDOWN(752193127, bParam0, 0);
 	return 1;
 }
 
@@ -16788,7 +16788,7 @@ bool func_531(var uParam0, int* iParam1, float fParam2, float fParam3, var uPara
 	bVar8 = iParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_637(Global_35)) || func_638(Global_35)) || func_639(Global_35));
+	bVar11 = (((PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_637(Global_35)) || func_638(Global_35)) || func_639(Global_35));
 	fVar12 = -1f;
 	if (func_204(&(iParam1->f_13)))
 	{
@@ -17144,7 +17144,7 @@ Vector3 func_543(int iParam0, bool bParam1)
 	}
 	if (VOLUME::DOES_VOLUME_EXIST(((*Global_1888801)[iParam0 /*35*/])->f_3))
 	{
-		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iParam0 /*35*/])->f_3) };
+		vVar0 = { VOLUME::GET_VOLUME_COORDS(((*Global_1888801)[iParam0 /*35*/])->f_3) };
 		if (bParam1)
 		{
 			if (MISC::GET_GROUND_Z_FOR_3D_COORD(vVar0, &uVar3, 0))
@@ -17201,7 +17201,7 @@ int func_548(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -17752,7 +17752,7 @@ int func_570(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -17866,7 +17866,7 @@ int func_576(int iParam0, var uParam1, var uParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x025A1B1FB03FBF61(iVar0, uParam1, uParam2, 22, 1))
+	if (!INVENTORY::_INVENTORY_GET_FULL_INVENTORY_ITEM_DATA(iVar0, uParam1, uParam2, 22, 1))
 	{
 		return 0;
 	}
@@ -17910,7 +17910,7 @@ int func_579(var uParam0)
 
 bool func_580(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_581(int iParam0, int iParam1)
@@ -19804,11 +19804,11 @@ void func_655(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}
@@ -20455,7 +20455,7 @@ int func_673(int iParam0, bool bParam1, int iParam2)
 			{
 				if (!bParam1 || func_745(iVar2))
 				{
-					vVar3 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iVar2 /*35*/])->f_3) };
+					vVar3 = { VOLUME::GET_VOLUME_COORDS(((*Global_1888801)[iVar2 /*35*/])->f_3) };
 					fVar6 = BUILTIN::VDIST(vVar3, Global_36);
 					if (fVar6 < fVar0)
 					{
@@ -22004,7 +22004,7 @@ int func_706(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_46))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1935630->f_46))
+			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::IS_WEAPON_BOW(Global_1935630->f_46))
 			{
 				return 1;
 			}
@@ -23344,7 +23344,7 @@ Vector3 func_772(int iParam0)
 {
 	if (((*Global_1945938)[iParam0 /*18*/])->f_5 == 1)
 	{
-		return VOLUME::_0xF70F00013A62F866(((*Global_1945938)[iParam0 /*18*/])->f_10);
+		return VOLUME::GET_VOLUME_COORDS(((*Global_1945938)[iParam0 /*18*/])->f_10);
 	}
 	else if (((*Global_1945938)[iParam0 /*18*/])->f_5 == 2)
 	{

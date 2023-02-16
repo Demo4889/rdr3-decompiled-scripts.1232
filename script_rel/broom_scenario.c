@@ -114,13 +114,13 @@ void func_6()
 				iLocal_5 = 7;
 				return;
 			}
-			iLocal_72 = TASK::_0x5BA659955369B0E2(iLocal_3);
+			iLocal_72 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_3);
 			if (!func_12(iLocal_72, 0))
 			{
 				iLocal_5 = 7;
 				return;
 			}
-			bLocal_79 = _NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_72));
+			bLocal_79 = _NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_GET_PERSCHAR_INDEX_FROM_PED_INDEX(iLocal_72));
 			if (!bLocal_79)
 			{
 				TASK::_0xE7BBC4E56B989449(iLocal_3, &uLocal_80, 1);
@@ -130,7 +130,7 @@ void func_6()
 					return;
 				}
 			}
-			iVar0 = BUILTIN::FLOOR(TASK::_0x6718F40313A2B5A6(iLocal_3));
+			iVar0 = BUILTIN::FLOOR(TASK::_GET_SCENARIO_POINT_RADIUS(iLocal_3));
 			if (!func_13(iVar0, iLocal_4))
 			{
 				iLocal_5 = 7;
@@ -154,7 +154,7 @@ void func_6()
 				iLocal_5 = 7;
 				return;
 			}
-			if (!PED::_0x9C54041BB66BCF9E(iLocal_72, iLocal_3))
+			if (!PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, iLocal_3))
 			{
 				iLocal_5 = 7;
 				return;
@@ -188,13 +188,13 @@ void func_6()
 					{
 						if (iVar1 > 0)
 						{
-							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(&(Local_6[(iVar1 - 1) /*13*/]), 1), TASK::_0xB93EA7184BAA85C3(&(Local_6[(iVar1 - 1) /*13*/]), 1), (Local_6[iVar1 /*13*/])->f_4) };
-							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_0xB93EA7184BAA85C3(&(Local_6[(iVar1 - 1) /*13*/]), 1) + (Local_6[iVar1 /*13*/])->f_10);
+							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(&(Local_6[(iVar1 - 1) /*13*/]), 1), TASK::_GET_SCENARIO_POINT_HEADING(&(Local_6[(iVar1 - 1) /*13*/]), 1), (Local_6[iVar1 /*13*/])->f_4) };
+							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_GET_SCENARIO_POINT_HEADING(&(Local_6[(iVar1 - 1) /*13*/]), 1) + (Local_6[iVar1 /*13*/])->f_10);
 						}
 						else
 						{
-							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_3, 1), TASK::_0xB93EA7184BAA85C3(iLocal_3, 1), (Local_6[iVar1 /*13*/])->f_4) };
-							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_0xB93EA7184BAA85C3(iLocal_3, 1) + (Local_6[iVar1 /*13*/])->f_10);
+							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_3, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1), (Local_6[iVar1 /*13*/])->f_4) };
+							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1) + (Local_6[iVar1 /*13*/])->f_10);
 						}
 						Local_6[iVar1 /*13*/] = TASK::CREATE_SCENARIO_POINT((Local_6[iVar1 /*13*/])->f_1, (Local_6[iVar1 /*13*/])->f_7, (Local_6[iVar1 /*13*/])->f_11, 0f, 0f, 0);
 						TASK::_0xE69FDA40AAC3EFC0(&(Local_6[iVar1 /*13*/]), 0);
@@ -215,7 +215,7 @@ void func_6()
 			{
 				func_17(&uLocal_75, 0);
 			}
-			if (func_18(&uLocal_75, fLocal_78) && TASK::_0x02EBBB3989B7E695(iLocal_72))
+			if (func_18(&uLocal_75, fLocal_78) && TASK::_PED_IS_IN_SCENARIO_BASE(iLocal_72))
 			{
 				iLocal_5 = 4;
 			}
@@ -228,7 +228,7 @@ void func_6()
 			}
 			if (TASK::_0x79197F7D2BB5E73A(iLocal_72, &(Local_6[iLocal_73 /*13*/]), (Local_6[iLocal_73 /*13*/])->f_2, (Local_6[iLocal_73 /*13*/])->f_3, 0, 0))
 			{
-				if (PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
+				if (PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
 				{
 					fLocal_78 = (Local_6[iLocal_73 /*13*/])->f_12;
 					iLocal_73++;
@@ -254,7 +254,7 @@ void func_6()
 			{
 				func_17(&uLocal_75, 0);
 			}
-			if (func_18(&uLocal_75, fLocal_78) && TASK::_0x02EBBB3989B7E695(iLocal_72))
+			if (func_18(&uLocal_75, fLocal_78) && TASK::_PED_IS_IN_SCENARIO_BASE(iLocal_72))
 			{
 				iLocal_5 = 6;
 			}
@@ -273,7 +273,7 @@ void func_6()
 					TASK::_TASK_USE_SCENARIO_POINT(iLocal_72, &(uLocal_80[0]), 0, 0, 1, 0, 0, 0, -1082130432, 0);
 					PED::SET_PED_KEEP_TASK(iLocal_72, true);
 				}
-				if (PED::_0x9C54041BB66BCF9E(iLocal_72, &(uLocal_80[0])))
+				if (PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(uLocal_80[0])))
 				{
 					iLocal_5 = 7;
 				}
@@ -502,7 +502,7 @@ int func_15()
 	}
 	if (iLocal_73 <= 0)
 	{
-		if (!PED::_0x9C54041BB66BCF9E(iLocal_72, iLocal_3) && !PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
+		if (!PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, iLocal_3) && !PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
 		{
 			return 1;
 		}
@@ -511,13 +511,13 @@ int func_15()
 	{
 		if (!bLocal_79)
 		{
-			if (!PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[(iLocal_73 - 1) /*13*/])) && !PED::_0x9C54041BB66BCF9E(iLocal_72, &(uLocal_80[0])))
+			if (!PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(Local_6[(iLocal_73 - 1) /*13*/])) && !PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(uLocal_80[0])))
 			{
 				return 1;
 			}
 		}
 	}
-	else if (!PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[(iLocal_73 - 1) /*13*/])) && !PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
+	else if (!PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(Local_6[(iLocal_73 - 1) /*13*/])) && !PED::IS_PED_USING_THIS_SCENARIO(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
 	{
 		return 1;
 	}

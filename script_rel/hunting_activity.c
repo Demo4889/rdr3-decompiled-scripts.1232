@@ -953,7 +953,7 @@ bool func_36()
 		}
 		iVar2++;
 	}
-	ITEMSET::_0x20A4BF0E09BEE146(iLocal_69);
+	ITEMSET::_CLEAR_ITEMSET(iLocal_69);
 	return iVar1 > 0;
 }
 
@@ -1000,7 +1000,7 @@ var func_39(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

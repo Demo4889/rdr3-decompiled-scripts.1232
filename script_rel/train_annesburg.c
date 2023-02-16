@@ -273,7 +273,7 @@ float func_9(int iParam0, bool bParam1, int iParam2)
 	float fVar0;
 	vector3 vVar1;
 
-	fVar0 = ENTITY::_0x627520389E288A73(iParam0, "props_misc@annesburg_coal", "annchute01_full");
+	fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iParam0, "props_misc@annesburg_coal", "annchute01_full");
 	if (bParam1)
 	{
 		vVar1 = { ENTITY::GET_ENTITY_COORDS(iParam0, true, false) };
@@ -645,9 +645,9 @@ void func_23(int iParam0, vector3 vParam1)
 	{
 		return;
 	}
-	if (AUDIO::_0xE368E8422C860BA7("Coal_Fall", "Annesburg_Coal_Chute_Sounds", -2) && AUDIO::_0x84848E1C0FC67DBB(iParam0))
+	if (AUDIO::_0xE368E8422C860BA7("Coal_Fall", "Annesburg_Coal_Chute_Sounds", -2) && AUDIO::_HAS_SOUND_ID_FINISHED(iParam0))
 	{
-		AUDIO::_0xDCF5BA95BBF0FABA(iParam0, "Coal_Fall", vParam1, "Annesburg_Coal_Chute_Sounds", 0, 0, 1);
+		AUDIO::_PLAY_SOUND_FROM_POSITION_WITH_ID(iParam0, "Coal_Fall", vParam1, "Annesburg_Coal_Chute_Sounds", 0, 0, 1);
 	}
 }
 
@@ -657,9 +657,9 @@ void func_24(int iParam0)
 	{
 		return;
 	}
-	if (!AUDIO::_0x84848E1C0FC67DBB(iParam0))
+	if (!AUDIO::_HAS_SOUND_ID_FINISHED(iParam0))
 	{
-		AUDIO::_0x3210BCB36AF7621B(iParam0);
+		AUDIO::_STOP_SOUND_WITH_ID(iParam0);
 	}
 }
 

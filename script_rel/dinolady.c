@@ -137,7 +137,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_21, 8);
 							if (func_36(32))
@@ -754,9 +754,9 @@ int func_38(int iParam0)
 						if (!iLocal_17)
 						{
 							AUDIO::SET_AMBIENT_ZONE_STATE_PERSISTENT("AZ_Dino_Lady_Working_In_Barn", false, true);
-							if (AUDIO::IS_STREAM_PLAYING(AUDIO::_0x0556C784FA056628("DINO_MIDSTAGE", "267765497_leadin_front")))
+							if (AUDIO::IS_STREAM_PLAYING(AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("DINO_MIDSTAGE", "267765497_leadin_front")))
 							{
-								AUDIO::STOP_STREAM(AUDIO::_0x0556C784FA056628("DINO_MIDSTAGE", "267765497_leadin_front"));
+								AUDIO::STOP_STREAM(AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("DINO_MIDSTAGE", "267765497_leadin_front"));
 							}
 							iLocal_17 = 1;
 						}
@@ -772,7 +772,7 @@ int func_38(int iParam0)
 					if (func_57(func_56(39)) < 1)
 					{
 						AUDIO::SET_AMBIENT_ZONE_STATE_PERSISTENT("AZ_Dino_Lady_Working_In_Barn", true, true);
-						AUDIO::PLAY_STREAM_FROM_POSITION(((*Global_1347702)[40 /*49*/])->f_24, AUDIO::_0x0556C784FA056628("DINO_MIDSTAGE", "267765497_leadin_front"));
+						AUDIO::PLAY_STREAM_FROM_POSITION(((*Global_1347702)[40 /*49*/])->f_24, AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("DINO_MIDSTAGE", "267765497_leadin_front"));
 						iLocal_16 = 1;
 						func_58(func_56(39), 1);
 					}
@@ -780,7 +780,7 @@ int func_38(int iParam0)
 				else if (func_59(func_56(39)) < 1)
 				{
 					AUDIO::SET_AMBIENT_ZONE_STATE_PERSISTENT("AZ_Dino_Lady_Working_In_Barn", true, true);
-					AUDIO::PLAY_STREAM_FROM_POSITION(((*Global_1347702)[40 /*49*/])->f_24, AUDIO::_0x0556C784FA056628("DINO_MIDSTAGE", "267765497_leadin_front"));
+					AUDIO::PLAY_STREAM_FROM_POSITION(((*Global_1347702)[40 /*49*/])->f_24, AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("DINO_MIDSTAGE", "267765497_leadin_front"));
 					iLocal_16 = 1;
 					func_60(func_56(39), 1);
 				}

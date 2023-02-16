@@ -541,8 +541,8 @@ int func_13()
 	iLocal_21 = ((*Global_1887327)[87 /*36*/])->f_5;
 	VOLUME::_0xB469CFD9E065EB99(iLocal_21, 22);
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Butcher - m_volGeneral Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, 2595.509f, 778.3701f, 87.90205f, 0f, 0f, 70f, 2.456799f, 2.667848f, 2.166918f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, 2593.104f, 779.3081f, 87.87495f, 0f, 0f, 70.00001f, 5.401831f, 2.666181f, 2.080325f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, 2595.509f, 778.3701f, 87.90205f, 0f, 0f, 70f, 2.456799f, 2.667848f, 2.166918f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, 2593.104f, 779.3081f, 87.87495f, 0f, 0f, 70.00001f, 5.401831f, 2.666181f, 2.080325f);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_22, 10082);
 	func_53();
 	if (func_45() != -1)
@@ -1058,23 +1058,23 @@ void func_53()
 	{
 		iLocal_24 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(2711.161f, 710.3177f, 77.27374f, 0f, 0f, -151.2205f, 50.23434f, 27.58518f, 8.132094f, "Butcher Creek - m_volFarmerRegistration");
 		iLocal_26 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Butcher Creek - m_volFarmerThreat Agg");
-		VOLUME::_0x39816F6F94F385AD(iLocal_26, 2696.193f, 704.9335f, 76.68376f, 0f, 0f, 88.96565f, 4.466922f, 1.336465f, 4.423785f);
-		VOLUME::_0x39816F6F94F385AD(iLocal_26, 2698.47f, 703.6447f, 76.68376f, 0f, 0f, -30.46352f, 4.936317f, 2.843117f, 4.423785f);
-		VOLUME::_0x39816F6F94F385AD(iLocal_26, 2717.371f, 710.274f, 77.27374f, 0f, 0f, 178.9532f, 3.930448f, 4.35889f, 8.132094f);
+		VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, 2696.193f, 704.9335f, 76.68376f, 0f, 0f, 88.96565f, 4.466922f, 1.336465f, 4.423785f);
+		VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, 2698.47f, 703.6447f, 76.68376f, 0f, 0f, -30.46352f, 4.936317f, 2.843117f, 4.423785f);
+		VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, 2717.371f, 710.274f, 77.27374f, 0f, 0f, 178.9532f, 3.930448f, 4.35889f, 8.132094f);
 		iLocal_25 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Butcher Creek - m_volFarmerRestricted Agg");
-		VOLUME::_0x6E0D3C3F828DA773(iLocal_25, iLocal_26);
-		VOLUME::_0xBCE668AAF83608BE(iLocal_25, 2711.161f, 710.3177f, 77.27374f, 0f, 0f, -151.2205f, 34.23434f, 22.58518f, 8.132094f);
+		VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_25, iLocal_26);
+		VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_25, 2711.161f, 710.3177f, 77.27374f, 0f, 0f, -151.2205f, 34.23434f, 22.58518f, 8.132094f);
 		iLocal_27 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Butcher Creek - m_volFarmerWarning Agg");
-		VOLUME::_0x6E0D3C3F828DA773(iLocal_27, iLocal_25);
-		VOLUME::_0xBCE668AAF83608BE(iLocal_27, 2711.161f, 710.3177f, 77.27374f, 0f, 0f, -151.2205f, 46.23434f, 26.58518f, 8.132094f);
+		VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_27, iLocal_25);
+		VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_27, 2711.161f, 710.3177f, 77.27374f, 0f, 0f, -151.2205f, 46.23434f, 26.58518f, 8.132094f);
 		sLocal_23 = "BUTCHER_CREEK";
 		LAW::_CREATE_GUARD_ZONE(sLocal_23);
-		LAW::_0x8C598A930F471938(sLocal_23, iLocal_24);
-		LAW::_0xA1B0E6301E2E02A6(sLocal_23, iLocal_26);
-		LAW::_0x35815F372D43E1E5(sLocal_23, iLocal_25);
-		LAW::_0xAD3E07C37A7C1ADC(sLocal_23, iLocal_27);
+		LAW::_SET_GUARD_ZONE_VOLUME_REGISTRATION_START(sLocal_23, iLocal_24);
+		LAW::_SET_GUARD_ZONE_VOLUME_THREAT(sLocal_23, iLocal_26);
+		LAW::_SET_GUARD_ZONE_VOLUME_RESTRICTED(sLocal_23, iLocal_25);
+		LAW::_SET_GUARD_ZONE_VOLUME_WARNING(sLocal_23, iLocal_27);
 		LAW::_SET_GUARD_ZONE_POSITION(sLocal_23, 2717.486f, 709.7006f, 79.6157f);
-		LAW::_0xA8A74AA79FB67159(sLocal_23, iLocal_24);
+		LAW::_SET_GUARD_ZONE_VOLUME_REGISTRATION_END(sLocal_23, iLocal_24);
 	}
 }
 
@@ -1138,7 +1138,7 @@ int func_55()
 			{
 				return 0;
 			}
-			if (PED::_0x5C16855277819BBF() < 5)
+			if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() < 5)
 			{
 				return 0;
 			}
@@ -1213,12 +1213,12 @@ int func_55()
 			iVar0 = 0;
 			while (iVar0 < 5)
 			{
-				if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_31[iVar0])) && !MISC::_0x5170DDA6D63ACAAA(&(uLocal_31[iVar0])))
+				if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_31[iVar0])) && !MISC::_IS_PED_DECOMPOSED(&(uLocal_31[iVar0])))
 				{
 					if (ENTITY::IS_ENTITY_DEAD(&(uLocal_31[iVar0])))
 					{
 						PED::APPLY_PED_DAMAGE_PACK(&(uLocal_31[iVar0]), &(sLocal_61[iVar0]), 0f, 1f);
-						MISC::_0x674B90BE1115846D(&(uLocal_31[iVar0]), 1);
+						MISC::SET_PED_DECOMPOSED(&(uLocal_31[iVar0]), 1);
 					}
 					else
 					{
@@ -2436,7 +2436,7 @@ int func_93(int iParam0)
 	{
 		if (ENTITY::DOES_ENTITY_HAVE_PHYSICS(&(iLocal_49[iParam0])))
 		{
-			OBJECT::_0xB6CBD40F8EA69E8A(&(iLocal_49[iParam0]));
+			OBJECT::CREATE_OBJECT_SKELETON(&(iLocal_49[iParam0]));
 			iVar9 = 33646;
 			switch (&iLocal_55[iParam0])
 			{
@@ -2450,9 +2450,9 @@ int func_93(int iParam0)
 					break;
 			}
 			ENTITY::ATTACH_ENTITY_TO_ENTITY_PHYSICALLY(&(iLocal_49[iParam0]), &(uLocal_31[iParam0]), 4, PED::GET_PED_BONE_INDEX(&(uLocal_31[iParam0]), iVar9), vVar3, vVar6, vVar0, -1f, 0, 1, 0, 0, 0, 1, 1065353216, 1065353216);
-			uLocal_37[iParam0] = PHYSICS::_0xE9C59F6809373A99(*(vLocal_83[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_99[iParam0]), 1, 1, -1, -1082130432);
+			uLocal_37[iParam0] = PHYSICS::_ADD_ROPE_2(*(vLocal_83[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_99[iParam0]), 1, 1, -1, -1082130432);
 			ENTITY::FREEZE_ENTITY_POSITION(&(uLocal_31[iParam0]), false);
-			PHYSICS::_0x462FF2A432733A44(&(uLocal_37[iParam0]), &(iLocal_43[iParam0]), &(iLocal_49[iParam0]), 0f, 0f, 0f, 0f, 0f, 0f, 0, "p_carcassHangMED_Bone2");
+			PHYSICS::_ATTACH_ENTITIES_TO_ROPE_2(&(uLocal_37[iParam0]), &(iLocal_43[iParam0]), &(iLocal_49[iParam0]), 0f, 0f, 0f, 0f, 0f, 0f, 0, "p_carcassHangMED_Bone2");
 			PHYSICS::_0x3C6490D940FF5D0B(&(uLocal_37[iParam0]), 0, 0, &(fLocal_99[iParam0]), 1);
 			AUDIO::_0xF092B6030D6FD49C(&(uLocal_37[iParam0]), "ROPE_SETTINGS_DEFAULT");
 			PHYSICS::_0x7A54D82227A139DB(uLocal_37[iParam0], 1);
@@ -3078,7 +3078,7 @@ int func_100(int iParam0)
 	Global_1051387->f_4319[iVar6 /*7*/] = iParam0;
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_6 = func_146(iVar0, vVar2, uVar1, 0, 0, 0);
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_5 = iVar0;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 0);
 	func_101(32, 16384);
 	iVar7 = 0;
@@ -4471,7 +4471,7 @@ void func_138(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -4479,7 +4479,7 @@ void func_138(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	{
 		if (bParam6)
 		{
-			WEAPON::_0x899A04AFCC725D04(iParam0, WEAPON::_0xD42514C182121C23(iParam1));
+			WEAPON::_GIVE_WEAPON_COLLECTION_TO_PED(iParam0, WEAPON::_GET_DEFAULT_PED_WEAPON_COLLECTION(iParam1));
 		}
 		if (PED::IS_PED_MALE(iParam0) && !bParam3)
 		{

@@ -138,7 +138,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_21, 8);
 							if (func_36(32))
@@ -498,8 +498,8 @@ int func_10(int iParam0)
 int func_11()
 {
 	iLocal_0 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Horseshoe - m_volTown");
-	VOLUME::_0xBCE668AAF83608BE(iLocal_0, -131.6045f, -34.30135f, 102.2093f, 0f, 0f, -24.47213f, 46.71921f, 37.52021f, 13.16044f);
-	VOLUME::_0xBCE668AAF83608BE(iLocal_0, -117.99f, -66.781f, 100f, 0f, 0f, 94f, 16.719f, 19.52f, 13.16044f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_0, -131.6045f, -34.30135f, 102.2093f, 0f, 0f, -24.47213f, 46.71921f, 37.52021f, 13.16044f);
+	VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_0, -117.99f, -66.781f, 100f, 0f, 0f, 94f, 16.719f, 19.52f, 13.16044f);
 	return 1;
 }
 
@@ -523,7 +523,7 @@ int func_15(int iParam0)
 {
 	if (AUDIO::LOAD_STREAM("horseshoe_overlook", "es_camp_memory_sounds"))
 	{
-		iLocal_1 = AUDIO::_0x0556C784FA056628("horseshoe_overlook", "es_camp_memory_sounds");
+		iLocal_1 = AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("horseshoe_overlook", "es_camp_memory_sounds");
 		iLocal_2 = MISC::GET_GAME_TIMER() + 30000;
 		return 1;
 	}

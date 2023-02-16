@@ -3433,7 +3433,7 @@ int func_106(var uParam0)
 							}
 							else if ((uParam0->f_127[iVar0 /*33*/])->f_3 == -1)
 							{
-								PED::_0x283978A15512B2FE(&(uParam0->f_127[iVar0 /*33*/]), 1);
+								PED::_SET_RANDOM_OUTFIT_VARIATION(&(uParam0->f_127[iVar0 /*33*/]), 1);
 							}
 							else if ((uParam0->f_127[iVar0 /*33*/])->f_3 > 0 && (uParam0->f_127[iVar0 /*33*/])->f_3 <= 3)
 							{

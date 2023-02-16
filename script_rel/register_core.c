@@ -242,11 +242,11 @@ int func_10(var uParam0)
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_11);
 	}
-	if (!ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_11, "pblMain"))
+	if (!ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_11, "pblMain"))
 	{
-		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_11, "pblMain"))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_11, "pblMain"))
 		{
-			ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_11, "pblMain");
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_11, "pblMain");
 		}
 		return 0;
 	}
@@ -315,7 +315,7 @@ void func_14(var uParam0)
 
 int func_15(int iParam0)
 {
-	if (ANIMSCENE::_0x3FBC3F51BF12DFBF(iParam0) >= 1f)
+	if (ANIMSCENE::GET_ANIM_SCENE_PHASE(iParam0) >= 1f)
 	{
 		return 1;
 	}

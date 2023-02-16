@@ -136,7 +136,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_19, 8);
 							if (func_36(32))
@@ -597,7 +597,7 @@ void func_14(int iParam0)
 	func_49(-1874862635, bVar0, 0f, 0, 0, 0, 1, 0);
 	iVar1 = VOLUME::_CREATE_VOLUME_BOX(1010.465f, -1772.747f, 54.474f, 0f, 0f, 0f, 46.182f, 45.55f, 29.43f);
 	iVar2 = ITEMSET::CREATE_ITEMSET(true);
-	iVar3 = ENTITY::_0x84CCF9A12942C83D(iVar1, iVar2, 3, 1, 1871313379, 0);
+	iVar3 = ENTITY::GET_MATCHING_ENTITIES(iVar1, iVar2, 3, 1, 1871313379, 0);
 	iVar4 = 0;
 	while (iVar4 < iVar3)
 	{
@@ -832,14 +832,14 @@ int func_38(int iParam0)
 		{
 			if (func_60(Global_35, iLocal_14, 0, 0))
 			{
-				if (AUDIO::_0x84848E1C0FC67DBB(iLocal_15))
+				if (AUDIO::_HAS_SOUND_ID_FINISHED(iLocal_15))
 				{
-					AUDIO::_0xDCF5BA95BBF0FABA(iLocal_15, "MAIN_LOOP", 1011.224f, -1766.506f, 46.5833f, "FIRE_SMOLDER_LARGE_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_POSITION_WITH_ID(iLocal_15, "MAIN_LOOP", 1011.224f, -1766.506f, 46.5833f, "FIRE_SMOLDER_LARGE_SOUNDSET", 0, 0, 0);
 				}
 			}
-			else if (!AUDIO::_0x84848E1C0FC67DBB(iLocal_15))
+			else if (!AUDIO::_HAS_SOUND_ID_FINISHED(iLocal_15))
 			{
-				AUDIO::_0x3210BCB36AF7621B(iLocal_15);
+				AUDIO::_STOP_SOUND_WITH_ID(iLocal_15);
 			}
 		}
 	}
@@ -1810,9 +1810,9 @@ void func_80(int iParam0)
 	}
 	if (iLocal_15 != -1)
 	{
-		if (!AUDIO::_0x84848E1C0FC67DBB(iLocal_15))
+		if (!AUDIO::_HAS_SOUND_ID_FINISHED(iLocal_15))
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_15);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_15);
 		}
 		AUDIO::RELEASE_SOUND_ID(iLocal_15);
 	}

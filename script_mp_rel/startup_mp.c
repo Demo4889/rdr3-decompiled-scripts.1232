@@ -1150,7 +1150,7 @@ void func_16(var uParam0, var uParam1)
 			}
 			else
 			{
-				if (NETWORK::_0xFBE782B3165AC8EC(1377133516))
+				if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(1377133516))
 				{
 					NETWORK::_0x2C5BD9A43987AA27(1);
 				}
@@ -2555,7 +2555,7 @@ void func_57()
 {
 	func_227();
 	func_228(1, 0, 0);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 0);
 	func_229(1);
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
 	{

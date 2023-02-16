@@ -211,7 +211,7 @@ int func_13(vector3 vParam0, float fParam3, float fParam4)
 {
 	if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Local_0.f_1, 1))
 	{
-		PED::_0xA3A9299C4F2ADB98(Local_0.f_1);
+		PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(Local_0.f_1);
 	}
 	if (!func_28(Local_0.f_1, vParam0, fParam3, 2f, 20f, 1))
 	{
@@ -247,7 +247,7 @@ int func_17()
 {
 	STREAMING::REQUEST_MODEL(func_32(), false);
 	PED::_RESERVE_AMBIENT_PEDS(1);
-	if (PED::_0x5C16855277819BBF() == 1 && STREAMING::HAS_MODEL_LOADED(func_32()))
+	if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() == 1 && STREAMING::HAS_MODEL_LOADED(func_32()))
 	{
 		return 1;
 	}
@@ -457,7 +457,7 @@ int func_35(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPar
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, false);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }

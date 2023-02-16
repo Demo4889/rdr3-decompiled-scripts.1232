@@ -274,7 +274,7 @@ int func_6()
 	{
 		return 0;
 	}
-	if (PED::_0xF103823FFE72BB49(PED::GET_MOUNT(Global_35)) == Global_35)
+	if (PED::_GET_ACTIVE_ANIMAL_OWNER(PED::GET_MOUNT(Global_35)) == Global_35)
 	{
 		return 0;
 	}
@@ -708,10 +708,10 @@ int func_37(var uParam0, vector3 vParam1, float fParam4)
 	}
 	if (ENTITY::_0x59B57C4B06531E1E(vParam1, fParam4, *uParam0, 2) > 0)
 	{
-		ITEMSET::_0x20A4BF0E09BEE146(*uParam0);
+		ITEMSET::_CLEAR_ITEMSET(*uParam0);
 		return 1;
 	}
-	ITEMSET::_0x20A4BF0E09BEE146(*uParam0);
+	ITEMSET::_CLEAR_ITEMSET(*uParam0);
 	return 0;
 }
 
@@ -742,7 +742,7 @@ int func_38(var uParam0, var uParam1, vector3 vParam2, float fParam5, float fPar
 					}
 					else
 					{
-						ITEMSET::_0x20A4BF0E09BEE146(*uParam0);
+						ITEMSET::_CLEAR_ITEMSET(*uParam0);
 						return 1;
 					}
 				}
@@ -750,7 +750,7 @@ int func_38(var uParam0, var uParam1, vector3 vParam2, float fParam5, float fPar
 		}
 		iVar1++;
 	}
-	ITEMSET::_0x20A4BF0E09BEE146(*uParam0);
+	ITEMSET::_CLEAR_ITEMSET(*uParam0);
 	return 0;
 }
 

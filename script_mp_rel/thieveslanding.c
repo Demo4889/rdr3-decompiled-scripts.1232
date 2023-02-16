@@ -1102,7 +1102,7 @@ void func_59(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_97(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1126,7 +1126,7 @@ void func_59(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_100(iParam0, 4);
 	func_101(iParam0);
 }
@@ -3551,7 +3551,7 @@ void func_107(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_166(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_100(iParam0, 16384);
 }
@@ -4926,7 +4926,7 @@ int func_164(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_203(12, func_202(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_203(12, func_202(iParam0), &vVar0))
 	{
 		return 0;
 	}

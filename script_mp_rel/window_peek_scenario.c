@@ -178,7 +178,7 @@ void func_6()
 		case 4:
 			if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 			{
-				if (!TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+				if (!TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 				{
 					func_17(&iLocal_21, 1);
 				}
@@ -263,7 +263,7 @@ void func_14()
 {
 	if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 	{
-		if (TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+		if (TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 		{
 			func_13();
 		}

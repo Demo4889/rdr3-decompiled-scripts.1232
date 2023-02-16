@@ -53,8 +53,8 @@ void __EntryFunction__()
 	{
 		BUILTIN::WAIT(0);
 	}
-	vLocal_73 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	fLocal_76 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
+	vLocal_73 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	fLocal_76 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
 	while (func_4())
 	{
 		switch (iLocal_78)
@@ -532,7 +532,7 @@ int func_13(int iParam0, char* sParam1, bool bParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	vVar0 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar0 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	vVar3 = { VOLUME::_0x3E2A25B2416DD67E(iParam0) };
 	uVar6 = func_28(vVar0, vVar3.x, sParam1, bParam2, iParam3, iParam4, bParam5, fParam6);
 	return uVar6;
@@ -551,7 +551,7 @@ void func_15(int iParam0)
 	{
 		return;
 	}
-	vVar0 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar0 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	func_29(vVar0, 0);
 }
 
@@ -753,7 +753,7 @@ int func_23(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)

@@ -2731,7 +2731,7 @@ int func_97(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	uParam1->f_17.f_6 = { VOLUME::_0xF70F00013A62F866(((*Global_1887327)[iParam0 /*36*/])->f_4) };
+	uParam1->f_17.f_6 = { VOLUME::GET_VOLUME_COORDS(((*Global_1887327)[iParam0 /*36*/])->f_4) };
 	if (MISC::GET_GROUND_Z_FOR_3D_COORD(uParam1->f_17.f_6, &uVar0, 0))
 	{
 		uParam1->f_17.f_6.f_2 = uVar0;

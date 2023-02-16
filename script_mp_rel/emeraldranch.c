@@ -532,24 +532,24 @@ int func_13()
 	iLocal_21 = ((*Global_1887327)[74 /*36*/])->f_5;
 	VOLUME::_0xB469CFD9E065EB99(iLocal_21, 17);
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Emerald - m_volPostOfficeOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, 1522f, 442.664f, 91.328f, 0f, 0f, 89.95493f, 5.041f, 4.081f, 3.9f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, 1521.951f, 438.992f, 91.328f, 0f, 0f, 89.95493f, 2.586f, 2.534f, 3.9f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, 1525.561f, 442.571f, 91.328f, 0f, 0f, 89.95493f, 2.417f, 2.096f, 3.9f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, 1522f, 442.664f, 91.328f, 0f, 0f, 89.95493f, 5.041f, 4.081f, 3.9f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, 1521.951f, 438.992f, 91.328f, 0f, 0f, 89.95493f, 2.586f, 2.534f, 3.9f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, 1525.561f, 442.571f, 91.328f, 0f, 0f, 89.95493f, 2.417f, 2.096f, 3.9f);
 	iLocal_24 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Emerald - m_volPostOfficeOfflimits");
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 1522.286f, 442.6286f, 91.09468f, 0f, 0f, 0.127711f, 3.924281f, 4.586129f, 2.884516f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 1524.154f, 443.6188f, 91.33035f, 0f, 0f, -40.52857f, 0.901248f, 0.812041f, 3.364722f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 1524.148f, 441.6273f, 91.32803f, 0f, 0f, 41.59158f, 0.901248f, 0.812041f, 3.361498f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 1524.171f, 442.5686f, 91.33483f, 0f, 0f, 89.87004f, 2.182719f, 0.812041f, 3.355471f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 1522.286f, 442.6286f, 91.09468f, 0f, 0f, 0.127711f, 3.924281f, 4.586129f, 2.884516f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 1524.154f, 443.6188f, 91.33035f, 0f, 0f, -40.52857f, 0.901248f, 0.812041f, 3.364722f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 1524.148f, 441.6273f, 91.32803f, 0f, 0f, 41.59158f, 0.901248f, 0.812041f, 3.361498f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 1524.171f, 442.5686f, 91.33483f, 0f, 0f, 89.87004f, 2.182719f, 0.812041f, 3.355471f);
 	iLocal_23 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Emerald - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_23, 1521.928f, 439.418f, 91.598f, 0f, 0f, 89.87004f, 1.421f, 1.98f, 3.9f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_23, 1525.299f, 442.591f, 91.598f, 0f, 0f, 0.50203f, 1.421f, 1.902f, 3.9f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_23, 1521.928f, 439.418f, 91.598f, 0f, 0f, 89.87004f, 1.421f, 1.98f, 3.9f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_23, 1525.299f, 442.591f, 91.598f, 0f, 0f, 0.50203f, 1.421f, 1.902f, 3.9f);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_22, 10052);
 	iLocal_27 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1416.919f, 275.628f, 89.84f, 0f, 0f, 13.744f, 4.796f, 10.102f, 3.23f, "Emerald - Fence Shop Volume");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_27, 10050);
 	iLocal_30 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Emerald - m_volHorsePen Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, 1392.317f, 341.5652f, 89.24782f, 0f, 0f, 12.46095f, 34.19419f, 40.64669f, 5.552397f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, 1406.395f, 342.4568f, 89.58327f, 0f, 0f, 39.45417f, 18.04731f, 26.06224f, 4.902727f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, 1416.681f, 332.729f, 89.86327f, 0f, 0f, 85.96169f, 12.0553f, 10.04752f, 5.028452f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, 1392.317f, 341.5652f, 89.24782f, 0f, 0f, 12.46095f, 34.19419f, 40.64669f, 5.552397f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, 1406.395f, 342.4568f, 89.58327f, 0f, 0f, 39.45417f, 18.04731f, 26.06224f, 4.902727f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, 1416.681f, 332.729f, 89.86327f, 0f, 0f, 85.96169f, 12.0553f, 10.04752f, 5.028452f);
 	iLocal_26 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1521.955f, 437.362f, 91.328f, 0f, 0f, 89.955f, 18.275f, 7.419f, 3.9f, "Emerald - m_volTrainStation");
 	if (func_45() == 0)
 	{
@@ -1095,7 +1095,7 @@ void func_53()
 int func_54(char* sParam0)
 {
 	HUD::TEXT_BLOCK_REQUEST(sParam0);
-	if (!HUD::_0xD0976CC34002DB57(sParam0))
+	if (!HUD::TEXT_BLOCK_IS_LOADED(sParam0))
 	{
 		HUD::TEXT_BLOCK_REQUEST(sParam0);
 		return 0;
@@ -1197,7 +1197,7 @@ void func_60(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_107(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1221,7 +1221,7 @@ void func_60(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_110(iParam0, 4);
 	func_111(iParam0);
 }
@@ -1299,7 +1299,7 @@ int func_63(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -1390,7 +1390,7 @@ void func_70(var uParam0, int iParam1, vector3 vParam2, int iParam5)
 		{
 			*iParam1 = ITEMSET::CREATE_ITEMSET(true);
 		}
-		ITEMSET::_0x20A4BF0E09BEE146(*iParam1);
+		ITEMSET::_CLEAR_ITEMSET(*iParam1);
 		iVar0 = ENTITY::_0x59B57C4B06531E1E(vParam2, 1f, *iParam1, 3);
 		iVar1 = 0;
 		while (iVar1 < iVar0)
@@ -1460,7 +1460,7 @@ int func_73(int iParam0)
 		{
 			return 0;
 		}
-		if (NETWORK::_0xFBE782B3165AC8EC(iVar1))
+		if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(iVar1))
 		{
 			return 1;
 		}
@@ -3907,7 +3907,7 @@ void func_122(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_193(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_110(iParam0, 16384);
 }
@@ -4968,7 +4968,7 @@ void func_152(char* sParam0)
 {
 	if (HUD::_DOES_TEXT_BLOCK_EXIST(sParam0))
 	{
-		if (HUD::_0xD0976CC34002DB57(sParam0))
+		if (HUD::TEXT_BLOCK_IS_LOADED(sParam0))
 		{
 			HUD::_TEXT_BLOCK_DELETE(sParam0);
 		}
@@ -5451,7 +5451,7 @@ int func_185(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_231(12, func_230(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_231(12, func_230(iParam0), &vVar0))
 	{
 		return 0;
 	}

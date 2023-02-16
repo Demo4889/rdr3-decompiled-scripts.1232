@@ -210,7 +210,7 @@ int func_13(int iParam0, bool bParam1, bool bParam2, float fParam3, bool bParam4
 	if (bParam1)
 	{
 		vVar1 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false, false) };
-		vVar4 = { VOLUME::_0xF70F00013A62F866(func_16(iParam0)) };
+		vVar4 = { VOLUME::GET_VOLUME_COORDS(func_16(iParam0)) };
 		vVar1.f_2 = 0f;
 		vVar4.f_2 = 0f;
 		fVar13 = BUILTIN::VDIST2(vVar1, vVar4);

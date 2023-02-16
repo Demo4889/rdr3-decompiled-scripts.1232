@@ -613,7 +613,7 @@ var func_40(int iParam0, int iParam1)
 
 int func_41(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return 0;
 	}

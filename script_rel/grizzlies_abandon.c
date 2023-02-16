@@ -398,7 +398,7 @@ void func_12(int iParam0, int iParam1)
 
 void func_13(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(1, iParam0, 0);
 }
 
 var func_14(var uParam0, int iParam1, var uParam2, var uParam3, int iParam4, int iParam5)
@@ -413,7 +413,7 @@ var func_14(var uParam0, int iParam1, var uParam2, var uParam3, int iParam4, int
 	Var0.f_2 = uParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -443,7 +443,7 @@ bool func_16(int iParam0)
 	iVar0 = 6;
 	if (func_28(iParam0))
 	{
-		iVar0 = _NAMESPACE71::_0x59FA676177DBE4C9(iParam0);
+		iVar0 = _NAMESPACE71::_UI_FEED_GET_MESSAGE_STATE(iParam0);
 	}
 	return iVar0 != 6;
 }

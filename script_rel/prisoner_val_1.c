@@ -769,7 +769,7 @@ void func_39(var uParam0)
 			}
 			break;
 		case 1:
-			if (HUD::_0xD0976CC34002DB57(func_57(uParam0->f_7, 1)))
+			if (HUD::TEXT_BLOCK_IS_LOADED(func_57(uParam0->f_7, 1)))
 			{
 				vVar0 = { func_58(uParam0->f_7, uParam0->f_65, 0) };
 				func_59(Global_1396116, uParam0->f_3, func_57(uParam0->f_7, 0), 0);
@@ -1157,7 +1157,7 @@ int func_53(int iParam0, int iParam1)
 	func_51(iParam0, 0, 0);
 	if (func_52(iParam0))
 	{
-		iVar0 = ENTITY::_0xF7424890E4A094C0(iParam0, iParam1);
+		iVar0 = ENTITY::_GET_ENTITY_BY_DOORHASH(iParam0, iParam1);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 		{
 			return iVar0;
@@ -3239,7 +3239,7 @@ bool func_95(var uParam0, int* iParam1, float fParam2, float fParam3, var uParam
 	bVar8 = uParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_127(Global_35)) || func_128(Global_35)) || func_129(Global_35));
+	bVar11 = (((PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_127(Global_35)) || func_128(Global_35)) || func_129(Global_35));
 	fVar12 = -1f;
 	if (func_21(&(iParam1->f_13)))
 	{
@@ -4359,7 +4359,7 @@ int func_161(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -4462,11 +4462,11 @@ void func_164(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}

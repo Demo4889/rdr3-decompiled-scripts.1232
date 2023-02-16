@@ -2775,7 +2775,7 @@ void __EntryFunction__()
 		{
 			_NAMESPACE76::_0x00A15B94CBA4F76F(Local_13563);
 		}
-		HUD::_0x8BC7C1F929D07BF3(690901814);
+		HUD::_DISABLE_HUD_CONTEXT(690901814);
 		func_22();
 		AUDIO::_0x2E399EAFBEEA74D5();
 		func_55(128);
@@ -2942,7 +2942,7 @@ void func_7(bool bParam0)
 	func_12(0);
 	func_97(0);
 	func_18(64);
-	HUD::_0x8BC7C1F929D07BF3(128623374);
+	HUD::_DISABLE_HUD_CONTEXT(128623374);
 	func_98(0);
 	func_99(1);
 	func_100(&Local_12275, &Local_13277);
@@ -3130,7 +3130,7 @@ void func_7(bool bParam0)
 	AUDIO::_0x531A78D6BF27014B("RDRO_Race_sounds");
 	PLAYER::_0xFECA17CF3343694B(iLocal_6147, fLocal_6782);
 	PLAYER::_0xBBADFB5E5E5766FB(iLocal_6147, fLocal_6783);
-	if (STREAMING::_0xCF45DF50C7775F2A())
+	if (STREAMING::IS_LOAD_SCENE_ACTIVE())
 	{
 		STREAMING::_0x5A8B01199C3E79C3();
 	}
@@ -3162,8 +3162,8 @@ void func_7(bool bParam0)
 	PLAYER::SET_MAX_WANTED_LEVEL(5);
 	PLAYER::RESET_WANTED_LEVEL_DIFFICULTY(iLocal_6147);
 	CAM::SET_WIDESCREEN_BORDERS(false, -1);
-	HUD::_0x8BC7C1F929D07BF3(474191950);
-	HUD::_0x8BC7C1F929D07BF3(-1450522739);
+	HUD::_DISABLE_HUD_CONTEXT(474191950);
+	HUD::_DISABLE_HUD_CONTEXT(-1450522739);
 	MAP::UNLOCK_MINIMAP_ANGLE();
 	_NAMESPACE71::_0x6035E8FBCA32AC5E();
 	MAP::CLEAR_GPS_FLAGS();
@@ -3338,7 +3338,7 @@ bool func_8()
 
 int func_9()
 {
-	if (HUD::_0xD0976CC34002DB57("RC_PLAY"))
+	if (HUD::TEXT_BLOCK_IS_LOADED("RC_PLAY"))
 	{
 		return 1;
 	}
@@ -4554,7 +4554,7 @@ void func_41()
 			func_335(3);
 			if ((WEAPON::GET_CURRENT_PED_WEAPON(iLocal_6150, &iVar0, true, 0, false) && iVar0 != joaat("weapon_unarmed")) || (WEAPON::GET_CURRENT_PED_WEAPON(iLocal_6150, &iVar1, true, 0, false) && iVar1 != joaat("weapon_unarmed")))
 			{
-				WEAPON::_0xFCCC886EDE3C63EC(iLocal_6150, 2, 1);
+				WEAPON::_HIDE_PED_WEAPONS(iLocal_6150, 2, 1);
 			}
 		}
 		else if (!MISC::IS_BIT_SET(iLocal_13499, 7))
@@ -4586,7 +4586,7 @@ void func_42(var uParam0)
 	}
 	else if (uParam0->f_20 != -1)
 	{
-		CAM::_0x8910C24B7E0046EC();
+		CAM::_DISABLE_CINEMATIC_MODE_THIS_FRAME();
 	}
 }
 
@@ -5786,7 +5786,7 @@ void func_100(int iParam0, var uParam1)
 	}
 	func_412(iParam0);
 	func_413(iParam0);
-	HUD::_0x8BC7C1F929D07BF3(-2124237476);
+	HUD::_DISABLE_HUD_CONTEXT(-2124237476);
 }
 
 void func_101(var uParam0)
@@ -6493,7 +6493,7 @@ void func_151()
 
 void func_152()
 {
-	if (SCRIPTS::_0x179A6F0EE2E79026(&(Global_1070355->f_20209.f_583)))
+	if (SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&(Global_1070355->f_20209.f_583)))
 	{
 		SCRIPTS::_0xDE544B7EC0C187CC(&(Global_1070355->f_20209.f_583));
 	}
@@ -6514,7 +6514,7 @@ void func_154(int iParam0)
 	{
 		if (MAP::DOES_BLIP_EXIST(&(Global_1070355->f_19946[iParam0 /*8*/])))
 		{
-			MAP::_0xB059D7BD3D78C16F(&(Global_1070355->f_19946[iParam0 /*8*/]), (Global_1070355->f_19946[iParam0 /*8*/])->f_4);
+			MAP::BLIP_REMOVE_MODIFIER(&(Global_1070355->f_19946[iParam0 /*8*/]), (Global_1070355->f_19946[iParam0 /*8*/])->f_4);
 		}
 		(Global_1070355->f_19946[iParam0 /*8*/])->f_4 = 0;
 		func_449(iParam0);
@@ -6527,7 +6527,7 @@ void func_155(int iParam0)
 	{
 		if (MAP::DOES_BLIP_EXIST(&(Global_1070355->f_19946[iParam0 /*8*/])))
 		{
-			MAP::_0xB059D7BD3D78C16F(&(Global_1070355->f_19946[iParam0 /*8*/]), (Global_1070355->f_19946[iParam0 /*8*/])->f_5);
+			MAP::BLIP_REMOVE_MODIFIER(&(Global_1070355->f_19946[iParam0 /*8*/]), (Global_1070355->f_19946[iParam0 /*8*/])->f_5);
 		}
 		(Global_1070355->f_19946[iParam0 /*8*/])->f_5 = 0;
 		func_449(iParam0);
@@ -8038,9 +8038,9 @@ void func_249(int iParam0)
 						{
 							if (WEAPON::HAS_PED_GOT_WEAPON(iLocal_6150, OBJECT::GET_WEAPON_TYPE_FROM_PICKUP_TYPE(Var0.f_2), 0, 0))
 							{
-								if (WEAPON::_0x0556E9D2ECF39D01(OBJECT::GET_WEAPON_TYPE_FROM_PICKUP_TYPE(Var0.f_2)))
+								if (WEAPON::_IS_WEAPON_TWO_HANDED(OBJECT::GET_WEAPON_TYPE_FROM_PICKUP_TYPE(Var0.f_2)))
 								{
-									WEAPON::_0xFCCC886EDE3C63EC(iLocal_6150, 2, 1);
+									WEAPON::_HIDE_PED_WEAPONS(iLocal_6150, 2, 1);
 								}
 								WEAPON::SET_CURRENT_PED_WEAPON(iLocal_6150, OBJECT::GET_WEAPON_TYPE_FROM_PICKUP_TYPE(Var0.f_2), true, 0, false, false);
 								WEAPON::_0x0A2AB7B7ABC055F4(iLocal_6150);
@@ -8505,7 +8505,7 @@ void func_269(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		SCRIPTS::_SET_PLAYER_BIT_AT_INDEX(&uVar6, PLAYER::PLAYER_ID());
 	}
-	if (SCRIPTS::_0x179A6F0EE2E79026(&uVar6))
+	if (SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uVar6))
 	{
 		SCRIPTS::TRIGGER_SCRIPT_EVENT(1, &Var0, 6, 47, &uVar6);
 	}
@@ -8919,7 +8919,7 @@ int func_283(struct<2> Param0)
 			func_543(&uLocal_7273, 0, 1);
 			func_18(512);
 			func_191(0);
-			HUD::_0x8BC7C1F929D07BF3(128623374);
+			HUD::_DISABLE_HUD_CONTEXT(128623374);
 			if (!CAM::IS_SCREEN_FADED_IN() && !CAM::IS_SCREEN_FADING_IN())
 			{
 				CAM::DO_SCREEN_FADE_IN(1000);
@@ -9139,7 +9139,7 @@ int func_284(struct<2> Param0)
 			func_577(1);
 			(Local_59[iLocal_6153 /*53*/])->f_14 = { ENTITY::GET_ENTITY_COORDS(iLocal_6150, true, false) };
 			MISC::SET_BIT(&((Local_59[iLocal_6153 /*53*/])->f_13), 0);
-			HUD::_0x8BC7C1F929D07BF3(128623374);
+			HUD::_DISABLE_HUD_CONTEXT(128623374);
 			func_578();
 			func_579(&uLocal_9902);
 			func_18(4);
@@ -10686,7 +10686,7 @@ int func_323(var uParam0)
 	}
 	uParam0->f_961++;
 	HUD::TEXT_BLOCK_REQUEST("UIC");
-	if (HUD::_0xD0976CC34002DB57("UIC"))
+	if (HUD::TEXT_BLOCK_IS_LOADED("UIC"))
 	{
 		uParam0->f_961 = 101;
 		return 1;
@@ -10804,7 +10804,7 @@ void func_327(var uParam0)
 		}
 		Local_12275.f_598 = -1;
 	}
-	HUD::_0x8BC7C1F929D07BF3(474191950);
+	HUD::_DISABLE_HUD_CONTEXT(474191950);
 	if (MISC::IS_BIT_SET(iLocal_13498, 26))
 	{
 		MISC::CLEAR_BIT(&iLocal_13498, 24);

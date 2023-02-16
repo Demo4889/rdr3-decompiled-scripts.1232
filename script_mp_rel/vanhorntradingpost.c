@@ -539,13 +539,13 @@ int func_13()
 	iLocal_23 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(3027.401f, 562.4042f, 44.687f, 0f, 0f, 80f, 1.736885f, 1f, 2f, "Van Horn - m_volFencePrompt");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_22, 10087);
 	iLocal_24 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Van Horn - m_volPostOfficeOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 2986.668f, 572.391f, 44.68746f, 0f, 0f, 80f, 6.513f, 5.709f, 2.553f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 2985.922f, 568.154f, 44.68746f, 0f, 0f, 80f, 2.17f, 2.622f, 2.553f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 2987.423f, 576.661f, 44.68746f, 0f, 0f, 80f, 2.509f, 2.264f, 2.553f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_24, 2982.536f, 570.44f, 44.68746f, 0f, 0f, 80f, 2.957f, 1.909f, 2.553f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 2986.668f, 572.391f, 44.68746f, 0f, 0f, 80f, 6.513f, 5.709f, 2.553f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 2985.922f, 568.154f, 44.68746f, 0f, 0f, 80f, 2.17f, 2.622f, 2.553f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 2987.423f, 576.661f, 44.68746f, 0f, 0f, 80f, 2.509f, 2.264f, 2.553f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, 2982.536f, 570.44f, 44.68746f, 0f, 0f, 80f, 2.957f, 1.909f, 2.553f);
 	iLocal_25 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Van Horn - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_25, 2985.951f, 568.536f, 44.902f, 0f, 0f, 80f, 1.441f, 1.703f, 2.553f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_25, 2987.352f, 576.3314f, 44.90187f, 0f, 0f, -99.75122f, 1.441f, 1.921f, 2.55285f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_25, 2985.951f, 568.536f, 44.902f, 0f, 0f, 80f, 1.441f, 1.703f, 2.553f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_25, 2987.352f, 576.3314f, 44.90187f, 0f, 0f, -99.75122f, 1.441f, 1.921f, 2.55285f);
 	iLocal_26 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2986.637f, 572.4257f, 44.90187f, 0f, 0f, 80f, 6.131599f, 5.291456f, 2.55285f, "Van Horn - m_volPostOfficeOfflimits");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_24, 10090);
 	iLocal_27 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2982.608f, 570.333f, 44.68746f, 0f, 0f, 80f, 3.388f, 2.263f, 2.553f, "Van Horn - m_volPostOfficeMute");
@@ -553,8 +553,8 @@ int func_13()
 	iLocal_30 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2986.621f, 572.416f, 45.094f, 0f, 0f, 80f, 6.05f, 5.4f, 3f, "Van horn - m_volStationTheft");
 	iLocal_31 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2947.408f, 545.9362f, 50.72883f, 0f, 0f, 0f, 17.35913f, 18.45897f, 4.232503f, "Van Horn- Resident Toughts Guard Volume");
 	iLocal_34 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Van Horn - m_volHorseShopPen Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_34, 2979.276f, 779.6296f, 52.62945f, 0f, 0f, 0f, 40.47127f, 19.50671f, 7.453903f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_34, 2985.944f, 797.0881f, 52.62945f, 0f, 0f, 0f, 23.67008f, 19.46324f, 7.453903f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_34, 2979.276f, 779.6296f, 52.62945f, 0f, 0f, 0f, 40.47127f, 19.50671f, 7.453903f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_34, 2985.944f, 797.0881f, 52.62945f, 0f, 0f, 0f, 23.67008f, 19.46324f, 7.453903f);
 	func_54(259147332, 1);
 	if (func_45() != -1)
 	{
@@ -563,8 +563,8 @@ int func_13()
 	else
 	{
 		iLocal_32 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Vanhorn Horse Shop - m_volHorseShop Agg");
-		VOLUME::_0x39816F6F94F385AD(iLocal_32, 2967.159f, 798.5253f, 51.745f, 0f, 0f, 0f, 14.3611f, 10.48136f, 4.225f);
-		VOLUME::_0x39816F6F94F385AD(iLocal_32, 2970.102f, 792.5105f, 51.65219f, 0f, 0f, 0f, 8.344481f, 5.59843f, 2.959558f);
+		VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_32, 2967.159f, 798.5253f, 51.745f, 0f, 0f, 0f, 14.3611f, 10.48136f, 4.225f);
+		VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_32, 2970.102f, 792.5105f, 51.65219f, 0f, 0f, 0f, 8.344481f, 5.59843f, 2.959558f);
 		iLocal_33 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2959.127f, 795.8362f, 51.00545f, 0f, 0f, 0f, 4.348893f, 4.095809f, 6.315661f, "Vanhorn Horse Shop - m_volHorseShopOutsideDoor");
 		func_55(9, iLocal_33);
 	}
@@ -599,23 +599,23 @@ int func_17(int iParam0)
 		HUD::TEXT_BLOCK_REQUEST("REDDVHT");
 		HUD::TEXT_BLOCK_REQUEST("VHTRDAU");
 		HUD::TEXT_BLOCK_REQUEST("RESFVHT");
-		if (!HUD::_0xD0976CC34002DB57("SCVHAUD"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("SCVHAUD"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("VANRGAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("VANRGAU"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("REDDVHT"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("REDDVHT"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("VHTRDAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("VHTRDAU"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("RESFVHT"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("RESFVHT"))
 		{
 			return 0;
 		}
@@ -1119,11 +1119,11 @@ void func_52(int iParam0)
 void func_53()
 {
 	iLocal_28 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volSaloonInterior");
-	VOLUME::_0x39816F6F94F385AD(iLocal_28, 2946.662f, 523.323f, 46.02f, 0f, 0f, 180f, 9.627f, 13.43f, 3.143f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_28, 2939.048f, 523.346f, 45.61858f, 0f, 0f, -180f, 6.016271f, 9.883f, 3.143f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_28, 2946.662f, 523.323f, 46.02f, 0f, 0f, 180f, 9.627f, 13.43f, 3.143f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_28, 2939.048f, 523.346f, 45.61858f, 0f, 0f, -180f, 6.016271f, 9.883f, 3.143f);
 	iLocal_29 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Van horn - m_volSaloonTheft");
-	VOLUME::_0x39816F6F94F385AD(iLocal_29, 2946.748f, 523.316f, 45.072f, 0f, 0f, 80f, 10.1f, 14f, 3.347f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_29, 2939.048f, 523.346f, 45.61858f, 0f, 0f, -180f, 6.016271f, 9.883f, 3.143f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_29, 2946.748f, 523.316f, 45.072f, 0f, 0f, 80f, 10.1f, 14f, 3.347f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_29, 2939.048f, 523.346f, 45.61858f, 0f, 0f, -180f, 6.016271f, 9.883f, 3.143f);
 }
 
 void func_54(int iParam0, int iParam1)
@@ -1687,7 +1687,7 @@ void func_63(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_122(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1711,7 +1711,7 @@ void func_63(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_125(iParam0, 4);
 	func_126(iParam0);
 }
@@ -1915,7 +1915,7 @@ int func_71(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -2012,7 +2012,7 @@ void func_78(var uParam0, int iParam1, vector3 vParam2, int iParam5)
 		{
 			*iParam1 = ITEMSET::CREATE_ITEMSET(true);
 		}
-		ITEMSET::_0x20A4BF0E09BEE146(*iParam1);
+		ITEMSET::_CLEAR_ITEMSET(*iParam1);
 		iVar0 = ENTITY::_0x59B57C4B06531E1E(vParam2, 1f, *iParam1, 3);
 		iVar1 = 0;
 		while (iVar1 < iVar0)
@@ -2886,35 +2886,35 @@ void func_97(int iParam0)
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("SCVHAUD"))
 	{
-		if (HUD::_0xD0976CC34002DB57("SCVHAUD"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("SCVHAUD"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("SCVHAUD");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("VANRGAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("VANRGAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("VANRGAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("VANRGAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("REDDVHT"))
 	{
-		if (HUD::_0xD0976CC34002DB57("REDDVHT"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("REDDVHT"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("REDDVHT");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("VHTRDAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("VHTRDAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("VHTRDAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("VHTRDAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("RESFVHT"))
 	{
-		if (HUD::_0xD0976CC34002DB57("RESFVHT"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("RESFVHT"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("RESFVHT");
 		}
@@ -4693,7 +4693,7 @@ void func_136(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_144(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_125(iParam0, 16384);
 }
@@ -7276,7 +7276,7 @@ int func_209(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_245(12, func_244(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_245(12, func_244(iParam0), &vVar0))
 	{
 		return 0;
 	}

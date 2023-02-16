@@ -92,7 +92,7 @@ void func_3(var uParam0, int iParam1, vector3 vParam2, int iParam5)
 		{
 			*iParam1 = ITEMSET::CREATE_ITEMSET(true);
 		}
-		ITEMSET::_0x20A4BF0E09BEE146(*iParam1);
+		ITEMSET::_CLEAR_ITEMSET(*iParam1);
 		iVar0 = ENTITY::_0x59B57C4B06531E1E(vParam2, 1f, *iParam1, 3);
 		iVar1 = 0;
 		while (iVar1 < iVar0)

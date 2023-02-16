@@ -266,7 +266,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_239, 8);
 							if (func_36(32))
@@ -633,8 +633,8 @@ int func_11()
 	iLocal_212 = VOLUME::_CREATE_VOLUME_BOX(-5508.861f, -2960.149f, -0.730614f, 0f, 0f, 14.06083f, 5.590748f, 1.871594f, 1.963433f);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_211, 10108);
 	iLocal_215 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Armadillo - m_volGeneral Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_215, -5486.887f, -2936.958f, -0.631974f, 0f, 0f, 37.50568f, 12.05108f, 6.394965f, 4.543615f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_215, -5479.758f, -2933.356f, -0.464321f, 0f, 0f, 37.59521f, 2.825781f, 2.131215f, 1.882721f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_215, -5486.887f, -2936.958f, -0.631974f, 0f, 0f, 37.50568f, 12.05108f, 6.394965f, 4.543615f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_215, -5479.758f, -2933.356f, -0.464321f, 0f, 0f, 37.59521f, 2.825781f, 2.131215f, 1.882721f);
 	iLocal_216 = VOLUME::_CREATE_VOLUME_BOX(-5487.416f, -2939.017f, -0.416119f, 0f, 0f, 36.36512f, 1.251111f, 3.269273f, 2.026726f);
 	iLocal_218 = VOLUME::_CREATE_VOLUME_BOX(-5485.543f, -2937.639f, -0.416119f, 0f, 0f, 36.36512f, 2.087f, 2.06f, 2.027f);
 	iLocal_217 = VOLUME::_CREATE_VOLUME_BOX(-5492.82f, -2941.371f, -0.730614f, 0f, 0f, 127.4349f, 6.522694f, 1.871594f, 1.963433f);
@@ -657,18 +657,18 @@ int func_11()
 		VOLUME::_0xB469CFD9E065EB99(iLocal_220, 10109);
 	}
 	iLocal_226 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Tumbleweed - JAIL");
-	VOLUME::_0x39816F6F94F385AD(iLocal_226, -5529.713f, -2927.539f, -1.328089f, 0f, 0f, 24.83998f, 6.747131f, 6.870256f, 6.016601f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_226, -5534.146f, -2922.72f, -1.771596f, 0f, 0f, 24.83998f, 10.62026f, 7.054735f, 6.016601f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_226, -5529.713f, -2927.539f, -1.328089f, 0f, 0f, 24.83998f, 6.747131f, 6.870256f, 6.016601f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_226, -5534.146f, -2922.72f, -1.771596f, 0f, 0f, 24.83998f, 10.62026f, 7.054735f, 6.016601f);
 	VOLUME::_0x3EFABB21E14A6BD1(iLocal_226, 5, 1);
 	iLocal_234 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Tumbleweed - m_volGeneralWindowBlocking Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_234, -5493.421f, -2940.41f, 0.004f, 0f, 0f, 126f, 2.009f, 1.864f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_234, -5482.353f, -2931.596f, -0.675f, 0f, 0f, 126f, 3.034f, 1.23f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_234, -5480.939f, -2938.642f, -0.675f, 0f, 0f, -143f, 1.733f, 3.552f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_234, -5487.038f, -2942.457f, -0.675f, 0f, 0f, -143f, 1.5f, 2.219f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_234, -5493.421f, -2940.41f, 0.004f, 0f, 0f, 126f, 2.009f, 1.864f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_234, -5482.353f, -2931.596f, -0.675f, 0f, 0f, 126f, 3.034f, 1.23f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_234, -5480.939f, -2938.642f, -0.675f, 0f, 0f, -143f, 1.733f, 3.552f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_234, -5487.038f, -2942.457f, -0.675f, 0f, 0f, -143f, 1.5f, 2.219f, 3f);
 	iLocal_235 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Tumbleweed - m_volGunsmithWindowBlocking Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_235, -5507.813f, -2960.458f, -1.20497f, 0f, 0f, 15f, 1f, 0.5f, 2.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_235, -5503.76f, -2966.969f, -0.981304f, 0f, 0f, -74.5f, 1.5f, 0.5f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_235, -5504.707f, -2963.481f, -0.981304f, 0f, 0f, -74.5f, 1.5f, 0.5f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_235, -5507.813f, -2960.458f, -1.20497f, 0f, 0f, 15f, 1f, 0.5f, 2.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_235, -5503.76f, -2966.969f, -0.981304f, 0f, 0f, -74.5f, 1.5f, 0.5f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_235, -5504.707f, -2963.481f, -0.981304f, 0f, 0f, -74.5f, 1.5f, 0.5f, 3f);
 	return 1;
 }
 
@@ -707,7 +707,7 @@ int func_15(int iParam0)
 	if (func_20() == -1)
 	{
 		HUD::TEXT_BLOCK_REQUEST("SCTDAUD");
-		if (!HUD::_0xD0976CC34002DB57("SCTDAUD"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("SCTDAUD"))
 		{
 			return 0;
 		}
@@ -1949,7 +1949,7 @@ int func_65(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -2161,7 +2161,7 @@ void func_73(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 		if (*iParam4)
 		{
 			iVar3 = ITEMSET::CREATE_ITEMSET(true);
-			iVar1 = ENTITY::_0x84CCF9A12942C83D(iParam2, iVar3, 1, 1, 0, 0);
+			iVar1 = ENTITY::GET_MATCHING_ENTITIES(iParam2, iVar3, 1, 1, 0, 0);
 			iVar4 = 0;
 			while (iVar4 < iVar1)
 			{
@@ -2795,7 +2795,7 @@ void func_96(int iParam0)
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("SCTDAUD"))
 	{
-		if (HUD::_0xD0976CC34002DB57("SCTDAUD"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("SCTDAUD"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("SCTDAUD");
 		}
@@ -9733,7 +9733,7 @@ int func_371(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -9772,7 +9772,7 @@ int func_371(int iParam0, bool bParam1, int iParam2, int iParam3)
 
 int func_372()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_400(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_400(Global_35))
 	{
 		return 1;
 	}

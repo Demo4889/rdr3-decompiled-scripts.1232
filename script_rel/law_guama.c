@@ -975,7 +975,7 @@ int func_42(var uParam0, var uParam1, bool bParam2)
 	}
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_21))
 	{
-		uParam0->f_21 = MAP::_0x554D9D53F696D002(408396114, vVar2);
+		uParam0->f_21 = MAP::BLIP_ADD_FOR_COORDS(408396114, vVar2);
 	}
 	iVar16 = 0;
 	while (iVar16 < 5)
@@ -1456,7 +1456,7 @@ int func_62(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -1773,7 +1773,7 @@ int func_79()
 		if (VOLUME::DOES_VOLUME_EXIST(((*Global_1888801)[iVar6 /*35*/])->f_3))
 		{
 			vVar7 = { 0f, 0f, 0f };
-			vVar7 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iVar6 /*35*/])->f_3) };
+			vVar7 = { VOLUME::GET_VOLUME_COORDS(((*Global_1888801)[iVar6 /*35*/])->f_3) };
 			fVar10 = BUILTIN::VDIST2(vVar3, vVar7);
 			if (fVar10 < fVar2)
 			{
@@ -1920,7 +1920,7 @@ void func_83(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -1978,7 +1978,7 @@ int func_85(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, b
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -2431,11 +2431,11 @@ void func_101(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}

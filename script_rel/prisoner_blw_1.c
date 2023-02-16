@@ -771,8 +771,8 @@ void func_37(var uParam0, int iParam1)
 void func_38()
 {
 	iLocal_46 = VOLUME::_CREATE_VOLUME_AGGREGATE();
-	VOLUME::_0x39816F6F94F385AD(iLocal_46, -763.0246f, -1269.283f, 43.6176f, 0f, 0f, 0f, 12.03637f, 8.528987f, 5.107259f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_46, -764.7173f, -1263.493f, 43.76242f, 0f, 0f, 0f, 7.664316f, 3.774002f, 5.107259f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_46, -763.0246f, -1269.283f, 43.6176f, 0f, 0f, 0f, 12.03637f, 8.528987f, 5.107259f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_46, -764.7173f, -1263.493f, 43.76242f, 0f, 0f, 0f, 7.664316f, 3.774002f, 5.107259f);
 	func_58(&uLocal_17);
 	iLocal_14 = 1;
 }
@@ -781,21 +781,21 @@ void func_39(var uParam0)
 {
 	if (ANIMSCENE::IS_ANIM_SCENE_RUNNING(uParam0->f_6, 0))
 	{
-		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_6, "SitToCower") && !ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "SitToCower"))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_6, "SitToCower") && !ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "SitToCower"))
 		{
-			ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_6, "SitToCower");
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "SitToCower");
 		}
-		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_6, "StandToCower") && !ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "StandToCower"))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_6, "StandToCower") && !ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "StandToCower"))
 		{
-			ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_6, "StandToCower");
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "StandToCower");
 		}
-		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_6, "flinch1") && !ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "flinch1"))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_6, "flinch1") && !ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "flinch1"))
 		{
-			ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_6, "flinch1");
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "flinch1");
 		}
-		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_6, "flinch2") && !ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "flinch2"))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_6, "flinch2") && !ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "flinch2"))
 		{
-			ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_6, "flinch2");
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "flinch2");
 		}
 	}
 	if (VOLUME::IS_POINT_IN_VOLUME(iLocal_46, Global_36) && PED::IS_PED_SHOOTING(Global_35))
@@ -877,7 +877,7 @@ void func_41(var uParam0)
 			}
 			break;
 		case 1:
-			if (HUD::_0xD0976CC34002DB57(func_62(uParam0->f_7, 1)))
+			if (HUD::TEXT_BLOCK_IS_LOADED(func_62(uParam0->f_7, 1)))
 			{
 				vVar0 = { func_63(uParam0->f_7, uParam0->f_65, 0) };
 				func_64(Global_1396116, uParam0->f_3, func_62(uParam0->f_7, 0), 0);
@@ -1265,7 +1265,7 @@ int func_55(int iParam0, int iParam1)
 	func_53(iParam0, 0, 0);
 	if (func_54(iParam0))
 	{
-		iVar0 = ENTITY::_0xF7424890E4A094C0(iParam0, iParam1);
+		iVar0 = ENTITY::_GET_ENTITY_BY_DOORHASH(iParam0, iParam1);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 		{
 			return iVar0;
@@ -1300,7 +1300,7 @@ void func_59(var uParam0)
 	switch (iLocal_14)
 	{
 		case 1:
-			if (ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "SitToCower") && !ANIMSCENE::_0x1F0E401031E20146(uParam0->f_6, "SitToCower"))
+			if (ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "SitToCower") && !ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_6, "SitToCower"))
 			{
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(uParam0->f_6, "SitToCower", true);
 				iLocal_14 = 5;
@@ -1309,7 +1309,7 @@ void func_59(var uParam0)
 		case 2:
 		case 3:
 		case 4:
-			if (ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_6, "StandToCower") && !ANIMSCENE::_0x1F0E401031E20146(uParam0->f_6, "StandToCower"))
+			if (ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_6, "StandToCower") && !ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_6, "StandToCower"))
 			{
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(uParam0->f_6, "StandToCower", true);
 				iLocal_14 = 5;
@@ -1320,14 +1320,14 @@ void func_59(var uParam0)
 			{
 				if (func_88() == 1)
 				{
-					if (!ANIMSCENE::_0x1F0E401031E20146(uParam0->f_6, "flinch1"))
+					if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_6, "flinch1"))
 					{
 						ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(uParam0->f_6, "flinch1", true);
 						iLocal_16 = 0;
 						iLocal_14 = 5;
 					}
 				}
-				else if (!ANIMSCENE::_0x1F0E401031E20146(uParam0->f_6, "flinch2"))
+				else if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_6, "flinch2"))
 				{
 					ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(uParam0->f_6, "flinch2", true);
 					iLocal_16 = 0;
@@ -3681,7 +3681,7 @@ int func_95(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -4946,7 +4946,7 @@ bool func_138(var uParam0, int* iParam1, float fParam2, float fParam3, var uPara
 	bVar8 = uParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_211(Global_35)) || func_212(Global_35)) || func_213(Global_35));
+	bVar11 = (((PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_211(Global_35)) || func_212(Global_35)) || func_213(Global_35));
 	fVar12 = -1f;
 	if (func_21(&(iParam1->f_13)))
 	{
@@ -5809,7 +5809,7 @@ int func_174(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_46))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1935630->f_46))
+			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::IS_WEAPON_BOW(Global_1935630->f_46))
 			{
 				return 1;
 			}
@@ -7409,7 +7409,7 @@ int func_260(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -7528,11 +7528,11 @@ void func_264(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}

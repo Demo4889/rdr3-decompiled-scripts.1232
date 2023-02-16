@@ -101,7 +101,7 @@ void __EntryFunction__()
 				{
 					if (iVar185 == 171451159 || iVar185 == 1881103362)
 					{
-						if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+						if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 						{
 							TASK::_0xB35370D5353995CB(Global_35, -583731576, 1f);
 						}
@@ -149,8 +149,8 @@ void __EntryFunction__()
 				else if (iVar185 == 171451159 || (iVar185 == 1372498217 && ENTITY::HAS_ANIM_EVENT_FIRED(Global_35, 1160706425)))
 				{
 					PED::_0xCB9401F918CB0F75(Global_35, "HIDE_STEW_EAT_PROMPT", true, 1);
-					PED::_0x6D07B371E9439019(Global_35);
-					PED::_0xD65FDC686A031C83(Global_35, -1134349867, 1.5f);
+					PED::_ADD_SCENARIO_TRANSITION(Global_35);
+					PED::_GIVE_PED_HASH_COMMAND(Global_35, -1134349867, 1.5f);
 				}
 				break;
 			case 3:
@@ -434,7 +434,7 @@ var func_15(int iParam0, int iParam1)
 
 void func_16(int iParam0, struct<5> Param1, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam15))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam15))
 	{
 		return;
 	}
@@ -770,7 +770,7 @@ void func_30(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, false);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, false);
 			uParam0->f_176 = 1;
 		}
 	}
@@ -5854,7 +5854,7 @@ int func_204(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (!_NAMESPACE26::_0x81FB74C83C2ED69F(&(Global_1273882->f_154[iVar1])))
+			if (!_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

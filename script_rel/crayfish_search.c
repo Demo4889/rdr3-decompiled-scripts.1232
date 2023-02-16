@@ -75,9 +75,9 @@ void func_1(var uParam0, int iParam1)
 		PLAYER::_0x9DAE1380CC5C6451(PLAYER::PLAYER_ID(), iParam1->f_7);
 		PLAYER::_0xDC5E09D012D759C4(iParam1->f_7, iParam1->f_7, 0);
 	}
-	if (ENTITY::_0x1FF441D7954F8709(iParam1->f_8))
+	if (ENTITY::IS_MAP_ENTITY_PINNED(iParam1->f_8))
 	{
-		ENTITY::_0xD2B9C78537ED5759(iParam1->f_8);
+		ENTITY::_UNPIN_MAP_ENTITY(iParam1->f_8);
 	}
 	SCRIPTS::_0xE7282390542F570D(*uParam0);
 	SCRIPTS::TERMINATE_THIS_THREAD();
@@ -293,7 +293,7 @@ Vector3 func_10(var uParam0)
 {
 	if (TASK::DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
-		return TASK::_0xA8452DD321607029(uParam0->f_1, 1);
+		return TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1, 1);
 	}
 	return 0f, 0f, 0f;
 }
@@ -316,7 +316,7 @@ int func_12(int iParam0)
 	{
 		return -1;
 	}
-	vVar0 = { TASK::_0xA8452DD321607029(iParam0, 1) };
+	vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS(iParam0, 1) };
 	fVar5 = 9999999f;
 	fVar6 = 9999999f;
 	iVar7 = 0;
@@ -363,11 +363,11 @@ int func_15(var uParam0, int iParam1)
 {
 	if (uParam0->f_8 == 0)
 	{
-		uParam0->f_8 = ENTITY::_0x6F3068258A499E52(func_27(uParam0->f_1), func_26(uParam0->f_1), 11);
+		uParam0->f_8 = ENTITY::PIN_CLOSEST_MAP_ENTITY(func_27(uParam0->f_1), func_26(uParam0->f_1), 11);
 	}
-	else if (ENTITY::_0x1FF441D7954F8709(uParam0->f_8))
+	else if (ENTITY::IS_MAP_ENTITY_PINNED(uParam0->f_8))
 	{
-		uParam0->f_7 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_0x4735E2A4BB83D9DA(uParam0->f_8));
+		uParam0->f_7 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_GET_PINNED_MAP_ENTITY(uParam0->f_8));
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(uParam0->f_7))
 	{

@@ -1022,7 +1022,7 @@ int func_61(int iParam0)
 		return 0;
 	}
 	Var14.f_9 = -1591664384;
-	if (!INVENTORY::_0x025A1B1FB03FBF61(iVar9, &Var10, &Var14, 22, 1))
+	if (!INVENTORY::_INVENTORY_GET_FULL_INVENTORY_ITEM_DATA(iVar9, &Var10, &Var14, 22, 1))
 	{
 		return 0;
 	}
@@ -1040,7 +1040,7 @@ void func_63(vector3 vParam0, var uParam3, var uParam4, var uParam5, var uParam6
 	int iVar0;
 
 	iVar0 = PLAYER::PLAYER_ID();
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam20))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam20))
 	{
 		return;
 	}
@@ -1551,8 +1551,8 @@ int func_85(int iParam0, var uParam1, var uParam2, var uParam3)
 	{
 	}
 	*uParam1 = iVar0;
-	*uParam2 = { TASK::_0xA8452DD321607029(*uParam1, 1) };
-	*uParam3 = TASK::_0xB93EA7184BAA85C3(*uParam1, 1);
+	*uParam2 = { TASK::_GET_SCENARIO_POINT_COORDS(*uParam1, 1) };
+	*uParam3 = TASK::_GET_SCENARIO_POINT_HEADING(*uParam1, 1);
 	return 1;
 }
 

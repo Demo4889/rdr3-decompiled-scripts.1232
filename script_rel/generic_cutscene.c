@@ -664,7 +664,7 @@ void func_34(var uParam0)
 
 void func_35()
 {
-	if (STREAMING::_0xCF45DF50C7775F2A())
+	if (STREAMING::IS_LOAD_SCENE_ACTIVE())
 	{
 		STREAMING::_0x5A8B01199C3E79C3();
 	}
@@ -1350,7 +1350,7 @@ void func_63()
 			iVar2 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
 			if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar2))
 			{
-				if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar2))
+				if (_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(iVar2))
 				{
 					if (iVar1 >= 7)
 					{
@@ -1450,7 +1450,7 @@ var func_67(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, int
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -1512,7 +1512,7 @@ int func_68(var uParam0)
 				}
 				uParam0->f_546.f_3 = 1;
 				Jump @759; //curOff = 271
-				if (!STREAMING::_0xCF45DF50C7775F2A())
+				if (!STREAMING::IS_LOAD_SCENE_ACTIVE())
 				{
 					STREAMING::_0x513F8AA5BF2F17CF(*(uParam0->f_546.f_4[uParam0->f_546 /*7*/]), 10f, 0);
 					uParam0->f_546.f_1 = NETWORK::GET_CLOUD_TIME_AS_INT();
@@ -1569,7 +1569,7 @@ int func_68(var uParam0)
 										iVar2 = PLAYER::INT_TO_PLAYERINDEX(iVar1);
 										if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar2))
 										{
-											if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar2))
+											if (_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(iVar2))
 											{
 												if (((*Global_1055058)[iVar1 /*116*/])->f_15.f_7 != 1)
 												{
@@ -1664,7 +1664,7 @@ int func_72(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4)
 	{
 		return 0;
 	}
-	if (NETWORK::_0xFBE782B3165AC8EC(iParam0))
+	if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(iParam0))
 	{
 		return 1;
 	}

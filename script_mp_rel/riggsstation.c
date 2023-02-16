@@ -520,8 +520,8 @@ int func_12(int iParam0)
 int func_13()
 {
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Riggs Stn - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -1095.52f, -576.564f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -1094.093f, -574.7371f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -1095.52f, -576.564f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -1094.093f, -574.7371f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
 	iLocal_21 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1094.383f, -575.865f, 82.807f, 0f, 0f, 52.00422f, 4.73f, 5.502f, 2.821f, "Riggs Stn - m_volPostOfficeOwner");
 	iLocal_23 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1093.137f, -576.9941f, 82.84734f, 0f, 0f, 52.00422f, 4.470828f, 2.119287f, 2.820909f, "Riggs Stn - m_volPostOfficeOfflimits");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_21, 10025);
@@ -1092,7 +1092,7 @@ void func_58(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_99(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1116,7 +1116,7 @@ void func_58(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_102(iParam0, 4);
 	func_103(iParam0);
 }
@@ -1194,7 +1194,7 @@ int func_61(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -3679,7 +3679,7 @@ void func_114(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_181(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_102(iParam0, 16384);
 }
@@ -5083,7 +5083,7 @@ int func_173(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_219(12, func_218(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_219(12, func_218(iParam0), &vVar0))
 	{
 		return 0;
 	}

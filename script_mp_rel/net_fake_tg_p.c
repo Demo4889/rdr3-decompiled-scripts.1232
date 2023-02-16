@@ -298,7 +298,7 @@ int func_5(int iParam0)
 	func_31(2, Local_13.f_4.f_2, &(Local_13.f_8.f_4[iParam0 /*5*/]), &vVar3);
 	PED::SET_PED_LEG_IK_MODE(iVar6, 0);
 	TASK::TASK_PLAY_ANIM_ADVANCED(iVar6, "MINI_GAMES@POKER_MG@BASE", "HOLD_CARDS_IDLE_A", vVar0, vVar3, 1000f, -1056964608, -1, 33153, 0.75f, 2, 1, 0);
-	PED::_0x2208438012482A1A(iVar6, false, false);
+	PED::FORCE_PED_AI_AND_ANIMATION_UPDATE(iVar6, false, false);
 	STREAMING::REMOVE_ANIM_DICT("MINI_GAMES@POKER_MG@BASE");
 	return 1;
 }
@@ -4107,7 +4107,7 @@ int func_94(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 			}
 			iVar3++;
 		}
-		ITEMSET::_0x20A4BF0E09BEE146(iVar5);
+		ITEMSET::_CLEAR_ITEMSET(iVar5);
 		ITEMSET::DESTROY_ITEMSET(iVar5);
 	}
 	func_116(iVar0);
@@ -4154,7 +4154,7 @@ void func_95(var uParam0, var uParam1)
 				iVar1 = NETWORK::NET_TO_PED(uParam1->f_2);
 				if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0) && ANIMSCENE::IS_ANIM_SCENE_RUNNING(iVar0, 0))
 				{
-					if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(iVar1, iVar0))
+					if (!ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(iVar1, iVar0))
 					{
 						ANIMSCENE::_CLEAR_BREAKOUT_ARCHETYPE(iVar1);
 						if (ENTITY::_0x083D497D57B7400F(iVar1))
@@ -4401,7 +4401,7 @@ void func_109(var uParam0, int iParam1)
 	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
 		NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
-		ANIMSCENE::_0xDF7B5144E25CD3FE(iVar0, func_134(iParam1));
+		ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iVar0, func_134(iParam1));
 		uParam0->f_3 = iParam1;
 		uParam0->f_18 = 1;
 	}
@@ -4427,7 +4427,7 @@ int func_110(var uParam0)
 	if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(iVar0))
 	{
 		NETWORK::PREVENT_NETWORK_ID_MIGRATION(uParam0->f_4);
-		return ANIMSCENE::_0x23E33CB9F4A3F547(iVar0, func_134(uParam0->f_3));
+		return ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iVar0, func_134(uParam0->f_3));
 	}
 	return 0;
 }
@@ -4447,7 +4447,7 @@ void func_111(var uParam0)
 	sVar0 = func_134(uParam0->f_2);
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(sVar0))
 	{
-		ANIMSCENE::_0xAE6ADA8FE7E84ACC(iVar1, sVar0);
+		ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADED(iVar1, sVar0);
 	}
 	uParam0->f_18 = 0;
 	uParam0->f_2 = uParam0->f_3;
@@ -5851,7 +5851,7 @@ int func_146(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }

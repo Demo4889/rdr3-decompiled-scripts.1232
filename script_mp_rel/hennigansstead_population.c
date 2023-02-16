@@ -38,7 +38,7 @@ void __EntryFunction__()
 		}
 		else
 		{
-			Global_1896610->f_51 = NETWORK::_0xFB9ECED5B68F3B78(Global_1896610->f_42);
+			Global_1896610->f_51 = NETWORK::_NETWORK_GET_INSTANCE_ID_OF_THREAD(Global_1896610->f_42);
 			if (func_5(1, 1))
 			{
 				bVar0 = false;
@@ -75,12 +75,12 @@ void func_2()
 	iLocal_18 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-1405.399f, -2279.227f, 70f, 0f, 0f, 7f, 65f, 107.5f, 40f, "m_volThievesLanding_Restriction");
 	func_8(iLocal_18, 0, 0);
 	iLocal_19 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volStillwaterCreek_Aquatic_Restriction");
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1747.279f, -2431.148f, 38f, 0f, 0f, -18f, 20f, 50f, 20f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1800.653f, -2314.105f, 38f, 0f, 0f, 15f, 60f, 25f, 20f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1787.128f, -2348.89f, 38f, 0f, 0f, -36f, 20f, 20f, 20f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1668.215f, -2341.46f, 38f, 0f, 0f, 25f, 25f, 15f, 20f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1671.046f, -2320.505f, 38f, 0f, 0f, 6f, 20f, 20f, 20f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_19, -1666.093f, -2360.316f, 38f, 0f, 0f, 25f, 20f, 15f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1747.279f, -2431.148f, 38f, 0f, 0f, -18f, 20f, 50f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1800.653f, -2314.105f, 38f, 0f, 0f, 15f, 60f, 25f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1787.128f, -2348.89f, 38f, 0f, 0f, -36f, 20f, 20f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1668.215f, -2341.46f, 38f, 0f, 0f, 25f, 25f, 15f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1671.046f, -2320.505f, 38f, 0f, 0f, 6f, 20f, 20f, 20f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_19, -1666.093f, -2360.316f, 38f, 0f, 0f, 25f, 20f, 15f, 20f);
 	func_9(iLocal_19);
 }
 
@@ -116,7 +116,7 @@ void func_4()
 	{
 		if (!func_10(1167397384))
 		{
-			if (!STREAMING::_0x73B40D97D7BAAD77(1736386364, Global_36))
+			if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(1736386364, Global_36))
 			{
 				func_11(1167397384);
 			}
@@ -124,7 +124,7 @@ void func_4()
 	}
 	else if (func_10(1167397384))
 	{
-		if (!STREAMING::_0x73B40D97D7BAAD77(1736386364, Global_36))
+		if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(1736386364, Global_36))
 		{
 			func_12(1167397384);
 		}

@@ -344,7 +344,7 @@ int func_18()
 		}
 		iVar1++;
 	}
-	if (!HUD::_0xD0976CC34002DB57(func_36()))
+	if (!HUD::TEXT_BLOCK_IS_LOADED(func_36()))
 	{
 		iVar0 = 0;
 	}
@@ -598,7 +598,7 @@ int func_32(int iParam0)
 		{
 			STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(func_35(iVar1));
 		}
-		if (HUD::_0xD0976CC34002DB57(func_36()))
+		if (HUD::TEXT_BLOCK_IS_LOADED(func_36()))
 		{
 			HUD::_TEXT_BLOCK_DELETE(func_36());
 		}
@@ -1040,7 +1040,7 @@ void func_55(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

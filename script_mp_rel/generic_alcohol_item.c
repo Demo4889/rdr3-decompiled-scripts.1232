@@ -133,8 +133,8 @@ void __EntryFunction__()
 					{
 						if (iVar184 == 1342098323)
 						{
-							PED::_0xD65FDC686A031C83(Global_35, -1268666326, 1.5f);
-							PED::_0x6D07B371E9439019(Global_35);
+							PED::_GIVE_PED_HASH_COMMAND(Global_35, -1268666326, 1.5f);
+							PED::_ADD_SCENARIO_TRANSITION(Global_35);
 							func_12(&Var0, 4);
 						}
 					}
@@ -142,13 +142,13 @@ void __EntryFunction__()
 					{
 						if (TASK::_0x2D0571BB55879DA2(Global_35) != -1177373461)
 						{
-							PED::_0xD65FDC686A031C83(Global_35, -872596011, 3f);
-							PED::_0x6D07B371E9439019(Global_35);
+							PED::_GIVE_PED_HASH_COMMAND(Global_35, -872596011, 3f);
+							PED::_ADD_SCENARIO_TRANSITION(Global_35);
 						}
 						else
 						{
-							PED::_0xD65FDC686A031C83(Global_35, 1114994170, 1.5f);
-							PED::_0x6D07B371E9439019(Global_35);
+							PED::_GIVE_PED_HASH_COMMAND(Global_35, 1114994170, 1.5f);
+							PED::_ADD_SCENARIO_TRANSITION(Global_35);
 						}
 						func_12(&Var0, 4);
 					}
@@ -397,8 +397,8 @@ void func_7(var uParam0)
 {
 	if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_35, 574156416))
 	{
-		PED::_0x6D07B371E9439019(Global_35);
-		PED::_0xD65FDC686A031C83(Global_35, 1114994170, 1.5f);
+		PED::_ADD_SCENARIO_TRANSITION(Global_35);
+		PED::_GIVE_PED_HASH_COMMAND(Global_35, 1114994170, 1.5f);
 	}
 }
 
@@ -406,8 +406,8 @@ void func_8(var uParam0)
 {
 	if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_35, 574156416))
 	{
-		PED::_0x6D07B371E9439019(Global_35);
-		PED::_0xD65FDC686A031C83(Global_35, -1268666326, 1.5f);
+		PED::_ADD_SCENARIO_TRANSITION(Global_35);
+		PED::_GIVE_PED_HASH_COMMAND(Global_35, -1268666326, 1.5f);
 	}
 }
 
@@ -473,7 +473,7 @@ void func_13(int iParam0)
 	}
 	else if (iParam0 == 1587785400)
 	{
-		if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+		if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 		{
 			TASK::_0xB35370D5353995CB(Global_35, -1493684811, 1f);
 		}
@@ -487,7 +487,7 @@ void func_13(int iParam0)
 	}
 	else if (iParam0 == 1342098323)
 	{
-		if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+		if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 		{
 			TASK::_0xB35370D5353995CB(Global_35, -752898125, 1f);
 		}
@@ -734,7 +734,7 @@ void func_22(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, false);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, false);
 			uParam0->f_176 = 1;
 		}
 	}
@@ -1202,7 +1202,7 @@ void func_46(float fParam0, bool bParam1)
 	if (fParam0 < 0f)
 	{
 		Global_1938998->f_9 = 0f;
-		PED::_0x06D26A96CA1BCA75(Global_35, 10, Global_1938998->f_9, 0);
+		PED::_SET_PED_MOTIVATION(Global_35, 10, Global_1938998->f_9, 0);
 	}
 	else if (fParam0 >= 1f && Global_1938998->f_14)
 	{
@@ -5920,7 +5920,7 @@ int func_211(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (!_NAMESPACE26::_0x81FB74C83C2ED69F(&(Global_1273882->f_154[iVar1])))
+			if (!_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

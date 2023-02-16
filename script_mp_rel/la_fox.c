@@ -3757,7 +3757,7 @@ bool func_163(var uParam0, var uParam1)
 	*uParam0 = Global_1232796->f_8113;
 	uParam0->f_2 = 423895568;
 	uParam0->f_3 = uParam1;
-	return (DATAFILE::_0x603AC35FD4602C76(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
+	return (DATAFILE::PARSEDDATA_IS_FILE_LOADED(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
 }
 
 bool func_164(var uParam0, int iParam1)
@@ -5433,7 +5433,7 @@ bool func_251(int iParam0)
 
 bool func_252(int iParam0)
 {
-	return SCRIPTS::_0x179A6F0EE2E79026(Local_1552.f_239.f_81[iParam0]);
+	return SCRIPTS::_IS_ANY_PLAYER_BIT_SET(Local_1552.f_239.f_81[iParam0]);
 }
 
 void func_253(int iParam0)
@@ -5443,7 +5443,7 @@ void func_253(int iParam0)
 
 bool func_254(int iParam0)
 {
-	return SCRIPTS::_0x179A6F0EE2E79026((Local_143[NETWORK::PARTICIPANT_ID_TO_INT() /*44*/])->f_14.f_9[iParam0]);
+	return SCRIPTS::_IS_ANY_PLAYER_BIT_SET((Local_143[NETWORK::PARTICIPANT_ID_TO_INT() /*44*/])->f_14.f_9[iParam0]);
 }
 
 void func_255(int iParam0)
@@ -5862,7 +5862,7 @@ bool func_270(int iParam0)
 
 	SCRIPTS::_0x20F4CB76689ACDBC(&uVar0);
 	SCRIPTS::_0x64F765D9A1F8F02C(&uVar0, Local_1552.f_239.f_91[iParam0], &uVar0);
-	return !SCRIPTS::_0x179A6F0EE2E79026(&uVar0);
+	return !SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uVar0);
 }
 
 int func_271(int iParam0, var uParam1, int iParam2, var uParam3)
@@ -5953,7 +5953,7 @@ int func_277(var uParam0, float fParam1, int iParam2, int iParam3, float fParam4
 	switch (*uParam0)
 	{
 		case 0:
-			if (ENTITY::IS_ENTITY_A_PED(uParam0->f_6) && !PED::_0x5102307CE88798EB(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6)))
+			if (ENTITY::IS_ENTITY_A_PED(uParam0->f_6) && !PED::_IS_PED_VISIBILITY_TRACKED(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6)))
 			{
 				PED::REQUEST_PED_VISIBILITY_TRACKING(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6));
 			}
@@ -5975,7 +5975,7 @@ int func_277(var uParam0, float fParam1, int iParam2, int iParam3, float fParam4
 			{
 				if (fParam4 > 0f)
 				{
-					bVar1 = PED::_0x164CECC59E70DF86(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6), fParam4);
+					bVar1 = PED::_IS_TRACKED_PED_VISIBILITY_PERCENTAGE_NOT_LESS_THAN(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_6), fParam4);
 				}
 				else
 				{
@@ -6907,7 +6907,7 @@ int func_322(int iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -7946,7 +7946,7 @@ int func_358(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }
@@ -8027,7 +8027,7 @@ void func_364(int iParam0)
 			Global_1939168->f_24 = PLAYER::_0x72AD59F7B7FB6E24(PLAYER::PLAYER_ID(), 4000);
 			if (!Global_1939168->f_24)
 			{
-				if (bVar1 && WEAPON::_0x6E4E1A82081EABED(Global_1939168->f_38))
+				if (bVar1 && WEAPON::_IS_WEAPON_LASSO(Global_1939168->f_38))
 				{
 					Global_1939168->f_24 = PED::_0xB65A4DAB460A19BD(Global_35) != 0;
 				}
@@ -8039,7 +8039,7 @@ void func_364(int iParam0)
 			break;
 		case 2:
 			bVar3 = WEAPON::IS_WEAPON_VALID(Global_1939168->f_40);
-			if (bVar3 && WEAPON::_0x6E4E1A82081EABED(Global_1939168->f_40))
+			if (bVar3 && WEAPON::_IS_WEAPON_LASSO(Global_1939168->f_40))
 			{
 				Global_1939168->f_19 = 0;
 			}
@@ -8279,7 +8279,7 @@ int func_375(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	{
 		return 0;
 	}
-	if ((WEAPON::_0x6E4E1A82081EABED(Global_1939168->f_38) || 1151374672 == Global_1939168->f_38) && Global_1939168->f_21)
+	if ((WEAPON::_IS_WEAPON_LASSO(Global_1939168->f_38) || 1151374672 == Global_1939168->f_38) && Global_1939168->f_21)
 	{
 	}
 	else if (PLAYER::_0x3EE1F7A8C32F24E1(PLAYER::PLAYER_ID(), &iVar2, 0, 0))
@@ -8555,7 +8555,7 @@ int func_385(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1939168->f_40))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1939168->f_40) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1939168->f_40))
+			if (WEAPON::_0x959383DCD42040DA(Global_1939168->f_40) || WEAPON::IS_WEAPON_BOW(Global_1939168->f_40))
 			{
 				return 1;
 			}
@@ -8696,7 +8696,7 @@ int func_391(int iParam0, int iParam1)
 	{
 		return 1;
 	}
-	if (!WEAPON::_0x6E4E1A82081EABED(func_421(iParam0, 1, 0, 0)) && !func_421(iParam0, 1, 0, 0) == 1151374672)
+	if (!WEAPON::_IS_WEAPON_LASSO(func_421(iParam0, 1, 0, 0)) && !func_421(iParam0, 1, 0, 0) == 1151374672)
 	{
 		return 0;
 	}
@@ -9051,7 +9051,7 @@ int func_406(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!PED::_0x5102307CE88798EB(iParam0))
+	if (!PED::_IS_PED_VISIBILITY_TRACKED(iParam0))
 	{
 		PED::REQUEST_PED_VISIBILITY_TRACKING(iParam0);
 	}

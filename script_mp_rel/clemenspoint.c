@@ -544,7 +544,7 @@ int func_17(int iParam0)
 {
 	if (AUDIO::LOAD_STREAM("clemens_point", "es_camp_memory_sounds"))
 	{
-		iLocal_14 = AUDIO::_0x0556C784FA056628("clemens_point", "es_camp_memory_sounds");
+		iLocal_14 = AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("clemens_point", "es_camp_memory_sounds");
 		iLocal_15 = MISC::GET_GAME_TIMER() + 30000;
 		return 1;
 	}

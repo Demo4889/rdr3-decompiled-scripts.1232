@@ -523,19 +523,19 @@ int func_13()
 {
 	iLocal_21 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-5220.2f, -3472.4f, -20.6f, 0f, 0f, 0f, 100f, 125f, 70f, "m_volBenedictPoint");
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volBenedictPostOffice Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -5226.037f, -3468.296f, -19.99f, 0f, 0f, 0f, 6.727f, 3.065f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -5227.384f, -3470.978f, -19.99f, 0f, 0f, 0f, 2.011f, 2.184f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -5226.037f, -3468.296f, -19.99f, 0f, 0f, 0f, 6.727f, 3.065f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -5227.384f, -3470.978f, -19.99f, 0f, 0f, 0f, 2.011f, 2.184f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
 	iLocal_23 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volBenedictPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_23, -5227.361f, -3470.487f, -20.226f, 0f, 0f, 0f, 1.695f, 1.082f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_23, -5229.832f, -3468.299f, -20.656f, 0f, 0f, 0f, 1.109f, 2.187f, 3.106f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_23, -5227.361f, -3470.487f, -20.226f, 0f, 0f, 0f, 1.695f, 1.082f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_23, -5229.832f, -3468.299f, -20.656f, 0f, 0f, 0f, 1.109f, 2.187f, 3.106f);
 	iLocal_24 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-5226.061f, -3468.279f, -21.52f, 0f, 0f, 0f, 6.85f, 3.25f, 4f, "m_volBenedictPostOfficeOffLimits");
 	if (func_45() != -1)
 	{
 	}
 	iLocal_26 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Benedict Point - m_volTrainStation Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_26, -5226.061f, -3471.827f, -21.52f, 0f, 0f, 0f, 7.421f, 10.471f, 4f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_26, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, -5226.061f, -3471.827f, -21.52f, 0f, 0f, 0f, 7.421f, 10.471f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
 	return 1;
 }
 
@@ -1117,7 +1117,7 @@ void func_58(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_102(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1141,7 +1141,7 @@ void func_58(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_105(iParam0, 4);
 	func_106(iParam0);
 }
@@ -1324,7 +1324,7 @@ int func_64(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -3809,7 +3809,7 @@ void func_117(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_196(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_105(iParam0, 16384);
 }
@@ -5761,7 +5761,7 @@ int func_188(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_235(12, func_234(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_235(12, func_234(iParam0), &vVar0))
 	{
 		return 0;
 	}

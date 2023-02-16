@@ -101,10 +101,10 @@ void func_6()
 		case 0:
 			if (TASK::DOES_SCENARIO_POINT_EXIST(uLocal_3))
 			{
-				iLocal_23 = TASK::_0x5BA659955369B0E2(uLocal_3);
+				iLocal_23 = TASK::_GET_PED_USING_SCENARIO_POINT(uLocal_3);
 				if (!ENTITY::IS_ENTITY_DEAD(iLocal_23) && TASK::IS_PED_ACTIVE_IN_SCENARIO(iLocal_23, 1))
 				{
-					iLocal_24 = PED::_0x4D0D2E3D8BC000EB(iLocal_23, "p_fishingPole02x_PH_R_HAND", 0);
+					iLocal_24 = PED::_GET_PED_REGISTER_PROP(iLocal_23, "p_fishingPole02x_PH_R_HAND", 0);
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_24))
 					{
 						Local_5.f_4 = "p_fishingPole02x_Bone_tip";
@@ -124,7 +124,7 @@ void func_6()
 						func_13();
 						iLocal_25 = 1;
 					}
-					else if (TASK::_0x02EBBB3989B7E695(iLocal_23))
+					else if (TASK::_PED_IS_IN_SCENARIO_BASE(iLocal_23))
 					{
 						func_13();
 						iLocal_25 = 1;
@@ -327,9 +327,9 @@ bool func_20(int iParam0)
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_5.f_8))
 		{
 			vVar4 = { vVar1 };
-			Local_5.f_8 = PHYSICS::_0xE9C59F6809373A99(vVar4, 0f, 0f, 0f, Local_5.f_12, 8, 0, -1, -1082130432);
+			Local_5.f_8 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_5.f_12, 8, 0, -1, -1082130432);
 			PHYSICS::_0xD699E688B49C0FD2(Local_5.f_8, 0.5f, Local_5.f_10, Local_5.f_10, 1);
-			PHYSICS::_0x462FF2A432733A44(Local_5.f_8, iParam0, Local_5.f_5, 0f, 0f, 0f, 0f, 0f, 0f, Local_5.f_4, "rod_attach");
+			PHYSICS::_ATTACH_ENTITIES_TO_ROPE_2(Local_5.f_8, iParam0, Local_5.f_5, 0f, 0f, 0f, 0f, 0f, 0f, Local_5.f_4, "rod_attach");
 			PHYSICS::_0x3C6490D940FF5D0B(Local_5.f_8, 0, 0, -1082130432, 1);
 			PHYSICS::_0xBB3E9B073E66C3C9(Local_5.f_8, 1, 1, 1, 0);
 			PHYSICS::_0x423C6B1F3786D28B(Local_5.f_8, 1);
@@ -340,9 +340,9 @@ bool func_20(int iParam0)
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_5.f_9))
 		{
 			vVar4 = { ENTITY::GET_ENTITY_COORDS(Local_5.f_5, true, false) };
-			Local_5.f_9 = PHYSICS::_0xE9C59F6809373A99(vVar4, 0f, 0f, 0f, Local_5.f_11, 10, 0, -1, -1082130432);
+			Local_5.f_9 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_5.f_11, 10, 0, -1, -1082130432);
 			PHYSICS::_0xD699E688B49C0FD2(Local_5.f_9, 0.5f, Local_5.f_11, Local_5.f_11, 1);
-			PHYSICS::_0x462FF2A432733A44(Local_5.f_9, Local_5.f_5, Local_5.f_6, 0f, 0f, 0f, 0f, 0f, 0f, "hook_attach", "fishingLine_bone");
+			PHYSICS::_ATTACH_ENTITIES_TO_ROPE_2(Local_5.f_9, Local_5.f_5, Local_5.f_6, 0f, 0f, 0f, 0f, 0f, 0f, "hook_attach", "fishingLine_bone");
 			PHYSICS::_0x3C6490D940FF5D0B(Local_5.f_9, 0, 0, -1082130432, 1);
 			PHYSICS::_0xBB3E9B073E66C3C9(Local_5.f_9, 1, 1, 1, 0);
 			PHYSICS::ROPE_SET_UPDATE_ORDER(Local_5.f_9, 1);

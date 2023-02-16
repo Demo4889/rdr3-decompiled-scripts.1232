@@ -325,7 +325,7 @@ Vector3 func_8(int iParam0, bool bParam1)
 	}
 	if (VOLUME::DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_4))
 	{
-		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1887327)[iParam0 /*36*/])->f_4) };
+		vVar0 = { VOLUME::GET_VOLUME_COORDS(((*Global_1887327)[iParam0 /*36*/])->f_4) };
 		if (bParam1)
 		{
 			if (MISC::GET_GROUND_Z_FOR_3D_COORD(vVar0, &uVar3, 0))
@@ -453,7 +453,7 @@ void func_14(int iParam0)
 		{
 			PED::REMOVE_PED_FROM_GROUP(&((Local_45[iParam0 /*10*/])->f_1[iVar0]));
 			TASK::TASK_COMBAT_PED(&((Local_45[iParam0 /*10*/])->f_1[iVar0]), Global_35, 0, 0);
-			MAP::_0x23F74C2FDA6E7C61(joaat("BLIP_STYLE_ENEMY"), &((Local_45[iParam0 /*10*/])->f_1[iVar0]));
+			MAP::BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_ENEMY"), &((Local_45[iParam0 /*10*/])->f_1[iVar0]));
 			MAP::REMOVE_BLIP(&((Local_45[iParam0 /*10*/])->f_8));
 		}
 		iVar0++;
@@ -1326,7 +1326,7 @@ void func_30(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

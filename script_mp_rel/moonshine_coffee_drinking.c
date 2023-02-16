@@ -123,7 +123,7 @@ void __EntryFunction__()
 			case 2:
 				if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == -1200848232)
 				{
-					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_0x569F1E1237508DEB(Global_35) == 254049387 || PED::_0x569F1E1237508DEB(Global_35) == -1451987280) || PED::_0x569F1E1237508DEB(Global_35) == 1135271674))
+					if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ((PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 254049387 || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == -1451987280) || PED::_GET_ACTIVE_DYNAMIC_SCENARIO(Global_35) == 1135271674))
 					{
 						TASK::_0xB35370D5353995CB(Global_35, -314440731, 1048576000);
 					}
@@ -550,7 +550,7 @@ int func_27(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -660,7 +660,7 @@ void func_35(float fParam0, bool bParam1)
 	if (fParam0 < 0f)
 	{
 		Global_1938998->f_9 = 0f;
-		PED::_0x06D26A96CA1BCA75(Global_35, 10, Global_1938998->f_9, 0);
+		PED::_SET_PED_MOTIVATION(Global_35, 10, Global_1938998->f_9, 0);
 	}
 	else if (fParam0 >= 1f && Global_1938998->f_14)
 	{
@@ -1005,7 +1005,7 @@ void func_49(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, false);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, false);
 			uParam0->f_176 = 1;
 		}
 	}
@@ -1072,11 +1072,11 @@ void func_53(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, 
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}
@@ -1109,7 +1109,7 @@ void func_53(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, 
 			}
 			break;
 		case 7:
-			HUD::_0xA3F2149AA24F3D8E(iVar0, iParam16, iParam15);
+			HUD::_UI_PROMPT_SET_HOLD_AUTO_FILL_WITH_DECAY_MODE(iVar0, iParam16, iParam15);
 			if (bParam25)
 			{
 				HUD::_UIPROMPT_SET_ATTRIBUTE(iVar0, 24, true);
@@ -5858,7 +5858,7 @@ int func_215(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (!_NAMESPACE26::_0x81FB74C83C2ED69F(&(Global_1273882->f_154[iVar1])))
+			if (!_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

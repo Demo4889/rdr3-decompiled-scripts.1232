@@ -548,8 +548,8 @@ int func_13()
 	iLocal_21 = ((*Global_1887327)[26 /*36*/])->f_5;
 	VOLUME::_0xB469CFD9E065EB99(iLocal_21, 7);
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Strawberry - m_volGeneral Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -1791.951f, -386.005f, 161.147f, 0f, 0f, -34.984f, 8.855f, 6.307f, 3.139f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -1793.558f, -394.3542f, 160.6098f, 0f, 0f, -34.79824f, 2f, 4.25f, 2.559283f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -1791.951f, -386.005f, 161.147f, 0f, 0f, -34.984f, 8.855f, 6.307f, 3.139f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -1793.558f, -394.3542f, 160.6098f, 0f, 0f, -34.79824f, 2f, 4.25f, 2.559283f);
 	iLocal_23 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1791.368f, -386.7759f, 160.8563f, 0f, 0f, -34.984f, 1.732364f, 2.839859f, 3.059408f, "Strawberry - m_volGeneralPrompt");
 	iLocal_24 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1789.667f, -388.7473f, 160.8563f, 0f, 0f, -34.984f, 1.732364f, 3.896986f, 3.059408f, "Strawberry - m_volGeneralCounterOff");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_22, 10031);
@@ -560,17 +560,17 @@ int func_13()
 	iLocal_43 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1815.467f, -370.539f, 166.547f, 0f, 0f, 0f, 12.2f, 9.494f, 2.515f, "Strawberry - m_volMute");
 	iLocal_28 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1764.683f, -382.6835f, 158.2782f, 0f, 0f, -34.984f, 9.48952f, 5.821443f, 3.059408f, "Strawberry - m_volPostOfficeOwner");
 	iLocal_30 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Strawberry - m_volPostOfficeOfflimits Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, -1763.516f, -378.3214f, 158.2782f, 0f, 0f, -34.984f, 4.345877f, 2.597463f, 3.059408f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, -1766.218f, -379.3755f, 158.2782f, 0f, 0f, -34.984f, 3.121531f, 2.179444f, 3.059408f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_30, -1762.194f, -384.4291f, 158.2782f, 0f, 0f, -34.984f, 3.429085f, 5.790822f, 3.059408f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, -1763.516f, -378.3214f, 158.2782f, 0f, 0f, -34.984f, 4.345877f, 2.597463f, 3.059408f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, -1766.218f, -379.3755f, 158.2782f, 0f, 0f, -34.984f, 3.121531f, 2.179444f, 3.059408f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_30, -1762.194f, -384.4291f, 158.2782f, 0f, 0f, -34.984f, 3.429085f, 5.790822f, 3.059408f);
 	iLocal_29 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1765.216f, -384.046f, 158.2782f, 0f, 0f, -34.984f, 1.835f, 2.004f, 3.059f, "Strawberry - m_volPostOfficePrompt");
 	iLocal_31 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Strawberry Stn - m_volPostOfficePARENT Agg");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_31, iLocal_28);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_31, iLocal_30);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_31, iLocal_28);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_31, iLocal_30);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_31, 10032);
 	iLocal_26 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Strawberry - m_volSheriff");
-	VOLUME::_0x39816F6F94F385AD(iLocal_26, func_53(26), 0f, 0f, 65.016f, 12f, 7f, 7.256f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_26, -1815.8f, -346.5f, 162.9f, 0f, 0f, 65.016f, 12f, 4f, 12f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, func_53(26), 0f, 0f, 65.016f, 12f, 7f, 7.256f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_26, -1815.8f, -346.5f, 162.9f, 0f, 0f, 65.016f, 12f, 4f, 12f);
 	iLocal_37 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1791.951f, -386.005f, 160.8563f, 0f, 0f, -34.984f, 9.1f, 6.4f, 3.256194f, "Strawberry - m_volGeneralPerscharOwnerVolume");
 	iLocal_38 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1812.002f, -350.8301f, 161.6032f, 0f, 0f, 65.01599f, 11.2f, 6.3f, 4f, "Strawberry - m_volSheriffPerscharOwnerVolume");
 	iLocal_32 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1753.4f, -392.8f, 156.3f, 0f, 0f, 58.4334f, 12.83099f, 10.50166f, 3.5f, "Strawberry - m_volButcher");
@@ -589,8 +589,8 @@ int func_13()
 		iLocal_35 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1819.88f, -561.8194f, 157.2323f, 0f, 0f, 74.99999f, 6.328568f, 11.11597f, 3.806699f, "Strawberry - m_volHorseShop");
 	}
 	iLocal_27 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Strawberry - m_volSheriffLoitering Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_27, -1812.852f, -352.8134f, 163.3997f, 0f, 0f, 65.01599f, 6.286466f, 5.825926f, 7.256f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_27, -1810.468f, -349.3962f, 163.3997f, 0f, 0f, 65.01599f, 6.286466f, 7.111871f, 7.151284f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_27, -1812.852f, -352.8134f, 163.3997f, 0f, 0f, 65.01599f, 6.286466f, 5.825926f, 7.256f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_27, -1810.468f, -349.3962f, 163.3997f, 0f, 0f, 65.01599f, 6.286466f, 7.111871f, 7.151284f);
 	VOLUME::_0x3EFABB21E14A6BD1(iLocal_27, 5, 1);
 	func_55();
 	return 1;
@@ -1161,8 +1161,8 @@ void func_54(int iParam0, int iParam1)
 void func_55()
 {
 	iLocal_25 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("SDN - m_volGeneralStorePorch Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_25, -1796.973f, -382.4901f, 160.8563f, 0f, 0f, -34.984f, 3.075656f, 10.30693f, 3.256194f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_25, -1789.325f, -382.7872f, 160.8563f, 0f, 0f, -124.786f, 1.84945f, 10.30693f, 3.256194f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_25, -1796.973f, -382.4901f, 160.8563f, 0f, 0f, -34.984f, 3.075656f, 10.30693f, 3.256194f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_25, -1789.325f, -382.7872f, 160.8563f, 0f, 0f, -124.786f, 1.84945f, 10.30693f, 3.256194f);
 }
 
 int func_56(int iParam0, int iParam1, int iParam2, bool bParam3)
@@ -1259,7 +1259,7 @@ void func_61(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_110(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1283,7 +1283,7 @@ void func_61(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_113(iParam0, 4);
 	func_114(iParam0);
 }
@@ -1426,7 +1426,7 @@ int func_68(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -3951,7 +3951,7 @@ void func_125(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_196(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_113(iParam0, 16384);
 }
@@ -3996,7 +3996,7 @@ int func_127(int iParam0)
 	Global_1051387->f_4319[iVar6 /*7*/] = iParam0;
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_6 = func_196(iVar0, vVar2, uVar1, 0, 0, 0);
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_5 = iVar0;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 0);
 	func_113(32, 16384);
 	iVar7 = 0;
@@ -5487,7 +5487,7 @@ int func_193(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_238(12, func_237(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_238(12, func_237(iParam0), &vVar0))
 	{
 		return 0;
 	}

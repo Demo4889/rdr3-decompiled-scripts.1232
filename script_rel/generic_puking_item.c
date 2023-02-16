@@ -25,7 +25,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 {
 	if (*iParam0 < 5)
 	{
-		if (((func_2() || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, -1) && !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, *uParam1))) || !func_3()) || !PED::IS_PED_ON_FOOT(Global_35))
+		if (((func_2() || (ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, -1) && !ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, *uParam1))) || !func_3()) || !PED::IS_PED_ON_FOOT(Global_35))
 		{
 			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(*uParam1))
 			{

@@ -131,7 +131,7 @@ int func_2(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -290,9 +290,9 @@ void func_7()
 				if (func_30(13))
 				{
 					iLocal_39 = VOLUME::_CREATE_VOLUME_AGGREGATE();
-					VOLUME::_0x39816F6F94F385AD(iLocal_39, -846.6119f, -1065.891f, 54.10397f, 0f, 0f, 12.2577f, 134.1237f, 68.95397f, 53.79238f);
-					VOLUME::_0x39816F6F94F385AD(iLocal_39, -957.0787f, -1000.424f, 57.02654f, 0f, 0f, 47.19107f, 141.1471f, 213.5969f, 75.77352f);
-					VOLUME::_0x39816F6F94F385AD(iLocal_39, -1165.555f, -1038.077f, 70.67178f, 0f, 0f, 12.46235f, 390.3466f, 336.1672f, 80.72659f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_39, -846.6119f, -1065.891f, 54.10397f, 0f, 0f, 12.2577f, 134.1237f, 68.95397f, 53.79238f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_39, -957.0787f, -1000.424f, 57.02654f, 0f, 0f, 47.19107f, 141.1471f, 213.5969f, 75.77352f);
+					VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_39, -1165.555f, -1038.077f, 70.67178f, 0f, 0f, 12.46235f, 390.3466f, 336.1672f, 80.72659f);
 					iLocal_31 = 20;
 				}
 				iLocal_14 = 3;
@@ -2128,7 +2128,7 @@ void func_85(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

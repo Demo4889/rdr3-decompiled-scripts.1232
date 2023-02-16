@@ -3929,7 +3929,7 @@ bool func_161(var uParam0, var uParam1)
 	*uParam0 = Global_1232796->f_8113;
 	uParam0->f_2 = 423895568;
 	uParam0->f_3 = uParam1;
-	return (DATAFILE::_0x603AC35FD4602C76(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
+	return (DATAFILE::PARSEDDATA_IS_FILE_LOADED(*uParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(uParam0->f_1), uParam0));
 }
 
 bool func_162(var uParam0, int iParam1)
@@ -5226,7 +5226,7 @@ void func_224()
 	if (!func_284(8, 255))
 	{
 		func_293(func_193(0), 1);
-		ENTITY::_0x18FF3110CF47115D(func_193(0), 7, true);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(func_193(0), 7, true);
 		func_225(8);
 	}
 	if (func_250(2))
@@ -6768,7 +6768,7 @@ bool func_282(int iParam0, int iParam1)
 
 void func_283()
 {
-	if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(func_193(0), func_148(0)))
+	if (!ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(func_193(0), func_148(0)))
 	{
 	}
 	else
@@ -6776,8 +6776,8 @@ void func_283()
 		func_293(func_193(0), 0);
 		PED::_0x6569F31A01B4C097(func_193(0), 4, true);
 		ENTITY::_0x8C03CD6B5E0E85E8(func_193(0), joaat("hunter"));
-		ENTITY::_0x18FF3110CF47115D(func_193(0), 7, false);
-		Local_281.f_18.f_1[0 /*4*/] = MAP::_0x23F74C2FDA6E7C61(-773443467, func_193(0));
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(func_193(0), 7, false);
+		Local_281.f_18.f_1[0 /*4*/] = MAP::BLIP_ADD_FOR_ENTITY(-773443467, func_193(0));
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(func_193(0), PED::GET_PED_RELATIONSHIP_GROUP_HASH(Global_35));
 		Local_281.f_18.f_49 = func_321("RE_LF_USECHECK", joaat("INPUT_CONTEXT_Y"), func_193(0), 2, 1, 0, 0, 5, 2f, 570, 4000, 10, 1073741824 /* Float: 2f */, 0, joaat("SHORT_TIMED_EVENT"), 0, 0);
 		func_322(Local_281.f_18.f_49, HUD::_UIPROMPT_GET_GROUP_ID_FOR_TARGET_ENTITY(func_193(0)), 0, 1);
@@ -6853,7 +6853,7 @@ void func_286()
 		}
 		return;
 	}
-	if (PED::_0xA911EE21EDF69DAF(iVar2))
+	if (PED::IS_PED_CARRYING_SOMETHING(iVar2))
 	{
 		bVar1 = false;
 	}
@@ -6970,7 +6970,7 @@ void func_291()
 	{
 		if (!func_284(2, 255))
 		{
-			if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, func_148(1)))
+			if (!ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, func_148(1)))
 			{
 				if (func_339(Global_35, 1369124074, 1, 0))
 				{
@@ -6989,7 +6989,7 @@ void func_291()
 		}
 		else if (!func_284(4, 255))
 		{
-			if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, func_148(1)))
+			if (!ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, func_148(1)))
 			{
 				func_145();
 				func_225(4);
@@ -7178,7 +7178,7 @@ int func_303(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }
@@ -7225,7 +7225,7 @@ int func_308(char[32] cParam0, var uParam8, var uParam9)
 	Var1.f_1 = -1;
 	Var1.f_2 = -1;
 	Var1 = SCRIPTS::_GET_HASH_OF_THREAD(iVar0);
-	Var1.f_1 = NETWORK::_0xFB9ECED5B68F3B78(iVar0);
+	Var1.f_1 = NETWORK::_NETWORK_GET_INSTANCE_ID_OF_THREAD(iVar0);
 	Var1.f_3 = { cParam0 };
 	iVar12 = func_345(&Var1);
 	if (iVar12 != -1)
@@ -7507,7 +7507,7 @@ int func_321(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -8083,7 +8083,7 @@ void func_341(int iParam0, int iParam1)
 	}
 	if (!MAP::DOES_BLIP_EXIST(&(Local_281.f_18.f_1[iParam0 /*4*/])))
 	{
-		Local_281.f_18.f_1[iParam0 /*4*/] = MAP::_0x23F74C2FDA6E7C61(iParam1, func_193(iParam0));
+		Local_281.f_18.f_1[iParam0 /*4*/] = MAP::BLIP_ADD_FOR_ENTITY(iParam1, func_193(iParam0));
 	}
 }
 
@@ -8413,11 +8413,11 @@ void func_361(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}
@@ -8450,7 +8450,7 @@ void func_361(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 			}
 			break;
 		case 7:
-			HUD::_0xA3F2149AA24F3D8E(iVar0, iParam16, iParam15);
+			HUD::_UI_PROMPT_SET_HOLD_AUTO_FILL_WITH_DECAY_MODE(iVar0, iParam16, iParam15);
 			if (bParam25)
 			{
 				HUD::_UIPROMPT_SET_ATTRIBUTE(iVar0, 24, true);

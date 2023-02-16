@@ -1870,7 +1870,7 @@ int func_64(var uParam0)
 		if (ITEMSET::GET_ITEMSET_SIZE(iVar0) > 0)
 		{
 			StringCopy(&(uParam0->f_2578), "MUD3A_F_LAW", 24);
-			ITEMSET::_0x20A4BF0E09BEE146(iVar0);
+			ITEMSET::_CLEAR_ITEMSET(iVar0);
 			ITEMSET::DESTROY_ITEMSET(iVar0);
 			return 1;
 		}
@@ -2630,10 +2630,10 @@ int func_89(var uParam0)
 	}
 	if (!MAP::DOES_BLIP_EXIST(iLocal_25) && ((ENTITY::DOES_ENTITY_EXIST(iLocal_27) && VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_27, 0, 0)) || !ENTITY::DOES_ENTITY_EXIST(iLocal_27)))
 	{
-		iLocal_25 = MAP::_0x554D9D53F696D002(1673015813, func_206(0));
+		iLocal_25 = MAP::BLIP_ADD_FOR_COORDS(1673015813, func_206(0));
 		MAP::SET_BLIP_SPRITE(iLocal_25, 1012165077, false);
-		MAP::_0x662D364ABF16DE2F(iLocal_25, 447544236);
-		MAP::_0x662D364ABF16DE2F(iLocal_25, 2124609802);
+		MAP::BLIP_ADD_MODIFIER(iLocal_25, 447544236);
+		MAP::BLIP_ADD_MODIFIER(iLocal_25, 2124609802);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(iLocal_25, "MUD3A_B_WAG");
 	}
 	else if ((ENTITY::DOES_ENTITY_EXIST(iLocal_27) && MAP::DOES_BLIP_EXIST(iLocal_25)) && !VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_27, 0, 0))
@@ -2777,7 +2777,7 @@ int func_96(var uParam0, int iParam1)
 			}
 			if (func_204(113) >= 1f)
 			{
-				if (!STREAMING::_0xCF45DF50C7775F2A())
+				if (!STREAMING::IS_LOAD_SCENE_ACTIVE())
 				{
 					if (!iLocal_100)
 					{
@@ -2860,7 +2860,7 @@ int func_96(var uParam0, int iParam1)
 					return 2;
 				}
 			}
-			else if (!STREAMING::_0xCF45DF50C7775F2A())
+			else if (!STREAMING::IS_LOAD_SCENE_ACTIVE())
 			{
 				if (!func_309(65))
 				{
@@ -3261,7 +3261,7 @@ int func_107(var uParam0)
 	{
 		if (func_339(64))
 		{
-			AUDIO::_0xCCE219C922737BFA("Alarm", 473.3236f, 673.1257f, 118.2851f, "RNATV2_Sounds", 0, 0, 0, 0);
+			AUDIO::_PLAY_SOUND_FROM_POSITION("Alarm", 473.3236f, 673.1257f, 118.2851f, "RNATV2_Sounds", 0, 0, 0, 0);
 			func_314(128);
 		}
 	}
@@ -3792,20 +3792,20 @@ void func_138(var uParam0)
 
 void func_139(bool bParam0, bool bParam1)
 {
-	if (((WEAPON::IS_WEAPON_VALID(Global_1935630->f_44) && WEAPON::_0x6AD66548840472E5(Global_1935630->f_44)) && PED::GET_PED_RESET_FLAG(Global_35, 0)) && CAM::_0xA24C1D341C6E0D53(1, 1, 1))
+	if (((WEAPON::IS_WEAPON_VALID(Global_1935630->f_44) && WEAPON::_0x6AD66548840472E5(Global_1935630->f_44)) && PED::GET_PED_RESET_FLAG(Global_35, 0)) && CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(1, 1, 1))
 	{
-		WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 0, 0);
+		WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 0, 0, 0, 0);
 		return;
 	}
 	if (Global_1935630->f_44 == joaat("weapon_kit_binoculars") && PED::GET_PED_RESET_FLAG(Global_35, 0))
 	{
-		WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 0, 0);
+		WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 0, 0, 0, 0);
 		return;
 	}
 	if (Global_1935630->f_44 == joaat("weapon_kit_camera"))
 	{
 		func_386(0);
-		WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 0, 0);
+		WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 0, 0, 0, 0);
 		return;
 	}
 	if (bParam0)

@@ -39,7 +39,7 @@ void __EntryFunction__()
 		func_2(&uLocal_14);
 	}
 	iLocal_21 = func_3();
-	vLocal_16 = { TASK::_0xA8452DD321607029(iLocal_20, 1) };
+	vLocal_16 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_20, 1) };
 	if (iLocal_21 == 560825326)
 	{
 		if (!func_4(21))
@@ -109,7 +109,7 @@ int func_3()
 
 	if (TASK::DOES_SCENARIO_POINT_EXIST(iLocal_20))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_20));
+		iVar0 = BUILTIN::ROUND(TASK::_GET_SCENARIO_POINT_RADIUS(iLocal_20));
 	}
 	return COLLECTION::_0x126CBEBBA46693CF(iVar0, -940661134, 0);
 }

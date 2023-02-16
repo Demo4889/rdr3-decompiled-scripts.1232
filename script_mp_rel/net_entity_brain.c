@@ -550,7 +550,7 @@ void func_33(var uParam0)
 	{
 		if (func_59(uParam0))
 		{
-			uParam0->f_7 = MAP::_0x23F74C2FDA6E7C61(203020899, uParam0->f_6);
+			uParam0->f_7 = MAP::BLIP_ADD_FOR_ENTITY(203020899, uParam0->f_6);
 			MAP::SET_BLIP_SPRITE(uParam0->f_7, 874255393, true);
 		}
 	}
@@ -589,7 +589,7 @@ void func_35(var uParam0)
 	{
 		if (func_62(uParam0))
 		{
-			uParam0->f_7 = MAP::_0x23F74C2FDA6E7C61(203020899, uParam0->f_6);
+			uParam0->f_7 = MAP::BLIP_ADD_FOR_ENTITY(203020899, uParam0->f_6);
 			MAP::SET_BLIP_SPRITE(uParam0->f_7, -643888085, true);
 		}
 	}
@@ -671,10 +671,10 @@ int func_41(int iParam0, bool bParam1)
 			DECORATOR::DECOR_SET_BOOL(iParam0, func_67(), bParam1);
 			if (TASK::_0x0CCFE72B43C9CF96(iParam0))
 			{
-				ENTITY::_0x18FF3110CF47115D(iParam0, 2, !bParam1);
-				ENTITY::_0x18FF3110CF47115D(iParam0, 3, !bParam1);
-				ENTITY::_0x18FF3110CF47115D(iParam0, 11, !bParam1);
-				ENTITY::_0x18FF3110CF47115D(iParam0, 12, !bParam1);
+				ENTITY::_SET_ENTITY_CARRYING_FLAG(iParam0, 2, !bParam1);
+				ENTITY::_SET_ENTITY_CARRYING_FLAG(iParam0, 3, !bParam1);
+				ENTITY::_SET_ENTITY_CARRYING_FLAG(iParam0, 11, !bParam1);
+				ENTITY::_SET_ENTITY_CARRYING_FLAG(iParam0, 12, !bParam1);
 			}
 		}
 		return 1;
@@ -820,7 +820,7 @@ var func_56(int iParam0, int iParam1)
 
 void func_57(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return;
 	}

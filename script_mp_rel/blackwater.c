@@ -586,43 +586,43 @@ int func_13()
 	iLocal_92 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-868.3356f, -1366.207f, 44.75311f, 0f, 0f, 0f, 23.18747f, 12.136f, 4.277f, "Blackwater - m_volHorseShop");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_92, 10042);
 	iLocal_90 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-775.5706f, -1278.292f, 43.72021f, 0f, 0f, 0f, 2.331285f, 11.19982f, 4.241409f, "m_volLawSpawn_Blocking");
-	uLocal_91 = MISC::_0xA2D5A26208421426(iLocal_90);
+	uLocal_91 = MISC::_ADD_DISPATCH_SPAWN_BLOCKING_AREA(iLocal_90);
 	iLocal_72 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-815.711f, -1276.18f, 43.997f, 0f, 0f, 89.8f, 7.8f, 12.9f, 2.9f, "Blackwater - m_volBank");
 	POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION(iLocal_72, 0, 0, 0, -1, -1, 0);
 	iLocal_73 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-815.711f, -1276.18f, 43.997f, 0f, 0f, 89.8f, 7.7f, 12.8f, 2.9f, "Blackwater - m_volBankManagerOwner");
 	iLocal_76 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-763.219f, -1292.7f, 44.6f, 0f, 0f, 0f, 11.4f, 6.5f, 3.5f, "Blackwater - m_volTailor");
 	iLocal_77 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volTailorOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_77, -765.319f, -1292.7f, 44.6f, 0f, 0f, 0f, 15.6f, 6.5f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_77, -774.117f, -1291.071f, 44.6f, 0f, 0f, 0f, 2f, 3.25f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_77, -765.319f, -1292.7f, 44.6f, 0f, 0f, 0f, 15.6f, 6.5f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_77, -774.117f, -1291.071f, 44.6f, 0f, 0f, 0f, 2f, 3.25f, 3.5f);
 	iLocal_78 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-761.543f, -1291.245f, 43.772f, 0f, 0f, 0f, 3.8f, 2.5f, 2f, "BLW-m_volTailorPrompt");
 	iLocal_79 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volTailorOfflimits");
-	VOLUME::_0x39816F6F94F385AD(iLocal_79, -760.79f, -1294.066f, 43.772f, 0f, 0f, 0f, 6f, 2f, 2f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_79, -767.183f, -1291.536f, 43.772f, 0f, 0f, 89.264f, 2.695f, 3.324f, 2f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_79, -760.79f, -1294.066f, 43.772f, 0f, 0f, 0f, 6f, 2f, 2f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_79, -767.183f, -1291.536f, 43.772f, 0f, 0f, 89.264f, 2.695f, 3.324f, 2f);
 	iLocal_80 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("SDN-m_volTailorPARENT");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_80, iLocal_77);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_80, iLocal_79);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_80, iLocal_77);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_80, iLocal_79);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_76, 10044);
 	iLocal_84 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficeOwner Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_84, -875.073f, -1332.742f, 44.47251f, 0f, 0f, -179.746f, 8.481f, 13.525f, 2.993397f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_84, -875.036f, -1324.642f, 44.43187f, 0f, 0f, 0f, 2.667f, 3.006f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_84, -875.073f, -1332.742f, 44.47251f, 0f, 0f, -179.746f, 8.481f, 13.525f, 2.993397f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_84, -875.036f, -1324.642f, 44.43187f, 0f, 0f, 0f, 2.667f, 3.006f, 3f);
 	iLocal_85 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_85, -875.07f, -1328.584f, 44.38541f, 0f, 0f, -179.5535f, 2.007f, 1.4f, 2.993397f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_85, -875.036f, -1324.773f, 44.43187f, 0f, 0f, 0f, 2.299f, 2.175f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_85, -875.07f, -1328.584f, 44.38541f, 0f, 0f, -179.5535f, 2.007f, 1.4f, 2.993397f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_85, -875.036f, -1324.773f, 44.43187f, 0f, 0f, 0f, 2.299f, 2.175f, 3f);
 	iLocal_86 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-875.6834f, -1326.861f, 44.47251f, 0f, 0f, -179.1404f, 3.857776f, 1.921187f, 2.993397f, "Blackwater - m_volPostOfficeOfflimits");
 	iLocal_87 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficePARENT Agg");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_87, iLocal_84);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_87, iLocal_86);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_87, iLocal_84);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_87, iLocal_86);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_87, 10043);
 	iLocal_81 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-785.2803f, -1304.695f, 44.6f, 0f, 0f, 180f, 9.89304f, 6.3f, 3.7f, "Blackwater - m_volDoctorOwner");
 	iLocal_82 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-786.6721f, -1302.453f, 44.5651f, 0f, 0f, -179.9827f, 7.058838f, 1.318995f, 3.7f, "Blackwater - m_volDoctorOfflimits");
 	iLocal_83 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volDoctorPARENT Agg");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_83, iLocal_81);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_83, iLocal_82);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_83, iLocal_81);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_83, iLocal_82);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_83, 10039);
 	iLocal_88 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volSaloonInterior");
-	VOLUME::_0x39816F6F94F385AD(iLocal_88, -818.523f, -1319.681f, 46.59f, 0f, 0f, 90f, 15.6f, 16f, 8f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_88, -809.672f, -1319.568f, 48.818f, 0f, 0f, 90f, 15.5f, 2f, 4f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_88, -809.672f, -1324.85f, 44.569f, 0f, 0f, 90f, 5.2f, 2f, 3.8f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_88, -818.523f, -1319.681f, 46.59f, 0f, 0f, 90f, 15.6f, 16f, 8f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_88, -809.672f, -1319.568f, 48.818f, 0f, 0f, 90f, 15.5f, 2f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_88, -809.672f, -1324.85f, 44.569f, 0f, 0f, 90f, 5.2f, 2f, 3.8f);
 	iLocal_74 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.815f, -1366.005f, 43.677f, 0f, 0f, 90f, 6.5f, 7f, 2f, "Blackwater-m_volBarberShop");
 	iLocal_75 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.686f, -1366.005f, 43.677f, 0f, 0f, 90f, 5.5f, 6f, 2f, "Blackwater-m_volBarberPrompt");
 	iLocal_94 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-753.4219f, -1284.24f, 43.20049f, 0f, 0f, 90f, 6f, 8f, 2f, "Blackwater - m_volButcher");
@@ -632,14 +632,14 @@ int func_13()
 	POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION(iLocal_93, 10208, 0, 0, -1, -1, 0);
 	POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION(iLocal_93, 10208, 0, 0, -1, -1, 0);
 	iLocal_96 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPhotoStudio-Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_96, -813.0476f, -1374.265f, 44.60803f, 0f, 0f, 0f, 7.733583f, 6.296834f, 3.236622f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_96, -813.74f, -1374.56f, 35.02f, 0f, 0f, 0f, 5f, 5f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_96, -813.0476f, -1374.265f, 44.60803f, 0f, 0f, 0f, 7.733583f, 6.296834f, 3.236622f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_96, -813.74f, -1374.56f, 35.02f, 0f, 0f, 0f, 5f, 5f, 3f);
 	iLocal_97 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.8254f, -1374.265f, 44.60803f, 0f, 0f, 0f, 6.401097f, 6.296834f, 3.236622f, "Blackwater - m_volPhotoStudioPrompt");
 	iLocal_98 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volLiveryOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_98, -971.5854f, -1321.096f, 54.18404f, 0.083127f, 4.778676f, 0.997744f, 31.36792f, 47.07047f, 7.816715f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_98, -949.3033f, -1339.083f, 52.97771f, 0f, 0f, 2.975328f, 14.37138f, 10.08988f, 7.273995f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_98, -971.5854f, -1321.096f, 54.18404f, 0.083127f, 4.778676f, 0.997744f, 31.36792f, 47.07047f, 7.816715f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_98, -949.3033f, -1339.083f, 52.97771f, 0f, 0f, 2.975328f, 14.37138f, 10.08988f, 7.273995f);
 	iLocal_99 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-751.898f, -1285.072f, 43.418f, 0f, 0f, 0f, 2.822f, 4.416f, 2.448f, "Blackwater-m_volButcherNavMeshBlocking");
-	PATHFIND::_0x19C7567D2F2287D6(iLocal_99, 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(iLocal_99, 7);
 	iLocal_100 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-934.7934f, -1374.338f, 48.44641f, 0f, 0f, 0f, 1f, 1f, 1f, "Blackwater-m_volCampfire");
 	func_54(iLocal_100, 4);
 	return 1;
@@ -937,7 +937,7 @@ int func_40(int iParam0)
 {
 	func_83();
 	func_84();
-	if (!func_85(-1854368742) && !STREAMING::_0xCF45DF50C7775F2A())
+	if (!func_85(-1854368742) && !STREAMING::IS_LOAD_SCENE_ACTIVE())
 	{
 		if (func_86(7))
 		{
@@ -1227,10 +1227,10 @@ void func_52(int iParam0)
 
 void func_53()
 {
-	iLocal_105[0] = ENTITY::_0x6F3068258A499E52(1542239325, -868.0292f, -1273.759f, 44.72966f, 11);
-	iLocal_105[1] = ENTITY::_0x6F3068258A499E52(1542239325, -867.504f, -1279.306f, 44.69716f, 11);
-	iLocal_105[2] = ENTITY::_0x6F3068258A499E52(1542239325, -874.4065f, -1278.266f, 44.10369f, 11);
-	iLocal_105[3] = ENTITY::_0x6F3068258A499E52(joaat("p_chair_crate15x"), -870.3456f, -1276.597f, 42.2979f, 11);
+	iLocal_105[0] = ENTITY::PIN_CLOSEST_MAP_ENTITY(1542239325, -868.0292f, -1273.759f, 44.72966f, 11);
+	iLocal_105[1] = ENTITY::PIN_CLOSEST_MAP_ENTITY(1542239325, -867.504f, -1279.306f, 44.69716f, 11);
+	iLocal_105[2] = ENTITY::PIN_CLOSEST_MAP_ENTITY(1542239325, -874.4065f, -1278.266f, 44.10369f, 11);
+	iLocal_105[3] = ENTITY::PIN_CLOSEST_MAP_ENTITY(joaat("p_chair_crate15x"), -870.3456f, -1276.597f, 42.2979f, 11);
 }
 
 int func_54(int iParam0, int iParam1)
@@ -1893,7 +1893,7 @@ void func_65(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_139(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1917,7 +1917,7 @@ void func_65(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_142(iParam0, 4);
 	func_143(iParam0);
 }
@@ -2167,7 +2167,7 @@ int func_74(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -2284,11 +2284,11 @@ void func_83()
 		{
 			if (Local_29.f_18 == 0)
 			{
-				Local_29.f_18 = ENTITY::_0x6F3068258A499E52(Local_29, Local_29.f_11, 11);
+				Local_29.f_18 = ENTITY::PIN_CLOSEST_MAP_ENTITY(Local_29, Local_29.f_11, 11);
 			}
-			else if (ENTITY::_0x1FF441D7954F8709(Local_29.f_18))
+			else if (ENTITY::IS_MAP_ENTITY_PINNED(Local_29.f_18))
 			{
-				Local_29.f_17 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_0x4735E2A4BB83D9DA(Local_29.f_18));
+				Local_29.f_17 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_GET_PINNED_MAP_ENTITY(Local_29.f_18));
 			}
 		}
 		Local_29.f_27 = MISC::GET_GAME_TIMER() + 1800;
@@ -2344,7 +2344,7 @@ void func_83()
 			}
 			break;
 		case 5:
-			fVar0 = ENTITY::_0x627520389E288A73(Local_29.f_17, Local_29.f_6, Local_29.f_8);
+			fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(Local_29.f_17, Local_29.f_6, Local_29.f_8);
 			if (fVar0 > 0.5f)
 			{
 				if (Local_29.f_26)
@@ -2367,10 +2367,10 @@ void func_83()
 	}
 	if (Local_29.f_25 && Local_29.f_14 > 2)
 	{
-		if (AUDIO::_0x714A0EA7DE1167BE(Local_29.f_10, "CHURCH_BELL_SOUNDS") && Local_29.f_24 < MISC::GET_GAME_TIMER())
+		if (AUDIO::_HAS_SOUND_AUDIO_NAME_FINISHED(Local_29.f_10, "CHURCH_BELL_SOUNDS") && Local_29.f_24 < MISC::GET_GAME_TIMER())
 		{
 			Local_29.f_24 = MISC::GET_GAME_TIMER() + 1800;
-			AUDIO::_0xCCE219C922737BFA(Local_29.f_10, Local_29.f_11, "CHURCH_BELL_SOUNDS", 0, 0, 1, 0);
+			AUDIO::_PLAY_SOUND_FROM_POSITION(Local_29.f_10, Local_29.f_11, "CHURCH_BELL_SOUNDS", 0, 0, 1, 0);
 			Local_29.f_21++;
 		}
 	}
@@ -2385,8 +2385,8 @@ void func_84()
 		iVar0 = 0;
 		while (iVar0 < iLocal_105)
 		{
-			ENTITY::SET_ENTITY_INVINCIBLE(ENTITY::_0x4735E2A4BB83D9DA(&(iLocal_105[iVar0])), true);
-			ENTITY::FREEZE_ENTITY_POSITION(ENTITY::_0x4735E2A4BB83D9DA(&(iLocal_105[iVar0])), true);
+			ENTITY::SET_ENTITY_INVINCIBLE(ENTITY::_GET_PINNED_MAP_ENTITY(&(iLocal_105[iVar0])), true);
+			ENTITY::FREEZE_ENTITY_POSITION(ENTITY::_GET_PINNED_MAP_ENTITY(&(iLocal_105[iVar0])), true);
 			iVar0++;
 		}
 		bLocal_110 = true;
@@ -2399,7 +2399,7 @@ bool func_85(int iParam0)
 	{
 		return false;
 	}
-	return STREAMING::_0x73B40D97D7BAAD77(iParam0, Global_36);
+	return STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(iParam0, Global_36);
 }
 
 int func_86(int iParam0)
@@ -5326,7 +5326,7 @@ void func_153(int iParam0, int iParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_161(iParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_142(iParam0, 16384);
 }
@@ -5463,7 +5463,7 @@ int func_163(int iParam0)
 	Global_1051387->f_4319[iVar6 /*7*/] = iParam0;
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_6 = func_161(iVar0, vVar2, uVar1, 0, 0, 0);
 	(Global_1051387->f_4319[iVar6 /*7*/])->f_5 = iVar0;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_4319[iVar6 /*7*/])->f_6, 0);
 	func_142(32, 16384);
 	iVar7 = 0;
@@ -5682,7 +5682,7 @@ bool func_181(int iParam0, char* sParam1, char* sParam2, float fParam3)
 	{
 		return false;
 	}
-	fVar0 = ENTITY::_0x627520389E288A73(iParam0, sParam1, sParam2);
+	fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iParam0, sParam1, sParam2);
 	return MISC::ABSF(((1f - fVar0) - fParam3)) < 0.01f;
 }
 
@@ -5697,7 +5697,7 @@ int func_182()
 	iVar0 = 0;
 	while (iVar0 < iLocal_105)
 	{
-		if (!ENTITY::_0x1FF441D7954F8709(&(iLocal_105[iVar0])))
+		if (!ENTITY::IS_MAP_ENTITY_PINNED(&(iLocal_105[iVar0])))
 		{
 			return 0;
 		}
@@ -6858,7 +6858,7 @@ void func_213()
 	}
 	if (Local_29.f_18 != 0)
 	{
-		ENTITY::_0xD2B9C78537ED5759(Local_29.f_18);
+		ENTITY::_UNPIN_MAP_ENTITY(Local_29.f_18);
 	}
 }
 
@@ -6869,9 +6869,9 @@ void func_214()
 	iVar0 = 0;
 	while (iVar0 < iLocal_105)
 	{
-		if (ENTITY::_0x1FF441D7954F8709(&(iLocal_105[iVar0])))
+		if (ENTITY::IS_MAP_ENTITY_PINNED(&(iLocal_105[iVar0])))
 		{
-			ENTITY::_0xD2B9C78537ED5759(&(iLocal_105[iVar0]));
+			ENTITY::_UNPIN_MAP_ENTITY(&(iLocal_105[iVar0]));
 		}
 		iVar0++;
 	}
@@ -8443,7 +8443,7 @@ int func_252(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_304(12, func_303(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_304(12, func_303(iParam0), &vVar0))
 	{
 		return 0;
 	}
@@ -9870,7 +9870,7 @@ int func_313(int iParam0, int iParam1)
 		{
 			return 0;
 		}
-		LAW::_0x4752F68EB7F2D280(PLAYER::PLAYER_ID(), Global_1938075->f_26, func_336(iVar0));
+		LAW::_SET_LAW_REGION(PLAYER::PLAYER_ID(), Global_1938075->f_26, func_336(iVar0));
 		return 1;
 	}
 	return 0;

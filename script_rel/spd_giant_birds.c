@@ -45,7 +45,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 2:
-				if (PED::_0x5C16855277819BBF() >= 12)
+				if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() >= 12)
 				{
 					if (func_3())
 					{
@@ -444,7 +444,7 @@ void func_15(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

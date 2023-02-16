@@ -756,11 +756,11 @@ int func_40(int iParam0)
 			break;
 		case 4:
 			func_69();
-			ANIMSCENE::_0xDF7B5144E25CD3FE(iLocal_20, func_54());
+			ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iLocal_20, func_54());
 			iLocal_21 = 5;
 			break;
 		case 5:
-			if ((ANIMSCENE::DOES_ANIM_SCENE_EXIST(iLocal_20) && ANIMSCENE::IS_ANIM_SCENE_LOADED(iLocal_20, 1, 0)) && ANIMSCENE::_0x23E33CB9F4A3F547(iLocal_20, func_54()))
+			if ((ANIMSCENE::DOES_ANIM_SCENE_EXIST(iLocal_20) && ANIMSCENE::IS_ANIM_SCENE_LOADED(iLocal_20, 1, 0)) && ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(iLocal_20, func_54()))
 			{
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(iLocal_20, func_54(), true);
 				ANIMSCENE::START_ANIM_SCENE(iLocal_20);
@@ -4206,11 +4206,11 @@ void func_146(var uParam0, int iParam1)
 		if (ENTITY::IS_ENTITY_DEAD(*uParam0))
 		{
 		}
-		ENTITY::_0x18FF3110CF47115D(*uParam0, 2, iParam1);
-		ENTITY::_0x18FF3110CF47115D(*uParam0, 3, iParam1);
-		ENTITY::_0x18FF3110CF47115D(*uParam0, 7, iParam1);
-		ENTITY::_0x18FF3110CF47115D(*uParam0, 9, iParam1);
-		ENTITY::_0x18FF3110CF47115D(*uParam0, 10, iParam1);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(*uParam0, 2, iParam1);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(*uParam0, 3, iParam1);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(*uParam0, 7, iParam1);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(*uParam0, 9, iParam1);
+		ENTITY::_SET_ENTITY_CARRYING_FLAG(*uParam0, 10, iParam1);
 	}
 }
 
@@ -4841,7 +4841,7 @@ void func_184(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

@@ -1332,7 +1332,7 @@ void func_47(var uParam0, int iParam1)
 		{
 			return;
 		}
-		if (!TASK::_0x02EBBB3989B7E695(iParam1))
+		if (!TASK::_PED_IS_IN_SCENARIO_BASE(iParam1))
 		{
 			return;
 		}
@@ -1392,7 +1392,7 @@ void func_49(var uParam0, int* iParam1)
 	{
 		if (!MAP::DOES_BLIP_EXIST(iParam1->f_9))
 		{
-			iParam1->f_9 = MAP::_0x23F74C2FDA6E7C61(-89429847, iVar1);
+			iParam1->f_9 = MAP::BLIP_ADD_FOR_ENTITY(-89429847, iVar1);
 		}
 	}
 	else if (MAP::DOES_BLIP_EXIST(iParam1->f_9))
@@ -2242,8 +2242,8 @@ int func_90(int iParam0, int iParam1, var uParam2, var uParam3)
 	{
 	}
 	*iParam1 = iVar0;
-	*uParam2 = { TASK::_0xA8452DD321607029(*iParam1, 1) };
-	*uParam3 = TASK::_0xB93EA7184BAA85C3(*iParam1, 1);
+	*uParam2 = { TASK::_GET_SCENARIO_POINT_COORDS(*iParam1, 1) };
+	*uParam3 = TASK::_GET_SCENARIO_POINT_HEADING(*iParam1, 1);
 	return 1;
 }
 
@@ -2290,7 +2290,7 @@ void func_94(vector3 vParam0, var uParam3, var uParam4, var uParam5, var uParam6
 	int iVar0;
 
 	iVar0 = PLAYER::PLAYER_ID();
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam20))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam20))
 	{
 		return;
 	}
@@ -4106,7 +4106,7 @@ int func_168(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }
@@ -5104,7 +5104,7 @@ bool func_195()
 	int iVar0;
 
 	iVar0 = _NAMESPACE71::UI_FEED_GET_CURRENT_MESSAGE(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) <= 4);
+	return (iVar0 != 0 && _NAMESPACE71::_UI_FEED_GET_MESSAGE_STATE(iVar0) <= 4);
 }
 
 bool func_196(var uParam0, int iParam1, int iParam2)

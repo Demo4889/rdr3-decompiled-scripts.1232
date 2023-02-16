@@ -1384,7 +1384,7 @@ void func_46(var uParam0)
 	int iVar1;
 	int iVar2;
 
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&(uParam0->f_250)))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&(uParam0->f_250)))
 	{
 		uParam0->f_18 = 0;
 		uParam0->f_17 = 0;
@@ -1688,7 +1688,7 @@ int func_55(var uParam0, int iParam1)
 {
 	int iVar0;
 
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam0))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam0))
 	{
 		return 0;
 	}
@@ -4529,7 +4529,7 @@ int func_195(int iParam0)
 	{
 		return 0;
 	}
-	if (!DATAFILE::_0x603AC35FD4602C76(iVar0))
+	if (!DATAFILE::PARSEDDATA_IS_FILE_LOADED(iVar0))
 	{
 		return 0;
 	}
@@ -6202,7 +6202,7 @@ int func_259(bool bParam0)
 	{
 		return 0;
 	}
-	LAW::_0xC61EDEBF16CD9668(752193127, bParam0, 0);
+	LAW::_PAUSE_BOUNTY_HUNTER_COOLDOWN(752193127, bParam0, 0);
 	return 1;
 }
 
@@ -8102,7 +8102,7 @@ bool func_312(int iParam0, var uParam1)
 	*iParam0 = Global_1232796->f_8113;
 	iParam0->f_2 = 423895568;
 	iParam0->f_3 = uParam1;
-	return (DATAFILE::_0x603AC35FD4602C76(*iParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(iParam0->f_1), iParam0));
+	return (DATAFILE::PARSEDDATA_IS_FILE_LOADED(*iParam0) && DATAFILE::_DATAFILE_GET_DATA_NODE_INDEX(&(iParam0->f_1), iParam0));
 }
 
 int func_313()

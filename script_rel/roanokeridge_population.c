@@ -63,7 +63,7 @@ void __EntryFunction__()
 	func_2();
 	func_3();
 	func_4(&uLocal_14, 1);
-	_NAMESPACE48::_0x187D65F3AEC5D679(-402695257, "Roanoke/ROA_Trapper_1");
+	_NAMESPACE48::_SET_PERSCHAR_SCHEDULE(-402695257, "Roanoke/ROA_Trapper_1");
 	if (_NAMESPACE48::IS_PERSISTENT_CHARACTER_VALID(_NAMESPACE48::_0x112DDF56300BC6E5(-402695257)))
 	{
 		_NAMESPACE48::_0xD4B614179BCD0654(_NAMESPACE48::_0x112DDF56300BC6E5(-402695257));
@@ -111,8 +111,8 @@ void func_3()
 	if (func_11() == 6)
 	{
 		iLocal_34 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volBeaverHollow_Restriction");
-		VOLUME::_0xBCE668AAF83608BE(iLocal_34, 2361.296f, 1344.457f, 123.1171f, 0f, 0f, 22f, 38f, 52f, 35f);
-		VOLUME::_0xBCE668AAF83608BE(iLocal_34, 2326.496f, 1326.393f, 125.5935f, 0f, 0f, 0f, 9f, 7f, 35f);
+		VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_34, 2361.296f, 1344.457f, 123.1171f, 0f, 0f, 22f, 38f, 52f, 35f);
+		VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_34, 2326.496f, 1326.393f, 125.5935f, 0f, 0f, 0f, 9f, 7f, 35f);
 		func_12(iLocal_34, 0, 0, 1);
 	}
 	else
@@ -296,7 +296,7 @@ void func_6()
 				vVar8.f_1 = (vVar8.y + (vVar11.y / 2f));
 				iLocal_41 = VOLUME::_CREATE_VOLUME_BOX(ENTITY::GET_ENTITY_COORDS(iLocal_45, true, false), ENTITY::GET_ENTITY_ROTATION(iLocal_45, 2), vVar8);
 				PED::_0x7C00CFC48A782DC0(iLocal_41, iLocal_45, 0f, (vVar11.y / 2f), 0f, 0f, 0f, 0f, 2, 1);
-				PATHFIND::_0x19C7567D2F2287D6(iLocal_41, 7);
+				PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(iLocal_41, 7);
 				iLocal_24 = 3;
 			}
 			break;
@@ -329,7 +329,7 @@ void func_7()
 	{
 		if (!func_31(2024769126))
 		{
-			if (!STREAMING::_0x73B40D97D7BAAD77(516817794, Global_36))
+			if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(516817794, Global_36))
 			{
 				func_32(2024769126);
 			}
@@ -337,7 +337,7 @@ void func_7()
 	}
 	else if (func_31(2024769126))
 	{
-		if (!STREAMING::_0x73B40D97D7BAAD77(516817794, Global_36))
+		if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(516817794, Global_36))
 		{
 			func_33(2024769126);
 		}
@@ -988,7 +988,7 @@ void func_43(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

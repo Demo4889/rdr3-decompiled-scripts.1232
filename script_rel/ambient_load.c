@@ -200,7 +200,7 @@ void func_3(var uParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPar
 			if (iVar18 && !ENTITY::IS_ENTITY_DEAD(Global_35))
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_35, 0, 1);
-				PED::_0x2208438012482A1A(Global_35, false, false);
+				PED::FORCE_PED_AI_AND_ANIMATION_UPDATE(Global_35, false, false);
 			}
 			ITEMSET::DESTROY_ITEMSET(iVar17);
 		}
@@ -288,7 +288,7 @@ int func_5(var uParam0)
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0, 1065353216);
 	if (uParam0->f_6)
 	{
-		if (!STREAMING::_0xCF45DF50C7775F2A())
+		if (!STREAMING::IS_LOAD_SCENE_ACTIVE())
 		{
 			STREAMING::_0x387AD749E3B69B70(*uParam0, CAM::GET_GAMEPLAY_CAM_ROT(2), 500f, 4);
 			return 0;
@@ -380,7 +380,7 @@ void func_10(bool bParam0)
 		iVar1 = func_29(Global_35, iVar0, 0, 1);
 		if (WEAPON::IS_WEAPON_VALID(iVar1))
 		{
-			if (WEAPON::_0x0556E9D2ECF39D01(iVar1) || func_30(iVar1))
+			if (WEAPON::_IS_WEAPON_TWO_HANDED(iVar1) || func_30(iVar1))
 			{
 				if (!bParam0 || (iVar0 != 7 && iVar0 != 9))
 				{
@@ -486,7 +486,7 @@ void func_18(struct<16> Param0, var uParam16, bool bParam17, bool bParam18)
 {
 	struct<18> Var0;
 
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam16))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam16))
 	{
 		return;
 	}
@@ -515,7 +515,7 @@ void func_18(struct<16> Param0, var uParam16, bool bParam17, bool bParam18)
 
 void func_19(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(1, iParam0, 0);
 }
 
 int func_20(vector3 vParam0, bool bParam3)
@@ -682,7 +682,7 @@ int func_29(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 bool func_30(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::IS_WEAPON_BOW(iParam0);
 }
 
 void func_31()
@@ -707,7 +707,7 @@ void func_31()
 			Global_1935630->f_17 = LAW::_0xDD5FD601481F648B(iVar0);
 			Global_1935630->f_26 = LAW::_0x9D5C9A5A3321B128(iVar0);
 			Global_1935630->f_21 = LAW::_0xDAEFDFDB2AEECE37(LAW::_GET_HUD_PLAYER_CRIME_TYPE(iVar0), 0);
-			Global_1935630->f_18 = LAW::_0xAD401C63158ACBAA(iVar0);
+			Global_1935630->f_18 = LAW::IS_LAW_INCIDENT_ACTIVE(iVar0);
 			if (Global_1935630->f_18)
 			{
 				LAW::_0x9C5BD8C562565CE6(&Var2);
@@ -900,7 +900,7 @@ int func_39(bool bParam0)
 	if (!bParam0 && func_65(373691918))
 	{
 		LAW::_0xE9AC8466ABE484BB(0, 0);
-		LAW::_0xC61EDEBF16CD9668(752193127, true, 0);
+		LAW::_PAUSE_BOUNTY_HUNTER_COOLDOWN(752193127, true, 0);
 		return 0;
 	}
 	LAW::_0xE9AC8466ABE484BB(bParam0, 0);

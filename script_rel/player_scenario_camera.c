@@ -29,7 +29,7 @@ void func_1()
 
 int func_2()
 {
-	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), iLocal_46))
+	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::IS_PED_USING_THIS_SCENARIO(PLAYER::PLAYER_PED_ID(), iLocal_46))
 	{
 		func_3();
 		return 0;
@@ -45,13 +45,13 @@ void func_3()
 		{
 			CAM::_0x798BE43C9393632B(&(Local_0.f_1));
 		}
-		if (CAM::_0x927B810E43E99932(&(Local_0.f_1)))
+		if (CAM::_IS_CAMERA_AVAILABLE(&(Local_0.f_1)))
 		{
 			CAM::_0x0A5A4F1979ABB40E(&(Local_0.f_1));
 		}
 		Local_0.f_44 = 0;
 	}
-	if (DATAFILE::_0x603AC35FD4602C76(Local_0.f_34))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Local_0.f_34))
 	{
 		DATAFILE::_DATAFILE_UNLOAD(Local_0.f_34);
 	}
@@ -73,7 +73,7 @@ int func_4()
 			Local_0 = 1;
 			break;
 		case 1:
-			if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && DATAFILE::_0x603AC35FD4602C76(Local_0.f_34))
+			if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && DATAFILE::PARSEDDATA_IS_FILE_LOADED(Local_0.f_34))
 			{
 				func_5();
 				if (!func_6())
@@ -158,12 +158,12 @@ void func_7(char* sParam0, char* sParam1)
 
 int func_8()
 {
-	if (CAM::_0xDD0B7C5AE58F721D(&(Local_0.f_1)) && !CAM::_0x927B810E43E99932(&(Local_0.f_1)))
+	if (CAM::_0xDD0B7C5AE58F721D(&(Local_0.f_1)) && !CAM::_IS_CAMERA_AVAILABLE(&(Local_0.f_1)))
 	{
 		CAM::_0xB8B207C34285E978(&(Local_0.f_1));
 		Local_0.f_1.f_16 = Global_35;
 		Local_0.f_1.f_21 = 1;
-		Local_0.f_1.f_22 = { 0f, 0f, TASK::_0xB93EA7184BAA85C3(Local_0.f_32, 1) };
+		Local_0.f_1.f_22 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(Local_0.f_32, 1) };
 		CAM::_0xAC77757C05DE9E5A(&(Local_0.f_1));
 		return 1;
 	}

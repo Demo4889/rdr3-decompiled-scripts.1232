@@ -59,7 +59,7 @@ void __EntryFunction__()
 		}
 		else
 		{
-			Global_1896610->f_51 = NETWORK::_0xFB9ECED5B68F3B78(Global_1896610->f_42);
+			Global_1896610->f_51 = NETWORK::_NETWORK_GET_INSTANCE_ID_OF_THREAD(Global_1896610->f_42);
 			if (func_6(1, 1))
 			{
 				bVar0 = false;
@@ -145,7 +145,7 @@ void func_5()
 	{
 		if (!func_11(2024769126))
 		{
-			if (!STREAMING::_0x73B40D97D7BAAD77(516817794, Global_36))
+			if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(516817794, Global_36))
 			{
 				func_12(2024769126);
 			}
@@ -153,7 +153,7 @@ void func_5()
 	}
 	else if (func_11(2024769126))
 	{
-		if (!STREAMING::_0x73B40D97D7BAAD77(516817794, Global_36))
+		if (!STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(516817794, Global_36))
 		{
 			func_13(2024769126);
 		}

@@ -276,7 +276,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_253, 8);
 							if (func_36(32))
@@ -644,12 +644,12 @@ int func_11()
 	iLocal_241 = ((*Global_1888801)[120 /*35*/])->f_4;
 	VOLUME::_0xB469CFD9E065EB99(iLocal_241, 29);
 	iLocal_242 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Armadillo - m_volGeneral Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3686.114f, -2623.858f, -12.89814f, 0f, 0f, 0f, 5.86845f, 3.98367f, 3.717603f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3681.782f, -2626.667f, -12.97999f, 0f, 0f, 0f, 3.247781f, 3.506042f, 3.000762f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3685.422f, -2627.413f, -12.92333f, 0f, 0f, 0f, 4.057125f, 5.521852f, 3.439446f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3682.85f, -2624.268f, -13.04125f, 0f, 0f, 42.27255f, 3.071827f, 4.479604f, 2.948806f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3689.445f, -2628.58f, -12.81253f, 0f, 0f, 0f, 4.103154f, 6.370532f, 3.388822f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_242, -3688.071f, -2623.283f, -9.7791f, 0f, 0f, 0f, 2.257698f, 2.906237f, 3.016091f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3686.114f, -2623.858f, -12.89814f, 0f, 0f, 0f, 5.86845f, 3.98367f, 3.717603f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3681.782f, -2626.667f, -12.97999f, 0f, 0f, 0f, 3.247781f, 3.506042f, 3.000762f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3685.422f, -2627.413f, -12.92333f, 0f, 0f, 0f, 4.057125f, 5.521852f, 3.439446f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3682.85f, -2624.268f, -13.04125f, 0f, 0f, 42.27255f, 3.071827f, 4.479604f, 2.948806f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3689.445f, -2628.58f, -12.81253f, 0f, 0f, 0f, 4.103154f, 6.370532f, 3.388822f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_242, -3688.071f, -2623.283f, -9.7791f, 0f, 0f, 0f, 2.257698f, 2.906237f, 3.016091f);
 	iLocal_243 = VOLUME::_CREATE_VOLUME_BOX(-3685.352f, -2623.258f, -13.4981f, 0f, 0f, 0f, 1.100183f, 2.220348f, 1.996734f);
 	iLocal_244 = VOLUME::_CREATE_VOLUME_BOX(-3687.81f, -2623.527f, -13.30467f, 0f, 0f, 0f, 2.162535f, 3.2466f, 2.122298f);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_242, 10111);
@@ -657,9 +657,9 @@ int func_11()
 	iLocal_246[0] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3715.032f, -2610.383f, -14.5792f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 1 blocking volume");
 	iLocal_246[1] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3635.024f, -2587.306f, -14.9224f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 2 blocking volume");
 	iLocal_246[2] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3619.826f, -2627.633f, -14.5396f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 3 blocking volume");
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_246[0]), 7);
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_246[1]), 7);
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_246[2]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_246[0]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_246[1]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_246[2]), 7);
 	return 1;
 }
 
@@ -696,15 +696,15 @@ int func_15(int iParam0)
 		HUD::TEXT_BLOCK_REQUEST("SCVTFAU");
 		HUD::TEXT_BLOCK_REQUEST("ARRGNAU");
 		HUD::TEXT_BLOCK_REQUEST("ARMRDAU");
-		if (!HUD::_0xD0976CC34002DB57("SCVTFAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("SCVTFAU"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("ARRGNAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("ARRGNAU"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("ARMRDAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("ARMRDAU"))
 		{
 			return 0;
 		}
@@ -2042,21 +2042,21 @@ void func_86(int iParam0)
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("SCVTFAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("SCVTFAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("SCVTFAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("SCVTFAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("ARRGNAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("ARRGNAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("ARRGNAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("ARRGNAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("ARMRDAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("ARMRDAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("ARMRDAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("ARMRDAU");
 		}
@@ -6493,7 +6493,7 @@ int func_206(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -8009,7 +8009,7 @@ void func_277(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -9564,7 +9564,7 @@ int func_340(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -9603,7 +9603,7 @@ int func_340(int iParam0, bool bParam1, int iParam2, int iParam3)
 
 int func_341()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_372(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_372(Global_35))
 	{
 		return 1;
 	}

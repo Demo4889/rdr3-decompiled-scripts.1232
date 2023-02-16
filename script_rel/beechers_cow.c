@@ -487,14 +487,14 @@ int func_5(int iParam0, vector3 vParam1)
 		{
 			*iParam0 = iVar4;
 			func_12(iVar1);
-			ITEMSET::_0x20A4BF0E09BEE146(iVar0);
+			ITEMSET::_CLEAR_ITEMSET(iVar0);
 			ITEMSET::DESTROY_ITEMSET(iVar0);
 			return 1;
 		}
 		iVar3++;
 	}
 	func_12(iVar1);
-	ITEMSET::_0x20A4BF0E09BEE146(iVar0);
+	ITEMSET::_CLEAR_ITEMSET(iVar0);
 	ITEMSET::DESTROY_ITEMSET(iVar0);
 	return 0;
 }
@@ -771,7 +771,7 @@ void func_21(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

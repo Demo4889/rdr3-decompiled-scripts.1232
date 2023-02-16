@@ -241,7 +241,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_170, 8);
 							if (func_36(32))
@@ -602,12 +602,12 @@ int func_11()
 {
 	iLocal_163 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-5220.2f, -3472.4f, -20.6f, 0f, 0f, 0f, 100f, 125f, 70f, "m_volBenedictPoint");
 	iLocal_164 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volBenedictPostOffice Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_164, -5226.037f, -3468.296f, -19.99f, 0f, 0f, 0f, 6.727f, 3.065f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_164, -5227.384f, -3470.978f, -19.99f, 0f, 0f, 0f, 2.011f, 2.184f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_164, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_164, -5226.037f, -3468.296f, -19.99f, 0f, 0f, 0f, 6.727f, 3.065f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_164, -5227.384f, -3470.978f, -19.99f, 0f, 0f, 0f, 2.011f, 2.184f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_164, -5230.431f, -3468.341f, -20.375f, 0f, 0f, 0f, 2.753f, 2.804f, 4f);
 	iLocal_165 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volBenedictPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_165, -5227.361f, -3470.487f, -20.226f, 0f, 0f, 0f, 1.695f, 1.082f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_165, -5229.832f, -3468.299f, -20.656f, 0f, 0f, 0f, 1.109f, 2.187f, 3.106f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_165, -5227.361f, -3470.487f, -20.226f, 0f, 0f, 0f, 1.695f, 1.082f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_165, -5229.832f, -3468.299f, -20.656f, 0f, 0f, 0f, 1.109f, 2.187f, 3.106f);
 	iLocal_166 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-5226.061f, -3468.279f, -21.52f, 0f, 0f, 0f, 6.85f, 3.25f, 4f, "m_volBenedictPostOfficeOffLimits");
 	return 1;
 }
@@ -637,7 +637,7 @@ int func_15(int iParam0)
 	if (func_20() == -1)
 	{
 		HUD::TEXT_BLOCK_REQUEST("TWDRGAU");
-		if (!HUD::_0xD0976CC34002DB57("TWDRGAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("TWDRGAU"))
 		{
 			return 0;
 		}
@@ -1270,7 +1270,7 @@ int func_54(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -1895,7 +1895,7 @@ void func_79(int iParam0)
 		func_149();
 		if (HUD::_DOES_TEXT_BLOCK_EXIST("TWDRGAU"))
 		{
-			if (HUD::_0xD0976CC34002DB57("TWDRGAU"))
+			if (HUD::TEXT_BLOCK_IS_LOADED("TWDRGAU"))
 			{
 				HUD::_TEXT_BLOCK_DELETE("TWDRGAU");
 			}
@@ -7383,7 +7383,7 @@ int func_272(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -7422,7 +7422,7 @@ int func_272(int iParam0, bool bParam1, int iParam2, int iParam3)
 
 int func_273()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_308(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_308(Global_35))
 	{
 		return 1;
 	}

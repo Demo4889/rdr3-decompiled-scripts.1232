@@ -737,7 +737,7 @@ void func_1()
 {
 	int iVar0;
 
-	HUD::_0x8BC7C1F929D07BF3(382897689);
+	HUD::_DISABLE_HUD_CONTEXT(382897689);
 	Global_1357517 = 0;
 	if (UIAPPS::_IS_APP_RUNNING(-605293197))
 	{
@@ -868,7 +868,7 @@ int func_7(var uParam0)
 		case 16:
 			break;
 		default:
-			PAD::_0x2804658EB7D8A50B(4, 652262273);
+			PAD::_SET_CONTROL_CONTEXT(4, 652262273);
 			if (PAD::_IS_INPUT_DISABLED(0))
 			{
 				if (!PAD::IS_CONTROL_PRESSED(0, 1395223413))
@@ -922,7 +922,7 @@ int func_7(var uParam0)
 			{
 				if (func_26(PLAYER::PLAYER_PED_ID(), 0, 1, 0) != joaat("weapon_unarmed") || func_26(PLAYER::PLAYER_PED_ID(), 1, 1, 0) != joaat("weapon_unarmed"))
 				{
-					WEAPON::_0x94A3C1B804D291EC(Global_35, 1, 0, 1, 1);
+					WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 1, 0, 1, 1);
 				}
 				else
 				{
@@ -1083,7 +1083,7 @@ int func_7(var uParam0)
 			}
 			else
 			{
-				if (CAM::_0xA24C1D341C6E0D53(1, 0, 0))
+				if (CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(1, 0, 0))
 				{
 					func_41(uParam0);
 				}
@@ -1187,7 +1187,7 @@ int func_7(var uParam0)
 			}
 			break;
 		case 15:
-			if (func_46(Global_35, 0) || !TASK::_0xEC7E480FF8BD0BED(Global_35))
+			if (func_46(Global_35, 0) || !TASK::IS_PED_RUNNING_TASK_ITEM_INTERACTION(Global_35))
 			{
 				func_20(uParam0, 16);
 			}
@@ -2845,7 +2845,7 @@ int func_78(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, b
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -3581,11 +3581,11 @@ void func_116(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}

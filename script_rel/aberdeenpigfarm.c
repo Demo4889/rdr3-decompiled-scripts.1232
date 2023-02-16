@@ -140,7 +140,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_24, 8);
 							if (func_36(32))
@@ -2872,11 +2872,11 @@ void func_117(int iParam0)
 
 void func_118(var uParam0)
 {
-	if (!ENTITY::_0x1FF441D7954F8709(*uParam0))
+	if (!ENTITY::IS_MAP_ENTITY_PINNED(*uParam0))
 	{
 		return;
 	}
-	ENTITY::_0xD2B9C78537ED5759(*uParam0);
+	ENTITY::_UNPIN_MAP_ENTITY(*uParam0);
 }
 
 int func_119()
@@ -2906,14 +2906,14 @@ int func_121(int iParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6
 	}
 	if (*uParam2 == 0)
 	{
-		*uParam2 = ENTITY::_0x6F3068258A499E52(uParam1, vParam3, iParam6 | 2 | 1);
+		*uParam2 = ENTITY::PIN_CLOSEST_MAP_ENTITY(uParam1, vParam3, iParam6 | 2 | 1);
 		return 0;
 	}
-	if (!ENTITY::_0x1FF441D7954F8709(*uParam2))
+	if (!ENTITY::IS_MAP_ENTITY_PINNED(*uParam2))
 	{
 		return 0;
 	}
-	iVar0 = ENTITY::_0x4735E2A4BB83D9DA(*uParam2);
+	iVar0 = ENTITY::_GET_PINNED_MAP_ENTITY(*uParam2);
 	*iParam0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar0);
 	return 0;
 }

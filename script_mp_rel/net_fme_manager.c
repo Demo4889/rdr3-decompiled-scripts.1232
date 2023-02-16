@@ -125,7 +125,7 @@ void func_4()
 	int iVar0;
 
 	func_13();
-	if (HUD::_0xD0976CC34002DB57(func_14()))
+	if (HUD::TEXT_BLOCK_IS_LOADED(func_14()))
 	{
 		HUD::_TEXT_BLOCK_DELETE(func_14());
 	}
@@ -700,7 +700,7 @@ int func_38()
 		iVar0 = 0;
 	}
 	HUD::TEXT_BLOCK_REQUEST(func_14());
-	if (!HUD::_0xD0976CC34002DB57(func_14()))
+	if (!HUD::TEXT_BLOCK_IS_LOADED(func_14()))
 	{
 		iVar0 = 0;
 	}
@@ -916,7 +916,7 @@ int func_53()
 
 bool func_54()
 {
-	return DATAFILE::_0x603AC35FD4602C76(Global_1183537->f_443);
+	return DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1183537->f_443);
 }
 
 var func_55()
@@ -2310,7 +2310,7 @@ int func_99(int iParam0, int iParam1, int iParam2)
 			return 7;
 		}
 		iVar1 = 2;
-		if (_NAMESPACE26::_0x149A2751AB66AC02(iVar0) < iVar1)
+		if (_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(iVar0) < iVar1)
 		{
 			return 9;
 		}
@@ -2827,7 +2827,7 @@ void func_129(int iParam0)
 	{
 		return;
 	}
-	iVar1 = _NAMESPACE26::_0x149A2751AB66AC02(iVar0);
+	iVar1 = _NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(iVar0);
 	if (iVar1 == 1)
 	{
 		func_165(iParam0);
@@ -3251,7 +3251,7 @@ int func_141(int iParam0, bool bParam1, bool bParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -3759,7 +3759,7 @@ var func_159(int iParam0, int iParam1)
 
 void func_160(var uParam0, var uParam1)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam1))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam1))
 	{
 		return;
 	}
@@ -5420,7 +5420,7 @@ int func_232(int iParam0, bool bParam1)
 			return 0;
 		}
 	}
-	if (_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::NETWORK_GET_GANG_ID(&(Global_1273882->f_154[iParam0]))) <= 1)
+	if (_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(_NAMESPACE26::NETWORK_GET_GANG_ID(&(Global_1273882->f_154[iParam0]))) <= 1)
 	{
 		return 0;
 	}
@@ -6043,7 +6043,7 @@ int func_278(bool bParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 	{
 		if (!bParam4)
 		{
-			if (TASK::_0xEC7E480FF8BD0BED(Global_35))
+			if (TASK::IS_PED_RUNNING_TASK_ITEM_INTERACTION(Global_35))
 			{
 				return 0;
 			}
@@ -6251,7 +6251,7 @@ int func_282(int iParam0)
 	{
 		return 0;
 	}
-	if (!DATAFILE::_0x603AC35FD4602C76(iVar0))
+	if (!DATAFILE::PARSEDDATA_IS_FILE_LOADED(iVar0))
 	{
 		return 0;
 	}

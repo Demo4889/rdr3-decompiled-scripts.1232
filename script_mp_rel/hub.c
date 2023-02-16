@@ -493,7 +493,7 @@ void func_39(var uParam0)
 	iVar16 = 0;
 	while (iVar16 < iVar0)
 	{
-		if (!INVENTORY::_0x82FA24C3D3FCD9B7(iVar1, iVar16, &Var2))
+		if (!INVENTORY::_INVENTORY_GET_ITEM_FROM_COLLECTION_INDEX(iVar1, iVar16, &Var2))
 		{
 		}
 		iVar18 = Var2.f_11;
@@ -528,7 +528,7 @@ void func_39(var uParam0)
 					{
 						iVar16++;
 					}
-					INVENTORY::_0x42A2F33A1942E865(iVar1);
+					INVENTORY::_INVENTORY_RELEASE_ITEM_COLLECTION(iVar1);
 					if (iVar17 == 0)
 					{
 						if (func_50(uParam0, -1))
@@ -1223,7 +1223,7 @@ int func_84(bool bParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (bParam1 && NETWORK::_0xFBE782B3165AC8EC(Var0.f_5))
+	if (bParam1 && NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(Var0.f_5))
 	{
 		return 0;
 	}
@@ -1298,7 +1298,7 @@ int func_92(int iParam0, bool bParam1)
 		return 0;
 	}
 	iVar0 = 0;
-	if ((iVar0 != 0 && bParam1) && NETWORK::_0xFBE782B3165AC8EC(iVar0))
+	if ((iVar0 != 0 && bParam1) && NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(iVar0))
 	{
 		return 0;
 	}

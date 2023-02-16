@@ -138,7 +138,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_21, 8);
 							if (func_36(32))
@@ -521,7 +521,7 @@ int func_15(int iParam0)
 {
 	if (AUDIO::LOAD_STREAM("colter", "es_camp_memory_sounds"))
 	{
-		iLocal_1 = AUDIO::_0x0556C784FA056628("colter", "es_camp_memory_sounds");
+		iLocal_1 = AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("colter", "es_camp_memory_sounds");
 		iLocal_2 = MISC::GET_GAME_TIMER() + 30000;
 		return 1;
 	}

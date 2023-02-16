@@ -310,7 +310,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_238, 8);
 							if (func_36(32))
@@ -673,9 +673,9 @@ int func_11()
 	iLocal_230 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1207.376f, -186.3412f, 100.5991f, 0f, 0f, 17f, 4f, 4.18f, 7f, "ScarlettMeadows Horse Shop - m_volHorseShopOutsideDoor");
 	func_46(9, iLocal_230);
 	iLocal_231 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("SCH_HORSESHOP_GUARD");
-	VOLUME::_0x39816F6F94F385AD(iLocal_231, 1193.417f, -220.1935f, 101.9785f, 0f, 0f, 14.80028f, 34.68813f, 24.66934f, 23.864f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_231, 1214.513f, -212.8789f, 101.9785f, 0f, 0f, 15.60754f, 23.67516f, 28.10355f, 23.864f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_231, 1187.173f, -208.151f, 105.1929f, 0f, 0f, 43.4823f, 32.91484f, 13.00947f, 30.26328f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_231, 1193.417f, -220.1935f, 101.9785f, 0f, 0f, 14.80028f, 34.68813f, 24.66934f, 23.864f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_231, 1214.513f, -212.8789f, 101.9785f, 0f, 0f, 15.60754f, 23.67516f, 28.10355f, 23.864f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_231, 1187.173f, -208.151f, 105.1929f, 0f, 0f, 43.4823f, 32.91484f, 13.00947f, 30.26328f);
 	iLocal_232 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(1209.053f, -193.1814f, 101.9785f, 0f, 0f, 19.83985f, 100.2164f, 100.6252f, 30.88881f, "ScarlettMeadows Horse Shop - GUARDS REGISTER");
 	return 1;
 }
@@ -702,7 +702,7 @@ int func_15(int iParam0)
 	if (func_20() == -1)
 	{
 		HUD::TEXT_BLOCK_REQUEST("RHRGNAU");
-		if (!HUD::_0xD0976CC34002DB57("RHRGNAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("RHRGNAU"))
 		{
 			HUD::TEXT_BLOCK_REQUEST("SCVRAUD");
 			return 0;
@@ -874,10 +874,10 @@ void func_28(int iParam0)
 		if (!iLocal_234)
 		{
 			LAW::_CREATE_GUARD_ZONE("SCARLET_HORSE_SHOP_OUTSIDE_PENS");
-			LAW::_0x8C598A930F471938("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_232);
-			LAW::_0x35815F372D43E1E5("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
-			LAW::_0xAD3E07C37A7C1ADC("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
-			LAW::_0xA1B0E6301E2E02A6("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
+			LAW::_SET_GUARD_ZONE_VOLUME_REGISTRATION_START("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_232);
+			LAW::_SET_GUARD_ZONE_VOLUME_RESTRICTED("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
+			LAW::_SET_GUARD_ZONE_VOLUME_WARNING("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
+			LAW::_SET_GUARD_ZONE_VOLUME_THREAT("SCARLET_HORSE_SHOP_OUTSIDE_PENS", iLocal_231);
 			func_61(804, iLocal_231, 1);
 			func_61(806, iLocal_231, 0);
 			iLocal_234 = 1;
@@ -1505,7 +1505,7 @@ int func_61(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -1577,7 +1577,7 @@ void func_66(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 		if (*iParam4)
 		{
 			iVar3 = ITEMSET::CREATE_ITEMSET(true);
-			iVar1 = ENTITY::_0x84CCF9A12942C83D(iParam2, iVar3, 1, 1, 0, 0);
+			iVar1 = ENTITY::GET_MATCHING_ENTITIES(iParam2, iVar3, 1, 1, 0, 0);
 			iVar4 = 0;
 			while (iVar4 < iVar1)
 			{
@@ -2185,7 +2185,7 @@ void func_86(int iParam0)
 	{
 		if (HUD::_DOES_TEXT_BLOCK_EXIST("RHRGNAU"))
 		{
-			if (HUD::_0xD0976CC34002DB57("RHRGNAU"))
+			if (HUD::TEXT_BLOCK_IS_LOADED("RHRGNAU"))
 			{
 				HUD::_TEXT_BLOCK_DELETE("RHRGNAU");
 			}
@@ -2532,7 +2532,7 @@ int func_101(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -8112,7 +8112,7 @@ int func_302(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 
 int func_303()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_338(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_338(Global_35))
 	{
 		return 1;
 	}

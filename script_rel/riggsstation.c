@@ -240,7 +240,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_169, 8);
 							if (func_36(32))
@@ -600,8 +600,8 @@ int func_10(int iParam0)
 int func_11()
 {
 	iLocal_164 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Riggs Stn - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_164, -1095.52f, -576.564f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_164, -1094.093f, -574.7371f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_164, -1095.52f, -576.564f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_164, -1094.093f, -574.7371f, 82.8243f, 0f, 0f, 52.00422f, 2.27305f, 1.013785f, 2.820909f);
 	iLocal_163 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1094.383f, -575.865f, 82.807f, 0f, 0f, 52.00422f, 4.73f, 5.502f, 2.821f, "Riggs Stn - m_volPostOfficeOwner");
 	iLocal_165 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1093.137f, -576.9941f, 82.84734f, 0f, 0f, 52.00422f, 4.470828f, 2.119287f, 2.820909f, "Riggs Stn - m_volPostOfficeOfflimits");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_163, 10025);
@@ -629,7 +629,7 @@ int func_15(int iParam0)
 	if (func_20() == -1)
 	{
 		HUD::TEXT_BLOCK_REQUEST("STRRGAU");
-		if (!HUD::_0xD0976CC34002DB57("STRRGAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("STRRGAU"))
 		{
 			return 0;
 		}
@@ -1235,7 +1235,7 @@ int func_53(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -1860,7 +1860,7 @@ void func_78(int iParam0)
 		func_145();
 		if (HUD::_DOES_TEXT_BLOCK_EXIST("STRRGAU"))
 		{
-			if (HUD::_0xD0976CC34002DB57("STRRGAU"))
+			if (HUD::TEXT_BLOCK_IS_LOADED("STRRGAU"))
 			{
 				HUD::_TEXT_BLOCK_DELETE("STRRGAU");
 			}
@@ -7442,7 +7442,7 @@ int func_277(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -7481,7 +7481,7 @@ int func_277(int iParam0, bool bParam1, int iParam2, int iParam3)
 
 int func_278()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_312(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_312(Global_35))
 	{
 		return 1;
 	}

@@ -186,7 +186,7 @@ void __EntryFunction__()
 	}
 	if (!GRAPHICS::ANIMPOSTFX_IS_RUNNING(sLocal_89))
 	{
-		PAD::_0x2804658EB7D8A50B(4, -508131217);
+		PAD::_SET_CONTROL_CONTEXT(4, -508131217);
 	}
 	while (iLocal_101)
 	{
@@ -356,12 +356,12 @@ void __EntryFunction__()
 				break;
 			case 4:
 				func_11(&Local_102);
-				PAD::_0x2804658EB7D8A50B(5, 499451365);
+				PAD::_SET_CONTROL_CONTEXT(5, 499451365);
 				if (iLocal_248)
 				{
 					if ((MISC::GET_GAME_TIMER() - iLocal_247) > 500)
 					{
-						HUD::_0x8BC7C1F929D07BF3(-1404924319);
+						HUD::_DISABLE_HUD_CONTEXT(-1404924319);
 						CAM::SET_CAM_ACTIVE(Local_102.f_32, false);
 						CAM::RENDER_SCRIPT_CAMS(false, false, 3000, true, false, 0);
 						CAM::DETACH_CAM(Local_102.f_32);
@@ -376,7 +376,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 3:
-				PAD::_0x2804658EB7D8A50B(5, 499451365);
+				PAD::_SET_CONTROL_CONTEXT(5, 499451365);
 				HUD::_UIPROMPT_SET_ACTIVE_GROUP_THIS_FRAME(-857683846, "CAM_CONG_C", 1, 0, 0, 0);
 				if ((MISC::GET_GAME_TIMER() - iLocal_239) > 100)
 				{
@@ -523,7 +523,7 @@ void __EntryFunction__()
 				break;
 			case 6:
 				CAM::_0x3C8F74E8FE751614();
-				PAD::_0x2804658EB7D8A50B(4, 1499787188);
+				PAD::_SET_CONTROL_CONTEXT(4, 1499787188);
 				if (iLocal_94 != 0)
 				{
 				}
@@ -588,7 +588,7 @@ void __EntryFunction__()
 				break;
 			case 10:
 				func_58(&Local_102);
-				PAD::_0x2804658EB7D8A50B(5, 499451365);
+				PAD::_SET_CONTROL_CONTEXT(5, 499451365);
 				iLocal_93 = 1;
 				if (iLocal_245 == 0)
 				{
@@ -615,7 +615,7 @@ void __EntryFunction__()
 				}
 				if (func_59(&uLocal_241) > 1000)
 				{
-					HUD::_0x8BC7C1F929D07BF3(-1404924319);
+					HUD::_DISABLE_HUD_CONTEXT(-1404924319);
 					func_35();
 					func_60(&uLocal_241);
 					func_15();
@@ -662,7 +662,7 @@ void __EntryFunction__()
 			case 9:
 				func_58(&Local_102);
 				CAM::_0x3C8F74E8FE751614();
-				PAD::_0x2804658EB7D8A50B(4, 1499787188);
+				PAD::_SET_CONTROL_CONTEXT(4, 1499787188);
 				HUD::_UIPROMPT_SET_ACTIVE_GROUP_THIS_FRAME(-857683846, "CAM_CONG_HSP", 1, 0, 0, 0);
 				if (func_22(&Local_102))
 				{
@@ -844,7 +844,7 @@ void __EntryFunction__()
 				func_38(12);
 				func_23(&Local_102);
 			}
-			PAD::_0x2804658EB7D8A50B(4, -508131217);
+			PAD::_SET_CONTROL_CONTEXT(4, -508131217);
 			HUD::_UIPROMPT_SET_ACTIVE_GROUP_THIS_FRAME(-857683846, "CAM_CONG_PMB", 1, 0, 0, 0);
 			if (iLocal_34 == 0)
 			{
@@ -852,14 +852,14 @@ void __EntryFunction__()
 				{
 					if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 					{
-						AUDIO::_0xCE5D0FFE83939AF1(iLocal_32, "zoom_out", "Photo_Mode_Sounds", 1);
+						AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_32, "zoom_out", "Photo_Mode_Sounds", 1);
 					}
 					iLocal_34 = 1;
 				}
 			}
 			else if (PAD::IS_CONTROL_RELEASED(0, 592761574) || CAM::_0x2AB7C81B3F70570C())
 			{
-				AUDIO::_0x3210BCB36AF7621B(iLocal_32);
+				AUDIO::_STOP_SOUND_WITH_ID(iLocal_32);
 				iLocal_34 = 0;
 			}
 			if (iLocal_33 == 0)
@@ -868,14 +868,14 @@ void __EntryFunction__()
 				{
 					if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 					{
-						AUDIO::_0xCE5D0FFE83939AF1(iLocal_31, "zoom_In", "Photo_Mode_Sounds", 1);
+						AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_31, "zoom_In", "Photo_Mode_Sounds", 1);
 					}
 					iLocal_33 = 1;
 				}
 			}
 			else if (PAD::IS_CONTROL_RELEASED(0, 1535392713) || CAM::_0x2AB7C81B3F70570C())
 			{
-				AUDIO::_0x3210BCB36AF7621B(iLocal_31);
+				AUDIO::_STOP_SOUND_WITH_ID(iLocal_31);
 				iLocal_33 = 0;
 			}
 			if (!func_50(&Local_102, 32))
@@ -886,12 +886,12 @@ void __EntryFunction__()
 					{
 						AUDIO::PLAY_SOUND_FRONTEND("effects", "Photo_Mode_Sounds", true, 0);
 					}
-					AUDIO::_0x3210BCB36AF7621B(iLocal_31);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_32);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_35);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_36);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_39);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_31);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_32);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 					func_17(&Local_102, 13);
 					func_32();
 				}
@@ -927,7 +927,7 @@ void __EntryFunction__()
 				func_38(13);
 				func_23(&Local_102);
 			}
-			PAD::_0x2804658EB7D8A50B(4, -508131217);
+			PAD::_SET_CONTROL_CONTEXT(4, -508131217);
 			HUD::_UIPROMPT_SET_ACTIVE_GROUP_THIS_FRAME(-857683846, "CAM_CONG_PMA", 1, 0, 0, 0);
 			if (!func_50(&Local_102, 32))
 			{
@@ -937,10 +937,10 @@ void __EntryFunction__()
 					{
 						AUDIO::PLAY_SOUND_FRONTEND("effects", "Photo_Mode_Sounds", true, 0);
 					}
-					AUDIO::_0x3210BCB36AF7621B(iLocal_35);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_36);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_39);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 					func_31();
 					func_17(&Local_102, 14);
 					func_32();
@@ -961,7 +961,7 @@ void __EntryFunction__()
 				func_38(14);
 				func_23(&Local_102);
 			}
-			PAD::_0x2804658EB7D8A50B(4, -508131217);
+			PAD::_SET_CONTROL_CONTEXT(4, -508131217);
 			HUD::_UIPROMPT_SET_ACTIVE_GROUP_THIS_FRAME(-857683846, "CAM_CONG_PME", 1, 0, 0, 0);
 			if (!func_50(&Local_102, 32))
 			{
@@ -976,10 +976,10 @@ void __EntryFunction__()
 					{
 						AUDIO::PLAY_SOUND_FRONTEND("effects", "Photo_Mode_Sounds", true, 0);
 					}
-					AUDIO::_0x3210BCB36AF7621B(iLocal_35);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_36);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_39);
-					AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
+					AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 					func_17(&Local_102, 12);
 					func_32();
 				}
@@ -1004,7 +1004,7 @@ void func_1(var uParam0, int iParam1)
 	if (func_26())
 	{
 		Global_1357504 = uParam0->f_89;
-		HUD::_0x8BC7C1F929D07BF3(-1404924319);
+		HUD::_DISABLE_HUD_CONTEXT(-1404924319);
 	}
 	Global_1357503 = 0;
 	func_29(0);
@@ -1015,7 +1015,7 @@ void func_1(var uParam0, int iParam1)
 		CAM::DESTROY_CAM(uParam0->f_32, false);
 	}
 	SCRIPTS::SET_NO_LOADING_SCREEN(false);
-	HUD::_0x8BC7C1F929D07BF3(959420967);
+	HUD::_DISABLE_HUD_CONTEXT(959420967);
 	Global_1357507 = 0;
 	Global_1357508 = 0;
 	AUDIO::_0x531A78D6BF27014B("CAMERA_SOUNDSET");
@@ -1303,7 +1303,7 @@ void func_10(struct<108> Param0, var uParam108, var uParam109, var uParam110, va
 		{
 			PED::SET_PED_RESET_FLAG(iVar0, 53, true);
 			PED::SET_PED_RESET_FLAG(iVar0, 153, true);
-			PED::_0x06D26A96CA1BCA75(iVar0, 3, 0f, 0);
+			PED::_SET_PED_MOTIVATION(iVar0, 3, 0f, 0);
 		}
 	}
 }
@@ -1817,7 +1817,7 @@ int func_27(int iParam0, int iParam1)
 	iVar0 = 1;
 	if (func_26())
 	{
-		if (!HUD::_0xD0976CC34002DB57("CAMERA"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("CAMERA"))
 		{
 			if ((MISC::_GET_SYSTEM_TIME() - iParam1) > 5000)
 			{
@@ -1852,7 +1852,7 @@ int func_27(int iParam0, int iParam1)
 		{
 			iVar0 = 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("CAMERA"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("CAMERA"))
 		{
 			iVar0 = 0;
 		}
@@ -1934,7 +1934,7 @@ int func_30()
 	{
 		return 1;
 	}
-	if (CAM::_0xA24C1D341C6E0D53(0, 0, 0) || CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
+	if (CAM::IS_FIRST_PERSON_CAMERA_ACTIVE(0, 0, 0) || CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
 	{
 		return 1;
 	}
@@ -1962,7 +1962,7 @@ int func_30()
 	{
 		return 1;
 	}
-	if (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, -1) || Global_1914319->f_18941.f_17)
+	if (ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, -1) || Global_1914319->f_18941.f_17)
 	{
 		return 1;
 	}
@@ -2287,7 +2287,7 @@ void func_38(int iParam0)
 
 void func_39(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(1, iParam0, 0);
 }
 
 bool func_40(int iParam0, int iParam1)
@@ -2641,7 +2641,7 @@ int func_54(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, b
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -3151,19 +3151,19 @@ void func_68()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_35, sLocal_43, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_35, sLocal_43, "Photo_Mode_Sounds", 1);
 				iLocal_37 = 1;
 			}
 		}
 		else if (fLocal_18 < 0.2f || fLocal_18 == 0.2f)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_35);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
 			iLocal_37 = 0;
 		}
 	}
 	else if (iLocal_37)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_35);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
 		iLocal_37 = 0;
 	}
 	if (PAD::GET_CONTROL_NORMAL(0, -2006271410) < -0.3f)
@@ -3172,19 +3172,19 @@ void func_68()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_36, sLocal_44, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_36, sLocal_44, "Photo_Mode_Sounds", 1);
 				iLocal_38 = 1;
 			}
 		}
 		else if (fLocal_18 > 49.6f || fLocal_18 == 49.6f)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_36);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
 			iLocal_38 = 0;
 		}
 	}
 	else if (iLocal_38)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_36);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
 		iLocal_38 = 0;
 	}
 }
@@ -3197,19 +3197,19 @@ void func_69()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_39, sLocal_43, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_39, sLocal_43, "Photo_Mode_Sounds", 1);
 				iLocal_41 = 1;
 			}
 		}
 		else if (fLocal_16 <= 0.1f)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_39);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
 			iLocal_37 = 0;
 		}
 	}
 	else if (iLocal_41)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_39);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
 		iLocal_41 = 0;
 	}
 	if (PAD::GET_CONTROL_NORMAL(0, 649703018) < -0.3f)
@@ -3218,19 +3218,19 @@ void func_69()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_40, sLocal_44, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_40, sLocal_44, "Photo_Mode_Sounds", 1);
 				iLocal_42 = 1;
 			}
 		}
 		else if (fLocal_16 > 99.9f || fLocal_16 < 0f)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 			iLocal_42 = 0;
 		}
 	}
 	else if (iLocal_42)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 		iLocal_42 = 0;
 	}
 }
@@ -3383,19 +3383,19 @@ void func_72()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_35, sLocal_43, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_35, sLocal_43, "Photo_Mode_Sounds", 1);
 				iLocal_37 = 1;
 			}
 		}
 		else if (iLocal_28 == 0)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_35);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
 			iLocal_37 = 0;
 		}
 	}
 	else if (iLocal_37)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_35);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
 		iLocal_37 = 0;
 	}
 	if (PAD::GET_CONTROL_NORMAL(0, 1212117119) < -0.3f)
@@ -3407,19 +3407,19 @@ void func_72()
 		{
 			if (AUDIO::_0xD9130842D7226045("Photo_Mode_Sounds", 0))
 			{
-				AUDIO::_0xCE5D0FFE83939AF1(iLocal_36, sLocal_44, "Photo_Mode_Sounds", 1);
+				AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iLocal_36, sLocal_44, "Photo_Mode_Sounds", 1);
 				iLocal_38 = 1;
 			}
 		}
 		else if (iLocal_28 == 14)
 		{
-			AUDIO::_0x3210BCB36AF7621B(iLocal_36);
+			AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
 			iLocal_38 = 0;
 		}
 	}
 	else if (iLocal_38)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iLocal_36);
+		AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
 		iLocal_38 = 0;
 	}
 }
@@ -3444,12 +3444,12 @@ void func_75()
 
 void func_76()
 {
-	AUDIO::_0x3210BCB36AF7621B(iLocal_31);
-	AUDIO::_0x3210BCB36AF7621B(iLocal_32);
-	AUDIO::_0x3210BCB36AF7621B(iLocal_35);
-	AUDIO::_0x3210BCB36AF7621B(iLocal_36);
-	AUDIO::_0x3210BCB36AF7621B(iLocal_39);
-	AUDIO::_0x3210BCB36AF7621B(iLocal_40);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_31);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_32);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_35);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_36);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_39);
+	AUDIO::_STOP_SOUND_WITH_ID(iLocal_40);
 	AUDIO::RELEASE_SOUND_ID(iLocal_31);
 	AUDIO::RELEASE_SOUND_ID(iLocal_32);
 	AUDIO::RELEASE_SOUND_ID(iLocal_35);
@@ -3686,7 +3686,7 @@ var func_90(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -4443,11 +4443,11 @@ void func_123(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}
@@ -4713,7 +4713,7 @@ int func_131(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -5092,7 +5092,7 @@ int func_144(int iParam0, int iParam1)
 			else if (!func_169(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_170(iVar1);
 				return 1;
@@ -5360,7 +5360,7 @@ int func_154(char* sParam0, int iParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -5393,7 +5393,7 @@ int func_155(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -5597,8 +5597,8 @@ void func_164(int iParam0)
 void func_165(int iParam0, int iParam1)
 {
 	iLocal_396 = TASK::CREATE_SCENARIO_POINT(iParam0, vLocal_219, fLocal_394, 0f, 0f, 1);
-	TASK::_0x5AF19B6CC2115D34(iLocal_396, 25, 1);
-	TASK::_0x5AF19B6CC2115D34(iLocal_396, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG(iLocal_396, 25, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG(iLocal_396, 23, 1);
 	TASK::_TASK_USE_SCENARIO_POINT(Global_35, iLocal_396, iParam1, -1, 0, 1, 0, 0, 0f, 0);
 }
 
@@ -5615,9 +5615,9 @@ int func_166(int iParam0, int iParam1)
 	iVar0 = func_143(iParam0);
 	if (iVar0 == -427144552 && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == 307971639 && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == 307971639 && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -5631,7 +5631,7 @@ int func_166(int iParam0, int iParam1)
 
 int func_167(char* sParam0, var uParam1, var uParam2, int iParam3, bool bParam4)
 {
-	*uParam1 = INVENTORY::_0x80D78BDC9D88EF07(func_172(bParam4), sParam0, iParam3, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION(func_172(bParam4), sParam0, iParam3, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;
@@ -5649,7 +5649,7 @@ int func_168(var uParam0, int iParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x82FA24C3D3FCD9B7(iParam2, iParam1, uParam0))
+	if (!INVENTORY::_INVENTORY_GET_ITEM_FROM_COLLECTION_INDEX(iParam2, iParam1, uParam0))
 	{
 		return 0;
 	}
@@ -5667,7 +5667,7 @@ int func_170(int iParam0)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x42A2F33A1942E865(iParam0))
+	if (!INVENTORY::_INVENTORY_RELEASE_ITEM_COLLECTION(iParam0))
 	{
 		return 0;
 	}
@@ -6012,7 +6012,7 @@ void func_188(var uParam0, struct<4> Param1)
 
 int func_189(var uParam0, var uParam1, var uParam2, bool bParam3)
 {
-	*uParam1 = INVENTORY::_0x640F890C3E5A3FFD(func_172(bParam3), uParam0, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION_WITH_FILTER(func_172(bParam3), uParam0, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;

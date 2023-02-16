@@ -80,8 +80,8 @@ void __EntryFunction__()
 				func_2(&uLocal_28, 1);
 				iLocal_23 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1409f, -958f, 68f, 0f, 0f, 29f, 1000f, 500f, 100f, "pre_sean1_trigger");
 				iLocal_24 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("pre_sean1_squad1");
-				VOLUME::_0xBCE668AAF83608BE(iLocal_24, -1374.059f, -964.364f, 70.254f, 0f, 0f, 41f, 90f, 45f, 40f);
-				VOLUME::_0xBCE668AAF83608BE(iLocal_24, -1447.488f, -944.557f, 70.254f, 0f, 0f, -18f, 34f, 13f, 40f);
+				VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, -1374.059f, -964.364f, 70.254f, 0f, 0f, 41f, 90f, 45f, 40f);
+				VOLUME::_ADD_CYLINDER_VOLUME_TO_VOLUME_AGGREGATE(iLocal_24, -1447.488f, -944.557f, 70.254f, 0f, 0f, -18f, 34f, 13f, 40f);
 				iLocal_25 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-1179.357f, -1230.73f, 73.20396f, 0f, 0f, 0f, 170f, 170f, 40f, "pre_sean1_squad2");
 				iLocal_26 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1413.668f, -962.834f, 62.681f, 0f, 0f, 61.59f, 105.15f, 74.578f, 12.986f, "pre_sean1_help");
 				PED::_RESERVE_AMBIENT_PEDS(8);
@@ -99,7 +99,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 2:
-				if (PED::_0x5C16855277819BBF() >= 8)
+				if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() >= 8)
 				{
 					if (func_6())
 					{
@@ -252,8 +252,8 @@ int func_6()
 			LAW::_0x819ADD5EF1742F47(&(uLocal_0[iVar0]), 1);
 			PED::SET_PED_CONFIG_FLAG(&(uLocal_0[iVar0]), 167, true);
 			PED::SET_PED_SEEING_RANGE(&(uLocal_0[iVar0]), 35f);
-			iLocal_16[iVar0] = MAP::_0x23F74C2FDA6E7C61(-1595050198, &(uLocal_0[iVar0]));
-			MAP::_0x662D364ABF16DE2F(&(iLocal_16[iVar0]), -662251075);
+			iLocal_16[iVar0] = MAP::BLIP_ADD_FOR_ENTITY(-1595050198, &(uLocal_0[iVar0]));
+			MAP::BLIP_ADD_MODIFIER(&(iLocal_16[iVar0]), -662251075);
 			switch (iVar0)
 			{
 				case 0:
@@ -1209,7 +1209,7 @@ void func_28(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -1656,7 +1656,7 @@ int func_41(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -3302,7 +3302,7 @@ int func_95(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_46))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1935630->f_46))
+			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::IS_WEAPON_BOW(Global_1935630->f_46))
 			{
 				return 1;
 			}

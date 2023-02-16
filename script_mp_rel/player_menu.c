@@ -50,7 +50,7 @@ void __EntryFunction__()
 		switch (&Global_1896726)
 		{
 			case 0:
-				PAD::_0x2804658EB7D8A50B(4, 1623465848);
+				PAD::_SET_CONTROL_CONTEXT(4, 1623465848);
 				if (func_3())
 				{
 					MISC::SET_THIS_SCRIPT_CAN_BE_PAUSED(false);
@@ -102,8 +102,8 @@ void func_1()
 		UIAPPS::_CLOSE_APP_BY_HASH(1433015236);
 	}
 	func_4(0);
-	HUD::_0x8BC7C1F929D07BF3(-523411361);
-	HUD::_0x8BC7C1F929D07BF3(-1274560729);
+	HUD::_DISABLE_HUD_CONTEXT(-523411361);
+	HUD::_DISABLE_HUD_CONTEXT(-1274560729);
 	func_15();
 	func_16();
 	func_17();
@@ -1296,7 +1296,7 @@ void func_25()
 														}
 														else
 														{
-															bVar129 = _NAMESPACE26::_0x81FB74C83C2ED69F(func_81());
+															bVar129 = _NAMESPACE26::_NETWORK_IS_IN_MY_GANG(func_81());
 															if (bVar129 || Global_1939221->f_1433.f_156.f_2.f_4)
 															{
 																if (bVar129)
@@ -1323,7 +1323,7 @@ void func_25()
 															{
 																func_204(func_81(), 1);
 															}
-															else if (_NAMESPACE26::_0x149A2751AB66AC02(iVar9) == _NAMESPACE26::_0x853B0FA4D8732C57(iVar9))
+															else if (_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(iVar9) == _NAMESPACE26::_0x853B0FA4D8732C57(iVar9))
 															{
 																func_204(func_81(), 2);
 															}
@@ -1485,7 +1485,7 @@ void func_25()
 														Jump @7444; //curOff = 6906
 														if (_NAMESPACE26::_0x0F99F6436528A089(iVar9))
 														{
-															if (_NAMESPACE26::_0x4BE6C13A45CCA8EC(iVar9) == iVar7 && _NAMESPACE26::_0x149A2751AB66AC02(iVar9) == 1)
+															if (_NAMESPACE26::_0x4BE6C13A45CCA8EC(iVar9) == iVar7 && _NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(iVar9) == 1)
 															{
 																func_141(962885784);
 															}
@@ -1554,7 +1554,7 @@ void func_25()
 														func_243(DATABINDING::_DATABINDING_READ_DATA_INT_FROM_PARENT(Var2.f_3, func_50(80)), 6);
 														Jump @7444; //curOff = 7338
 														Var131 = { func_244(0, 1, 0, -1) };
-														TELEMETRY::_0xE67AF24C5A3B6058(-1842437844, &Var131, 0);
+														TELEMETRY::_TELEMETRY_PERSONAL_VEHICLE_WAGON(-1842437844, &Var131, 0);
 														func_245(Var131, 2, 2);
 														func_246();
 														Jump @7444; //curOff = 7380
@@ -2079,7 +2079,7 @@ void func_41(int iParam0)
 			func_169();
 			break;
 		case 14:
-			HUD::_0x8BC7C1F929D07BF3(-1274560729);
+			HUD::_DISABLE_HUD_CONTEXT(-1274560729);
 			break;
 		case 19:
 			Global_1102098->f_935.f_26 = -1;
@@ -2099,10 +2099,10 @@ void func_41(int iParam0)
 			func_145(0);
 			break;
 		case 39:
-			HUD::_0x8BC7C1F929D07BF3(-523411361);
+			HUD::_DISABLE_HUD_CONTEXT(-523411361);
 			break;
 		case 53:
-			HUD::_0x8BC7C1F929D07BF3(-523411361);
+			HUD::_DISABLE_HUD_CONTEXT(-523411361);
 			break;
 		case 6:
 			if ((iVar0 != 7 && iVar0 != 9) && iVar0 != 8)
@@ -4485,12 +4485,12 @@ void func_106(int iParam0, bool bParam1)
 	}
 	vVar0.f_1 = bParam1;
 	vVar0.x = func_500(iParam0);
-	if (func_505(vVar0, _NAMESPACE26::_0x149A2751AB66AC02(Global_1273882->f_15)))
+	if (func_505(vVar0, _NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(Global_1273882->f_15)))
 	{
 		func_62(MISC::_CREATE_VAR_STRING(2, "NET_CAMP_LOCATION_TOO_SMALL"), joaat("COLOR_WHITE"));
 		return;
 	}
-	iVar4 = _NAMESPACE26::_0x149A2751AB66AC02(Global_1273882->f_15);
+	iVar4 = _NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(Global_1273882->f_15);
 	if (!func_506(vVar0.x, iVar4, bParam1))
 	{
 		func_62(MISC::_CREATE_VAR_STRING(2, "NET_CAMP_DISTRICT_INVALID"), joaat("COLOR_WHITE"));
@@ -5525,7 +5525,7 @@ int func_156(int iParam0, bool bParam1)
 		return 0;
 	}
 	iVar3 = func_500(iParam0);
-	iVar4 = _NAMESPACE26::_0x149A2751AB66AC02(Global_1273882->f_15);
+	iVar4 = _NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(Global_1273882->f_15);
 	Var0 = iVar3;
 	Var0.f_1 = bParam1;
 	if (func_565(64))
@@ -6177,7 +6177,7 @@ int func_192(int iParam0)
 			return 0;
 		}
 	}
-	else if (_NAMESPACE26::_0x149A2751AB66AC02(Global_1273882->f_15) >= _NAMESPACE26::_0x853B0FA4D8732C57(Global_1273882->f_15))
+	else if (_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(Global_1273882->f_15) >= _NAMESPACE26::_0x853B0FA4D8732C57(Global_1273882->f_15))
 	{
 		if (func_204(iParam0, 2))
 		{
@@ -6795,7 +6795,7 @@ int func_214(int iParam0)
 		func_629("NG_CANT_JOIN");
 		return 0;
 	}
-	else if (_NAMESPACE26::_0x149A2751AB66AC02(iParam0) == _NAMESPACE26::_0x853B0FA4D8732C57(iParam0))
+	else if (_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(iParam0) == _NAMESPACE26::_0x853B0FA4D8732C57(iParam0))
 	{
 		func_655("NG_FULL", func_654(iParam0, 1, 0), 340002725);
 		return 0;
@@ -8484,7 +8484,7 @@ void func_264()
 			}
 			if (func_541(iVar106, 1))
 			{
-				if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar7))
+				if (_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(iVar7))
 				{
 					func_542(&iVar106, 32);
 				}
@@ -11432,7 +11432,7 @@ float func_399(int iParam0, bool bParam1)
 	{
 		return 0f;
 	}
-	if ((_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::NETWORK_GET_GANG_ID(iParam0)) > 1 && bParam1) && ((*Global_1097609)[iVar0 /*51*/])->f_18 >= ((*Global_1097609)[iVar0 /*51*/])->f_45)
+	if ((_NAMESPACE26::NETWORK_GET_NUM_GANG_MEMBERS(_NAMESPACE26::NETWORK_GET_GANG_ID(iParam0)) > 1 && bParam1) && ((*Global_1097609)[iVar0 /*51*/])->f_18 >= ((*Global_1097609)[iVar0 /*51*/])->f_45)
 	{
 		return ((*Global_1097609)[iVar0 /*51*/])->f_18;
 	}
@@ -11617,7 +11617,7 @@ var func_416(int iParam0, int iParam1)
 
 void func_417(int iParam0, struct<5> Param1, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15)
 {
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam15))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam15))
 	{
 		return;
 	}

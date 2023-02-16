@@ -532,12 +532,12 @@ int func_13()
 	iLocal_21 = ((*Global_1887327)[127 /*36*/])->f_5;
 	VOLUME::_0xB469CFD9E065EB99(iLocal_21, 29);
 	iLocal_22 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Armadillo - m_volGeneral Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3686.114f, -2623.858f, -12.89814f, 0f, 0f, 0f, 5.86845f, 3.98367f, 3.717603f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3681.782f, -2626.667f, -12.97999f, 0f, 0f, 0f, 3.247781f, 3.506042f, 3.000762f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3685.422f, -2627.413f, -12.92333f, 0f, 0f, 0f, 4.057125f, 5.521852f, 3.439446f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3683.131f, -2624.525f, -13.041f, 0f, 0f, 44.914f, 3.072f, 3.99f, 2.949f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3689.379f, -2628.766f, -12.813f, 0f, 0f, 0f, 3.741f, 5.57f, 3.389f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_22, -3688.071f, -2623.283f, -9.7791f, 0f, 0f, 0f, 2.257698f, 2.906237f, 3.016091f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3686.114f, -2623.858f, -12.89814f, 0f, 0f, 0f, 5.86845f, 3.98367f, 3.717603f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3681.782f, -2626.667f, -12.97999f, 0f, 0f, 0f, 3.247781f, 3.506042f, 3.000762f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3685.422f, -2627.413f, -12.92333f, 0f, 0f, 0f, 4.057125f, 5.521852f, 3.439446f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3683.131f, -2624.525f, -13.041f, 0f, 0f, 44.914f, 3.072f, 3.99f, 2.949f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3689.379f, -2628.766f, -12.813f, 0f, 0f, 0f, 3.741f, 5.57f, 3.389f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_22, -3688.071f, -2623.283f, -9.7791f, 0f, 0f, 0f, 2.257698f, 2.906237f, 3.016091f);
 	iLocal_23 = VOLUME::_CREATE_VOLUME_BOX(-3685.352f, -2623.258f, -13.4981f, 0f, 0f, 0f, 1.100183f, 2.220348f, 1.996734f);
 	iLocal_24 = VOLUME::_CREATE_VOLUME_BOX(-3687.81f, -2623.527f, -13.30467f, 0f, 0f, 0f, 2.162535f, 3.2466f, 2.122298f);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_22, 10111);
@@ -547,9 +547,9 @@ int func_13()
 	iLocal_30[0] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3715.032f, -2610.383f, -14.5792f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 1 blocking volume");
 	iLocal_30[1] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3635.024f, -2587.306f, -14.9224f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 2 blocking volume");
 	iLocal_30[2] = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3619.826f, -2627.633f, -14.5396f, 0f, 0f, 0f, 6f, 6f, 5f, "Fire 3 blocking volume");
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_30[0]), 7);
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_30[1]), 7);
-	PATHFIND::_0x19C7567D2F2287D6(&(iLocal_30[2]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_30[0]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_30[1]), 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(&(iLocal_30[2]), 7);
 	iLocal_28 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3640.015f, -2777.934f, -13.33529f, 0.011471f, 0.064168f, 10.13543f, 7.095184f, 8.285556f, 4.615525f, "vol_Armadillo_OldManJones");
 	iLocal_29 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3640.015f, -2777.934f, -13.33529f, 0.011471f, 0.064168f, 10.13543f, 7.095184f, 8.285556f, 4.615525f, "vol_Armadillo_OldManJonesPrompt");
 	iLocal_35 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-3730.346f, -2604.482f, -12.723f, 0f, 0f, 0f, 5.896f, 17.555f, 2.514f, "Armadillo - m_volTrainStation");
@@ -1155,7 +1155,7 @@ void func_59(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Global_1051387->f_69[iParam0 /*76*/] = 0;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_18 = func_107(iParam2, iParam0);
 	(Global_1051387->f_69[iParam0 /*76*/])->f_25 = iParam1;
-	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::_0xF70F00013A62F866(iParam1) };
+	(Global_1051387->f_69[iParam0 /*76*/])->f_3 = { VOLUME::GET_VOLUME_COORDS(iParam1) };
 	(Global_1051387->f_69[iParam0 /*76*/])->f_26 = iParam3;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_28 = iParam4;
 	(Global_1051387->f_69[iParam0 /*76*/])->f_2 = iParam2;
@@ -1179,7 +1179,7 @@ void func_59(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		POPULATION::_ADD_AMBIENT_SPAWN_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 		POPULATION::_ADD_AMBIENT_AVOIDANCE_RESTRICTION((Global_1051387->f_69[iParam0 /*76*/])->f_26, 0, 0, 0, -1, -1, 0);
 	}
-	NETWORK::_0xEEB7818B1D307212((Global_1051387->f_69[iParam0 /*76*/])->f_25);
+	NETWORK::_NETWORK_SPAWN_CONFIG_ADD_EXCLUSION_VOLUME((Global_1051387->f_69[iParam0 /*76*/])->f_25);
 	func_110(iParam0, 4);
 	func_111(iParam0);
 }
@@ -2215,21 +2215,21 @@ void func_87(int iParam0)
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("SCVTFAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("SCVTFAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("SCVTFAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("SCVTFAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("ARRGNAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("ARRGNAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("ARRGNAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("ARRGNAU");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("ARMRDAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("ARMRDAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("ARMRDAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("ARMRDAU");
 		}
@@ -3888,7 +3888,7 @@ void func_117(int iParam0, var uParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051387->f_69[iParam0 /*76*/])->f_6 = func_124(uParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915170->f_3[iParam0 /*447*/])->f_16 = (Global_1051387->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051387->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051387->f_69[iParam0 /*76*/])->f_6, 0);
 	func_110(iParam0, 16384);
 }
@@ -5319,7 +5319,7 @@ int func_182(int iParam0)
 {
 	vector3 vVar0;
 
-	if (DATAFILE::_0x603AC35FD4602C76(Global_1131373->f_7) && !func_224(12, func_223(iParam0), &vVar0))
+	if (DATAFILE::PARSEDDATA_IS_FILE_LOADED(Global_1131373->f_7) && !func_224(12, func_223(iParam0), &vVar0))
 	{
 		return 0;
 	}

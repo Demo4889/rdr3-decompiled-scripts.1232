@@ -388,7 +388,7 @@ void __EntryFunction__()
 		switch (iLocal_1170)
 		{
 			case 0:
-				if (PED::_0x5C16855277819BBF() < (Local_16.f_1 + Local_16) && !func_6(Local_1019.f_136, 524288))
+				if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() < (Local_16.f_1 + Local_16) && !func_6(Local_1019.f_136, 524288))
 				{
 					PED::_RESERVE_AMBIENT_PEDS((Local_16 + Local_16.f_1));
 				}
@@ -1528,7 +1528,7 @@ void func_36()
 	iVar0 = 0;
 	while (iVar0 < 22)
 	{
-		iLocal_1180[iVar0] = ENTITY::_0x6F3068258A499E52(func_68(), func_69(iVar0), 11);
+		iLocal_1180[iVar0] = ENTITY::PIN_CLOSEST_MAP_ENTITY(func_68(), func_69(iVar0), 11);
 		iVar0++;
 	}
 }
@@ -2567,11 +2567,11 @@ void func_80(int iParam0)
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(&(iLocal_1203[iParam0])))
 	{
-		if (!ENTITY::_0x1FF441D7954F8709(&(iLocal_1180[iParam0])))
+		if (!ENTITY::IS_MAP_ENTITY_PINNED(&(iLocal_1180[iParam0])))
 		{
 			return;
 		}
-		iLocal_1203[iParam0] = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_0x4735E2A4BB83D9DA(&(iLocal_1180[iParam0])));
+		iLocal_1203[iParam0] = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_GET_PINNED_MAP_ENTITY(&(iLocal_1180[iParam0])));
 		if (OBJECT::GET_OBJECT_FRAGMENT_DAMAGE_HEALTH(&(iLocal_1203[iParam0]), true) < 1f || FIRE::_0xA4454592DCF7C992(&(iLocal_1203[iParam0])))
 		{
 			MISC::_0xE84AAC1B22A73E99(&uLocal_1227, iParam0);
@@ -2626,7 +2626,7 @@ int func_82(int iParam0)
 	{
 		return 0;
 	}
-	return _NAMESPACE48::_0xA00DF706C60173D1(Global_1895087[iParam0 /*3*/]);
+	return _NAMESPACE48::_GET_PERSCHAR_MODEL_NAME(Global_1895087[iParam0 /*3*/]);
 }
 
 var func_83(var uParam0)
@@ -3222,7 +3222,7 @@ int func_118(int iParam0, int iParam1)
 			else if (!func_132(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_133(iVar1);
 				return 1;
@@ -3599,9 +3599,9 @@ int func_129(int iParam0, int iParam1)
 	iVar0 = func_117(iParam0);
 	if (iVar0 == -427144552 && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == 307971639 && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == 307971639 && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -3615,7 +3615,7 @@ int func_129(int iParam0, int iParam1)
 
 int func_130(char* sParam0, var uParam1, var uParam2, int iParam3, bool bParam4)
 {
-	*uParam1 = INVENTORY::_0x80D78BDC9D88EF07(func_135(bParam4), sParam0, iParam3, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION(func_135(bParam4), sParam0, iParam3, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;
@@ -3633,7 +3633,7 @@ int func_131(var uParam0, int iParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x82FA24C3D3FCD9B7(iParam2, iParam1, uParam0))
+	if (!INVENTORY::_INVENTORY_GET_ITEM_FROM_COLLECTION_INDEX(iParam2, iParam1, uParam0))
 	{
 		return 0;
 	}
@@ -3651,7 +3651,7 @@ int func_133(int iParam0)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x42A2F33A1942E865(iParam0))
+	if (!INVENTORY::_INVENTORY_RELEASE_ITEM_COLLECTION(iParam0))
 	{
 		return 0;
 	}
@@ -4330,7 +4330,7 @@ void func_155(var uParam0, struct<4> Param1)
 
 int func_156(var uParam0, var uParam1, var uParam2, bool bParam3)
 {
-	*uParam1 = INVENTORY::_0x640F890C3E5A3FFD(func_135(bParam3), uParam0, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION_WITH_FILTER(func_135(bParam3), uParam0, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;
@@ -4663,7 +4663,7 @@ void func_172(bool bParam0)
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(121713391);
+		HUD::_DISABLE_HUD_CONTEXT(121713391);
 	}
 }
 

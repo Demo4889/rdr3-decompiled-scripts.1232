@@ -94,7 +94,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 4:
-				PAD::_0x2804658EB7D8A50B(5, -490854963);
+				PAD::_SET_CONTROL_CONTEXT(5, -490854963);
 				if (func_15(&Local_0))
 				{
 					func_16(&Local_0);
@@ -106,7 +106,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 5:
-				PAD::_0x2804658EB7D8A50B(5, 711586536);
+				PAD::_SET_CONTROL_CONTEXT(5, 711586536);
 				PAD::DISABLE_CONTROL_ACTION(0, -1404316431, false);
 				if (CAM::_0xDC62CD70658E7A02())
 				{
@@ -150,7 +150,7 @@ void __EntryFunction__()
 				func_11(&Local_0, 8);
 				if (func_28(Global_35, 0) == joaat("weapon_kit_binoculars"))
 				{
-					WEAPON::_0xFCCC886EDE3C63EC(Global_35, 2, 0);
+					WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, 0);
 				}
 				break;
 			case 8:
@@ -419,7 +419,7 @@ void func_16(int iParam0)
 
 void func_17(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(1, iParam0, 0);
 }
 
 void func_18(int iParam0, bool bParam1)
@@ -459,7 +459,7 @@ int func_20(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -503,7 +503,7 @@ void func_22(char* sParam0, int iParam1)
 	iVar0 = AUDIO::GET_SOUND_ID();
 	if (iVar0 != -1)
 	{
-		AUDIO::_0xCE5D0FFE83939AF1(iVar0, sParam0, iParam1, 1);
+		AUDIO::_PLAY_SOUND_FRONTEND_WITH_SOUND_ID(iVar0, sParam0, iParam1, 1);
 		(*Global_1956586)[Global_1956586->f_25] = iVar0;
 		Global_1956586->f_25 = (Global_1956586->f_25 + 1 % 24);
 	}
@@ -537,7 +537,7 @@ int func_24(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -838,11 +838,11 @@ void func_46(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, 
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}
@@ -1038,7 +1038,7 @@ int func_51(int iParam0, int iParam1)
 			else if (!func_70(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_71(iVar1);
 				return 1;
@@ -1235,9 +1235,9 @@ int func_67(int iParam0, int iParam1)
 	iVar0 = func_50(iParam0);
 	if (iVar0 == -427144552 && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == 307971639 && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == 307971639 && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -1251,7 +1251,7 @@ int func_67(int iParam0, int iParam1)
 
 int func_68(char* sParam0, var uParam1, var uParam2, int iParam3, bool bParam4)
 {
-	*uParam1 = INVENTORY::_0x80D78BDC9D88EF07(func_73(bParam4), sParam0, iParam3, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION(func_73(bParam4), sParam0, iParam3, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;
@@ -1269,7 +1269,7 @@ int func_69(var uParam0, int iParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x82FA24C3D3FCD9B7(iParam2, iParam1, uParam0))
+	if (!INVENTORY::_INVENTORY_GET_ITEM_FROM_COLLECTION_INDEX(iParam2, iParam1, uParam0))
 	{
 		return 0;
 	}
@@ -1287,7 +1287,7 @@ int func_71(int iParam0)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x42A2F33A1942E865(iParam0))
+	if (!INVENTORY::_INVENTORY_RELEASE_ITEM_COLLECTION(iParam0))
 	{
 		return 0;
 	}
@@ -1520,7 +1520,7 @@ void func_79(var uParam0, struct<4> Param1)
 
 int func_80(var uParam0, var uParam1, var uParam2, bool bParam3)
 {
-	*uParam1 = INVENTORY::_0x640F890C3E5A3FFD(func_73(bParam3), uParam0, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION_WITH_FILTER(func_73(bParam3), uParam0, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;

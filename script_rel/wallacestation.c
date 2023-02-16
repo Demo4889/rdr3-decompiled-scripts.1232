@@ -244,7 +244,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_218, 8);
 							if (func_36(32))
@@ -604,17 +604,17 @@ int func_10(int iParam0)
 int func_11()
 {
 	iLocal_209 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("WalStn-m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_209, -1301.158f, 398.81f, 95.65845f, 0f, 0f, 61.99999f, 1.32f, 1.421f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_209, -1299.192f, 402.038f, 95.658f, 0f, 0f, 61.99999f, 1.537f, 2.022f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_209, -1301.158f, 398.81f, 95.65845f, 0f, 0f, 61.99999f, 1.32f, 1.421f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_209, -1299.192f, 402.038f, 95.658f, 0f, 0f, 61.99999f, 1.537f, 2.022f, 3f);
 	iLocal_208 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("WalStn-m_volPostOfficeOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_208, -1301.045f, 400.748f, 95.8015f, 0f, 0f, 61.99999f, 2.173f, 5f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_208, -1301.309f, 398.458f, 95.8015f, 0f, 0f, 61.99999f, 2.173f, 2.006f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_208, -1298.877f, 402.661f, 95.8015f, 0f, 0f, 61.99999f, 3.035f, 2.644f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_208, -1301.045f, 400.748f, 95.8015f, 0f, 0f, 61.99999f, 2.173f, 5f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_208, -1301.309f, 398.458f, 95.8015f, 0f, 0f, 61.99999f, 2.173f, 2.006f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_208, -1298.877f, 402.661f, 95.8015f, 0f, 0f, 61.99999f, 3.035f, 2.644f, 3f);
 	iLocal_210 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1301.071f, 400.6989f, 95.824f, 0f, 0f, 61.99999f, 2f, 5f, 3f, "WalStn-m_volPostOfficeOfflimits");
 	VOLUME::_0xB469CFD9E065EB99(iLocal_208, 10047);
 	iLocal_211 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("WalStn-m_volGeneralShop Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_211, -1302.8f, 395.115f, 95.824f, 0f, 0f, 61.99999f, 13.80803f, 7.2f, 3f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_211, -1296.613f, 397.2601f, 95.824f, 0f, 0f, 61.99999f, 3.88245f, 2.262934f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_211, -1302.8f, 395.115f, 95.824f, 0f, 0f, 61.99999f, 13.80803f, 7.2f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_211, -1296.613f, 397.2601f, 95.824f, 0f, 0f, 61.99999f, 3.88245f, 2.262934f, 3f);
 	iLocal_212 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1303.289f, 394.199f, 95.824f, 0f, 0f, 62f, 2.042f, 1.5f, 3f, "WalStn-m_volGeneralShopPrompt");
 	iLocal_213 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1307.855f, 397.8527f, 95.324f, 0f, 0f, 61.99999f, 4.5f, 4.5f, 4f, "WalStn-m_volGeneralShopPorch");
 	iLocal_214 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1301.095f, 393.546f, 95.824f, 0f, 0f, 60f, 3.235947f, 2.050864f, 3f, "WalStn-m_volGeneralShopOff");
@@ -643,11 +643,11 @@ int func_15(int iParam0)
 	{
 		HUD::TEXT_BLOCK_REQUEST("TWDRGAU");
 		HUD::TEXT_BLOCK_REQUEST("WALLAUD");
-		if (!HUD::_0xD0976CC34002DB57("TWDRGAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("TWDRGAU"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("WALLAUD"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("WALLAUD"))
 		{
 			return 0;
 		}
@@ -1286,7 +1286,7 @@ int func_55(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -1911,14 +1911,14 @@ void func_80(int iParam0)
 		func_147();
 		if (HUD::_DOES_TEXT_BLOCK_EXIST("TWDRGAU"))
 		{
-			if (HUD::_0xD0976CC34002DB57("TWDRGAU"))
+			if (HUD::TEXT_BLOCK_IS_LOADED("TWDRGAU"))
 			{
 				HUD::_TEXT_BLOCK_DELETE("TWDRGAU");
 			}
 		}
 		if (HUD::_DOES_TEXT_BLOCK_EXIST("WALLAUD"))
 		{
-			if (HUD::_0xD0976CC34002DB57("WALLAUD"))
+			if (HUD::TEXT_BLOCK_IS_LOADED("WALLAUD"))
 			{
 				HUD::_TEXT_BLOCK_DELETE("WALLAUD");
 			}
@@ -7636,7 +7636,7 @@ int func_283(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -7675,7 +7675,7 @@ int func_283(int iParam0, bool bParam1, int iParam2, int iParam3)
 
 int func_284()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_316(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_316(Global_35))
 	{
 		return 1;
 	}

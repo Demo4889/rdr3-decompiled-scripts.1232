@@ -396,7 +396,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_576, 8);
 							if (func_36(32))
@@ -766,7 +766,7 @@ int func_11()
 	iLocal_516 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-763f, -1269.2f, 44.2f, 0f, 0f, 0f, 12.1f, 8.532616f, 5f, "BLKWATER SHERIFF STATION");
 	VOLUME::_0x3EFABB21E14A6BD1(iLocal_516, 5, 1);
 	iLocal_517 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-775.5706f, -1278.292f, 43.72021f, 0f, 0f, 0f, 2.331285f, 11.19982f, 4.241409f, "m_volLawSpawn_Blocking");
-	uLocal_518 = MISC::_0xA2D5A26208421426(iLocal_517);
+	uLocal_518 = MISC::_ADD_DISPATCH_SPAWN_BLOCKING_AREA(iLocal_517);
 	func_46();
 	iLocal_496 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(func_47(3), func_48(3), func_49(3), "Blackwater - m_volBank");
 	iLocal_497 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.1776f, -1277.296f, 43.69548f, 0f, 0f, 0f, 1.252319f, 1f, 2.736849f, "Rhodes - Bank prompt");
@@ -774,45 +774,45 @@ int func_11()
 	VOLUME::_0xB469CFD9E065EB99(iLocal_496, 10034);
 	iLocal_519 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-868.3356f, -1366.207f, 44.35f, 0f, 0f, 0f, 23.18747f, 12.136f, 4.97f, "Blackwater Horse Shop - m_volHorseShop");
 	iLocal_520 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater Horse Shop - m_volHorseShopOutsideDoor Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_520, -856.5364f, -1366.288f, 43.215f, 0f, 0f, 0f, 3.880519f, 3.130757f, 6.64254f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_520, -873.7517f, -1360.161f, 43.215f, 0f, 0f, 90f, 4.034535f, 3.134493f, 6.64254f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_520, -856.5364f, -1366.288f, 43.215f, 0f, 0f, 0f, 3.880519f, 3.130757f, 6.64254f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_520, -873.7517f, -1360.161f, 43.215f, 0f, 0f, 90f, 4.034535f, 3.134493f, 6.64254f);
 	func_50(9, iLocal_520);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_519, 10042);
 	iLocal_525 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-806.585f, -1330.295f, 43.60916f, 0f, 0f, 0f, 5.678295f, 5.023632f, 2.508849f, "Blackwater - newspaper boy");
 	iLocal_499 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-815.711f, -1276.18f, 43.997f, 0f, 0f, 89.8f, 7.7f, 12.8f, 2.9f, "Blackwater - m_volBankManagerOwner");
 	iLocal_503 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-763.219f, -1292.7f, 44.6f, 0f, 0f, 0f, 11.4f, 6.5f, 3.5f, "Blackwater - m_volTailor");
 	iLocal_504 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volTailorOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_504, -765.319f, -1292.7f, 44.6f, 0f, 0f, 0f, 15.6f, 6.5f, 3.5f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_504, -774.117f, -1291.071f, 44.6f, 0f, 0f, 0f, 2f, 3.25f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_504, -765.319f, -1292.7f, 44.6f, 0f, 0f, 0f, 15.6f, 6.5f, 3.5f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_504, -774.117f, -1291.071f, 44.6f, 0f, 0f, 0f, 2f, 3.25f, 3.5f);
 	iLocal_505 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-761.543f, -1291.245f, 43.772f, 0f, 0f, 0f, 3.8f, 2.5f, 2f, "BLW-m_volTailorPrompt");
 	iLocal_506 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volTailorOfflimits");
-	VOLUME::_0x39816F6F94F385AD(iLocal_506, -760.79f, -1294.066f, 43.772f, 0f, 0f, 0f, 6f, 2f, 2f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_506, -767.183f, -1291.536f, 43.772f, 0f, 0f, 89.264f, 2.695f, 3.324f, 2f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_506, -760.79f, -1294.066f, 43.772f, 0f, 0f, 0f, 6f, 2f, 2f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_506, -767.183f, -1291.536f, 43.772f, 0f, 0f, 89.264f, 2.695f, 3.324f, 2f);
 	iLocal_507 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("SDN-m_volTailorPARENT");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_507, iLocal_504);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_507, iLocal_506);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_507, iLocal_504);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_507, iLocal_506);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_503, 10044);
 	iLocal_511 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficeOwner Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_511, -875.073f, -1332.742f, 44.47251f, 0f, 0f, -179.746f, 8.481f, 13.525f, 2.993397f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_511, -875.036f, -1324.642f, 44.43187f, 0f, 0f, 0f, 2.667f, 3.006f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_511, -875.073f, -1332.742f, 44.47251f, 0f, 0f, -179.746f, 8.481f, 13.525f, 2.993397f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_511, -875.036f, -1324.642f, 44.43187f, 0f, 0f, 0f, 2.667f, 3.006f, 3f);
 	iLocal_512 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficePrompt Agg");
-	VOLUME::_0x39816F6F94F385AD(iLocal_512, -875.07f, -1328.584f, 44.38541f, 0f, 0f, -179.5535f, 2.007f, 1.4f, 2.993397f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_512, -875.036f, -1324.773f, 44.43187f, 0f, 0f, 0f, 2.299f, 2.175f, 3f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_512, -875.07f, -1328.584f, 44.38541f, 0f, 0f, -179.5535f, 2.007f, 1.4f, 2.993397f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_512, -875.036f, -1324.773f, 44.43187f, 0f, 0f, 0f, 2.299f, 2.175f, 3f);
 	iLocal_513 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-875.6834f, -1326.861f, 44.47251f, 0f, 0f, -179.1404f, 3.857776f, 1.921187f, 2.993397f, "Blackwater - m_volPostOfficeOfflimits");
 	iLocal_514 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volPostOfficePARENT Agg");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_514, iLocal_511);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_514, iLocal_513);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_514, iLocal_511);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_514, iLocal_513);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_514, 10043);
 	iLocal_508 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-785.2803f, -1304.695f, 44.6f, 0f, 0f, 180f, 9.89304f, 6.3f, 3.7f, "Blackwater - m_volDoctorOwner");
 	iLocal_509 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-786.6721f, -1302.453f, 44.5651f, 0f, 0f, -179.9827f, 7.058838f, 1.318995f, 3.7f, "Blackwater - m_volDoctorOfflimits");
 	iLocal_510 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volDoctorPARENT Agg");
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_510, iLocal_508);
-	VOLUME::_0x6E0D3C3F828DA773(iLocal_510, iLocal_509);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_510, iLocal_508);
+	VOLUME::_ADD_BOUNDS_TO_AGGREGATE_VOLUME(iLocal_510, iLocal_509);
 	VOLUME::_0xB469CFD9E065EB99(iLocal_510, 10039);
 	iLocal_515 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volSaloonInterior");
-	VOLUME::_0x39816F6F94F385AD(iLocal_515, -818.523f, -1319.681f, 46.59f, 0f, 0f, 90f, 15.6f, 16f, 8f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_515, -809.672f, -1319.568f, 48.818f, 0f, 0f, 90f, 15.5f, 2f, 4f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_515, -809.672f, -1324.85f, 44.569f, 0f, 0f, 90f, 5.2f, 2f, 3.8f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_515, -818.523f, -1319.681f, 46.59f, 0f, 0f, 90f, 15.6f, 16f, 8f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_515, -809.672f, -1319.568f, 48.818f, 0f, 0f, 90f, 15.5f, 2f, 4f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_515, -809.672f, -1324.85f, 44.569f, 0f, 0f, 90f, 5.2f, 2f, 3.8f);
 	iLocal_500 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.686f, -1366.005f, 43.677f, 0f, 0f, 90f, 6.5f, 7f, 2f, "Blackwater-m_volBarberShop");
 	iLocal_501 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-807.6548f, -1366.734f, 43.68237f, 0f, 0f, 90f, 8.25f, 5.5f, 2f, "Blackwater-m_volBarberPorch");
 	iLocal_502 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.686f, -1366.005f, 43.677f, 0f, 0f, 90f, 5.5f, 6f, 2f, "Blackwater-m_volBarberPrompt");
@@ -826,10 +826,10 @@ int func_11()
 	iLocal_527 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.0476f, -1374.265f, 44.60803f, 0f, 0f, 0f, 7.733583f, 6.296834f, 3.236622f, "Blackwater - m_volPhotoStudio");
 	iLocal_528 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-813.8254f, -1374.265f, 44.60803f, 0f, 0f, 0f, 6.401097f, 6.296834f, 3.236622f, "Blackwater - m_volPhotoStudioPrompt");
 	iLocal_529 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("Blackwater - m_volLiveryOwner");
-	VOLUME::_0x39816F6F94F385AD(iLocal_529, -971.5854f, -1321.096f, 54.18404f, 0.083127f, 4.778676f, 0.997744f, 31.36792f, 47.07047f, 7.816715f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_529, -949.3033f, -1339.083f, 52.97771f, 0f, 0f, 2.975328f, 14.37138f, 10.08988f, 7.273995f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_529, -971.5854f, -1321.096f, 54.18404f, 0.083127f, 4.778676f, 0.997744f, 31.36792f, 47.07047f, 7.816715f);
+	VOLUME::_ADD_BOX_VOLUME_TO_VOLUME_AGGREGATE(iLocal_529, -949.3033f, -1339.083f, 52.97771f, 0f, 0f, 2.975328f, 14.37138f, 10.08988f, 7.273995f);
 	iLocal_530 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-751.898f, -1285.072f, 43.418f, 0f, 0f, 0f, 2.822f, 4.416f, 2.448f, "Blackwater-m_volButcherNavMeshBlocking");
-	PATHFIND::_0x19C7567D2F2287D6(iLocal_530, 7);
+	PATHFIND::_ADD_NAVMESH_BLOCKING_VOLUME(iLocal_530, 7);
 	iLocal_531 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-934.7934f, -1374.338f, 48.44641f, 0f, 0f, 0f, 1f, 1f, 1f, "Blackwater-m_volCampfire");
 	func_51(iLocal_531, 4);
 	return 1;
@@ -911,11 +911,11 @@ int func_15(int iParam0)
 	{
 		HUD::TEXT_BLOCK_REQUEST("SCVBAUD");
 		HUD::TEXT_BLOCK_REQUEST("BWRGNAU");
-		if (!HUD::_0xD0976CC34002DB57("SCVBAUD"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("SCVBAUD"))
 		{
 			return 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("BWRGNAU"))
+		if (!HUD::TEXT_BLOCK_IS_LOADED("BWRGNAU"))
 		{
 			return 0;
 		}
@@ -1231,7 +1231,7 @@ int func_38(int iParam0)
 	func_87(iParam0, 1);
 	func_94(38);
 	func_95();
-	if (!func_96(-1854368742) && !STREAMING::_0xCF45DF50C7775F2A())
+	if (!func_96(-1854368742) && !STREAMING::IS_LOAD_SCENE_ACTIVE())
 	{
 		if (func_97(7))
 		{
@@ -3082,7 +3082,7 @@ int func_85(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	VOLUME::_0xE2BE6FFA4A13CBB0(iParam1, iVar0, iParam2);
+	VOLUME::SET_VOLUME_OWNER_PERSISTENT_CHARACTER(iParam1, iVar0, iParam2);
 	return 1;
 }
 
@@ -3287,11 +3287,11 @@ void func_95()
 		{
 			if (Local_22.f_18 == 0)
 			{
-				Local_22.f_18 = ENTITY::_0x6F3068258A499E52(Local_22, Local_22.f_11, 11);
+				Local_22.f_18 = ENTITY::PIN_CLOSEST_MAP_ENTITY(Local_22, Local_22.f_11, 11);
 			}
-			else if (ENTITY::_0x1FF441D7954F8709(Local_22.f_18))
+			else if (ENTITY::IS_MAP_ENTITY_PINNED(Local_22.f_18))
 			{
-				Local_22.f_17 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_0x4735E2A4BB83D9DA(Local_22.f_18));
+				Local_22.f_17 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(ENTITY::_GET_PINNED_MAP_ENTITY(Local_22.f_18));
 			}
 		}
 		Local_22.f_26 = MISC::GET_GAME_TIMER() + 1800;
@@ -3360,10 +3360,10 @@ void func_95()
 	}
 	if (Local_22.f_25 && Local_22.f_14 > 2)
 	{
-		if (AUDIO::_0x714A0EA7DE1167BE(Local_22.f_10, "CHURCH_BELL_SOUNDS") && Local_22.f_24 < MISC::GET_GAME_TIMER())
+		if (AUDIO::_HAS_SOUND_AUDIO_NAME_FINISHED(Local_22.f_10, "CHURCH_BELL_SOUNDS") && Local_22.f_24 < MISC::GET_GAME_TIMER())
 		{
 			Local_22.f_24 = MISC::GET_GAME_TIMER() + 1800;
-			AUDIO::_0xCCE219C922737BFA(Local_22.f_10, Local_22.f_11, "CHURCH_BELL_SOUNDS", 0, 0, 1, 0);
+			AUDIO::_PLAY_SOUND_FROM_POSITION(Local_22.f_10, Local_22.f_11, "CHURCH_BELL_SOUNDS", 0, 0, 1, 0);
 			Local_22.f_21++;
 		}
 	}
@@ -3375,7 +3375,7 @@ bool func_96(int iParam0)
 	{
 		return false;
 	}
-	return STREAMING::_0x73B40D97D7BAAD77(iParam0, Global_36);
+	return STREAMING::_IS_POSITION_INSIDE_IPL_STREAMING_EXTENTS(iParam0, Global_36);
 }
 
 int func_97(int iParam0)
@@ -3643,7 +3643,7 @@ void func_103(var uParam0)
 		case 7:
 			if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_3)))
 			{
-				_NAMESPACE48::_0x187D65F3AEC5D679(func_153(uParam0->f_1), &(uParam0->f_3));
+				_NAMESPACE48::_SET_PERSCHAR_SCHEDULE(func_153(uParam0->f_1), &(uParam0->f_3));
 			}
 			if (ENTITY::DOES_ENTITY_EXIST(_NAMESPACE48::GET_PERSCHAR_PED_INDEX(_NAMESPACE48::_0x112DDF56300BC6E5(func_153(uParam0->f_1)))))
 			{
@@ -3926,10 +3926,10 @@ void func_107(int iParam0)
 			{
 				return;
 			}
-			iLocal_11 = PED::_0x4D0D2E3D8BC000EB(iParam0, "p_cs_newspaper_02x_noanim_PH_L_HAND", 0);
+			iLocal_11 = PED::_GET_PED_REGISTER_PROP(iParam0, "p_cs_newspaper_02x_noanim_PH_L_HAND", 0);
 			if (ENTITY::DOES_ENTITY_EXIST(iLocal_11))
 			{
-				iLocal_11 = PED::_0x4D0D2E3D8BC000EB(iParam0, "p_cs_newspaper_02x_noanim_PH_L_HAND", 1);
+				iLocal_11 = PED::_GET_PED_REGISTER_PROP(iParam0, "p_cs_newspaper_02x_noanim_PH_L_HAND", 1);
 				OBJECT::DELETE_OBJECT(&iLocal_11);
 				if (!ENTITY::DOES_ENTITY_EXIST(iLocal_11))
 				{
@@ -3937,7 +3937,7 @@ void func_107(int iParam0)
 				}
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_11))
 				{
-					if (PED::_0x3BBDD6143FF16F98(iParam0, iLocal_11, "p_cs_newspaper_02x_noanim_PH_L_HAND", "WORLD_HUMAN_SELL_PAPER", "WORLD_HUMAN_SELL_PAPER_MALE_A", 1))
+					if (PED::_GIVE_PED_SCENARIO_PROP(iParam0, iLocal_11, "p_cs_newspaper_02x_noanim_PH_L_HAND", "WORLD_HUMAN_SELL_PAPER", "WORLD_HUMAN_SELL_PAPER_MALE_A", 1))
 					{
 						STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iLocal_12);
 						iLocal_9 = 3;
@@ -4536,14 +4536,14 @@ void func_127(int iParam0)
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("SCVBAUD"))
 	{
-		if (HUD::_0xD0976CC34002DB57("SCVBAUD"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("SCVBAUD"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("SCVBAUD");
 		}
 	}
 	if (HUD::_DOES_TEXT_BLOCK_EXIST("BWRGNAU"))
 	{
-		if (HUD::_0xD0976CC34002DB57("BWRGNAU"))
+		if (HUD::TEXT_BLOCK_IS_LOADED("BWRGNAU"))
 		{
 			HUD::_TEXT_BLOCK_DELETE("BWRGNAU");
 		}
@@ -8179,7 +8179,7 @@ bool func_241(int iParam0, char* sParam1, char* sParam2, float fParam3)
 	{
 		return false;
 	}
-	fVar0 = ENTITY::_0x627520389E288A73(iParam0, sParam1, sParam2);
+	fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iParam0, sParam1, sParam2);
 	return MISC::ABSF(((1f - fVar0) - fParam3)) < 0.01f;
 }
 
@@ -8740,7 +8740,7 @@ int func_258(int iParam0, bool bParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((iParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -10112,7 +10112,7 @@ void func_300()
 	}
 	if (Local_22.f_18 != 0)
 	{
-		ENTITY::_0xD2B9C78537ED5759(Local_22.f_18);
+		ENTITY::_UNPIN_MAP_ENTITY(Local_22.f_18);
 	}
 }
 
@@ -14073,7 +14073,7 @@ void func_468(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -14828,7 +14828,7 @@ int func_501(int iParam0, int iParam1)
 		{
 			return 0;
 		}
-		LAW::_0x4752F68EB7F2D280(PLAYER::PLAYER_ID(), Global_1934266->f_26, func_557(iVar0));
+		LAW::_SET_LAW_REGION(PLAYER::PLAYER_ID(), Global_1934266->f_26, func_557(iVar0));
 		return 1;
 	}
 	return 0;
@@ -15650,7 +15650,7 @@ int func_540(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 
 int func_541()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_570(Global_35))
+	if (PED::IS_PED_CARRYING_SOMETHING(Global_35) || func_570(Global_35))
 	{
 		return 1;
 	}

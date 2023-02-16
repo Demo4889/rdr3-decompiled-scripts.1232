@@ -59,9 +59,9 @@ void __EntryFunction__()
 	{
 		func_2(&Var0);
 	}
-	Var0 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	Var0.f_3 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
-	Var0.f_4 = TASK::_0x6718F40313A2B5A6(ScriptParam_0.f_1);
+	Var0 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var0.f_3 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
+	Var0.f_4 = TASK::_GET_SCENARIO_POINT_RADIUS(ScriptParam_0.f_1);
 	Global_43838[Var0.f_18] = &Global_43838[Var0.f_18] + 1;
 	if (func_3() == 0)
 	{
@@ -2242,7 +2242,7 @@ int func_95(var uParam0, var uParam1, bool bParam2, var uParam3)
 {
 	if (*uParam0 < 5)
 	{
-		if (((func_170() || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, -1) && !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, *uParam1))) || !func_90()) || !PED::IS_PED_ON_FOOT(Global_35))
+		if (((func_170() || (ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, -1) && !ANIMSCENE::IS_ENTITY_PLAYING_ANIM_SCENE(Global_35, *uParam1))) || !func_90()) || !PED::IS_PED_ON_FOOT(Global_35))
 		{
 			if (ANIMSCENE::DOES_ANIM_SCENE_EXIST(*uParam1))
 			{

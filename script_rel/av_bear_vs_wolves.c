@@ -1297,11 +1297,11 @@ int func_17(var uParam0)
 		iVar0 = 0;
 		while (iVar0 < uParam0->f_3.f_8)
 		{
-			if (!ANIMSCENE::_0x23E33CB9F4A3F547(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
+			if (!ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
 			{
-				if (!ANIMSCENE::_0x0DF57F86FE71DBE5(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
+				if (!ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADING(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
 				{
-					ANIMSCENE::_0xDF7B5144E25CD3FE(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0]));
+					ANIMSCENE::REQUEST_ANIM_SCENE_PLAY_LIST(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0]));
 				}
 				return 0;
 			}
@@ -1369,7 +1369,7 @@ int func_18(var uParam0)
 	{
 		return 0;
 	}
-	if (!STREAMING::_0x9427C94D2E4094A4(2075717199, 0))
+	if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(2075717199, 0))
 	{
 		return 0;
 	}
@@ -1799,7 +1799,7 @@ int func_28(var uParam0)
 		PED::SET_PED_CONFIG_FLAG(&(uParam0->f_20[4 /*14*/]), 243, true);
 		PED::_0xCE6B874286D640BB(&(uParam0->f_20[4 /*14*/]), 0);
 		TASK::TASK_PLAY_ANIM(&(uParam0->f_20[4 /*14*/]), sLocal_39, sLocal_40, 1000f, -1000f, -1, 131072, 0, 0, 0, 0, 0, 0);
-		MISC::_0x674B90BE1115846D(&(uParam0->f_20[4 /*14*/]), 1);
+		MISC::SET_PED_DECOMPOSED(&(uParam0->f_20[4 /*14*/]), 1);
 		_NAMESPACE49::_0x3CA5E58C9731A16B(&(uParam0->f_20[4 /*14*/]), iLocal_45);
 		PED::SET_PED_KEEP_TASK(&(uParam0->f_20[4 /*14*/]), true);
 		ENTITY::SET_ENTITY_NO_COLLISION_ENTITY(&(uParam0->f_20[4 /*14*/]), &(uParam0->f_20[3 /*14*/]), true);
@@ -1830,7 +1830,7 @@ void func_29(var uParam0)
 int func_30(var uParam0)
 {
 	STREAMING::REQUEST_ANIM_DICT(sLocal_39);
-	STREAMING::_0x19A6BE7D9C6884D3(2075717199, 1, joaat("a_c_bear_01"), 0);
+	STREAMING::_REQUEST_SCENARIO_TYPE(2075717199, 1, joaat("a_c_bear_01"), 0);
 	func_58(&uLocal_11, 0);
 	func_59(&uLocal_11, 1);
 	func_60(&uLocal_11, 1);
@@ -1893,7 +1893,7 @@ int func_31(var uParam0)
 					{
 						if (ANIMSCENE::IS_ANIM_SCENE_LOADED(uParam0->f_3.f_1, 1, 0))
 						{
-							if (ANIMSCENE::_0x1F0E401031E20146(uParam0->f_3.f_1, "pbl_action"))
+							if (ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_3.f_1, "pbl_action"))
 							{
 								func_72(uParam0);
 								ANIMSCENE::SET_ANIM_SCENE_BOOL(uParam0->f_3.f_1, "bStopLoop", true, false);
@@ -1922,7 +1922,7 @@ int func_31(var uParam0)
 				{
 					if (ANIMSCENE::IS_ANIM_SCENE_LOADED(uParam0->f_3.f_1, 1, 0))
 					{
-						if (ANIMSCENE::_0x1F0E401031E20146(uParam0->f_3.f_1, "pbl_action"))
+						if (ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_ACTIVE(uParam0->f_3.f_1, "pbl_action"))
 						{
 							iVar0 = 0;
 							while (iVar0 <= 2)
@@ -1992,7 +1992,7 @@ int func_31(var uParam0)
 								if (ANIMSCENE::_0x005E6F28DD7ED58D(uParam0->f_3.f_1, (uParam0->f_20[3 /*14*/])->f_1))
 								{
 									TASK::_TASK_START_SCENARIO_IN_PLACE(&(uParam0->f_20[3 /*14*/]), 2075717199, 30000, 0, 0, 0.25f, 0);
-									PED::_0x2208438012482A1A(&(uParam0->f_20[3 /*14*/]), false, false);
+									PED::FORCE_PED_AI_AND_ANIMATION_UPDATE(&(uParam0->f_20[3 /*14*/]), false, false);
 									PED::SET_PED_KEEP_TASK(&(uParam0->f_20[3 /*14*/]), true);
 									func_57(uParam0->f_20[3 /*14*/], 0, 1);
 									uParam0->f_469[6] = 1;
@@ -3086,7 +3086,7 @@ int func_76(var uParam0, float fParam1, float fParam2, int iParam3, float fParam
 			}
 			if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[iVar0 /*14*/])))
 			{
-				if (!PED::_0x5102307CE88798EB(&(uParam0->f_20[iVar0 /*14*/])))
+				if (!PED::_IS_PED_VISIBILITY_TRACKED(&(uParam0->f_20[iVar0 /*14*/])))
 				{
 					PED::REQUEST_PED_VISIBILITY_TRACKING(&(uParam0->f_20[iVar0 /*14*/]));
 				}
@@ -3097,7 +3097,7 @@ int func_76(var uParam0, float fParam1, float fParam2, int iParam3, float fParam
 				}
 				if (fVar8 < (fParam2 * fParam2))
 				{
-					if (PED::_0x5102307CE88798EB(&(uParam0->f_20[iVar0 /*14*/])) && PED::IS_TRACKED_PED_VISIBLE(&(uParam0->f_20[iVar0 /*14*/])))
+					if (PED::_IS_PED_VISIBILITY_TRACKED(&(uParam0->f_20[iVar0 /*14*/])) && PED::IS_TRACKED_PED_VISIBLE(&(uParam0->f_20[iVar0 /*14*/])))
 					{
 						if (!func_69(&(uParam0->f_490)))
 						{
@@ -3140,13 +3140,13 @@ int func_77(var uParam0, float fParam1, float fParam2, int iParam3, int iParam4,
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[iVar0 /*14*/])))
 				{
-					if (!PED::_0x5102307CE88798EB(&(uParam0->f_20[iVar0 /*14*/])))
+					if (!PED::_IS_PED_VISIBILITY_TRACKED(&(uParam0->f_20[iVar0 /*14*/])))
 					{
 						PED::REQUEST_PED_VISIBILITY_TRACKING(&(uParam0->f_20[iVar0 /*14*/]));
 					}
 					if (!bParam5 || ENTITY::HAS_ANIM_EVENT_FIRED(&(uParam0->f_20[iVar0 /*14*/]), iParam4))
 					{
-						if ((func_118(Global_35, &(uParam0->f_20[iVar0 /*14*/]), 1) < fParam2 && PED::_0x5102307CE88798EB(&(uParam0->f_20[iVar0 /*14*/]))) && PED::IS_TRACKED_PED_VISIBLE(&(uParam0->f_20[iVar0 /*14*/])))
+						if ((func_118(Global_35, &(uParam0->f_20[iVar0 /*14*/]), 1) < fParam2 && PED::_IS_PED_VISIBILITY_TRACKED(&(uParam0->f_20[iVar0 /*14*/]))) && PED::IS_TRACKED_PED_VISIBLE(&(uParam0->f_20[iVar0 /*14*/])))
 						{
 							if (!func_69(&(uParam0->f_490)))
 							{
@@ -3189,7 +3189,7 @@ void func_78(var uParam0, bool bParam1, bool bParam2, bool bParam3)
 			iVar0 = 0;
 			while (iVar0 < uParam0->f_3.f_8)
 			{
-				if (ANIMSCENE::_0xAE6ADA8FE7E84ACC(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
+				if (ANIMSCENE::_IS_ANIM_SCENE_PLAYBACK_LIST_PHASE_LOADED(uParam0->f_3.f_1, &(uParam0->f_3.f_9[iVar0])))
 				{
 				}
 				iVar0++;
@@ -3503,7 +3503,7 @@ void func_98(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -4882,7 +4882,7 @@ int func_146(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	{
 		return 0;
 	}
-	if (LAW::_0xAD401C63158ACBAA(iParam0))
+	if (LAW::IS_LAW_INCIDENT_ACTIVE(iParam0))
 	{
 		LAW::_0xCBFB4951F2E3934C(iParam0, &Var0);
 		if ((bParam3 || Var0.f_10 > 0) || PLAYER::GET_PLAYER_WANTED_LEVEL(iParam0) > 0)
@@ -6318,7 +6318,7 @@ int func_199(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_46))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1935630->f_46))
+			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::IS_WEAPON_BOW(Global_1935630->f_46))
 			{
 				return 1;
 			}

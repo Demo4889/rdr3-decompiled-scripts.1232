@@ -44,7 +44,7 @@ void __EntryFunction__()
 	{
 		func_3(&Local_3);
 	}
-	Local_3.f_1 = { TASK::_0xA8452DD321607029(iLocal_10, 1) };
+	Local_3.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_10, 1) };
 	if (func_4(&Local_3))
 	{
 		TASK::_0xEEE4829304F93EEE(iLocal_10, 0);
@@ -156,7 +156,7 @@ int func_7(var uParam0)
 			}
 			else
 			{
-				uParam0->f_5 = MAP::_0x554D9D53F696D002(1425226969, uParam0->f_1);
+				uParam0->f_5 = MAP::BLIP_ADD_FOR_COORDS(1425226969, uParam0->f_1);
 				func_14(uParam0);
 			}
 			break;
@@ -228,7 +228,7 @@ void func_13(vector3 vParam0)
 
 void func_14(var uParam0)
 {
-	MAP::_0x662D364ABF16DE2F(uParam0->f_5, 287065609);
+	MAP::BLIP_ADD_MODIFIER(uParam0->f_5, 287065609);
 }
 
 int func_15(int iParam0)
@@ -373,7 +373,7 @@ int func_20(int iParam0, int iParam1)
 			else if (!func_26(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_27(iVar1);
 				return 1;
@@ -398,9 +398,9 @@ int func_21(int iParam0, int iParam1)
 	iVar0 = func_19(iParam0);
 	if (iVar0 == -427144552 && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == 307971639 && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == 307971639 && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -454,7 +454,7 @@ int func_23(bool bParam0)
 
 int func_24(char* sParam0, var uParam1, var uParam2, int iParam3, bool bParam4)
 {
-	*uParam1 = INVENTORY::_0x80D78BDC9D88EF07(func_23(bParam4), sParam0, iParam3, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION(func_23(bParam4), sParam0, iParam3, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;
@@ -472,7 +472,7 @@ int func_25(var uParam0, int iParam1, int iParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x82FA24C3D3FCD9B7(iParam2, iParam1, uParam0))
+	if (!INVENTORY::_INVENTORY_GET_ITEM_FROM_COLLECTION_INDEX(iParam2, iParam1, uParam0))
 	{
 		return 0;
 	}
@@ -490,7 +490,7 @@ int func_27(int iParam0)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x42A2F33A1942E865(iParam0))
+	if (!INVENTORY::_INVENTORY_RELEASE_ITEM_COLLECTION(iParam0))
 	{
 		return 0;
 	}
@@ -678,7 +678,7 @@ void func_32(var uParam0, struct<4> Param1)
 
 int func_33(var uParam0, var uParam1, var uParam2, bool bParam3)
 {
-	*uParam1 = INVENTORY::_0x640F890C3E5A3FFD(func_23(bParam3), uParam0, uParam2);
+	*uParam1 = INVENTORY::_INVENTORY_CREATE_ITEM_COLLECTION_WITH_FILTER(func_23(bParam3), uParam0, uParam2);
 	if (*uParam1 >= 0)
 	{
 		return 1;

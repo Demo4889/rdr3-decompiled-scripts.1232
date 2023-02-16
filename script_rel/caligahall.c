@@ -138,7 +138,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISABLE_HUD_CONTEXT(1833957607);
 							}
 							func_19(iLocal_22, 8);
 							if (func_36(32))
@@ -1107,7 +1107,7 @@ void func_54(int iParam0, int iParam1, var uParam2)
 			}
 		}
 		PLAYER::_0x8674D138391FFB1B(PLAYER::PLAYER_ID(), 1);
-		PLAYER::_0x9F9A829C6751F3C7(PLAYER::PLAYER_ID(), 49, 1);
+		PLAYER::_SET_PLAYER_RESET_FLAG(PLAYER::PLAYER_ID(), 49, 1);
 		PED::SET_PED_RESET_FLAG(Global_35, 49, true);
 		PAD::DISABLE_CONTROL_ACTION(0, -562475458, false);
 		PAD::DISABLE_CONTROL_ACTION(0, 2028806450, false);
@@ -2776,12 +2776,12 @@ void func_102()
 		case 1549070292:
 			break;
 		default:
-			WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 1, 0);
+			WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 0, 0, 1, 0);
 			break;
 	}
 	if (func_166(Global_35, 1))
 	{
-		WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 1, 0);
+		WEAPON::_HOLSTER_PED_WEAPONS(Global_35, 0, 0, 1, 0);
 	}
 }
 

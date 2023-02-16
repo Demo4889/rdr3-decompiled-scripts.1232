@@ -267,7 +267,7 @@ void func_7(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, false);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, false);
 			uParam0->f_176 = 1;
 		}
 	}
@@ -5202,7 +5202,7 @@ int func_174(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (!_NAMESPACE26::_0x81FB74C83C2ED69F(&(Global_1273882->f_154[iVar1])))
+			if (!_NAMESPACE26::_NETWORK_IS_IN_MY_GANG(&(Global_1273882->f_154[iVar1])))
 			{
 				return 0;
 			}

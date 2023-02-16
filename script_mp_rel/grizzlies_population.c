@@ -33,7 +33,7 @@ void __EntryFunction__()
 		}
 		else
 		{
-			Global_1896610->f_51 = NETWORK::_0xFB9ECED5B68F3B78(Global_1896610->f_42);
+			Global_1896610->f_51 = NETWORK::_NETWORK_GET_INSTANCE_ID_OF_THREAD(Global_1896610->f_42);
 			if (func_3(1, 1))
 			{
 				bVar0 = false;

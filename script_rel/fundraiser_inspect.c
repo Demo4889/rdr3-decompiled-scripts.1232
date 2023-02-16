@@ -45,7 +45,7 @@ int func_1(struct<2> Param0, var uParam2)
 		case 0:
 			if (func_2() && STREAMING::_IS_IMAP_ACTIVE_2(204868257))
 			{
-				iLocal_0 = func_3("INSPECT_GENERIC", -719620017, TASK::_0xA8452DD321607029(Param0.f_1, 1), 4f, 1, 1, 0, 3, 570, 4000, 10, 1073741824, 0, 1704213876, 0);
+				iLocal_0 = func_3("INSPECT_GENERIC", -719620017, TASK::_GET_SCENARIO_POINT_COORDS(Param0.f_1, 1), 4f, 1, 1, 0, 3, 570, 4000, 10, 1073741824, 0, 1704213876, 0);
 				iLocal_1 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, 2511.907f, -1160.024f, 52.5668f, -3.9115f, 0f, -90.0969f, 51.282f, false, 2);
 				iLocal_10 = 1;
 			}
@@ -111,7 +111,7 @@ int func_3(char* sParam0, int iParam1, vector3 vParam2, float fParam5, int iPara
 	{
 		return 0;
 	}
-	if (!PAD::_0xBC0884BC590951C7(iParam1, 0))
+	if (!PAD::_IS_CONTROL_ACTION_VALID(iParam1, 0))
 	{
 		return 0;
 	}
@@ -305,11 +305,11 @@ void func_16(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, 
 	}
 	else if (iParam3 == 2)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam10);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam10);
 	}
 	else if (iParam3 == 5)
 	{
-		HUD::_0x4D107406667423BE(iVar0, iParam11);
+		HUD::_UI_PROMPT_CONTEXT_SET_VOLUME(iVar0, iParam11);
 		HUD::_UIPROMPT_CONTEXT_SET_POINT(iVar0, 0f, 0f, 0f);
 		HUD::_UIPROMPT_CONTEXT_SET_SIZE(iVar0, fParam9);
 	}

@@ -544,7 +544,7 @@ int func_17(int iParam0)
 {
 	if (AUDIO::LOAD_STREAM("colter", "es_camp_memory_sounds"))
 	{
-		iLocal_14 = AUDIO::_0x0556C784FA056628("colter", "es_camp_memory_sounds");
+		iLocal_14 = AUDIO::_GET_LOADED_STREAM_ID_FROM_CREATION("colter", "es_camp_memory_sounds");
 		iLocal_15 = MISC::GET_GAME_TIMER() + 30000;
 		return 1;
 	}

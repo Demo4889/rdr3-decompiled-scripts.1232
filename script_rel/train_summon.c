@@ -96,8 +96,8 @@ int func_2()
 			if (!TASK::DOES_SCENARIO_POINT_EXIST(iLocal_19))
 			{
 				iLocal_19 = TASK::CREATE_SCENARIO_POINT(iLocal_2, vLocal_11, fLocal_17, 0f, 0f, 0);
-				TASK::_0x5AF19B6CC2115D34(iLocal_19, 23, 1);
-				TASK::_0x5AF19B6CC2115D34(iLocal_19, 25, 1);
+				TASK::_SET_SCENARIO_POINT_FLAG(iLocal_19, 23, 1);
+				TASK::_SET_SCENARIO_POINT_FLAG(iLocal_19, 25, 1);
 				return 0;
 			}
 			if (!func_13(Global_35, -76381094))
@@ -168,7 +168,7 @@ int func_2()
 		case 5:
 			if (TASK::DOES_SCENARIO_POINT_EXIST(iLocal_19))
 			{
-				if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_19))
+				if (PED::IS_PED_USING_THIS_SCENARIO(Global_35, iLocal_19))
 				{
 					return 0;
 				}
@@ -621,10 +621,10 @@ struct<5> func_25(int iParam0, bool bParam1, int iParam2)
 	switch (func_35(iParam0))
 	{
 		case -1037537535:
-			if (!INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			if (!INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0 = { func_27(889965687, Var0, 1034665895, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 889965687);
 			}
 			else
 			{
@@ -684,27 +684,27 @@ struct<5> func_25(int iParam0, bool bParam1, int iParam2)
 			if (func_42(iParam0, -1823706425))
 			{
 				Var0 = { func_27(-1838434463, Var0, 1084182731, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, -1838434463);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, -1838434463);
 			}
 			else if (func_42(iParam0, -1483207246))
 			{
 				Var0 = { func_27(889965687, Var0, 1034665895, bParam1) };
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var27.f_9 = -1591664384;
 				if (!func_43(Var0, &Var27, bParam1, 0))
@@ -719,7 +719,7 @@ struct<5> func_25(int iParam0, bool bParam1, int iParam2)
 			}
 			else
 			{
-				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 1328661203);
+				Var0.f_4 = INVENTORY::_GET_DEFAULT_ITEM_SLOT_INFO(iParam0, 1328661203);
 				if (Var0.f_4 == 0)
 				{
 				}
@@ -746,7 +746,7 @@ int func_26(int iParam0, int iParam1, var uParam2, var uParam3, bool bParam4)
 		iVar0 = -1;
 		return iVar0 != -1;
 	}
-	if (!INVENTORY::_0xB4158C8C9A3B5DCE(func_46(bParam4), iParam0, iParam1, uParam2))
+	if (!INVENTORY::_INVENTORY_REMOVE_INVENTORY_ITEM_WITH_ITEMID(func_46(bParam4), iParam0, iParam1, uParam2))
 	{
 		return 0;
 	}
@@ -796,7 +796,7 @@ int func_28(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4, var
 		iVar14 = -1;
 		return iVar14 != -1;
 	}
-	if (!INVENTORY::_0x3E4E811480B3AE79(func_46(bParam6), uParam1, iParam3, iParam4))
+	if (!INVENTORY::_INVENTORY_REMOVE_INVENTORY_ITEM_WITH_GUID(func_46(bParam6), uParam1, iParam3, iParam4))
 	{
 		return 0;
 	}
@@ -906,7 +906,7 @@ int func_37(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -1023,7 +1023,7 @@ int func_45(bool bParam0)
 	{
 		return 1;
 	}
-	return INVENTORY::_0x0FBBFFC891A97C81(func_46(bParam0));
+	return INVENTORY::_INVENTORY_ARE_LOCAL_CHANGES_ALLOWED(func_46(bParam0));
 }
 
 int func_46(bool bParam0)
@@ -1105,7 +1105,7 @@ int func_52(int iParam0, var uParam1, var uParam2, int iParam3)
 	{
 		return 0;
 	}
-	if (!INVENTORY::_0x025A1B1FB03FBF61(iVar0, uParam1, uParam2, 22, 1))
+	if (!INVENTORY::_INVENTORY_GET_FULL_INVENTORY_ITEM_DATA(iVar0, uParam1, uParam2, 22, 1))
 	{
 		return 0;
 	}
@@ -1114,6 +1114,6 @@ int func_52(int iParam0, var uParam1, var uParam2, int iParam3)
 
 bool func_53(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 

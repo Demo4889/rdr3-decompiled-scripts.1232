@@ -114,7 +114,7 @@ void __EntryFunction__()
 				{
 					if (iVar182 == 171451159 || iVar182 == 1881103362)
 					{
-						if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::_0x0C3CB2E600C8977D(Global_35, 0))
+						if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) || TASK::IS_PED_EXITING_SCENARIO(Global_35, 0))
 						{
 							TASK::_0xB35370D5353995CB(Global_35, -583731576, 1f);
 						}
@@ -164,8 +164,8 @@ void __EntryFunction__()
 					PED::_0xCB9401F918CB0F75(Global_35, "HIDE_STEW_EAT_PROMPT", 1, 1);
 					if (!func_9(-1))
 					{
-						PED::_0x6D07B371E9439019(Global_35);
-						PED::_0xD65FDC686A031C83(Global_35, -1134349867, 1.5f);
+						PED::_ADD_SCENARIO_TRANSITION(Global_35);
+						PED::_GIVE_PED_HASH_COMMAND(Global_35, -1134349867, 1.5f);
 					}
 				}
 				break;
@@ -1018,7 +1018,7 @@ void func_35(var uParam0)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_174))
 		{
-			ENTITY::_0x18FF3110CF47115D(uParam0->f_174, 2, 0);
+			ENTITY::_SET_ENTITY_CARRYING_FLAG(uParam0->f_174, 2, 0);
 			uParam0->f_176 = 1;
 		}
 	}

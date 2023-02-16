@@ -716,7 +716,7 @@ void func_29(int iParam0)
 	iVar0 = func_55(iParam0, 1);
 	if (iVar0 != -1)
 	{
-		AUDIO::_0x3210BCB36AF7621B(iVar0);
+		AUDIO::_STOP_SOUND_WITH_ID(iVar0);
 	}
 	func_25(8, iParam0);
 }

@@ -23,7 +23,7 @@ void __EntryFunction__()
 				iLocal_0 = 1;
 				break;
 			case 1:
-				if (HUD::_0xD0976CC34002DB57(sLocal_4))
+				if (HUD::TEXT_BLOCK_IS_LOADED(sLocal_4))
 				{
 					func_2(&uLocal_1);
 					iLocal_0 = 2;
@@ -106,7 +106,7 @@ void func_4()
 
 void func_5(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(1, iParam0, 0);
 }
 
 void func_6(var uParam0, float fParam1)
@@ -171,7 +171,7 @@ var func_14(var uParam0, int iParam1, var uParam2, var uParam3, int iParam4, int
 	Var0.f_2 = uParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

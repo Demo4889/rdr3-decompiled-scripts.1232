@@ -1431,7 +1431,7 @@ var func_49(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_UI_FEED_POST_HELP_TEXT(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -11317,7 +11317,7 @@ int func_209(var uParam0)
 	{
 		*uParam0 = DATAFILE::_0xD97D8D905F1562F2(MISC::GET_HASH_KEY(&cVar1));
 	}
-	bVar4 = DATAFILE::_0x603AC35FD4602C76(*uParam0);
+	bVar4 = DATAFILE::PARSEDDATA_IS_FILE_LOADED(*uParam0);
 	if (!bVar4)
 	{
 		return 0;
@@ -11446,7 +11446,7 @@ int func_212()
 	}
 	if (!PLAYER::IS_PLAYER_CONTROL_ON(PLAYER::PLAYER_ID()))
 	{
-		if (HUD::_0x66F35DD9D2B58579())
+		if (HUD::IS_RADAR_HIDDEN_BY_SCRIPT())
 		{
 			return 1;
 		}
@@ -11457,7 +11457,7 @@ int func_212()
 	}
 	if (GRAPHICS::GET_TV_CHANNEL() != -1)
 	{
-		if (HUD::_0x66F35DD9D2B58579())
+		if (HUD::IS_RADAR_HIDDEN_BY_SCRIPT())
 		{
 			return 1;
 		}
@@ -11476,7 +11476,7 @@ int func_212()
 	{
 		if (func_311(((*Global_1835011)[39 /*74*/])->f_1))
 		{
-			if (HUD::_0x66F35DD9D2B58579())
+			if (HUD::IS_RADAR_HIDDEN_BY_SCRIPT())
 			{
 				if (!CAM::_0x1204EB53A5FBC63D())
 				{
@@ -11552,7 +11552,7 @@ int func_213()
 			return 1;
 		}
 	}
-	if (HUD::_0x66F35DD9D2B58579())
+	if (HUD::IS_RADAR_HIDDEN_BY_SCRIPT())
 	{
 		return 1;
 	}
@@ -15548,7 +15548,7 @@ void func_354(bool bParam0, bool bParam1)
 		}
 		else
 		{
-			HUD::_0x8BC7C1F929D07BF3(128623374);
+			HUD::_DISABLE_HUD_CONTEXT(128623374);
 			GRAPHICS::TOGGLE_PAUSED_RENDERPHASES(true);
 		}
 	}
@@ -15608,7 +15608,7 @@ void func_359(vector3 vParam0)
 		iVar1 = ((*Global_1888801)[iVar0 /*35*/])->f_4;
 		if (VOLUME::DOES_VOLUME_EXIST(iVar1))
 		{
-			vVar2 = { VOLUME::_0xF70F00013A62F866(iVar1) };
+			vVar2 = { VOLUME::GET_VOLUME_COORDS(iVar1) };
 		}
 	}
 	vVar5.x = MISC::GET_RANDOM_FLOAT_IN_RANGE(-3f, 3f);
@@ -17271,7 +17271,7 @@ int func_443(var uParam0, int iParam1)
 {
 	int iVar0;
 
-	if (!SCRIPTS::_0x179A6F0EE2E79026(&uParam0))
+	if (!SCRIPTS::_IS_ANY_PLAYER_BIT_SET(&uParam0))
 	{
 		return 0;
 	}
@@ -17707,7 +17707,7 @@ void func_469(var uParam0, int iParam1)
 
 int func_470()
 {
-	if (NETWORK::_0xFBE782B3165AC8EC(1377133516))
+	if (NETWORK::NETWORK_AWARD_HAS_REACHED_MAXCLAIM(1377133516))
 	{
 		return 1;
 	}

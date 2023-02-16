@@ -159,8 +159,8 @@ int func_2(var uParam0, var uParam1)
 	uParam1->f_196 = uParam0->f_1;
 	uParam1->f_197 = *uParam0;
 	uParam1->f_3 = 55;
-	uParam1->f_51 = { TASK::_0xA8452DD321607029(uParam1->f_196, 1) };
-	uParam1->f_51.f_3 = TASK::_0xB93EA7184BAA85C3(uParam1->f_196, 1);
+	uParam1->f_51 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam1->f_196, 1) };
+	uParam1->f_51.f_3 = TASK::_GET_SCENARIO_POINT_HEADING(uParam1->f_196, 1);
 	func_22(uParam1, 1);
 	return 1;
 }
@@ -1239,7 +1239,7 @@ void func_29(int iParam0)
 	{
 		return;
 	}
-	vVar0 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar0 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	func_83(vVar0, 0);
 }
 
@@ -1716,7 +1716,7 @@ int func_53(var uParam0)
 		iVar0 = (iVar0 + iVar1);
 	}
 	PED::_RESERVE_AMBIENT_PEDS(iVar0);
-	if (PED::_0x5C16855277819BBF() >= iVar0)
+	if (PED::_GET_NUM_RESERVED_AMBIENT_PEDS_READY() >= iVar0)
 	{
 		return 1;
 	}
@@ -1967,7 +1967,7 @@ void func_73()
 	iVar0 = 0;
 	while (iVar0 < 1)
 	{
-		iLocal_236[iVar0] = PHYSICS::_0xE9C59F6809373A99(func_131(iVar0) + vVar1, func_132(0f, 0f, -1f), func_133(iVar0), 1, 1, -1, -1082130432);
+		iLocal_236[iVar0] = PHYSICS::_ADD_ROPE_2(func_131(iVar0) + vVar1, func_132(0f, 0f, -1f), func_133(iVar0), 1, 1, -1, -1082130432);
 		func_134(iVar0);
 		iVar0++;
 	}
@@ -2026,7 +2026,7 @@ var func_79(char* sParam0, int iParam1, bool bParam2, bool bParam3, char* sParam
 
 	if (bParam2)
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 1);
+		_NAMESPACE71::UI_FEED_CLEAR_CHANNEL(3, 1, 1);
 	}
 	if (Global_1572887->f_12 != -1)
 	{
@@ -4107,7 +4107,7 @@ int func_118(int iParam0, var uParam1, bool bParam2, int iParam3, int iParam4, b
 	{
 		return 0;
 	}
-	vVar0 = { VOLUME::_0xF70F00013A62F866(iParam0) };
+	vVar0 = { VOLUME::GET_VOLUME_COORDS(iParam0) };
 	vVar3 = { VOLUME::_0x3E2A25B2416DD67E(iParam0) };
 	uVar6 = func_168(vVar0, vVar3.x, uParam1, bParam2, iParam3, iParam4, bParam5, fParam6);
 	return uVar6;
@@ -5341,7 +5341,7 @@ int func_130(var uParam0, bool bParam1)
 			{
 				return 1;
 			}
-			else if (OBJECT::_0xB6CBD40F8EA69E8A(*uParam0))
+			else if (OBJECT::CREATE_OBJECT_SKELETON(*uParam0))
 			{
 				return 1;
 			}
@@ -6328,7 +6328,7 @@ void func_185(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	ENTITY::SET_ENTITY_COORDS(&(iLocal_238[iParam2]), func_131(iParam0), true, false, true, true);
 	ENTITY::FREEZE_ENTITY_POSITION(&(iLocal_238[iParam2]), true);
-	PHYSICS::_0x462FF2A432733A44(&(iLocal_236[iParam0]), &(iLocal_238[iParam2]), &(iLocal_234[iParam1]), 0f, 0f, 0f, 0f, 0f, 0f, "ropeAttach", iParam3);
+	PHYSICS::_ATTACH_ENTITIES_TO_ROPE_2(&(iLocal_236[iParam0]), &(iLocal_238[iParam2]), &(iLocal_234[iParam1]), 0f, 0f, 0f, 0f, 0f, 0f, "ropeAttach", iParam3);
 	PHYSICS::_0x3C6490D940FF5D0B(&(iLocal_236[iParam0]), "ropeAttach", iParam3, func_230(iParam0, 1068708659), 0);
 	PHYSICS::_0x76BAD9D538BCA1AA(&(iLocal_236[iParam0]), 0f);
 	PHYSICS::_0xB40EA9E0D2E2F7F3(&(iLocal_236[iParam0]), 1f);
@@ -7808,7 +7808,7 @@ void func_260(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -9154,7 +9154,7 @@ int func_297(int iParam0, bool bParam1, int iParam2)
 			{
 				if (!bParam1 || func_303(iVar2))
 				{
-					vVar3 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iVar2 /*35*/])->f_3) };
+					vVar3 = { VOLUME::GET_VOLUME_COORDS(((*Global_1888801)[iVar2 /*35*/])->f_3) };
 					fVar6 = BUILTIN::VDIST(vVar3, Global_36);
 					if (fVar6 < fVar0)
 					{
